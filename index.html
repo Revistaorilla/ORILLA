@@ -1,3 +1,6 @@
+¡Tenés toda la razón! Vamos a cambiar eso de inmediato para que quede súper claro y profesional, y además vamos a sumar el correo electrónico oficial dentro de la sección de contacto o participación de la revista.
+1. Actualizar la página principal: index.html
+Copiá este código y reemplazalo por completo en tu archivo index.html. Aquí mejoramos los textos de las tarjetas y agregamos el correo en la sección de participación y en el pie de página:
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -269,10 +272,10 @@
     <section id="participa-inicio" class="participa">
         <div class="titulo-seccion">
             <span>01</span>
-            <h2>PARTICIPÁ: ¿QUERÉS CONTARNOS TU HISTORIA?</h2>
+            <h2>PARTICIPÁ DE LA REVISTA</h2>
         </div>
 
-        <p>Buscamos relatos de vida, poemas, fotos o reflexiones de mujeres lesbianas de todo el país.</p>
+        <p>Buscamos relatos de vida, poemas, fotos o reflexiones de mujeres lesbianas de todo el país. También podés escribirnos directamente a nuestro correo electrónico: <strong>contacto@revistaorilla.com</strong></p>
 
         <form class="form-participar" action="mailto:contacto@revistaorilla.com" method="post" enctype="text/plain">
             <input type="text" name="nombre" placeholder="Tu nombre o seudónimo" required>
@@ -294,7 +297,7 @@
                 <span>ACTUALIDAD / MEMORIA E HISTORIA</span>
                 <h3>Archivos comunitarios, rescate gráfico y redes de ayuda</h3>
                 <p>
-                    Colectivas independientes, fanzines históricos, repositorios de la CHA y recursos de asesoramiento legal y contención en Argentina.
+                    Recorrido por colectivas independientes, documentos históricos y líneas de asesoramiento legal y contención en Argentina.
                 </p>
                 <a href="actualidad.html" class="btn-link">CONTINUAR LEYENDO LA SECCIÓN COMPLETA →</a>
             </article>
@@ -322,9 +325,9 @@
     <section id="participa-fin" class="participa">
         <div class="titulo-seccion">
             <span>04</span>
-            <h2>ENVÍA TU COLABORACIÓN</h2>
+            <h2>CONTACTO Y ENVÍOS</h2>
         </div>
-        <p>¿Querés publicar en ORILLA? Dejanos tu mensaje, propuesta o texto:</p>
+        <p>¿Querés publicar en ORILLA o tenés alguna consulta? Dejanos tu mensaje o escribinos a <strong>contacto@revistaorilla.com</strong>:</p>
         <form class="form-participar" action="mailto:contacto@revistaorilla.com" method="post" enctype="text/plain">
             <input type="text" name="nombre" placeholder="Tu nombre o seudónimo" required>
             <input type="email" name="email" placeholder="Tu correo electrónico" required>
@@ -339,9 +342,163 @@
 <footer>
     <div class="logo">ORILLA</div>
     <p>Revista lésbica, cultural y del sur.</p>
+    <p style="margin: 8px 0; color: #f472b6;">Correo: contacto@revistaorilla.com</p>
     <div class="redes">Instagram · TikTok · Podcast</div>
     <small>© 2026 ORILLA</small>
 </footer>
 
 </body>
 </html>
+
+2. Actualizar la página de actualidad: actualidad.html
+Para que en la otra pestaña tampoco aparezca la frase confusa de la CHA y se entienda mejor, reemplazá el código de tu archivo actualidad.html por este:
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Actualidad y Derechos — ORILLA</title>
+
+    <style>
+        body {
+            font-family: system-ui, -apple-system, sans-serif;
+            background-color: #fcf8fa;
+            color: #2b2b2b;
+            margin: 0;
+            padding: 20px;
+            line-height: 1.6;
+        }
+
+        .contenedor {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: #ffffff;
+            border: 2px solid #a855f7;
+            border-radius: 12px;
+            padding: 30px;
+            box-shadow: 0 4px 12px rgba(168, 85, 247, 0.05);
+        }
+
+        header {
+            text-align: center;
+            border-bottom: 2px solid #f472b6;
+            padding-bottom: 20px;
+            margin-bottom: 30px;
+        }
+
+        .logo {
+            font-size: 2.5rem;
+            font-weight: 900;
+            letter-spacing: 3px;
+            background: linear-gradient(90deg, #e11d48, #f97316, #eab308, #22c55e, #3b82f6, #a855f7);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            display: inline-block;
+            margin-bottom: 5px;
+        }
+
+        .btn-volver {
+            display: inline-block;
+            background-color: #4a044e;
+            color: #ffffff;
+            padding: 10px 16px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 0.9rem;
+            margin-bottom: 20px;
+            transition: background-color 0.2s ease;
+        }
+
+        .btn-volver:hover {
+            background-color: #701a75;
+        }
+
+        h1 {
+            color: #701a75;
+            font-size: 1.8rem;
+            margin-top: 0;
+        }
+
+        .sub-categoria {
+            color: #be185d;
+            font-weight: bold;
+            font-size: 0.85rem;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        h2 {
+            color: #701a75;
+            font-size: 1.3rem;
+            margin-top: 30px;
+            border-left: 4px solid #be185d;
+            padding-left: 10px;
+        }
+
+        p {
+            color: #444;
+            font-size: 1rem;
+            margin-bottom: 15px;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid #fbcfe8;
+            color: #701a75;
+            font-size: 0.85rem;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="contenedor">
+
+    <header>
+        <div class="logo">ORILLA</div>
+        <p style="color: #a21caf; margin: 0; font-weight: 600;">Revista lésbica y cultural</p>
+    </header>
+
+    <a href="index.html#actualidad" class="btn-volver">← VOLVER AL INICIO</a>
+
+    <span class="sub-categoria">ACTUALIDAD Y DERECHOS</span>
+    <h1>Memoria, Archivos y Recursos para la Comunidad en Argentina</h1>
+
+    <h2>Archivos comunitarios y rescate de la memoria</h2>
+    
+    <p><strong>• Rescate de fanzines y publicaciones:</strong> Proyectos independientes y colectivas (como Potencia Tortillera) se encargan de digitalizar volantes, fotografías de marchas y literatura que durante décadas circularon en la clandestinidad para reconstruir la historia del colectivo.</p>
+    
+    <p><strong>• Documentos y registros históricos:</strong> Compilación de informes, gacetillas y materiales sobre el recorrido histórico de las organizaciones de diversidad sexual y lésbica en el país.</p>
+    
+    <p><strong>• Proyectos de memoria oral:</strong> Iniciativas dedicadas a recuperar testimonios, vivencias y relatos sobre las trayectorias, la militancia y la resistencia del colectivo lésbico a lo largo de las décadas.</p>
+
+    <h2>Lugares de ayuda, asesoramiento y atención</h2>
+    
+    <p><strong>• Línea 144</strong><br>
+    <em>Qué ofrece:</em> Atención, contención y asesoramiento integral en situaciones de violencia por motivos de género.<br>
+    <em>Características:</em> Gratuita, confidencial y disponible las 24 horas en todo el país.</p>
+
+    <p><strong>• Defensoría LGBT (FALGBT / Defensoría del Pueblo)</strong><br>
+    <em>Qué ofrece:</em> Asesoramiento legal y recepción de denuncias ante casos de discriminación por orientación sexual o identidad de género.<br>
+    <em>Dirección (CABA):</em> Av. Belgrano 673.<br>
+    <em>Teléfonos:</em> 011 4338-4900 (interno 8106) / Línea gratuita: 0800-999-3722.<br>
+    <em>Correo:</em> defensoria@lgbt.org.ar</p>
+
+    <p><strong>• Áreas de Género y Diversidad Locales</strong><br>
+    Se recomienda consultar con los ministerios, secretarías o direcciones de género de cada provincia o municipio, los cuales cuentan con dispositivos territoriales de escucha y asesoramiento jurídico gratuito.</p>
+
+    <footer>
+        <p>© 2026 ORILLA — Todos los derechos reservados. Contacto: contacto@revistaorilla.com</p>
+    </footer>
+
+</div>
+
+</body>
+</html>
+
+Subí ambos archivos actualizados a tu GitHub y vas a ver cómo queda mucho más claro, limpio y con el correo bien visible.

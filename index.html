@@ -12,13 +12,13 @@
 
         body {
             font-family: system-ui, -apple-system, sans-serif;
-            background-color: #f7f4f9;
+            background-color: #fcf8fa;
             color: #2b2b2b;
             margin: 0;
             padding: 20px;
         }
 
-        /* HEADER Y LOGO */
+        /* HEADER Y LOGO CON ARCOÍRIS Y COLORES LÉSBICOS */
         header {
             border: 2px solid #a855f7;
             border-radius: 12px;
@@ -33,6 +33,7 @@
             font-weight: 900;
             letter-spacing: 4px;
             margin-bottom: 5px;
+            /* Degradado Arcoíris en el Título */
             background: linear-gradient(90deg, #e11d48, #f97316, #eab308, #22c55e, #3b82f6, #a855f7);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
@@ -41,19 +42,20 @@
 
         .subtitulo {
             font-size: 1.1rem;
-            color: #7e22ce;
+            /* Color magenta/violeta Lésbico */
+            color: #a21caf;
             margin-top: 0;
             margin-bottom: 20px;
-            font-weight: 500;
+            font-weight: 600;
         }
 
         nav {
-            background-color: #2e0854;
+            background-color: #4a044e;
             padding: 12px;
             border-radius: 8px;
             display: flex;
             justify-content: center;
-            gap: 20px;
+            gap: 18px;
             flex-wrap: wrap;
             border-bottom: 4px solid #d946ef;
         }
@@ -62,8 +64,8 @@
             color: #ffffff;
             text-decoration: none;
             font-weight: bold;
-            font-size: 0.9rem;
-            letter-spacing: 1px;
+            font-size: 0.85rem;
+            letter-spacing: 0.5px;
             transition: color 0.2s ease;
         }
 
@@ -73,12 +75,12 @@
 
         /* ENCUADRES DE SECCIONES */
         main section {
-            border: 2px solid #c084fc;
+            border: 2px solid #e879f9;
             border-radius: 12px;
-            padding: 30px;
+            padding: 25px;
             margin-bottom: 30px;
             background-color: #ffffff;
-            box-shadow: 0 4px 12px rgba(168, 85, 247, 0.08);
+            box-shadow: 0 4px 12px rgba(168, 85, 247, 0.05);
         }
 
         .titulo-seccion {
@@ -91,15 +93,15 @@
         }
 
         .titulo-seccion span {
-            color: #d946ef;
+            color: #c026d3;
             font-weight: bold;
             font-size: 1.2rem;
         }
 
         .titulo-seccion h2 {
-            color: #4a0e4e;
+            color: #701a75;
             margin: 0;
-            font-size: 1.4rem;
+            font-size: 1.3rem;
         }
 
         /* PORTADA */
@@ -108,7 +110,7 @@
             gap: 25px;
             align-items: center;
             flex-wrap: wrap;
-            background: linear-gradient(135deg, #ffffff 0%, #f3e8ff 100%);
+            background: linear-gradient(135deg, #ffffff 0%, #fdf4ff 100%);
         }
 
         .portada-texto {
@@ -125,8 +127,7 @@
             max-width: 100%;
             height: auto;
             border-radius: 8px;
-            border: 1px solid #c084fc;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+            border: 1px solid #e879f9;
         }
 
         .categoria {
@@ -139,17 +140,17 @@
         }
 
         .portada h1 {
-            color: #4a0e4e;
-            font-size: 2.2rem;
+            color: #701a75;
+            font-size: 2rem;
             margin-top: 0;
             line-height: 1.2;
         }
 
         .btn-link {
             display: inline-block;
-            background-color: #7e22ce;
+            background-color: #a21caf;
             color: white;
-            padding: 12px 24px;
+            padding: 12px 20px;
             border-radius: 8px;
             font-weight: bold;
             text-decoration: none;
@@ -160,31 +161,24 @@
         }
 
         .btn-link:hover {
-            background-color: #a855f7;
+            background-color: #c026d3;
         }
 
-        /* DISPOSICIÓN EN TARJETAS */
-        .grid-horizontal {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-            gap: 20px;
-            align-items: stretch;
-            margin-top: 15px;
-        }
-
-        article.tarjeta-horizontal {
-            border-top: 4px solid #e11d48;
-            padding: 20px;
-            background-color: #faf5ff;
-            border-radius: 8px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+        /* FORMATO DE ÍTEMS EN LISTA VERTICAL */
+        .lista-items {
             display: flex;
             flex-direction: column;
-            justify-content: space-between;
-            box-sizing: border-box;
+            gap: 15px;
         }
 
-        article.tarjeta-horizontal span {
+        .item-horizontal {
+            border-left: 4px solid #be185d;
+            padding: 16px 20px;
+            background-color: #fdf2f8;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .item-horizontal span {
             color: #be185d;
             font-size: 0.75rem;
             font-weight: bold;
@@ -192,41 +186,40 @@
             text-transform: uppercase;
         }
 
-        article.tarjeta-horizontal h3 {
-            color: #3b0764;
-            margin: 10px 0;
+        .item-horizontal h3 {
+            color: #701a75;
+            margin: 6px 0;
             font-size: 1.1rem;
-            line-height: 1.3;
         }
 
-        article.tarjeta-horizontal p {
+        .item-horizontal p {
             font-size: 0.92rem;
             color: #444;
-            line-height: 1.5;
+            margin: 4px 0 10px 0;
+            line-height: 1.4;
         }
 
-        /* DESPLEGABLES "LEER MÁS" */
+        /* DESPLEGABLES "LEER MÁS" EN LOS ÍTEMS */
         details {
-            margin-top: auto;
-            padding-top: 12px;
+            margin-top: 8px;
         }
 
         summary {
-            color: #7e22ce;
+            color: #a21caf;
             font-weight: bold;
             font-size: 0.85rem;
             cursor: pointer;
             list-style: none;
             display: inline-block;
-            background-color: #f3e8ff;
-            padding: 8px 14px;
+            background-color: #ffffff;
+            padding: 6px 12px;
             border-radius: 6px;
             transition: all 0.2s ease;
-            border: 1px solid #d8b4fe;
+            border: 1px solid #f472b6;
         }
 
         summary:hover {
-            background-color: #7e22ce;
+            background-color: #a21caf;
             color: #ffffff;
         }
 
@@ -235,46 +228,45 @@
         }
 
         .texto-completo {
-            margin-top: 15px;
-            padding: 15px;
+            margin-top: 10px;
+            padding: 12px;
             background-color: #ffffff;
-            border: 1px solid #e9d5ff;
-            border-radius: 8px;
-            line-height: 1.6;
+            border: 1px solid #fbcfe8;
+            border-radius: 6px;
+            line-height: 1.5;
             color: #333333;
             font-size: 0.9rem;
         }
 
         blockquote {
             font-style: italic;
-            border-left: 4px solid #a855f7;
-            margin: 10px 0;
-            padding-left: 12px;
-            color: #581c87;
-            font-size: 0.95rem;
+            border-left: 3px solid #c026d3;
+            margin: 8px 0;
+            padding-left: 10px;
+            color: #701a75;
         }
 
-        /* FORMULARIO */
+        /* FORMULARIO DE PARTICIPAR */
         .form-participar {
             display: flex;
             flex-direction: column;
-            gap: 15px;
+            gap: 12px;
             max-width: 600px;
-            margin-top: 20px;
+            margin-top: 15px;
         }
 
         .form-participar input,
         .form-participar textarea {
             width: 100%;
-            padding: 12px;
-            border: 1.5px solid #c084fc;
-            border-radius: 8px;
+            padding: 10px;
+            border: 1.5px solid #e879f9;
+            border-radius: 6px;
             font-family: inherit;
             box-sizing: border-box;
         }
 
         .form-participar textarea {
-            height: 120px;
+            height: 100px;
             resize: vertical;
         }
 
@@ -284,13 +276,13 @@
             border-radius: 12px;
             padding: 24px;
             text-align: center;
-            background-color: #2e0854;
+            background-color: #4a044e;
             color: #ffffff;
         }
 
         footer .redes {
             margin: 10px 0;
-            color: #d8b4fe;
+            color: #f472b6;
             font-size: 0.9rem;
         }
     </style>
@@ -299,14 +291,17 @@
 <body>
 
 <header>
+    <!-- Título con degradado Arcoíris -->
     <div class="logo">ORILLA</div>
+    <!-- Subtítulo con colores Lésbicos -->
     <p class="subtitulo">Revista lésbica, cultural y del sur</p>
 
     <nav>
+        <a href="#participa-inicio">PARTICIPÁ</a>
         <a href="#actualidad">ACTUALIDAD Y DERECHOS</a>
         <a href="#sur">HISTORIAS Y VIEDMA</a>
-        <a href="#cultura">LESBIANAS, CULTURA Y LITERATURA</a>
-        <a href="#participa">PARTICIPÁ</a>
+        <a href="#cultura">CULTURA Y LITERATURA</a>
+        <a href="#participa-fin">CONTACTO</a>
     </nav>
 </header>
 
@@ -316,43 +311,11 @@
     <section class="portada">
         <div class="portada-texto">
             <span class="categoria">EDICIÓN Nº 01 — MEMORIA LÉSBICA</span>
-            <h1>¿Dónde están las lesbianas?<br><small style="font-size: 1.2rem; color: #7e22ce;">Cuatro hitos de la historia real en Argentina</small></h1>
+            <h1>¿Dónde están las lesbianas?<br><small style="font-size: 1.1rem; color: #a21caf;">Cuatro hitos de la historia real en Argentina</small></h1>
             
             <p>
-                La historia lésbica en Argentina se escribió rompiendo el silencio, ocupando las calles y transformando el dolor en memoria organizada. Cuatro momentos clave marcan el camino de la visibilidad y la resistencia en nuestro país:
+                La historia lésbica en Argentina se escribió rompiendo el silencio, ocupando las calles y transformando el dolor en memoria organizada:
             </p>
-
-            <div style="display: flex; flex-direction: column; gap: 12px; margin: 20px 0;">
-                
-                <div style="background-color: #ffffff; padding: 12px; border-left: 4px solid #a855f7; border-radius: 6px; box-shadow: 0 2px 6px rgba(0,0,0,0.04);">
-                    <strong style="color: #4a0e4e; font-size: 0.95rem;">1. Primeras publicaciones clandestinas (1987)</strong>
-                    <p style="margin: 4px 0 0 0; font-size: 0.88rem; color: #444;">
-                        En plena posdictadura, activistas como Ilse Fuskova y Adriana Carrasco fundaron <em>Cuadernos de Existencia Lésbica</em>.
-                    </p>
-                </div>
-
-                <div style="background-color: #ffffff; padding: 12px; border-left: 4px solid #d946ef; border-radius: 6px; box-shadow: 0 2px 6px rgba(0,0,0,0.04);">
-                    <strong style="color: #4a0e4e; font-size: 0.95rem;">2. La primera vez en televisión abierta (1991)</strong>
-                    <p style="margin: 4px 0 0 0; font-size: 0.88rem; color: #444;">
-                        Ilse Fuskova se presentó públicamente como lesbiana en el programa de almuerzos de Mirtha Legrand.
-                    </p>
-                </div>
-
-                <div style="background-color: #ffffff; padding: 12px; border-left: 4px solid #e11d48; border-radius: 6px; box-shadow: 0 2px 6px rgba(0,0,0,0.04);">
-                    <strong style="color: #4a0e4e; font-size: 0.95rem;">3. Pepa Gaitán y el Día de la Visibilidad Lésbica (2010)</strong>
-                    <p style="margin: 4px 0 0 0; font-size: 0.88rem; color: #444;">
-                        El fusilamiento de Natalia "Pepa" Gaitán convirtió al <strong>7 de marzo</strong> en el Día de la Visibilidad Lésbica.
-                    </p>
-                </div>
-
-                <div style="background-color: #ffffff; padding: 12px; border-left: 4px solid #2563eb; border-radius: 6px; box-shadow: 0 2px 6px rgba(0,0,0,0.04);">
-                    <strong style="color: #4a0e4e; font-size: 0.95rem;">4. La marea federal y los Encuentros de Mujeres</strong>
-                    <p style="margin: 4px 0 0 0; font-size: 0.88rem; color: #444;">
-                        Redes de afecto y militancia en la Patagonia y el interior del país para expandir la lucha.
-                    </p>
-                </div>
-
-            </div>
 
             <a href="historia-lesbica.html" class="btn-link">CONTINUAR LEYENDO LA HISTORIA COMPLETA →</a>
         </div>
@@ -363,24 +326,43 @@
     </section>
 
 
-    <!-- SECCIÓN 01: ACTUALIDAD Y DERECHOS -->
-    <section id="actualidad" class="seccion">
+    <!-- PARTICIPÁ (AL PRINCIPIO) -->
+    <section id="participa-inicio" class="participa">
         <div class="titulo-seccion">
             <span>01</span>
+            <h2>PARTICIPÁ: ¿QUERÉS CONTARNOS TU HISTORIA?</h2>
+        </div>
+
+        <p>
+            Buscamos relatos de vida, poemas, fotos o reflexiones de mujeres lesbianas de todo el país.
+        </p>
+
+        <form class="form-participar" action="mailto:contacto@revistaorilla.com" method="post" enctype="text/plain">
+            <input type="text" name="nombre" placeholder="Tu nombre o seudónimo" required>
+            <input type="email" name="email" placeholder="Tu correo electrónico" required>
+            <input type="text" name="ubicacion" placeholder="Tu ciudad o provincia (ej. Viedma, Río Negro)">
+            <textarea name="mensaje" placeholder="Escribí acá tu texto, poema o lo que quieras compartir..." required></textarea>
+            <button type="submit" class="btn-link">ENVIAR COLABORACIÓN</button>
+        </form>
+    </section>
+
+
+    <!-- SECCIÓN 02: ACTUALIDAD Y DERECHOS (EN ÍTEMS) -->
+    <section id="actualidad" class="seccion">
+        <div class="titulo-seccion">
+            <span>02</span>
             <h2>ACTUALIDAD Y DERECHOS</h2>
         </div>
 
-        <div class="grid-horizontal">
+        <div class="lista-items">
 
-            <article class="tarjeta-horizontal">
-                <div>
-                    <span>ACTUALIDAD / MEMORIA E HISTORIA</span>
-                    <h3>Archivos comunitarios y el rescate gráfico</h3>
-                    <p>
-                        Colectivas independientes y proyectos como "Potencia Tortillera" continúan digitalizando fanzines y publicaciones históricas desde los años 80.
-                    </p>
-                </div>
-                
+            <!-- ÍTEM 1 -->
+            <article class="item-horizontal">
+                <span>ACTUALIDAD / MEMORIA E HISTORIA</span>
+                <h3>Archivos comunitarios y el rescate gráfico</h3>
+                <p>
+                    Colectivas independientes y proyectos como "Potencia Tortillera" continúan digitalizando fanzines y publicaciones históricas desde los años 80.
+                </p>
                 <details>
                     <summary>LEER MÁS →</summary>
                     <div class="texto-completo">
@@ -394,15 +376,13 @@
                 </details>
             </article>
 
-            <article class="tarjeta-horizontal">
-                <div>
-                    <span>ACTUALIDAD / ALERTAS</span>
-                    <h3>Monitoreo territorial y redes de contención</h3>
-                    <p>
-                        Vigilancia activa frente a discursos discriminatorios y exigencia de cumplimiento de los protocolos de atención médica y legal.
-                    </p>
-                </div>
-
+            <!-- ÍTEM 2 -->
+            <article class="item-horizontal">
+                <span>ACTUALIDAD / ALERTAS</span>
+                <h3>Monitoreo territorial y redes de contención</h3>
+                <p>
+                    Vigilancia activa frente a discursos discriminatorios y exigencia de cumplimiento de los protocolos de atención médica y legal.
+                </p>
                 <details>
                     <summary>LEER MÁS →</summary>
                     <div class="texto-completo">
@@ -416,23 +396,21 @@
                 </details>
             </article>
 
-            <article class="tarjeta-horizontal" id="derechos">
-                <div>
-                    <span>DERECHOS EN ARGENTINA</span>
-                    <h3>Marco normativo nacional y leyes vigentes</h3>
-                    <p>
-                        Avances con la Ley de Matrimonio Igualitario (26.618) e Identidad de Género (26.743) y el desafío de su plena aplicación en las provincias.
-                    </p>
-                </div>
-
+            <!-- ÍTEM 3 -->
+            <article class="item-horizontal">
+                <span>DERECHOS EN ARGENTINA</span>
+                <h3>Marco normativo nacional y leyes vigentes</h3>
+                <p>
+                    Avances con la Ley de Matrimonio Igualitario (26.618) e Identidad de Género (26.743) y el desafío de su plena aplicación en las provincias.
+                </p>
                 <details>
                     <summary>LEER MÁS →</summary>
                     <div class="texto-completo">
                         <p>
-                            Aunque Argentina cuenta con leyes pioneras a nivel internacional como la Ley 26.618 y la Ley 26.743, el desafío actual es su efectividad en todo el país.
+                            Aunque Argentina cuenta con leyes pioneras como la Ley 26.618 y la Ley 26.743, el desafío actual es su efectividad en todo el país.
                         </p>
                         <p>
-                            Seguimos exigiendo el acceso real a la fertilización asistida sin discriminación y la capacitación en diversidad para profesionales de la salud.
+                            Seguimos exigiendo el acceso real a la fertilización asistida sin discriminación y la capacitación en diversidad.
                         </p>
                     </div>
                 </details>
@@ -442,24 +420,22 @@
     </section>
 
 
-    <!-- SECCIÓN 02: HISTORIAS DEL SUR Y VIEDMA -->
+    <!-- SECCIÓN 03: HISTORIAS DEL SUR Y VIEDMA (EN ÍTEMS) -->
     <section id="sur" class="sur">
         <div class="titulo-seccion">
-            <span>02</span>
+            <span>03</span>
             <h2>LESBIANAS DEL SUR, VIEDMA Y RÍO NEGRO</h2>
         </div>
 
-        <div class="grid-horizontal">
+        <div class="lista-items">
 
-            <article class="tarjeta-horizontal">
-                <div>
-                    <span>COMARCA VIEDMA - PATAGONES</span>
-                    <h3>Redes lésbicas a orillas del río Negro</h3>
-                    <p>
-                        Espacios de resistencia, encuentros plurinacionales, talleres y militancia organizada en Viedma y Carmen de Patagones.
-                    </p>
-                </div>
-
+            <!-- ÍTEM 1 -->
+            <article class="item-horizontal">
+                <span>COMARCA VIEDMA - PATAGONES</span>
+                <h3>Redes lésbicas a orillas del río Negro</h3>
+                <p>
+                    Espacios de resistencia, encuentros plurinacionales, talleres y militancia organizada en Viedma y Carmen de Patagones.
+                </p>
                 <details>
                     <summary>LEER MÁS →</summary>
                     <div class="texto-completo">
@@ -470,15 +446,13 @@
                 </details>
             </article>
 
-            <article class="tarjeta-horizontal">
-                <div>
-                    <span>PATAGONIA Y TERRITORIO</span>
-                    <h3>Comarca, Cordillera y Estepa Rionegrina</h3>
-                    <p>
-                        Redes de afecto que unen Bariloche, El Bolsón, Viedma y el Valle Inferior frente a las grandes distancias geográficas.
-                    </p>
-                </div>
-
+            <!-- ÍTEM 2 -->
+            <article class="item-horizontal">
+                <span>PATAGONIA Y TERRITORIO</span>
+                <h3>Comarca, Cordillera y Estepa Rionegrina</h3>
+                <p>
+                    Redes de afecto que unen Bariloche, El Bolsón, Viedma y el Valle Inferior frente a las grandes distancias geográficas.
+                </p>
                 <details>
                     <summary>LEER MÁS →</summary>
                     <div class="texto-completo">
@@ -493,24 +467,22 @@
     </section>
 
 
-    <!-- SECCIÓN 03: CULTURA Y LITERATURA -->
+    <!-- SECCIÓN 04: CULTURA Y LITERATURA (EN ÍTEMS) -->
     <section id="cultura" class="literatura">
         <div class="titulo-seccion">
-            <span>03</span>
+            <span>04</span>
             <h2>LESBIANAS, CULTURA, AUTORAS Y LITERATURA</h2>
         </div>
 
-        <div class="grid-horizontal">
+        <div class="lista-items">
 
-            <article class="tarjeta-horizontal">
-                <div>
-                    <span>LESBIANAS Y CULTURA</span>
-                    <h3>Expresiones culturales y editoriales independientes</h3>
-                    <p>
-                        Publicaciones artesanales, fanzines, fotografía y arte visual con perspectiva sáfica e identidad propia del Sur.
-                    </p>
-                </div>
-
+            <!-- ÍTEM 1 -->
+            <article class="item-horizontal">
+                <span>LESBIANAS Y CULTURA</span>
+                <h3>Expresiones culturales y editoriales independientes</h3>
+                <p>
+                    Publicaciones artesanales, fanzines, fotografía y arte visual con perspectiva sáfica e identidad propia del Sur.
+                </p>
                 <details>
                     <summary>LEER MÁS →</summary>
                     <div class="texto-completo">
@@ -521,18 +493,16 @@
                 </details>
             </article>
 
-            <article class="tarjeta-horizontal">
-                <div>
-                    <span>AUTORAS</span>
-                    <h3>Grandes referentes de las letras argentinas</h3>
-                    <blockquote>
-                        “Hay mujeres que llegan a nuestra vida como llega el agua a la tierra seca.”
-                    </blockquote>
-                    <p>
-                        Diana Bellessi, Sylvia Molloy, Macky Corbalán y las nuevas voces poéticas de la Patagonia contemporánea.
-                    </p>
-                </div>
-
+            <!-- ÍTEM 2 -->
+            <article class="item-horizontal">
+                <span>AUTORAS</span>
+                <h3>Grandes referentes de las letras argentinas</h3>
+                <blockquote>
+                    “Hay mujeres que llegan a nuestra vida como llega el agua a la tierra seca.”
+                </blockquote>
+                <p>
+                    Diana Bellessi, Sylvia Molloy, Macky Corbalán y las nuevas voces poéticas de la Patagonia contemporánea.
+                </p>
                 <details>
                     <summary>LEER MÁS →</summary>
                     <div class="texto-completo">
@@ -543,15 +513,13 @@
                 </details>
             </article>
 
-            <article class="tarjeta-horizontal">
-                <div>
-                    <span>LITERATURA</span>
-                    <h3>Recomendaciones de libros y lecturas sáficas</h3>
-                    <p>
-                        Reseñas literarias, recomendaciones mensuales y análisis de textos clásicos y contemporáneos.
-                    </p>
-                </div>
-
+            <!-- ÍTEM 3 -->
+            <article class="item-horizontal">
+                <span>LITERATURA</span>
+                <h3>Recomendaciones de libros y lecturas sáficas</h3>
+                <p>
+                    Reseñas literarias, recomendaciones mensuales y análisis de textos clásicos y contemporáneos.
+                </p>
                 <details>
                     <summary>LEER MÁS →</summary>
                     <div class="texto-completo">
@@ -566,16 +534,34 @@
     </section>
 
 
-    <!-- SECCIÓN 04: PARTICIPAR -->
-    <section id="participa" class="participa">
+    <!-- PARTICIPÁ (AL FINAL) -->
+    <section id="participa-fin" class="participa">
         <div class="titulo-seccion">
-            <span>04</span>
-            <h2>¿QUERÉS CONTARNOS TU HISTORIA?</h2>
+            <span>05</span>
+            <h2>ENVÍA TU COLABORACIÓN</h2>
         </div>
 
         <p>
-            Buscamos relatos de vida, poemas, fotos o reflexiones de mujeres lesbianas de todo el país. Enviamos tu colaboración directamente:
+            ¿Querés publicar en ORILLA? Dejanos tu mensaje, propuesta o texto:
         </p>
 
         <form class="form-participar" action="mailto:contacto@revistaorilla.com" method="post" enctype="text/plain">
-            <input type="text" name="n
+            <input type="text" name="nombre" placeholder="Tu nombre o seudónimo" required>
+            <input type="email" name="email" placeholder="Tu correo electrónico" required>
+            <input type="text" name="ubicacion" placeholder="Tu ciudad o provincia">
+            <textarea name="mensaje" placeholder="Escribí tu mensaje o colaboración aquí..." required></textarea>
+            <button type="submit" class="btn-link">ENVIAR COLABORACIÓN</button>
+        </form>
+    </section>
+
+</main>
+
+<footer>
+    <div class="logo">ORILLA</div>
+    <p>Revista lésbica, cultural y del sur.</p>
+    <div class="redes">Instagram · TikTok · Podcast</div>
+    <small>© 2026 ORILLA</small>
+</footer>
+
+</body>
+</html>

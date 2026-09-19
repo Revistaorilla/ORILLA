@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ORILLA - Revista lésbica, cultura y derechos</title>
     <style>
+        /* Estilos generales y tipografía */
         * {
             box-sizing: border-box;
             margin: 0;
@@ -12,95 +13,130 @@
         }
 
         body {
-            font-family: Arial, Helvetica, sans-serif;
-            background-color: #f5f5f5;
+            font-family: 'Times New Roman', Times, serif, Arial, sans-serif;
+            background-color: #f7f7f5;
             color: #111;
-            line-height: 1.5;
+            line-height: 1.6;
             padding: 20px;
             display: flex;
             justify-content: center;
         }
 
         .container {
-            max-width: 850px;
+            max-width: 800px;
             width: 100%;
             background-color: #ffffff;
-            padding: 30px;
+            padding: 35px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.05);
         }
 
-        /* Banner de enlace superior */
+        /* Banner superior estilo enlace destacado */
         .top-banner {
             text-align: center;
-            margin-bottom: 25px;
+            margin-bottom: 30px;
         }
 
-        .btn-blue-banner {
+        .btn-blue {
             display: inline-block;
             background-color: #2b3990;
             color: #ffffff;
             text-decoration: none;
             font-weight: bold;
-            font-size: 0.8rem;
-            padding: 6px 16px;
+            font-size: 0.85rem;
+            padding: 8px 18px;
             text-transform: uppercase;
-            letter-spacing: 0.5px;
-        }
-
-        /* Título de Sección 01 */
-        .section-header {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            border-bottom: 1px solid #ddd;
-            padding-bottom: 10px;
-            margin-bottom: 20px;
-        }
-
-        .section-number {
-            font-size: 1.2rem;
-            font-weight: bold;
-            color: #333;
-        }
-
-        .section-title {
-            font-size: 2rem;
-            font-weight: 900;
             letter-spacing: 1px;
-            text-transform: uppercase;
+            border-radius: 2px;
+            font-family: sans-serif;
         }
 
-        /* Tarjeta gris interna (Tal cual la foto) */
-        .content-card {
-            background-color: #f2f2f0;
-            padding: 25px;
-            border-radius: 4px;
+        .btn-blue:hover {
+            background-color: #1d286b;
+        }
+
+        /* Títulos de sección */
+        .card-section {
+            border-top: 2px solid #111;
+            padding-top: 20px;
+            margin-bottom: 40px;
+        }
+
+        .section-header {
             margin-bottom: 25px;
         }
 
-        .badge-category {
-            display: inline-block;
-            font-size: 0.75rem;
-            font-weight: bold;
-            color: #2b3990;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            margin-bottom: 12px;
-        }
-
-        .card-title {
-            font-family: 'Times New Roman', Times, serif;
-            font-size: 1.4rem;
+        .section-number {
+            font-size: 2rem;
             font-weight: bold;
             color: #111;
-            margin-bottom: 8px;
+            display: inline-block;
+            margin-right: 10px;
         }
 
-        .card-subtitle {
-            font-family: 'Times New Roman', Times, serif;
-            font-size: 1rem;
+        .section-title {
+            font-size: 1.8rem;
+            font-weight: 900;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            display: inline-block;
+        }
+
+        /* Etiquetas secundarias */
+        .category-tag {
+            font-size: 0.8rem;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #2b3990;
+            margin-bottom: 5px;
+            font-family: sans-serif;
+        }
+
+        .tag-pill {
+            display: inline-block;
+            background-color: #2b3990;
+            color: #ffffff;
+            font-size: 0.75rem;
+            padding: 3px 10px;
+            border-radius: 12px;
+            margin: 10px 0;
+            font-family: sans-serif;
+        }
+
+        .sub-tag {
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            font-weight: bold;
             color: #555;
-            line-height: 1.4;
+            letter-spacing: 1px;
             margin-bottom: 15px;
+            font-family: sans-serif;
+        }
+
+        /* Estructura de Artículos */
+        article {
+            margin-top: 20px;
+            border-top: 1px dashed #ccc;
+            padding-top: 20px;
+            margin-bottom: 25px;
+        }
+
+        article h3 {
+            font-size: 1.6rem;
+            font-weight: bold;
+            line-height: 1.3;
+            margin-bottom: 15px;
+        }
+
+        article p {
+            font-size: 1.05rem;
+            margin-bottom: 15px;
+            text-align: justify;
+            color: #222;
+        }
+
+        article p strong {
+            font-weight: bold;
         }
 
         .btn-read-more {
@@ -110,26 +146,15 @@
             color: #111;
             text-decoration: none;
             font-size: 0.85rem;
-            letter-spacing: 0.5px;
+            letter-spacing: 1px;
             border-bottom: 1px solid #111;
             padding-bottom: 2px;
+            font-family: sans-serif;
         }
 
         .btn-read-more:hover {
             color: #2b3990;
             border-color: #2b3990;
-        }
-
-        /* Etiqueta redondeada para Cultura */
-        .tag-pill {
-            display: inline-block;
-            background-color: #2b3990;
-            color: #ffffff;
-            font-size: 0.75rem;
-            padding: 3px 12px;
-            border-radius: 12px;
-            margin-bottom: 8px;
-            font-weight: bold;
         }
     </style>
 </head>
@@ -139,35 +164,52 @@
         
         <!-- Enlace superior -->
         <div class="top-banner">
-            <a href="#cultura" class="btn-blue-banner">LEER NOTA SOBRE CULTURA Y LITERATURA →</a>
+            <a href="#cultura" class="btn-blue">LEER NOTA SOBRE CULTURA Y LITERATURA →</a>
         </div>
 
         <!-- SECCIÓN 01: ACTUALIDAD Y DERECHOS -->
-        <section id="derechos">
+        <section class="card-section" id="derechos">
             <div class="section-header">
-                <span class="section-number">01</span>
+                <span class="section-number">01.</span>
                 <h2 class="section-title">ACTUALIDAD Y DERECHOS</h2>
             </div>
 
-            <!-- Subtarjeta 1: DERECHOS -->
-            <div class="content-card">
-                <span class="badge-category">DERECHOS</span>
-                <h3 class="card-title">Lo que está pasando y por qué importa</h3>
-                <p class="card-subtitle">
-                    Información, contexto y fuentes para entender la actualidad social y política desde una perspectiva de derechos y diversidad.
+            <article>
+                <div class="category-tag">DERECHOS</div>
+                <h3>Del Matrimonio Igualitario a la Inseminación: Diseñando nuestras familias</h3>
+                <p>
+                    En Argentina, el reconocimiento legal representó un punto de inflexión histórico tras la sanción de la Ley de Matrimonio Igualitario (N° 26.618) en 2010. Este hito no solo abrió el derecho al vínculo civil entre parejas del mismo sexo, sino que garantizó el acceso a la co-maternidad, la protección patrimonial y la cobertura en obras sociales para las familias homoparentales.
+                </p>
+                <p>
+                    Con el avance de las leyes de Identidad de Género y Reproducción Médicamente Asistida, se consolidó el marco normativo para asegurar la filiación de hijas e hijos nacidos mediante técnicas de inseminación. Sin embargo, en la actualidad el desafío se desplaza hacia la erradicación de las violencias institucionales y la defensa de los derechos adquiridos.
                 </p>
                 <a href="#" class="btn-read-more">SEGUIR LEYENDO →</a>
+            </article>
+        </section>
+
+        <!-- SECCIÓN 02: CULTURA Y LITERATURA -->
+        <section class="card-section" id="cultura">
+            <div class="section-header">
+                <span class="section-number">02.</span>
+                <h2 class="section-title">CULTURA Y LITERATURA</h2>
             </div>
 
-            <!-- Subtarjeta 2: CULTURA DENTRO DE DERECHOS -->
-            <div class="content-card">
-                <span class="badge-category">CULTURA</span>
-                <h3 class="card-title">Una mirada lésbica sobre el presente</h3>
-                <p class="card-subtitle">
-                    Cultura, sociedad y las historias que todavía necesitan ser contadas en primera persona.
+            <div>
+                <span class="tag-pill">Libros de literatura lésbica</span>
+                <div class="sub-tag">ESCRITORAS & MEMORIA</div>
+            </div>
+
+            <article>
+                <div class="category-tag">EDITORIAL DE BIENVENIDA</div>
+                <h3>La herencia del té y las fotocopias: por qué hacemos ORILLA hoy</h3>
+                <p>
+                    Cuando los primeros ejemplares de <em>Cuadernos de Existencia Lesbiana</em> estaban listos en los años 80, salían a recorrer las calles de Buenos Aires. En un contexto de clandestinidad, se acercaban a las puertas de los bares para llevarles a las mujeres solas o en pareja un mensaje escrito a máquina y fotocopiado: "No estás loca, no eres la única".
+                </p>
+                <p>
+                    La fuerza de encontrarnos en la literatura escrita por mujeres continúa vigente. Hoy el mundo cambió, scrolleamos en redes y publicamos en la nube, pero el aislamiento y la necesidad de tejer redes comunitarias siguen presentes. Por eso nace <strong>ORILLA</strong>: para continuar con esa memoria, registrar nuestra cultura y recordar que cada historia cuenta.
                 </p>
                 <a href="#" class="btn-read-more">SEGUIR LEYENDO →</a>
-            </div>
+            </article>
         </section>
 
     </div>

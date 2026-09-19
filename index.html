@@ -7,6 +7,32 @@
     <title>ORILLA — Revista lésbica, cultural y del sur</title>
 
     <link rel="stylesheet" href="estilos.css">
+    
+    <!-- Estilos añadidos para separar las secciones y crear los cuadros independientes -->
+    <style>
+        body {
+            background-color: #f8f9fa; /* Un fondo gris muy claro para que resalten los cuadros */
+        }
+        
+        /* Estilo para los cuadros independientes de cada noticia */
+        .noticias article {
+            background-color: #ffffff;
+            border: 1px solid #e2e8f0;
+            border-radius: 12px;
+            padding: 30px;
+            margin-bottom: 35px; /* Más separación entre un cuadro y otro */
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.04);
+        }
+
+        /* Más aire para el resto de las secciones principales de la revista */
+        section {
+            margin-bottom: 70px !important; /* Separa los bloques grandes de la página */
+        }
+
+        .titulo-seccion {
+            margin-bottom: 35px;
+        }
+    </style>
 </head>
 
 <body>
@@ -70,7 +96,7 @@
     </section>
 
 
-    <section class="seccion" style="baackgrour>
+    <section class="seccion">
 
         <div class="titulo-seccion">
             <span>01</span>
@@ -79,20 +105,21 @@
 
         <div class="noticias">
 
+            <!-- Cuadro 1: Actualidad -->
             <article>
-                <span>ACTUALIDAD</span>
+                <span class="categoria">ACTUALIDAD</span>
                 <h3>
                     Una noticia importante sobre lesbianas
                 </h3>
                 <p>
-                
+                    Espacio destinado a las últimas novedades, crónicas y eventos relevantes del mes.
                 </p>
                 <a href="#">LEER MÁS →</a>
             </article>
 
-
+            <!-- Cuadro 2: Derechos -->
             <article>
-                <span>DERECHOS</span>
+                <span class="categoria">DERECHOS</span>
                 <h3>
                     Lo que está pasando y por qué importa
                 </h3>
@@ -101,11 +128,11 @@
                     entender la actualidad.
                 </p>
                 <a href="#">LEER MÁS →</a>
-            </article style="background-color: #fffff1>
+            </article>
 
-
+            <!-- Cuadro 3: Cultura -->
             <article>
-                <span>CULTURA</span>
+                <span class="categoria">CULTURA</span>
                 <h3>
                     Una mirada lésbica sobre el presente
                 </h3>
@@ -114,7 +141,7 @@
                     todavía necesitan ser contadas.
                 </p>
                 <a href="#">LEER MÁS →</a>
-            </article style02blackground-color: fffff1>
+            </article>
 
         </div>
 
@@ -173,9 +200,10 @@
             <h2>LITERATURA</h2>
         </div>
 
+        <!-- Se arregló la comilla inicial tipográfica -->
         <blockquote>
-            “Hay mujeres que llegan a nuestra vida
-            como llega el agua a la tierra seca.”
+            "Hay mujeres que llegan a nuestra vida
+            como llega el agua a la tierra seca."
         </blockquote>
 
         <p>

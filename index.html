@@ -3,9 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Historia Real de las Lesbianas en Argentina — ORILLA</title>
+    <title>ORILLA — Revista lésbica, cultural y del sur</title>
 
     <style>
+        html {
+            scroll-behavior: smooth;
+        }
+
         body {
             font-family: system-ui, -apple-system, sans-serif;
             background-color: #f7f4f9;
@@ -14,107 +18,256 @@
             padding: 20px;
         }
 
+        /* HEADER Y LOGO ARCOÍRIS 🌈 */
         header {
             border: 2px solid #a855f7;
             border-radius: 12px;
-            padding: 20px;
+            padding: 24px;
             margin-bottom: 30px;
             background-color: #ffffff;
             text-align: center;
         }
 
-        .logo a {
+        .logo {
             font-size: 3.5rem;
             font-weight: 900;
             letter-spacing: 4px;
-            text-decoration: none;
+            margin-bottom: 5px;
+            /* EFECTO DEGRADADO ARCOÍRIS 🌈 */
             background: linear-gradient(90deg, #e11d48, #f97316, #eab308, #22c55e, #3b82f6, #a855f7);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             display: inline-block;
         }
 
-        .articulo-completo {
-            max-width: 800px;
-            margin: 0 auto;
+        .subtitulo {
+            font-size: 1.1rem;
+            color: #7e22ce;
+            margin-top: 0;
+            margin-bottom: 20px;
+            font-weight: 500;
+        }
+
+        nav {
+            background-color: #2e0854;
+            padding: 12px;
+            border-radius: 8px;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            border-bottom: 4px solid #d946ef;
+        }
+
+        nav a {
+            color: #ffffff;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 0.9rem;
+            letter-spacing: 1px;
+            transition: color 0.2s ease;
+        }
+
+        nav a:hover {
+            color: #f472b6;
+        }
+
+        /* ENCUADRES DE SECCIONES CON MATIZ LÉSBICO */
+        main section {
             border: 2px solid #c084fc;
             border-radius: 12px;
-            padding: 40px;
+            padding: 30px;
+            margin-bottom: 30px;
             background-color: #ffffff;
             box-shadow: 0 4px 12px rgba(168, 85, 247, 0.08);
+        }
+
+        .titulo-seccion {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            border-bottom: 2px solid #f472b6;
+            padding-bottom: 8px;
+            margin-bottom: 20px;
+        }
+
+        .titulo-seccion span {
+            color: #d946ef;
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+
+        .titulo-seccion h2 {
+            color: #4a0e4e;
+            margin: 0;
+            font-size: 1.5rem;
+        }
+
+        /* PORTADA */
+        .portada {
+            display: flex;
+            gap: 25px;
+            align-items: center;
+            flex-wrap: wrap;
+            background: linear-gradient(135deg, #ffffff 0%, #f3e8ff 100%);
+        }
+
+        .portada-texto {
+            flex: 1 1 500px;
+        }
+
+        .portada-imagen {
+            flex: 0 1 320px;
+            text-align: center;
+            margin: 0 auto;
+        }
+
+        .portada-imagen img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            border: 1px solid #c084fc;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.08);
         }
 
         .categoria {
             color: #be185d;
             font-weight: bold;
-            font-size: 0.9rem;
+            font-size: 0.85rem;
+            letter-spacing: 1px;
+            display: block;
+            margin-bottom: 8px;
         }
 
-        h1 {
-            color: #3b0764;
+        .portada h1 {
+            color: #4a0e4e;
             font-size: 2.2rem;
+            margin-top: 0;
+            line-height: 1.2;
+        }
+
+        .btn-link {
+            display: inline-block;
+            background-color: #7e22ce;
+            color: white;
+            padding: 12px 24px;
+            border-radius: 8px;
+            font-weight: bold;
+            text-decoration: none;
+            transition: background-color 0.2s ease;
+            border: none;
+            cursor: pointer;
             margin-top: 10px;
         }
 
-        .subtitulo-articulo {
+        .btn-link:hover {
+            background-color: #a855f7;
+        }
+
+        /* TARJETAS Y ARTÍCULOS EN SECCIONES */
+        .noticias {
+            display: grid;
+            gap: 20px;
+        }
+
+        article {
+            border-left: 4px solid #e11d48;
+            padding: 18px;
+            background-color: #faf5ff;
+            border-radius: 0 8px 8px 0;
+        }
+
+        article span {
+            color: #be185d;
+            font-size: 0.8rem;
+            font-weight: bold;
+        }
+
+        article h3 {
+            color: #3b0764;
+            margin: 8px 0;
+        }
+
+        /* LECTURA DESPLEGABLE */
+        details {
+            margin-top: 10px;
+        }
+
+        summary {
             color: #7e22ce;
-            font-size: 1.2rem;
-            margin-bottom: 30px;
-            font-weight: 600;
+            font-weight: bold;
+            cursor: pointer;
+            list-style: none;
+            display: inline-block;
+            margin-top: 8px;
+            transition: color 0.2s ease;
         }
 
-        .hito-bloque {
-            margin-bottom: 40px;
-            padding-bottom: 25px;
-            border-bottom: 1px solid #e9d5ff;
+        summary:hover {
+            color: #d946ef;
         }
 
-        .hito-bloque h2 {
-            color: #4a0e4e;
-            font-size: 1.4rem;
-            margin-bottom: 15px;
+        summary::-webkit-details-marker {
+            display: none;
         }
 
-        .hito-bloque img {
-            width: 100%;
-            max-height: 400px;
-            object-fit: cover;
+        .texto-completo {
+            margin-top: 15px;
+            padding: 18px;
+            background-color: #ffffff;
+            border: 1px solid #e9d5ff;
             border-radius: 8px;
-            margin: 15px 0;
-            border: 1px solid #c084fc;
-        }
-
-        .hito-bloque p {
-            line-height: 1.8;
-            font-size: 1.05rem;
+            line-height: 1.7;
             color: #333333;
         }
 
-        .volver-btn {
-            display: inline-block;
+        blockquote {
+            font-style: italic;
+            border-left: 4px solid #a855f7;
+            margin: 15px 0;
+            padding-left: 15px;
+            color: #581c87;
+            font-size: 1.1rem;
+        }
+
+        /* FORMULARIO EN SECCIÓN PARTICIPAR */
+        .form-participar {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            max-width: 600px;
             margin-top: 20px;
-            color: #7e22ce;
-            font-weight: bold;
-            text-decoration: none;
-            border: 2px solid #a855f7;
-            padding: 12px 24px;
+        }
+
+        .form-participar input,
+        .form-participar textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1.5px solid #c084fc;
             border-radius: 8px;
-            transition: all 0.2s ease;
+            font-family: inherit;
+            box-sizing: border-box;
         }
 
-        .volver-btn:hover {
-            background-color: #7e22ce;
-            color: #ffffff;
+        .form-participar textarea {
+            height: 120px;
+            resize: vertical;
         }
 
+        /* FOOTER */
         footer {
             border: 2px solid #a855f7;
             border-radius: 12px;
-            padding: 20px;
+            padding: 24px;
             text-align: center;
             background-color: #2e0854;
             color: #ffffff;
-            margin-top: 40px;
+        }
+
+        footer .redes {
+            margin: 10px 0;
+            color: #d8b4fe;
+            font-size: 0.9rem;
         }
     </style>
 </head>
@@ -122,53 +275,211 @@
 <body>
 
 <header>
-    <div class="logo"><a href="index.html">ORILLA</a></div>
+    <div class="logo">ORILLA</div>
+    <p class="subtitulo">Revista lésbica, cultural y del sur</p>
+
+    <nav>
+        <a href="#actualidad">ACTUALIDAD</a>
+        <a href="#derechos">DERECHOS</a>
+        <a href="#sur">HISTORIAS Y VIEDMA</a>
+        <a href="#literatura">CULTURA Y LITERATURA</a>
+        <a href="#participa">PARTICIPÁ</a>
+    </nav>
 </header>
 
 <main>
-    <article class="articulo-completo">
-        <span class="categoria">EDICIÓN Nº 01 — MEMORIA LÉSBICA</span>
-        <h1>¿Dónde están las lesbianas?</h1>
-        <div class="subtitulo-articulo">Cuatro hitos de la historia real en Argentina</div>
 
-        <div class="hito-bloque">
-            <h2>1. Primeras publicaciones clandestinas (1987)</h2>
-            <img src="cuadernos_existencia_lesbica.jpg" alt="Cuadernos de Existencia Lésbica">
+    <!-- PORTADA: HISTORIA REAL DE LAS LESBIANAS EN ARGENTINA -->
+    <section class="portada">
+        <div class="portada-texto">
+            <span class="categoria">EDICIÓN Nº 01 — MEMORIA LÉSBICA</span>
+            <h1>¿Dónde están las lesbianas?<br><small style="font-size: 1.2rem; color: #7e22ce;">Cuatro hitos de la historia real en Argentina</small></h1>
+            
             <p>
-                En plena posdictadura, activistas como Ilse Fuskova y Adriana Carrasco fundaron <em>Cuadernos de Existencia Lésbica</em>. Imprimiendo boletines artesanales en mimeógrafos y repartiéndolos de mano en mano, crearon los primeros canales autogestivos para decir en voz alta lo que la sociedad insistía en ocultar.
+                La historia lésbica en Argentina se escribió rompiendo el silencio, ocupando las calles y transformando el dolor en memoria organizada. Cuatro momentos clave marcan el camino de la visibilidad y la resistencia en nuestro país:
             </p>
+
+            <div style="display: flex; flex-direction: column; gap: 14px; margin: 20px 0;">
+                
+                <div style="background-color: #ffffff; padding: 14px; border-left: 4px solid #a855f7; border-radius: 6px; box-shadow: 0 2px 6px rgba(0,0,0,0.04);">
+                    <strong style="color: #4a0e4e; font-size: 1rem;">1. Primeras publicaciones clandestinas (1987)</strong>
+                    <p style="margin: 4px 0 0 0; font-size: 0.9rem; color: #444;">
+                        En plena posdictadura, activistas como Ilse Fuskova y Adriana Carrasco fundaron <em>Cuadernos de Existencia Lésbica</em>. Imprimiendo boletines artesanales en mimeógrafos, crearon los primeros canales autogestivos.
+                    </p>
+                </div>
+
+                <div style="background-color: #ffffff; padding: 14px; border-left: 4px solid #d946ef; border-radius: 6px; box-shadow: 0 2px 6px rgba(0,0,0,0.04);">
+                    <strong style="color: #4a0e4e; font-size: 1rem;">2. La primera vez en televisión abierta (1991)</strong>
+                    <p style="margin: 4px 0 0 0; font-size: 0.9rem; color: #444;">
+                        Ilse Fuskova se presentó publicly como lesbiana en el programa de almuerzos de Mirtha Legrand, rompiendo el tabú mediático en millones de hogares.
+                    </p>
+                </div>
+
+                <div style="background-color: #ffffff; padding: 14px; border-left: 4px solid #e11d48; border-radius: 6px; box-shadow: 0 2px 6px rgba(0,0,0,0.04);">
+                    <strong style="color: #4a0e4e; font-size: 1rem;">3. Pepa Gaitán y el Día de la Visibilidad Lésbica (2010)</strong>
+                    <p style="margin: 4px 0 0 0; font-size: 0.9rem; color: #444;">
+                        El fusilamiento lesbofóbico de Natalia "Pepa" Gaitán movilizó al país y convirtió al <strong>7 de marzo</strong> en el Día de la Visibilidad Lésbica en Argentina.
+                    </p>
+                </div>
+
+                <div style="background-color: #ffffff; padding: 14px; border-left: 4px solid #2563eb; border-radius: 6px; box-shadow: 0 2px 6px rgba(0,0,0,0.04);">
+                    <strong style="color: #4a0e4e; font-size: 1rem;">4. La marea federal y los Encuentros de Mujeres y Disidencias</strong>
+                    <p style="margin: 4px 0 0 0; font-size: 0.9rem; color: #444;">
+                        Desde los años 90, las lesbianas del interior y de la Patagonia articularon redes de afecto y militancia para expandir la lucha a todo el territorio.
+                    </p>
+                </div>
+
+            </div>
+
+            <a href="historia-lesbica.html" class="btn-link">CONTINUAR LEYENDO LA HISTORIA COMPLETA →</a>
         </div>
 
-        <div class="hito-bloque">
-            <h2>2. La primera vez en televisión abierta (1991)</h2>
-            <img src="ilse_fuskova_tv.jpg" alt="Ilse Fuskova en televisión">
-            <p>
-                En un hito de valentía sin precedentes, Ilse Fuskova se presentó publicly como lesbiana en el programa de almuerzos de Mirtha Legrand. Su testimonio cara a cara rompió el tabú mediático en millones de hogares argentinos.
-            </p>
+        <div class="portada-imagen">
+            <img src="foto_escritoras.jpeg" alt="Escritoras lesbianas">
+        </div>
+    </section>
+
+
+    <!-- SECCIÓN 01: ACTUALIDAD Y DERECHOS -->
+    <section id="actualidad" class="seccion">
+        <div class="titulo-seccion">
+            <span>01</span>
+            <h2>ACTUALIDAD Y DERECHOS</h2>
         </div>
 
-        <div class="hito-bloque">
-            <h2>3. Pepa Gaitán y el Día de la Visibilidad Lésbica (2010)</h2>
-            <img src="pepa_gaitan.jpg" alt="Natalia Pepa Gaitán">
-            <p>
-                El 7 de marzo de 2010, Natalia "Pepa" Gaitán fue fusilada en Córdoba por el padrastro de su novia a causa de su orientación sexual. Su fusilamiento lesbofóbico movilizó al país y convirtió al <strong>7 de marzo</strong> en el Día de la Visibilidad Lésbica en Argentina, transformando el duelo en una bandera colectiva de lucha y justicia.
-            </p>
+        <div class="noticias">
+
+            <article>
+                <span>ACTUALIDAD / MEMORIA E HISTORIA</span>
+                <h3>Archivos comunitarios y el rescate del material gráfico histórico</h3>
+                <p>
+                    Colectivas independientes y proyectos como "Potencia Tortillera" continúan digitalizando y clasificando publicaciones periódicas, boletines artesanales y fanzines producidos desde los años 80 hasta la actualidad.
+                </p>
+                
+                <details>
+                    <summary>LEER MÁS →</summary>
+                    <div class="texto-completo">
+                        <p>Durante décadas, la literatura y el periodismo lésbico en la Argentina circularon en la clandestinidad y la autogestión. Los boletines mimeografiados y las volantes impresas a mano funcionaban no solo como canales de difusión de ideas políticas, sino como refugios comunitarios para conectarse en tiempos de persecución.</p>
+                        <p>El rescate y preservación de este patrimonio gráfico permite reconstruir la línea del tiempo de la militancia lésbica, garantizando que el archivo histórico no sea borrado de los relatos oficiales del país.</p>
+                    </div>
+                </details>
+            </article>
+
+            <article>
+                <span>ACTUALIDAD / MONITOREO Y ALERTAS</span>
+                <h3>Monitoreo territorial ante discursos de odio y violencia lesbofóbica</h3>
+                <p>
+                    Redes de contención en distintos puntos del país mantienen la vigilancia ante discursos discriminatorios, exigiendo la efectividad de los protocolos de protección integral y acceso equitativo a la salud.
+                </p>
+
+                <details>
+                    <summary>LEER MÁS →</summary>
+                    <div class="texto-completo">
+                        <p>Frente a las situaciones de discriminación persistentes en el ámbito institucional y callejero, diversas organizaciones han constituido redes de respuesta rápida y acompañamiento legal. Se remarca la importancia crucial del acceso a la salud ginecológica y reproductiva libre de prejuicios y con profesionales formados en trato digno.</p>
+                    </div>
+                </details>
+            </article>
+
+            <article id="derechos">
+                <span>DERECHOS EN ARGENTINA</span>
+                <h3>Marco normativo nacional: Avances pioneros y desafíos de implementación</h3>
+                <p>
+                    La Argentina cuenta con leyes fundamentales como el Matrimonio Igualitario (26.618), la Ley de Identidad de Género (26.743) y el Cupo Laboral Trans. El desafío actual reside en garantizar la vigencia real de estas normas en las provincias.
+                </p>
+
+                <details>
+                    <summary>LEER MÁS →</summary>
+                    <div class="texto-completo">
+                        <p>Si bien el marco legal argentino es reconocido internacionalmente por su carácter de vanguardia, las activistas señalan la brecha que suele existir entre el texto normativo y la vivencia en localidades alejadas de las capitales. La descentralización de los recursos y la formación continua del personal de salud y justicia continúan siendo los pilares de la demanda actual.</p>
+                    </div>
+                </details>
+            </article>
+
+        </div>
+    </section>
+
+
+    <!-- SECCIÓN 02: HISTORIAS DEL SUR Y VIEDMA -->
+    <section id="sur" class="sur">
+        <div class="titulo-seccion">
+            <span>02</span>
+            <h2>LESBIANAS DEL SUR, VIEDMA Y RÍO NEGRO</h2>
         </div>
 
-        <div class="hito-bloque" style="border-bottom: none;">
-            <h2>4. La marea federal y los Encuentros de Mujeres y Disidencias</h2>
-            <img src="encuentro_mujeres_patagonia.jpg" alt="Encuentro de Mujeres en la Patagonia">
+        <p class="introduccion">
+            Cultura, memoria territorial y resistencia en Viedma, el Valle Inferior, Bariloche, El Bolsón y toda la comarca patagónica.
+        </p>
+
+        <div class="historia">
+            <h3>Viedma como punto de encuentro: Redes lésbicas a orillas del río Negro</h3>
             <p>
-                Desde los años 90, las lesbianas del interior y de la Patagonia emprendieron viajes de miles de kilómetros para habitar los Encuentros Nacionales. Crearon talleres específicos de lesbianismo y articularon redes de afecto y militancia que sacaron la lucha de las capitales para expandirla a cada rincón del territorio.
+                En la capital rionegrina, la militancia disidente ha tejido históricamente espacios de resistencia a través del arte, las marchas del orgullo locales, programas de radio comunitaria y talleres de lectura sáfica a orillas del río.
             </p>
+
+            <details>
+                <summary>LEER MÁS SOBRE VIEDMA Y EL SUR →</summary>
+                <div class="texto-completo">
+                    <p><strong>El activismo en la Comarca Viedma-Carmen de Patagones:</strong> La posición geográfica de Viedma como puerta de entrada a la Patagonia ha favorecido la confluencia de activistas, estudiantes y artistas. A lo largo de los años, las colectivas locales han organizado marchas plurinacionales, intervenciones en la vía pública y encuentros de debate que vinculan los derechos del colectivo con las problemáticas sociales y territoriales de Río Negro.</p>
+                    <p><strong>El legado patagónico:</strong> Desde la poesía neuquina de Macky Corbalán hasta las creadoras de la cordillera y la estepa, habitar el sur siendo lesbiana implica tejer alianzas de acompañamiento frente a las distancias geográficas, impulsando editoriales artesanales y redes autogestivas de contención.</p>
+                </div>
+            </details>
+        </div>
+    </section>
+
+
+    <!-- SECCIÓN 03: LITERATURA -->
+    <section id="literatura" class="literatura">
+        <div class="titulo-seccion">
+            <span>03</span>
+            <h2>LITERATURA Y AUTORAS</h2>
         </div>
 
-        <a href="index.html" class="volver-btn">← VOLVER A LA REVISTA</a>
-    </article>
+        <blockquote>
+            “Hay mujeres que llegan a nuestra vida como llega el agua a la tierra seca.”
+        </blockquote>
+
+        <p>
+            Un recorrido por la lírica y narrativa de autoras insoslayables de la tradición argentina: Diana Bellessi, Sylvia Molloy, Sharon Olds y la rica poesía patagónica contemporánea.
+        </p>
+
+        <details>
+            <summary>LEER MÁS SOBRE LITERATURA →</summary>
+            <div class="texto-completo">
+                <p>La literatura escrita por lesbianas en la Argentina no solo constituye una corriente de valor estético incalculable, sino un testimonio de la experiencia afectiva y política. La poesía de Diana Bellessi abrió senderos para pensar el cuerpo, la naturaleza y la libertad del deseo. En el ensayo y la narrativa, autoras como Sylvia Molloy reflexionaron sobre la memoria, la traducción y la intimidad.</p>
+                <p>En el panorama actual, proliferan editoriales independientes que publican fanzines, poesía de trinchera y antologías federales donde las autoras jóvenes continúan expandiendo las fronteras de la palabra.</p>
+            </div>
+        </details>
+    </section>
+
+
+    <!-- SECCIÓN 04: PARTICIPAR CON FORMULARIO ACTIVO -->
+    <section id="participa" class="participa">
+        <div class="titulo-seccion">
+            <span>04</span>
+            <h2>¿QUERÉS CONTARNOS TU HISTORIA?</h2>
+        </div>
+
+        <p>
+            Buscamos historias, relatos de vida, poemas, fotografías, ensayos o reseñas de mujeres lesbianas de todo el país. Podés enviarnos tu colaboración directamente a través del siguiente formulario:
+        </p>
+
+        <form class="form-participar" action="mailto:contacto@revistaorilla.com" method="post" enctype="text/plain">
+            <input type="text" name="nombre" placeholder="Tu nombre o seudónimo" required>
+            <input type="email" name="email" placeholder="Tu correo electrónico" required>
+            <input type="text" name="ubicacion" placeholder="Tu ciudad o provincia (ej. Viedma, Río Negro)">
+            <textarea name="mensaje" placeholder="Escribí acá tu texto, poema o la historia que quieras compartir..." required></textarea>
+            <button type="submit" class="btn-link">ENVIAR COLABORACIÓN</button>
+        </form>
+    </section>
+
 </main>
 
+
 <footer>
-    <small>© 2026 ORILLA — Revista lésbica, cultural y del sur</small>
+    <div class="logo">ORILLA</div>
+    <p>Revista lésbica, cultural y del sur.</p>
+    <div class="redes">Instagram · TikTok · Podcast</div>
+    <small>© 2026 ORILLA</small>
 </footer>
 
 </body>

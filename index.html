@@ -80,6 +80,21 @@
             line-height: 1.2;
         }
 
+        /* FOTO DE PORTADA PEQUEÑA Y CENTRADA */
+        .portada-imagen {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .portada-imagen img {
+            max-width: 320px;
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            border: 1px solid #c084fc;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
         .btn-link {
             display: inline-block;
             margin-top: 15px;
@@ -95,6 +110,21 @@
 
         .btn-link:hover {
             background-color: #6b21a8;
+        }
+
+        section.seccion-revista {
+            border: 2px solid #c084fc;
+            border-radius: 12px;
+            padding: 25px;
+            background-color: #ffffff;
+            margin-bottom: 25px;
+        }
+
+        section.seccion-revista h2 {
+            color: #4a0e4e;
+            margin-top: 0;
+            border-bottom: 2px solid #f3e8ff;
+            padding-bottom: 10px;
         }
 
         footer {
@@ -122,61 +152,69 @@
     </header>
 
     <main>
-        <!-- PORTADA CON FOTO Y RESUMEN DE HISTORIA -->
+        <!-- PORTADA CON FOTO PEQUEÑA Y RESUMEN -->
         <section class="portada" id="historia">
-            <div style="display: flex; flex-direction: column; gap: 20px;">
+            
+            <!-- FOTO CHICA -->
+            <div class="portada-imagen">
+                <img src="foto_escritoras.jpeg" alt="Escritoras lesbianas">
+            </div>
+
+            <!-- TEXTO DE LA PORTADA -->
+            <div class="portada-texto">
+                <span class="categoria">EDICIÓN Nº 01 — MEMORIA LÉSBICA</span>
+                <h1>¿Dónde están las lesbianas?<br><small style="font-size: 1.2rem; color: #7e22ce;">Cuatro hitos de la historia real en Argentina</small></h1>
                 
-                <!-- IMAGEN DE PORTADA QUE APUNTA A TU ARCHIVO SUBIDO -->
-                <div class="portada-imagen" style="text-align: center;">
-                    <img src="foto_escritoras.jpeg" alt="Escritoras lesbianas" style="max-width: 100%; height: auto; border-radius: 8px; border: 1px solid #c084fc;">
-                </div>
+                <p>
+                    La historia lésbica en Argentina se escribió rompiendo el silencio, ocupando las calles y transformando el dolor en memoria organizada. Cuatro momentos clave marcan el camino de la visibilidad y la resistencia en nuestro país:
+                </p>
 
-                <!-- TEXTO DE LA PORTADA -->
-                <div class="portada-texto">
-                    <span class="categoria">EDICIÓN Nº 01 — MEMORIA LÉSBICA</span>
-                    <h1>¿Dónde están las lesbianas?<br><small style="font-size: 1.2rem; color: #7e22ce;">Cuatro hitos de la historia real en Argentina</small></h1>
+                <div style="display: flex; flex-direction: column; gap: 16px; margin: 20px 0;">
                     
-                    <p>
-                        La historia lésbica en Argentina se escribió rompiendo el silencio, ocupando las calles y transformando el dolor en memoria organizada. Cuatro momentos clave marcan el camino de la visibilidad y la resistencia en nuestro país:
-                    </p>
-
-                    <div style="display: flex; flex-direction: column; gap: 16px; margin: 20px 0;">
-                        
-                        <div style="background-color: #fdf4ff; padding: 16px; border-left: 4px solid #a855f7; border-radius: 6px;">
-                            <strong style="color: #4a0e4e; font-size: 1.05rem;">1. Primeras publicaciones clandestinas (1987)</strong>
-                            <p style="margin: 6px 0 0 0; font-size: 0.95rem; color: #444;">
-                                En plena posdictadura, activistas como Ilse Fuskova y Adriana Carrasco fundaron <em>Cuadernos de Existencia Lésbica</em>. Imprimiendo boletines artesanales en mimeógrafos, crearon los primeros canales autogestivos.
-                            </p>
-                        </div>
-
-                        <div style="background-color: #fdf4ff; padding: 16px; border-left: 4px solid #d946ef; border-radius: 6px;">
-                            <strong style="color: #4a0e4e; font-size: 1.05rem;">2. La primera vez en televisión abierta (1991)</strong>
-                            <p style="margin: 6px 0 0 0; font-size: 0.95rem; color: #444;">
-                                Ilse Fuskova se presentó públicamente como lesbiana en el programa de almuerzos de Mirtha Legrand, rompiendo el tabú mediático en millones de hogares.
-                            </p>
-                        </div>
-
-                        <div style="background-color: #fdf4ff; padding: 16px; border-left: 4px solid #e11d48; border-radius: 6px;">
-                            <strong style="color: #4a0e4e; font-size: 1.05rem;">3. Pepa Gaitán y el Día de la Visibilidad Lésbica (2010)</strong>
-                            <p style="margin: 6px 0 0 0; font-size: 0.95rem; color: #444;">
-                                El fusilamiento lesbofóbico de Natalia "Pepa" Gaitán movilizó al país y convirtió al <strong>7 de marzo</strong> en el Día de la Visibilidad Lésbica en Argentina.
-                            </p>
-                        </div>
-
-                        <div style="background-color: #fdf4ff; padding: 16px; border-left: 4px solid #2563eb; border-radius: 6px;">
-                            <strong style="color: #4a0e4e; font-size: 1.05rem;">4. La marea federal y los Encuentros de Mujeres y Disidencias</strong>
-                            <p style="margin: 6px 0 0 0; font-size: 0.95rem; color: #444;">
-                                Desde los años 90, las lesbianas del interior y de la Patagonia articularon redes de afecto y militancia para expandir la lucha a todo el territorio.
-                            </p>
-                        </div>
-
+                    <div style="background-color: #fdf4ff; padding: 16px; border-left: 4px solid #a855f7; border-radius: 6px;">
+                        <strong style="color: #4a0e4e; font-size: 1.05rem;">1. Primeras publicaciones clandestinas (1987)</strong>
+                        <p style="margin: 6px 0 0 0; font-size: 0.95rem; color: #444;">
+                            En plena posdictadura, activistas como Ilse Fuskova y Adriana Carrasco fundaron <em>Cuadernos de Existencia Lésbica</em>. Imprimiendo boletines artesanales en mimeógrafos, crearon los primeros canales autogestivos.
+                        </p>
                     </div>
 
-                    <!-- BOTÓN QUE DIRIGE A LA NUEVA PÁGINA -->
-                    <a href="historia-lesbica.html" class="btn-link">CONTINUAR LEYENDO LA REVISTA</a>
+                    <div style="background-color: #fdf4ff; padding: 16px; border-left: 4px solid #d946ef; border-radius: 6px;">
+                        <strong style="color: #4a0e4e; font-size: 1.05rem;">2. La primera vez en televisión abierta (1991)</strong>
+                        <p style="margin: 6px 0 0 0; font-size: 0.95rem; color: #444;">
+                            Ilse Fuskova se presentó públicamente como lesbiana en el programa de almuerzos de Mirtha Legrand, rompiendo el tabú mediático en millones de hogares.
+                        </p>
+                    </div>
+
+                    <div style="background-color: #fdf4ff; padding: 16px; border-left: 4px solid #e11d48; border-radius: 6px;">
+                        <strong style="color: #4a0e4e; font-size: 1.05rem;">3. Pepa Gaitán y el Día de la Visibilidad Lésbica (2010)</strong>
+                        <p style="margin: 6px 0 0 0; font-size: 0.95rem; color: #444;">
+                            El fusilamiento lesbofóbico de Natalia "Pepa" Gaitán movilizó al país y convirtió al <strong>7 de marzo</strong> en el Día de la Visibilidad Lésbica en Argentina.
+                        </p>
+                    </div>
+
+                    <div style="background-color: #fdf4ff; padding: 16px; border-left: 4px solid #2563eb; border-radius: 6px;">
+                        <strong style="color: #4a0e4e; font-size: 1.05rem;">4. La marea federal y los Encuentros de Mujeres y Disidencias</strong>
+                        <p style="margin: 6px 0 0 0; font-size: 0.95rem; color: #444;">
+                            Desde los años 90, las lesbianas del interior y de la Patagonia articularon redes de afecto y militancia para expandir la lucha a todo el territorio.
+                        </p>
+                    </div>
+
                 </div>
 
+                <a href="historia-lesbica.html" class="btn-link">CONTINUAR LEYENDO LA REVISTA</a>
             </div>
+        </section>
+
+        <!-- SECCIÓN ACTUALIDAD RESTAURADA -->
+        <section class="seccion-revista" id="actualidad">
+            <h2>Actualidad & Agenda</h2>
+            <p>Espacio dedicado a las noticias, activismos y reflexiones contemporáneas sobre la comunidad lésbica en Argentina y la región.</p>
+        </section>
+
+        <!-- SECCIÓN CULTURA RESTAURADA -->
+        <section class="seccion-revista" id="cultura">
+            <h2>Cultura & Literatura</h2>
+            <p>Recomendaciones de libros, poesía, arte visual, recomendaciones de cine y voces de escritoras independientes del Sur.</p>
         </section>
     </main>
 

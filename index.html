@@ -166,14 +166,14 @@
         /* DISPOSICIÓN HORIZONTAL (TARJETAS EN PARALELO) ↔️ */
         .grid-horizontal {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 20px;
-            align-items: start;
+            align-items: stretch;
+            margin-top: 15px;
         }
 
         article.tarjeta-horizontal {
             border-top: 4px solid #e11d48;
-            border-left: none;
             padding: 20px;
             background-color: #faf5ff;
             border-radius: 8px;
@@ -181,7 +181,6 @@
             display: flex;
             flex-direction: column;
             justify-content: space-between;
-            height: 100%;
             box-sizing: border-box;
         }
 
@@ -190,6 +189,7 @@
             font-size: 0.75rem;
             font-weight: bold;
             letter-spacing: 0.5px;
+            text-transform: uppercase;
         }
 
         article.tarjeta-horizontal h3 {
@@ -208,7 +208,7 @@
         /* BOTÓN DE DESPLEGABLE "LEER MÁS" */
         details {
             margin-top: auto;
-            padding-top: 10px;
+            padding-top: 12px;
         }
 
         summary {
@@ -248,10 +248,10 @@
         blockquote {
             font-style: italic;
             border-left: 4px solid #a855f7;
-            margin: 15px 0;
-            padding-left: 15px;
+            margin: 10px 0;
+            padding-left: 12px;
             color: #581c87;
-            font-size: 1.05rem;
+            font-size: 0.95rem;
         }
 
         /* FORMULARIO */
@@ -374,34 +374,33 @@
             <article class="tarjeta-horizontal">
                 <div>
                     <span>ACTUALIDAD / MEMORIA E HISTORIA</span>
-                    <h3>Archivos comunitarios y el rescate del material gráfico histórico</h3>
+                    <h3>Archivos comunitarios y el rescate gráfico</h3>
                     <p>
-                        Colectivas independientes y proyectos como "Potencia Tortillera" continúan digitalizando y clasificando publicaciones periódicas, boletines artesanales y fanzines producidos desde los años 80.
+                        Colectivas independientes y proyectos como "Potencia Tortillera" continúan digitalizando fanzines y publicaciones históricas desde los años 80.
                     </p>
                 </div>
                 
                 <details>
                     <summary>LEER MÁS →</summary>
                     <div class="texto-completo">
-                        <p>Durante décadas, la literatura y el periodismo lésbico en la Argentina circularon en la clandestinidad y la autogestión. Los boletines mimeografiados y las volantes impresas a mano funcionaban como refugios comunitarios.</p>
-                        <p>El rescate de este patrimonio gráfico permite reconstruir la línea del tiempo de la militancia lésbica en el país.</p>
+                        <p>Durante décadas, la literatura y el periodismo lésbico en la Argentina circularon en la clandestinidad y la autogestión.</p>
                     </div>
                 </details>
             </article>
 
             <article class="tarjeta-horizontal">
                 <div>
-                    <span>ACTUALIDAD / MONITOREO Y ALERTAS</span>
-                    <h3>Monitoreo territorial ante discursos de odio y violencia lesbofóbica</h3>
+                    <span>ACTUALIDAD / ALERTAS</span>
+                    <h3>Monitoreo territorial y redes de contención</h3>
                     <p>
-                        Redes de contención en distintos puntos del país mantienen la vigilancia ante discursos discriminatorios, exigiendo la efectividad de los protocolos de protección integral.
+                        Vigilancia activa frente a discursos discriminatorios y exigencia de cumplimiento de los protocolos de atención médica y legal.
                     </p>
                 </div>
 
                 <details>
                     <summary>LEER MÁS →</summary>
                     <div class="texto-completo">
-                        <p>Frente a las situaciones de discriminación persistentes en el ámbito institucional y callejero, diversas organizaciones han constituido redes de respuesta rápida y acompañamiento legal.</p>
+                        <p>Redes de respuesta rápida ante situaciones de violencia institucional o callejera, garantizando el derecho a la salud digna.</p>
                     </div>
                 </details>
             </article>
@@ -409,16 +408,16 @@
             <article class="tarjeta-horizontal" id="derechos">
                 <div>
                     <span>DERECHOS EN ARGENTINA</span>
-                    <h3>Marco normativo nacional: Avances pioneros y desafíos de implementación</h3>
+                    <h3>Marco normativo nacional y leyes vigentes</h3>
                     <p>
-                        La Argentina cuenta con leyes fundamentales como Matrimonio Igualitario (26.618) e Identidad de Género (26.743). El desafío actual es garantizar su vigencia real en todas las provincias.
+                        Avances con la Ley de Matrimonio Igualitario (26.618) e Identidad de Género (26.743) y el desafío de su plena aplicación en las provincias.
                     </p>
                 </div>
 
                 <details>
                     <summary>LEER MÁS →</summary>
                     <div class="texto-completo">
-                        <p>Si bien el marco legal argentino es reconocido internacionalmente por su carácter de vanguardia, las activistas señalan la brecha que suele existir en localidades alejadas de las capitales.</p>
+                        <p>Acompañamiento y garantización de los derechos en cada territorio del país.</p>
                     </div>
                 </details>
             </article>
@@ -433,28 +432,42 @@
             <h2>LESBIANAS DEL SUR, VIEDMA Y RÍO NEGRO</h2>
         </div>
 
-        <p class="introduccion">
-            Cultura, memoria territorial y resistencia en Viedma, el Valle Inferior, Bariloche, El Bolsón y toda la comarca patagónica.
-        </p>
-
         <div class="grid-horizontal">
+
             <article class="tarjeta-horizontal">
                 <div>
-                    <span>COMARCA VIEDMA - CARMEN DE PATAGONES</span>
-                    <h3>Viedma como punto de encuentro: Redes lésbicas a orillas del río Negro</h3>
+                    <span>LESBIANAS Y ACTIVISMO</span>
+                    <h3>Redes lésbicas a orillas del río Negro</h3>
                     <p>
-                        En la capital rionegrina, la militancia disidente ha tejido históricamente espacios de resistencia a través del arte, las marchas del orgullo locales y talleres de lectura a orillas del río.
+                        Espacios de resistencia, encuentros plurinacionales, talleres y militancia organizada en la comarca Viedma-Carmen de Patagones.
                     </p>
                 </div>
 
                 <details>
-                    <summary>LEER MÁS SOBRE VIEDMA Y EL SUR →</summary>
+                    <summary>LEER MÁS →</summary>
                     <div class="texto-completo">
-                        <p><strong>El activismo en la Comarca:</strong> La posición geográfica de Viedma como puerta de entrada a la Patagonia ha favorecido la confluencia de activistas, estudiantes y artistas. A lo largo de los años, las colectivas locales han organizado marchas plurinacionales e intervenciones en la vía pública.</p>
-                        <p><strong>El legado patagónico:</strong> Desde la poesía neuquina de Macky Corbalán hasta las creadoras de la cordillera y la estepa, habitar el sur siendo lesbiana implica tejer alianzas de acompañamiento frente a las distancias geográficas.</p>
+                        <p>La posición de Viedma como puerta de la Patagonia fomenta espacios de encuentro, marchas locales y talleres comunitarios.</p>
                     </div>
                 </details>
             </article>
+
+            <article class="tarjeta-horizontal">
+                <div>
+                    <span>PATAGONIA Y TERRITORIO</span>
+                    <h3>Comarca, Cordillera y Estepa Rionegrina</h3>
+                    <p>
+                        Redes de afecto que unen Bariloche, El Bolsón, Viedma y el Valle Inferior frente a las grandes distancias geográficas.
+                    </p>
+                </div>
+
+                <details>
+                    <summary>LEER MÁS →</summary>
+                    <div class="texto-completo">
+                        <p>Tejiendo alianzas culturales y afectivas para habitar el territorio con soberanía y visibilidad.</p>
+                    </div>
+                </details>
+            </article>
+
         </div>
     </section>
 
@@ -462,29 +475,65 @@
     <section id="literatura" class="literatura">
         <div class="titulo-seccion">
             <span>03</span>
-            <h2>LITERATURA Y AUTORAS</h2>
+            <h2>LITERATURA, CULTURA Y AUTORAS</h2>
         </div>
 
         <div class="grid-horizontal">
+
             <article class="tarjeta-horizontal">
                 <div>
-                    <span>LÍRICA Y NARRATIVA SÁFICA</span>
-                    <h3>Voces de la tradición literaria e independiente</h3>
-                    <blockquote>
-                        “Hay mujeres que llegan a nuestra vida como llega el agua a la tierra seca.”
-                    </blockquote>
+                    <span>CULTURA</span>
+                    <h3>Expresiones culturales y editoriales independientes</h3>
                     <p>
-                        Un recorrido por la poesía y narrativa de autoras insoslayables: Diana Bellessi, Sylvia Molloy, Sharon Olds y escritoras patagónicas contemporáneas.
+                        Publicaciones artesanales, fanzines, fotografía y arte visual con perspectiva sáfica e identidad propia del Sur.
                     </p>
                 </div>
 
                 <details>
-                    <summary>LEER MÁS SOBRE LITERATURA →</summary>
+                    <summary>LEER MÁS →</summary>
                     <div class="texto-completo">
-                        <p>La literatura escrita por lesbianas en la Argentina constituye un testimonio de la experiencia afectiva y política. La poesía de Diana Bellessi abrió senderos para pensar el cuerpo y la naturaleza. En el ensayo y la narrativa, autoras como Sylvia Molloy reflexionaron sobre la memoria y la intimidad.</p>
+                        <p>Difusión de proyectos autogestivos, muestras de arte y festivales de poesía independiente.</p>
                     </div>
                 </details>
             </article>
+
+            <article class="tarjeta-horizontal">
+                <div>
+                    <span>AUTORAS</span>
+                    <h3>Grandes referentes de las letras argentinas</h3>
+                    <blockquote>
+                        “Hay mujeres que llegan a nuestra vida como llega el agua a la tierra seca.”
+                    </blockquote>
+                    <p>
+                        Diana Bellessi, Sylvia Molloy, Macky Corbalán y las nuevas voces poéticas de la Patagonia contemporánea.
+                    </p>
+                </div>
+
+                <details>
+                    <summary>LEER MÁS →</summary>
+                    <div class="texto-completo">
+                        <p>Recorrido analítico y biográfico por las obras fundantes de la poesía y narrativa lésbica en el país.</p>
+                    </div>
+                </details>
+            </article>
+
+            <article class="tarjeta-horizontal">
+                <div>
+                    <span>LITERATURA</span>
+                    <h3>Recomendaciones de libros y lecturas sáficas</h3>
+                    <p>
+                        Reseñas literarias, recomendaciones mensuales y análisis de textos clásicos y contemporáneos.
+                    </p>
+                </div>
+
+                <details>
+                    <summary>LEER MÁS →</summary>
+                    <div class="texto-completo">
+                        <p>Sugerencias de lectura y clubes de libros para enriquecer la biblioteca lésbica comunitaria.</p>
+                    </div>
+                </details>
+            </article>
+
         </div>
     </section>
 
@@ -496,7 +545,7 @@
         </div>
 
         <p>
-            Buscamos historias, relatos de vida, poemas, fotografías o reflexiones de mujeres lesbianas de todo el país. Podés enviarnos tu colaboración a través del siguiente formulario:
+            Buscamos relatos de vida, poemas, fotos o reflexiones de mujeres lesbianas de todo el país. Enviamos tu colaboración directamente:
         </p>
 
         <form class="form-participar" action="mailto:contacto@revistaorilla.com" method="post" enctype="text/plain">

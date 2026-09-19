@@ -3,9 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Historia Real de las Lesbianas en Argentina — ORILLA</title>
+    <title>ORILLA — Historia Lésbica en Argentina</title>
 
     <style>
+        html {
+            scroll-behavior: smooth;
+        }
+
         body {
             font-family: system-ui, -apple-system, sans-serif;
             background-color: #f7f4f9;
@@ -14,107 +18,141 @@
             padding: 20px;
         }
 
-        header {
+        header, footer {
             border: 2px solid #a855f7;
             border-radius: 12px;
-            padding: 20px;
+            padding: 24px;
             margin-bottom: 30px;
             background-color: #ffffff;
             text-align: center;
         }
 
-        .logo a {
+        header {
+            background-color: #ffffff;
+        }
+
+        footer {
+            background-color: #2e0854;
+            color: #ffffff;
+        }
+
+        footer .redes {
+            margin: 10px 0;
+            color: #d8b4fe;
+            font-size: 0.9rem;
+        }
+
+        .logo {
             font-size: 3.5rem;
             font-weight: 900;
             letter-spacing: 4px;
-            text-decoration: none;
+            margin-bottom: 5px;
             background: linear-gradient(90deg, #e11d48, #f97316, #eab308, #22c55e, #3b82f6, #a855f7);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             display: inline-block;
         }
 
-        .articulo-completo {
-            max-width: 800px;
-            margin: 0 auto;
+        .subtitulo {
+            font-size: 1.1rem;
+            color: #7e22ce;
+            margin-top: 0;
+            margin-bottom: 20px;
+            font-weight: 500;
+        }
+
+        nav {
+            background-color: #2e0854;
+            padding: 12px;
+            border-radius: 8px;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            border-bottom: 4px solid #d946ef;
+        }
+
+        nav a {
+            color: #ffffff;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 0.9rem;
+            letter-spacing: 1px;
+            transition: color 0.2s ease;
+        }
+
+        nav a:hover {
+            color: #f472b6;
+        }
+
+        main section {
             border: 2px solid #c084fc;
             border-radius: 12px;
-            padding: 40px;
+            padding: 30px;
+            margin-bottom: 30px;
             background-color: #ffffff;
             box-shadow: 0 4px 12px rgba(168, 85, 247, 0.08);
         }
 
-        .categoria {
-            color: #be185d;
+        .titulo-seccion {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            border-bottom: 2px solid #f472b6;
+            padding-bottom: 8px;
+            margin-bottom: 20px;
+        }
+
+        .titulo-seccion span {
+            color: #d946ef;
             font-weight: bold;
-            font-size: 0.9rem;
-        }
-
-        h1 {
-            color: #3b0764;
-            font-size: 2.2rem;
-            margin-top: 10px;
-        }
-
-        .subtitulo-articulo {
-            color: #7e22ce;
             font-size: 1.2rem;
-            margin-bottom: 30px;
-            font-weight: 600;
         }
 
-        .hito-bloque {
-            margin-bottom: 40px;
-            padding-bottom: 25px;
-            border-bottom: 1px solid #e9d5ff;
-        }
-
-        .hito-bloque h2 {
+        .titulo-seccion h2 {
             color: #4a0e4e;
+            margin: 0;
             font-size: 1.4rem;
-            margin-bottom: 15px;
         }
 
-        .hito-bloque img {
-            width: 100%;
-            max-height: 400px;
-            object-fit: cover;
-            border-radius: 8px;
-            margin: 15px 0;
-            border: 1px solid #c084fc;
-        }
-
-        .hito-bloque p {
-            line-height: 1.8;
-            font-size: 1.05rem;
+        .articulo-historia {
+            line-height: 1.7;
+            font-size: 1rem;
             color: #333333;
         }
 
-        .volver-btn {
-            display: inline-block;
-            margin-top: 20px;
+        .articulo-historia h3 {
             color: #7e22ce;
+            font-size: 1.3rem;
+            margin-top: 25px;
+            border-left: 4px solid #d946ef;
+            padding-left: 10px;
+        }
+
+        .btn-volver {
+            display: inline-block;
+            background-color: #2e0854;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 8px;
             font-weight: bold;
             text-decoration: none;
-            border: 2px solid #a855f7;
-            padding: 12px 24px;
-            border-radius: 8px;
-            transition: all 0.2s ease;
+            margin-bottom: 20px;
+            transition: background-color 0.2s ease;
         }
 
-        .volver-btn:hover {
-            background-color: #7e22ce;
-            color: #ffffff;
+        .btn-volver:hover {
+            background-color: #a855f7;
         }
 
-        footer {
-            border: 2px solid #a855f7;
-            border-radius: 12px;
-            padding: 20px;
-            text-align: center;
-            background-color: #2e0854;
-            color: #ffffff;
-            margin-top: 40px;
+        blockquote {
+            font-style: italic;
+            border-left: 4px solid #a855f7;
+            margin: 20px 0;
+            padding: 10px 15px;
+            background-color: #faf5ff;
+            color: #581c87;
+            border-radius: 0 8px 8px 0;
         }
     </style>
 </head>
@@ -122,53 +160,66 @@
 <body>
 
 <header>
-    <div class="logo"><a href="index.html">ORILLA</a></div>
+    <div class="logo">ORILLA</div>
+    <p class="subtitulo">Revista lésbica, cultural y del sur</p>
+
+    <nav>
+        <a href="index.html">INICIO</a>
+        <a href="index.html#actualidad">ACTUALIDAD Y DERECHOS</a>
+        <a href="index.html#sur">HISTORIAS Y VIEDMA</a>
+        <a href="index.html#cultura">CULTURA Y LITERATURA</a>
+        <a href="index.html#participa">PARTICIPÁ</a>
+    </nav>
 </header>
 
 <main>
-    <article class="articulo-completo">
-        <span class="categoria">EDICIÓN Nº 01 — MEMORIA LÉSBICA</span>
-        <h1>¿Dónde están las lesbianas?</h1>
-        <div class="subtitulo-articulo">Cuatro hitos de la historia real en Argentina</div>
 
-        <div class="hito-bloque">
-            <h2>1. Primeras publicaciones clandestinas (1987)</h2>
-            <img src="cuadernos_existencia_lesbica.jpg" alt="Cuadernos de Existencia Lésbica">
-            <p>
-                En plena posdictadura, activistas como Ilse Fuskova y Adriana Carrasco fundaron <em>Cuadernos de Existencia Lésbica</em>. Imprimiendo boletines artesanales en mimeógrafos y repartiéndolos de mano en mano, crearon los primeros canales autogestivos para decir en voz alta lo que la sociedad insistía en ocultar.
-            </p>
+    <section>
+        <a href="index.html" class="btn-volver">← VOLVER AL INICIO</a>
+
+        <div class="titulo-seccion">
+            <span>MEMORIA</span>
+            <h2>Historia del Activismo Lésbico en Argentina</h2>
         </div>
 
-        <div class="hito-bloque">
-            <h2>2. La primera vez en televisión abierta (1991)</h2>
-            <img src="ilse_fuskova_tv.jpg" alt="Ilse Fuskova en televisión">
+        <article class="articulo-historia">
             <p>
-                En un hito de valentía sin precedentes, Ilse Fuskova se presentó públicamente como lesbiana en el programa de almuerzos de Mirtha Legrand. Su testimonio cara a cara rompió el tabú mediático en millones de hogares argentinos.
+                La historia lésbica en nuestro país no es un relato secundario dentro de las luchas sociales, sino un camino propio marcado por la autoorganización, la valentía colectiva y la creación de redes afectivas y políticas.
             </p>
-        </div>
 
-        <div class="hito-bloque">
-            <h2>3. Pepa Gaitán y el Día de la Visibilidad Lésbica (2010)</h2>
-            <img src="pepa_gaitan.jpg" alt="Natalia Pepa Gaitán">
+            <h3>1. Cuadernos de Existencia Lésbica (1987)</h3>
             <p>
-                El 7 de marzo de 2010, Natalia "Pepa" Gaitán fue fusilada en Córdoba por el padrastro de su novia a causa de su orientación sexual. Su fusilamiento lesbofóbico movilizó al país y convirtió al <strong>7 de marzo</strong> en el Día de la Visibilidad Lésbica en Argentina, transformando el duelo en una bandera colectiva de lucha y justicia.
+                En una Argentina que recién salía de la dictadura militar, hablar de lesbianismo era romper un tabú profundo. Activistas como Ilse Fuskova y Adriana Carrasco crearon <em>Cuadernos de Existencia Lésbica</em>, una publicación artesanal y mimeografiada que circulaba de mano en mano. Este fanzine permitió a muchas mujeres nombrarse por primera vez y encontrar una comunidad.
             </p>
-        </div>
 
-        <div class="hito-bloque" style="border-bottom: none;">
-            <h2>4. La marea federal y los Encuentros de Mujeres y Disidencias</h2>
-            <img src="encuentro_mujeres_patagonia.jpg" alt="Encuentro de Mujeres en la Patagonia">
+            <blockquote>
+                “Nombrarnos era el primer paso para salir de la clandestinidad y construir memoria colectiva.”
+            </blockquote>
+
+            <h3>2. La visibilidad en televisión abierta (1991)</h3>
             <p>
-                Desde los años 90, las lesbianas del interior y de la Patagonia emprendieron viajes de miles de kilómetros para habitar los Encuentros Nacionales. Crearon talleres específicos de lesbianismo y articularon redes de afecto y militancia que sacaron la lucha de las capitales para expandirla a cada rincón del territorio.
+                En mayo de 1991, Ilse Fuskova se convirtió en la primera mujer en declararse públicamente lesbiana en la televisión argentina, durante una entrevista en el programa de Mirtha Legrand. Este acontecimiento marcó un hito sin precedentes en la visibilidad mediática del colectivo lésbico en el país.
             </p>
-        </div>
 
-        <a href="index.html" class="volver-btn">← VOLVER A LA REVISTA</a>
-    </article>
+            <h3>3. Natalia "Pepa" Gaitán y el 7 de Marzo (2010)</h3>
+            <p>
+                El 7 de marzo de 2010, Natalia "Pepa" Gaitán fue asesinada en Córdoba por el padrastro de su novia a causa de su orientación sexual. Su fusilamiento impulsó a las organizaciones a exigir justicia y motivó la declaración del <strong>7 de marzo como el Día de la Visibilidad Lésbica en Argentina</strong>.
+            </p>
+
+            <h3>4. Redes federales y la huella en la Patagonia</h3>
+            <p>
+                La lucha lésbica argentina es profundamente federal. A través de los Encuentros Nacionales de Mujeres y las redes autogestivas, colectivas de Río Negro, Neuquén, Chubut y toda la Patagonia han impulsado publicaciones, ferias del libro independiente y espacios de contención comunitaria.
+            </p>
+        </article>
+    </section>
+
 </main>
 
 <footer>
-    <small>© 2026 ORILLA — Revista lésbica, cultural y del sur</small>
+    <div class="logo">ORILLA</div>
+    <p>Revista lésbica, cultural y del sur.</p>
+    <div class="redes">Instagram · TikTok · Podcast</div>
+    <small>© 2026 ORILLA</small>
 </footer>
 
 </body>

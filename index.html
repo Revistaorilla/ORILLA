@@ -3,11 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <title>ORILLA — Revista lésbica, cultural y del sur</title>
 
     <style>
-        /* ESTILOS Y PALETA DE COLORES */
+        html {
+            scroll-behavior: smooth;
+        }
+
         body {
             font-family: system-ui, -apple-system, sans-serif;
             background-color: #f7f4f9;
@@ -59,13 +61,14 @@
             font-weight: bold;
             font-size: 0.9rem;
             letter-spacing: 1px;
+            transition: color 0.2s ease;
         }
 
         nav a:hover {
             color: #f472b6;
         }
 
-        /* ENCUADRES Y SECCIONES INDIVIDUALES */
+        /* ENCUADRES DE SECCIONES */
         main section {
             border: 2px solid #c084fc;
             border-radius: 12px;
@@ -96,7 +99,7 @@
             font-size: 1.5rem;
         }
 
-        /* ARTÍCULOS DENTRO DE CADA SECCIÓN */
+        /* TARJETAS Y ARTÍCULOS */
         .noticias {
             display: grid;
             gap: 20px;
@@ -120,12 +123,37 @@
             margin: 8px 0;
         }
 
-        article a, .historia a, .literatura a {
+        /* LECTURA COMPLETA DESPLEGABLE */
+        details {
+            margin-top: 10px;
+        }
+
+        summary {
             color: #7e22ce;
             font-weight: bold;
-            text-decoration: none;
+            cursor: pointer;
+            list-style: none;
             display: inline-block;
             margin-top: 8px;
+            transition: color 0.2s ease;
+        }
+
+        summary:hover {
+            color: #d946ef;
+        }
+
+        summary::-webkit-details-marker {
+            display: none;
+        }
+
+        .texto-completo {
+            margin-top: 15px;
+            padding: 15px;
+            background-color: #ffffff;
+            border: 1px solid #e9d5ff;
+            border-radius: 8px;
+            line-height: 1.6;
+            color: #333333;
         }
 
         /* PORTADA */
@@ -147,17 +175,18 @@
             font-size: 2.2rem;
         }
 
-        button {
+        .btn-link {
+            display: inline-block;
             background-color: #7e22ce;
             color: white;
-            border: none;
             padding: 12px 24px;
             border-radius: 6px;
             font-weight: bold;
-            cursor: pointer;
+            text-decoration: none;
+            transition: background-color 0.2s ease;
         }
 
-        button:hover {
+        .btn-link:hover {
             background-color: #a855f7;
         }
 
@@ -180,197 +209,159 @@
 <body>
 
 <header>
-
-    <div class="logo">
-        ORILLA
-    </div>
-
-    <p class="subtitulo">
-        Revista lésbica, cultural y del sur
-    </p>
+    <div class="logo">ORILLA</div>
+    <p class="subtitulo">Revista lésbica, cultural y del sur</p>
 
     <nav>
-        <a href="#">ACTUALIDAD</a>
-        <a href="#">DERECHOS</a>
-        <a href="#">HISTORIAS</a>
-        <a href="#">CULTURA</a>
-        <a href="#">LITERATURA</a>
-        <a href="#">ARCHIVO</a>
-        <a href="#">AGENDA</a>
+        <a href="#actualidad">ACTUALIDAD</a>
+        <a href="#derechos">DERECHOS</a>
+        <a href="#sur">HISTORIAS</a>
+        <a href="#literatura">CULTURA Y LITERATURA</a>
+        <a href="#participa">PARTICIPÁ</a>
     </nav>
-
 </header>
-
 
 <main>
 
     <section class="portada">
-
         <div class="portada-texto">
-
             <span class="categoria">EDICIÓN Nº 01</span>
-
-            <h1>
-                ¿Dónde están<br>
-                las lesbianas?
-            </h1>
-
+            <h1>¿Dónde están<br>las lesbianas?</h1>
             <p>
                 En Argentina, la historia lésbica ha sido durante décadas una trama invisible de resistencia urbana y territorial. Desde las primeras volantas clandestinas en dictadura hasta los movimientos autogestivos actuales, las lesbianas han construido redes de afecto, creación artística y lucha política, habitando el espacio público y disputando la memoria en cada rincón del país.
             </p>
-
-            <button>
-                LEER LA EDICIÓN
-            </button>
-
+            <a href="#actualidad" class="btn-link">LEER LA EDICIÓN</a>
         </div>
 
         <div class="portada-imagen">
-
-            <img
-                src="escritoras_lesbianas.jpg"
-                alt="Escritoras lesbianas"
-                style="max-width: 100%; border-radius: 8px;"
-            >
-
+            <img src="escritoras_lesbianas.jpg" alt="Escritoras lesbianas" style="max-width: 100%; border-radius: 8px;">
         </div>
-
     </section>
 
 
-    <section class="seccion">
-
+    <section id="actualidad" class="seccion">
         <div class="titulo-seccion">
             <span>01</span>
-            <h2>ACTUALIDAD</h2>
+            <h2>ACTUALIDAD Y DERECHOS</h2>
         </div>
 
         <div class="noticias">
 
             <article>
                 <span>ACTUALIDAD / NOTICIA BUENA</span>
-                <h3>
-                    Avanza la digitalización de fanzines e itinerarios gráficos del activismo
-                </h3>
+                <h3>Archivos de la memoria: rescatan publicaciones lésbicas históricas</h3>
                 <p>
                     Archivos comunitarios como "Potencia Tortillera" y colectivas independientes siguen rescatando volantes, boletines y publicaciones artesanales producidas entre los años 80 y 2000, garantizando la preservación de la memoria histórica gráfica del país.
                 </p>
-                <a href="#">LEER MÁS →</a>
+                
+                <details>
+                    <summary>LEER MÁS →</summary>
+                    <div class="texto-completo">
+                        <p>Durante décadas, las publicaciones lésbicas en la Argentina circularon de mano en mano en un formato subterráneo y autogestivo. Boletines mimeografiados, fanzines fotocopiados y volantes distribuidos en encuentros nacionales se convirtieron en las primeras plataformas de pensamiento, poesía y debate político del colectivo.</p>
+                        <p>Preservar estos registros no solo restituye la memoria gráfica de las luchas pasadas, sino que ofrece a las nuevas generaciones un árbol genealógico político y cultural sobre el cual seguir construyendo visibilidad.</p>
+                    </div>
+                </details>
             </article>
+
 
             <article>
                 <span>ACTUALIDAD / ALERTA Y DESAFÍOS</span>
-                <h3>
-                    Visibilidad, violencia de género y llamados a la erradicación de crímenes de odio
-                </h3>
+                <h3>Visibilidad, violencia de género y llamados a la erradicación de crímenes de odio</h3>
                 <p>
                     Organizaciones sociales en todo el territorio argentino mantienen la alerta ante discursos de odio y hechos de lesbofobia, reclamando la plena aplicación de protocolos de protección, acceso equitativo a la justicia y acompañamiento a víctimas.
                 </p>
-                <a href="#">LEER MÁS →</a>
+
+                <details>
+                    <summary>LEER MÁS →</summary>
+                    <div class="texto-completo">
+                        <p>Diversas colectivas continentales e independientes destacan la urgencia de fortalecer las redes comunitarias de cuidado y la exigencia de políticas públicas efectivas. La visibilidad lésbica sigue siendo una trinchera frente a las violencias cotidianas y la discriminación institucional.</p>
+                    </div>
+                </details>
             </article>
 
-            <article>
+
+            <article id="derechos">
                 <span>DERECHOS DE LA COMUNIDAD</span>
-                <h3>
-                    Marco legal en Argentina: De la conquista de derechos al monitoreo constante
-                </h3>
+                <h3>Marco legal en Argentina: De la conquista de derechos al monitoreo constante</h3>
                 <p>
                     Argentina ha sido pionera en América Latina con hitos como la Ley de Matrimonio Igualitario (Ley 26.618), la Ley de Identidad de Género (Ley 26.743) y el Cupo Laboral Trans-Travesti. Hoy, el foco está puesto en sostener estos avances ante cambios normativos y vaciamientos en salud integral.
                 </p>
-                <a href="#">LEER MÁS →</a>
+
+                <details>
+                    <summary>LEER MÁS →</summary>
+                    <div class="texto-completo">
+                        <p>A pesar de contar con un marco legal de vanguardia internacional, el acceso real a la salud ginecológica sin sesgos de género, el cumplimiento efectivo del cupo laboral y la erradicación de la violencia en el ámbito público continúan siendo ejes centrales de la agenda política del colectivo.</p>
+                    </div>
+                </details>
             </article>
 
         </div>
-
     </section>
 
 
-    <section class="sur">
-
+    <section id="sur" class="sur">
         <div class="titulo-seccion">
             <span>02</span>
             <h2>LESBIANAS DEL SUR Y CULTURA</h2>
         </div>
 
         <p class="introduccion">
-            Historias culturales, redes de acompañamiento y producción artística en Río Negro,
-            Neuquén, Chubut, Santa Cruz, Tierra del Fuego y la Patagonia profunda.
+            Historias culturales, redes de acompañamiento y producción artística en Río Negro, Neuquén, Chubut, Santa Cruz, Tierra del Fuego y la Patagonia profunda.
         </p>
 
         <div class="historia">
-
-            <h3>
-                Poesía, marea y territorio: la herencia cultural en el sur
-            </h3>
-
+            <h3>Poesía, marea y territorio: la herencia cultural en el sur</h3>
             <p>
                 Desde los escritos y el legado militante de la poeta neuquina Macky Corbalán hasta los actuales colectivos editoriales en la Patagonia, la creación sáfica del sur descentraliza la cultura nacional y propone una estética arraigada en el viento, la resistencia y el afecto entre mujeres.
             </p>
 
-            <a href="#">CONOCER LA HISTORIA →</a>
-
+            <details>
+                <summary>CONOCER LA HISTORIA COMPLETA →</summary>
+                <div class="texto-completo">
+                    <p>Habitar la Patagonia desde una perspectiva lésbica implica construir redes afectivas y creativas a lo largo de grandes distancias. Las publicaciones independientes, los talleres de poesía fanzinera y las ferias del libro del sur han creado una escena cultural vibrante que dialoga de manera única con el territorio y el paisaje patagónico.</p>
+                </div>
+            </details>
         </div>
-
     </section>
 
 
-    <section class="literatura">
-
+    <section id="literatura" class="literatura">
         <div class="titulo-seccion">
             <span>03</span>
             <h2>LITERATURA Y ESCRITORAS</h2>
         </div>
 
         <blockquote>
-            “Hay mujeres que llegan a nuestra vida
-            como llega el agua a la tierra seca.”
+            “Hay mujeres que llegan a nuestra vida como llega el agua a la tierra seca.”
         </blockquote>
 
         <p>
             Un recorrido por la obra de escritoras fundamentales de la literatura argentina y latinoamericana: desde las metáforas y el lirismo de Diana Bellessi, las traducciones e intimidad en Sylvia Molloy, hasta las nuevas autoras que publican en editoriales independientes y de poesía comunitaria.
         </p>
 
-        <a href="#">LEER LITERATURA →</a>
-
+        <details>
+            <summary>LEER SOBRE LITERATURA COMPLETA →</summary>
+            <div class="texto-completo">
+                <p>La literatura sáfica en Argentina posee una rica tradición que cruza el ensayo, el diario íntimo y la poesía. Autoras clave han abierto caminos para nombrar el deseo entre mujeres, desafiando la norma literaria clásica y abriendo paso a las voces contemporáneas que hoy llenan las librerías autogestivas del país.</p>
+            </div>
+        </details>
     </section>
 
 
-    <section class="participa">
-
-        <h2>
-            ¿QUERÉS CONTARNOS TU HISTORIA?
-        </h2>
-
-        <p>
-            Buscamos historias, poemas, fotografías,
-            experiencias y textos de mujeres lesbianas.
-        </p>
-
-        <button>
-            PARTICIPAR
-        </button>
-
+    <section id="participa" class="participa">
+        <h2>¿QUERÉS CONTARNOS TU HISTORIA?</h2>
+        <p>Buscamos historias, poemas, fotografías, experiencias y textos de mujeres lesbianas.</p>
+        <a href="mailto:contacto@revistaorilla.com" class="btn-link">PARTICIPAR</a>
     </section>
 
 </main>
 
 
 <footer>
-
     <div class="logo">ORILLA</div>
-
-    <p>
-        Revista lésbica, cultural y del sur.
-    </p>
-
-    <div class="redes">
-        Instagram · TikTok · Podcast
-    </div>
-
-    <small>
-        © 2026 ORILLA
-    </small>
-
+    <p>Revista lésbica, cultural y del sur.</p>
+    <div class="redes">Instagram · TikTok · Podcast</div>
+    <small>© 2026 ORILLA</small>
 </footer>
 
 </body>

@@ -18,7 +18,7 @@
             padding: 20px;
         }
 
-        /* HEADER Y NAVEGACIÓN */
+        /* HEADER Y LOGO ARCOÍRIS 🌈 */
         header {
             border: 2px solid #a855f7;
             border-radius: 12px;
@@ -29,11 +29,15 @@
         }
 
         .logo {
-            font-size: 3rem;
+            font-size: 3.5rem;
             font-weight: 900;
             letter-spacing: 4px;
-            color: #4a0e4e;
             margin-bottom: 5px;
+            /* EFECTO DEGRADADO ARCOÍRIS 🌈 */
+            background: linear-gradient(90deg, #e11d48, #f97316, #eab308, #22c55e, #3b82f6, #a855f7);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            display: inline-block;
         }
 
         .subtitulo {
@@ -68,7 +72,7 @@
             color: #f472b6;
         }
 
-        /* ENCUADRES DE SECCIONES */
+        /* ENCUADRES DE SECCIONES CON MATIZ LÉSBICO */
         main section {
             border: 2px solid #c084fc;
             border-radius: 12px;
@@ -107,7 +111,7 @@
 
         article {
             border-left: 4px solid #e11d48;
-            padding: 16px;
+            padding: 18px;
             background-color: #faf5ff;
             border-radius: 0 8px 8px 0;
         }
@@ -123,7 +127,7 @@
             margin: 8px 0;
         }
 
-        /* LECTURA COMPLETA DESPLEGABLE */
+        /* LECTURA DESPLEGABLE */
         details {
             margin-top: 10px;
         }
@@ -148,11 +152,11 @@
 
         .texto-completo {
             margin-top: 15px;
-            padding: 15px;
+            padding: 18px;
             background-color: #ffffff;
             border: 1px solid #e9d5ff;
             border-radius: 8px;
-            line-height: 1.6;
+            line-height: 1.7;
             color: #333333;
         }
 
@@ -184,10 +188,36 @@
             font-weight: bold;
             text-decoration: none;
             transition: background-color 0.2s ease;
+            border: none;
+            cursor: pointer;
         }
 
         .btn-link:hover {
             background-color: #a855f7;
+        }
+
+        /* FORMULARIO EN SECCIÓN PARTICIPAR */
+        .form-participar {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            max-width: 600px;
+            margin-top: 20px;
+        }
+
+        .form-participar input,
+        .form-participar textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1.5px solid #c084fc;
+            border-radius: 8px;
+            font-family: inherit;
+            box-sizing: border-box;
+        }
+
+        .form-participar textarea {
+            height: 120px;
+            resize: vertical;
         }
 
         /* FOOTER */
@@ -197,10 +227,6 @@
             padding: 24px;
             text-align: center;
             background-color: #2e0854;
-            color: #ffffff;
-        }
-
-        footer .logo {
             color: #ffffff;
         }
     </style>
@@ -215,7 +241,7 @@
     <nav>
         <a href="#actualidad">ACTUALIDAD</a>
         <a href="#derechos">DERECHOS</a>
-        <a href="#sur">HISTORIAS</a>
+        <a href="#sur">HISTORIAS Y VIEDMA</a>
         <a href="#literatura">CULTURA Y LITERATURA</a>
         <a href="#participa">PARTICIPÁ</a>
     </nav>
@@ -228,7 +254,7 @@
             <span class="categoria">EDICIÓN Nº 01</span>
             <h1>¿Dónde están<br>las lesbianas?</h1>
             <p>
-                En Argentina, la historia lésbica ha sido durante décadas una trama invisible de resistencia urbana y territorial. Desde las primeras volantas clandestinas en dictadura hasta los movimientos autogestivos actuales, las lesbianas han construido redes de afecto, creación artística y lucha política, habitando el espacio público y disputando la memoria en cada rincón del país.
+                En Argentina, la historia lésbica ha sido durante décadas una trama invisible de resistencia urbana y territorial. Desde las primeras volantas clandestinas durante la dictadura militar hasta la consolidación del Encuentro Plurinacional de Mujeres y Disidencias, las lesbianas han construido redes afectivas, artísticas y políticas para habitar el espacio público y disputar la memoria en cada provincia del país.
             </p>
             <a href="#actualidad" class="btn-link">LEER LA EDICIÓN</a>
         </div>
@@ -248,49 +274,49 @@
         <div class="noticias">
 
             <article>
-                <span>ACTUALIDAD / NOTICIA BUENA</span>
-                <h3>Archivos de la memoria: rescatan publicaciones lésbicas históricas</h3>
+                <span>ACTUALIDAD / MEMORIA E HISTORIA</span>
+                <h3>Archivos comunitarios y el rescate del material gráfico histórico</h3>
                 <p>
-                    Archivos comunitarios como "Potencia Tortillera" y colectivas independientes siguen rescatando volantes, boletines y publicaciones artesanales producidas entre los años 80 y 2000, garantizando la preservación de la memoria histórica gráfica del país.
+                    Colectivas independientes y proyectos como "Potencia Tortillera" continúan digitalizando y clasificando publicaciones periódicas, boletines artesanales y fanzines producidos desde los años 80 hasta la actualidad.
                 </p>
                 
                 <details>
                     <summary>LEER MÁS →</summary>
                     <div class="texto-completo">
-                        <p>Durante décadas, las publicaciones lésbicas en la Argentina circularon de mano en mano en un formato subterráneo y autogestivo. Boletines mimeografiados, fanzines fotocopiados y volantes distribuidos en encuentros nacionales se convirtieron en las primeras plataformas de pensamiento, poesía y debate político del colectivo.</p>
-                        <p>Preservar estos registros no solo restituye la memoria gráfica de las luchas pasadas, sino que ofrece a las nuevas generaciones un árbol genealógico político y cultural sobre el cual seguir construyendo visibilidad.</p>
+                        <p>Durante décadas, la literatura y el periodismo lésbico en la Argentina circularon en la clandestinidad y la autogestión. Los boletines mimeografiados y las volantes impresas a mano funcionaban no solo como canales de difusión de ideas políticas, sino como refugios comunitarios para conectarse en tiempos de persecución.</p>
+                        <p>El rescate y preservación de este patrimonio gráfico permite reconstruir la línea del tiempo de la militancia lésbica, garantizando que el archivo histórico no sea borrado de los relatos oficiales del país.</p>
                     </div>
                 </details>
             </article>
 
 
             <article>
-                <span>ACTUALIDAD / ALERTA Y DESAFÍOS</span>
-                <h3>Visibilidad, violencia de género y llamados a la erradicación de crímenes de odio</h3>
+                <span>ACTUALIDAD / MONITOREO Y ALERTAS</span>
+                <h3>Monitoreo territorial ante discursos de odio y violencia lesbofóbica</h3>
                 <p>
-                    Organizaciones sociales en todo el territorio argentino mantienen la alerta ante discursos de odio y hechos de lesbofobia, reclamando la plena aplicación de protocolos de protección, acceso equitativo a la justicia y acompañamiento a víctimas.
+                    Redes de contención en distintos puntos del país mantienen la vigilancia ante discursos discriminatorios, exigiendo la efectividad de los protocolos de protección integral y acceso equitativo a la salud.
                 </p>
 
                 <details>
                     <summary>LEER MÁS →</summary>
                     <div class="texto-completo">
-                        <p>Diversas colectivas continentales e independientes destacan la urgencia de fortalecer las redes comunitarias de cuidado y la exigencia de políticas públicas efectivas. La visibilidad lésbica sigue siendo una trinchera frente a las violencias cotidianas y la discriminación institucional.</p>
+                        <p>Frente a las situaciones de discriminación persistentes en el ámbito institucional y callejero, diversas organizaciones han constituido redes de respuesta rápida y acompañamiento legal. Se remarca la importancia crucial del acceso a la salud ginecológica y reproductiva libre de prejuicios y con profesionales formados en trato digno.</p>
                     </div>
                 </details>
             </article>
 
 
             <article id="derechos">
-                <span>DERECHOS DE LA COMUNIDAD</span>
-                <h3>Marco legal en Argentina: De la conquista de derechos al monitoreo constante</h3>
+                <span>DERECHOS EN ARGENTINA</span>
+                <h3>Marco normativo nacional: Avances pioneros y desafíos de implementación</h3>
                 <p>
-                    Argentina ha sido pionera en América Latina con hitos como la Ley de Matrimonio Igualitario (Ley 26.618), la Ley de Identidad de Género (Ley 26.743) y el Cupo Laboral Trans-Travesti. Hoy, el foco está puesto en sostener estos avances ante cambios normativos y vaciamientos en salud integral.
+                    La Argentina cuenta con leyes fundamentales como el Matrimonio Igualitario (26.618), la Ley de Identidad de Género (26.743) y el Cupo Laboral Trans. El desafío actual reside en garantizar la vigencia real de estas normas en las provincias.
                 </p>
 
                 <details>
                     <summary>LEER MÁS →</summary>
                     <div class="texto-completo">
-                        <p>A pesar de contar con un marco legal de vanguardia internacional, el acceso real a la salud ginecológica sin sesgos de género, el cumplimiento efectivo del cupo laboral y la erradicación de la violencia en el ámbito público continúan siendo ejes centrales de la agenda política del colectivo.</p>
+                        <p>Si bien el marco legal argentino es reconocido internacionalmente por su carácter de vanguardia, las activistas señalan la brecha que suele existir entre el texto normativo y la vivencia en localidades alejadas de las capitales. La descentralización de los recursos y la formación continua del personal de salud y justicia continúan siendo los pilares de la demanda actual.</p>
                     </div>
                 </details>
             </article>
@@ -302,23 +328,24 @@
     <section id="sur" class="sur">
         <div class="titulo-seccion">
             <span>02</span>
-            <h2>LESBIANAS DEL SUR Y CULTURA</h2>
+            <h2>LESBIANAS DEL SUR, VIEDMA Y RÍO NEGRO</h2>
         </div>
 
         <p class="introduccion">
-            Historias culturales, redes de acompañamiento y producción artística en Río Negro, Neuquén, Chubut, Santa Cruz, Tierra del Fuego y la Patagonia profunda.
+            Cultura, memoria territorial y resistencia en Viedma, el Valle Inferior, Bariloche, El Bolsón y toda la comarca patagónica.
         </p>
 
         <div class="historia">
-            <h3>Poesía, marea y territorio: la herencia cultural en el sur</h3>
+            <h3>Viedma como punto de encuentro: Redes lésbicas a orillas del río Negro</h3>
             <p>
-                Desde los escritos y el legado militante de la poeta neuquina Macky Corbalán hasta los actuales colectivos editoriales en la Patagonia, la creación sáfica del sur descentraliza la cultura nacional y propone una estética arraigada en el viento, la resistencia y el afecto entre mujeres.
+                En la capital rionegrina, la militancia disidente ha tejido históricamente espacios de resistencia a través del arte, las marchas del orgullo locales, programas de radio comunitaria y talleres de lectura sáfica a orillas del río.
             </p>
 
             <details>
-                <summary>CONOCER LA HISTORIA COMPLETA →</summary>
+                <summary>LEER MÁS SOBRE VIEDMA Y EL SUR →</summary>
                 <div class="texto-completo">
-                    <p>Habitar la Patagonia desde una perspectiva lésbica implica construir redes afectivas y creativas a lo largo de grandes distancias. Las publicaciones independientes, los talleres de poesía fanzinera y las ferias del libro del sur han creado una escena cultural vibrante que dialoga de manera única con el territorio y el paisaje patagónico.</p>
+                    <p><strong>El activismo en la Comarca Viedma-Carmen de Patagones:</strong> La posición geográfica de Viedma como puerta de entrada a la Patagonia ha favorecido la confluencia de activistas, estudiantes y artistas. A lo largo de los años, las colectivas locales han organizado marchas plurinacionales, intervenciones en la vía pública y encuentros de debate que vinculan los derechos del colectivo con las problemáticas sociales y territoriales de Río Negro.</p>
+                    <p><strong>El legado patagónico:</strong> Desde la poesía neuquina de Macky Corbalán hasta las creadoras de la cordillera y la estepa, habitar el sur siendo lesbiana implica tejer alianzas de acompañamiento frente a las distancias geográficas, impulsando editoriales artesanales y redes autogestivas de contención.</p>
                 </div>
             </details>
         </div>
@@ -328,7 +355,7 @@
     <section id="literatura" class="literatura">
         <div class="titulo-seccion">
             <span>03</span>
-            <h2>LITERATURA Y ESCRITORAS</h2>
+            <h2>LITERATURA Y AUTORAS</h2>
         </div>
 
         <blockquote>
@@ -336,22 +363,36 @@
         </blockquote>
 
         <p>
-            Un recorrido por la obra de escritoras fundamentales de la literatura argentina y latinoamericana: desde las metáforas y el lirismo de Diana Bellessi, las traducciones e intimidad en Sylvia Molloy, hasta las nuevas autoras que publican en editoriales independientes y de poesía comunitaria.
+            Un recorrido por la lírica y narrativa de autoras insoslayables de la tradición argentina: Diana Bellessi, Sylvia Molloy, Sharon Olds y la rica poesía patagónica contemporánea.
         </p>
 
         <details>
-            <summary>LEER SOBRE LITERATURA COMPLETA →</summary>
+            <summary>LEER MÁS SOBRE LITERATURA →</summary>
             <div class="texto-completo">
-                <p>La literatura sáfica en Argentina posee una rica tradición que cruza el ensayo, el diario íntimo y la poesía. Autoras clave han abierto caminos para nombrar el deseo entre mujeres, desafiando la norma literaria clásica y abriendo paso a las voces contemporáneas que hoy llenan las librerías autogestivas del país.</p>
+                <p>La literatura escrita por lesbianas en la Argentina no solo constituye una corriente de valor estético incalculable, sino un testimonio de la experiencia afectiva y política. La poesía de Diana Bellessi abrió senderos para pensar el cuerpo, la naturaleza y la libertad del deseo. En el ensayo y la narrativa, autoras como Sylvia Molloy reflexionaron sobre la memoria, la traducción y la intimidad.</p>
+                <p>En el panorama actual, proliferan editoriales independientes que publican fanzines, poesía de trinchera y antologías federales donde las autoras jóvenes continúan expandiendo las fronteras de la palabra.</p>
             </div>
         </details>
     </section>
 
 
     <section id="participa" class="participa">
-        <h2>¿QUERÉS CONTARNOS TU HISTORIA?</h2>
-        <p>Buscamos historias, poemas, fotografías, experiencias y textos de mujeres lesbianas.</p>
-        <a href="mailto:contacto@revistaorilla.com" class="btn-link">PARTICIPAR</a>
+        <div class="titulo-seccion">
+            <span>04</span>
+            <h2>¿QUERÉS CONTARNOS TU HISTORIA?</h2>
+        </div>
+
+        <p>
+            Buscamos historias, relatos de vida, poemas, fotografías, ensayos o reseñas de mujeres lesbianas de todo el país. Podés enviarnos tu colaboración directamente a través del siguiente formulario:
+        </p>
+
+        <form class="form-participar" action="mailto:contacto@revistaorilla.com" method="post" enctype="text/plain">
+            <input type="text" name="nombre" placeholder="Tu nombre o seudónimo" required>
+            <input type="email" name="email" placeholder="Tu correo electrónico" required>
+            <input type="text" name="ubicacion" placeholder="Tu ciudad o provincia (ej. Viedma, Río Negro)">
+            <textarea name="mensaje" placeholder="Escribí acá tu texto, poema o la historia que quieras compartir..." required></textarea>
+            <button type="submit" class="btn-link">ENVIAR COLABORACIÓN</button>
+        </form>
     </section>
 
 </main>

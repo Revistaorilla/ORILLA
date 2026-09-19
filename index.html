@@ -6,31 +6,173 @@
 
     <title>ORILLA — Revista lésbica, cultural y del sur</title>
 
-    <link rel="stylesheet" href="estilos.css">
-
     <style>
-        /* Encuadres sutiles basados en la paleta lésbica/LGBTQ+ */
-        main section {
-            border: 1.5px solid #d8b4fe;
-            border-radius: 12px;
-            padding: 28px;
-            margin-bottom: 32px;
-            background-color: #fcf8ff;
-            box-shadow: 0 2px 8px rgba(168, 85, 247, 0.06);
+        /* ESTILOS Y PALETA DE COLORES */
+        body {
+            font-family: system-ui, -apple-system, sans-serif;
+            background-color: #f7f4f9;
+            color: #2b2b2b;
+            margin: 0;
+            padding: 20px;
         }
 
-        header, footer {
-            border: 1.5px solid #d8b4fe;
+        /* HEADER Y NAVEGACIÓN */
+        header {
+            border: 2px solid #a855f7;
             border-radius: 12px;
-            padding: 20px;
-            margin-bottom: 32px;
-            background-color: #fcf8ff;
+            padding: 24px;
+            margin-bottom: 30px;
+            background-color: #ffffff;
+            text-align: center;
+        }
+
+        .logo {
+            font-size: 3rem;
+            font-weight: 900;
+            letter-spacing: 4px;
+            color: #4a0e4e;
+            margin-bottom: 5px;
+        }
+
+        .subtitulo {
+            font-size: 1.1rem;
+            color: #7e22ce;
+            margin-top: 0;
+            margin-bottom: 20px;
+            font-weight: 500;
+        }
+
+        nav {
+            background-color: #2e0854;
+            padding: 12px;
+            border-radius: 8px;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            border-bottom: 4px solid #d946ef;
+        }
+
+        nav a {
+            color: #ffffff;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 0.9rem;
+            letter-spacing: 1px;
+        }
+
+        nav a:hover {
+            color: #f472b6;
+        }
+
+        /* ENCUADRES Y SECCIONES INDIVIDUALES */
+        main section {
+            border: 2px solid #c084fc;
+            border-radius: 12px;
+            padding: 30px;
+            margin-bottom: 30px;
+            background-color: #ffffff;
+            box-shadow: 0 4px 12px rgba(168, 85, 247, 0.08);
+        }
+
+        .titulo-seccion {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            border-bottom: 2px solid #f472b6;
+            padding-bottom: 8px;
+            margin-bottom: 20px;
+        }
+
+        .titulo-seccion span {
+            color: #d946ef;
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+
+        .titulo-seccion h2 {
+            color: #4a0e4e;
+            margin: 0;
+            font-size: 1.5rem;
+        }
+
+        /* ARTÍCULOS DENTRO DE CADA SECCIÓN */
+        .noticias {
+            display: grid;
+            gap: 20px;
         }
 
         article {
-            border-left: 3px solid #f472b6;
-            padding-left: 12px;
-            margin-bottom: 24px;
+            border-left: 4px solid #e11d48;
+            padding: 16px;
+            background-color: #faf5ff;
+            border-radius: 0 8px 8px 0;
+        }
+
+        article span {
+            color: #be185d;
+            font-size: 0.8rem;
+            font-weight: bold;
+        }
+
+        article h3 {
+            color: #3b0764;
+            margin: 8px 0;
+        }
+
+        article a, .historia a, .literatura a {
+            color: #7e22ce;
+            font-weight: bold;
+            text-decoration: none;
+            display: inline-block;
+            margin-top: 8px;
+        }
+
+        /* PORTADA */
+        .portada {
+            display: flex;
+            gap: 20px;
+            align-items: center;
+            flex-wrap: wrap;
+            background: linear-gradient(135deg, #ffffff 0%, #f3e8ff 100%);
+        }
+
+        .categoria {
+            color: #be185d;
+            font-weight: bold;
+        }
+
+        .portada h1 {
+            color: #4a0e4e;
+            font-size: 2.2rem;
+        }
+
+        button {
+            background-color: #7e22ce;
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 6px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #a855f7;
+        }
+
+        /* FOOTER */
+        footer {
+            border: 2px solid #a855f7;
+            border-radius: 12px;
+            padding: 24px;
+            text-align: center;
+            background-color: #2e0854;
+            color: #ffffff;
+        }
+
+        footer .logo {
+            color: #ffffff;
         }
     </style>
 </head>
@@ -49,6 +191,7 @@
 
     <nav>
         <a href="#">ACTUALIDAD</a>
+        <a href="#">DERECHOS</a>
         <a href="#">HISTORIAS</a>
         <a href="#">CULTURA</a>
         <a href="#">LITERATURA</a>
@@ -73,9 +216,7 @@
             </h1>
 
             <p>
-                Una revista para contar nuestras historias,
-                recuperar nuestra memoria y mirar el presente
-                desde una perspectiva lésbica.
+                En Argentina, la historia lésbica ha sido durante décadas una trama invisible de resistencia urbana y territorial. Desde las primeras volantas clandestinas en dictadura hasta los movimientos autogestivos actuales, las lesbianas han construido redes de afecto, creación artística y lucha política, habitando el espacio público y disputando la memoria en cada rincón del país.
             </p>
 
             <button>
@@ -89,6 +230,7 @@
             <img
                 src="escritoras_lesbianas.jpg"
                 alt="Escritoras lesbianas"
+                style="max-width: 100%; border-radius: 8px;"
             >
 
         </div>
@@ -106,36 +248,34 @@
         <div class="noticias">
 
             <article>
-                <span>ACTUALIDAD</span>
+                <span>ACTUALIDAD / NOTICIA BUENA</span>
                 <h3>
-                    Archivos de la memoria: rescatan publicaciones lésbicas históricas
+                    Avanza la digitalización de fanzines e itinerarios gráficos del activismo
                 </h3>
                 <p>
-                    Iniciativas independientes digitalizan fanzines y boletines de los años 80 e inicios de los 90 para reconstruir la historia del activismo lésbico local.
+                    Archivos comunitarios como "Potencia Tortillera" y colectivas independientes siguen rescatando volantes, boletines y publicaciones artesanales producidas entre los años 80 y 2000, garantizando la preservación de la memoria histórica gráfica del país.
                 </p>
                 <a href="#">LEER MÁS →</a>
             </article>
 
-
             <article>
-                <span>DERECHOS</span>
+                <span>ACTUALIDAD / ALERTA Y DESAFÍOS</span>
                 <h3>
-                    Avances y desafíos en el acceso a la salud integral
+                    Visibilidad, violencia de género y llamados a la erradicación de crímenes de odio
                 </h3>
                 <p>
-                    Relevamientos recientes analizan las barreras cotidianas en la atención médica y las demandas por profesionales capacitados en diversidad.
+                    Organizaciones sociales en todo el territorio argentino mantienen la alerta ante discursos de odio y hechos de lesbofobia, reclamando la plena aplicación de protocolos de protección, acceso equitativo a la justicia y acompañamiento a víctimas.
                 </p>
                 <a href="#">LEER MÁS →</a>
             </article>
 
-
             <article>
-                <span>CULTURA</span>
+                <span>DERECHOS DE LA COMUNIDAD</span>
                 <h3>
-                    Encuentros y ferias del libro independiente
+                    Marco legal en Argentina: De la conquista de derechos al monitoreo constante
                 </h3>
                 <p>
-                    Proyectos editoriales autogestivos abren espacios de difusión para la poesía, el ensayo y la narrativa lésbica contemporánea.
+                    Argentina ha sido pionera en América Latina con hitos como la Ley de Matrimonio Igualitario (Ley 26.618), la Ley de Identidad de Género (Ley 26.743) y el Cupo Laboral Trans-Travesti. Hoy, el foco está puesto en sostener estos avances ante cambios normativos y vaciamientos en salud integral.
                 </p>
                 <a href="#">LEER MÁS →</a>
             </article>
@@ -149,23 +289,22 @@
 
         <div class="titulo-seccion">
             <span>02</span>
-            <h2>LESBIANAS DEL SUR</h2>
+            <h2>LESBIANAS DEL SUR Y CULTURA</h2>
         </div>
 
         <p class="introduccion">
-            Historias de mujeres lesbianas de Río Negro,
-            Neuquén, Chubut, Santa Cruz, Tierra del Fuego
-            y todo el territorio patagónico.
+            Historias culturales, redes de acompañamiento y producción artística en Río Negro,
+            Neuquén, Chubut, Santa Cruz, Tierra del Fuego y la Patagonia profunda.
         </p>
 
         <div class="historia">
 
             <h3>
-                Vivir, amar y ser lesbiana lejos de Buenos Aires
+                Poesía, marea y territorio: la herencia cultural en el sur
             </h3>
 
             <p>
-                Redes de acompañamiento, festivales autogestivos y poesía patagónica: el rastro de autoras como Macky Corbalán y las colectivas que habitan el territorio del sur.
+                Desde los escritos y el legado militante de la poeta neuquina Macky Corbalán hasta los actuales colectivos editoriales en la Patagonia, la creación sáfica del sur descentraliza la cultura nacional y propone una estética arraigada en el viento, la resistencia y el afecto entre mujeres.
             </p>
 
             <a href="#">CONOCER LA HISTORIA →</a>
@@ -179,7 +318,7 @@
 
         <div class="titulo-seccion">
             <span>03</span>
-            <h2>LITERATURA</h2>
+            <h2>LITERATURA Y ESCRITORAS</h2>
         </div>
 
         <blockquote>
@@ -188,7 +327,7 @@
         </blockquote>
 
         <p>
-            Poesía, cuentos y textos de autoras referentes como Diana Bellessi, María Elena Walsh y nuevas voces de la narrativa contemporánea.
+            Un recorrido por la obra de escritoras fundamentales de la literatura argentina y latinoamericana: desde las metáforas y el lirismo de Diana Bellessi, las traducciones e intimidad en Sylvia Molloy, hasta las nuevas autoras que publican en editoriales independientes y de poesía comunitaria.
         </p>
 
         <a href="#">LEER LITERATURA →</a>

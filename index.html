@@ -33,7 +33,6 @@
             font-weight: 900;
             letter-spacing: 4px;
             margin-bottom: 5px;
-            /* Degradado Arcoíris en el Título */
             background: linear-gradient(90deg, #e11d48, #f97316, #eab308, #22c55e, #3b82f6, #a855f7);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
@@ -42,7 +41,6 @@
 
         .subtitulo {
             font-size: 1.1rem;
-            /* Color magenta/violeta Lésbico */
             color: #a21caf;
             margin-top: 0;
             margin-bottom: 20px;
@@ -164,7 +162,7 @@
             background-color: #c026d3;
         }
 
-        /* FORMATO DE ÍTEMS EN LISTA VERTICAL */
+        /* LISTA VERTICAL */
         .lista-items {
             display: flex;
             flex-direction: column;
@@ -199,54 +197,7 @@
             line-height: 1.4;
         }
 
-        /* DESPLEGABLES "LEER MÁS" EN LOS ÍTEMS */
-        details {
-            margin-top: 8px;
-        }
-
-        summary {
-            color: #a21caf;
-            font-weight: bold;
-            font-size: 0.85rem;
-            cursor: pointer;
-            list-style: none;
-            display: inline-block;
-            background-color: #ffffff;
-            padding: 6px 12px;
-            border-radius: 6px;
-            transition: all 0.2s ease;
-            border: 1px solid #f472b6;
-        }
-
-        summary:hover {
-            background-color: #a21caf;
-            color: #ffffff;
-        }
-
-        summary::-webkit-details-marker {
-            display: none;
-        }
-
-        .texto-completo {
-            margin-top: 10px;
-            padding: 12px;
-            background-color: #ffffff;
-            border: 1px solid #fbcfe8;
-            border-radius: 6px;
-            line-height: 1.5;
-            color: #333333;
-            font-size: 0.9rem;
-        }
-
-        blockquote {
-            font-style: italic;
-            border-left: 3px solid #c026d3;
-            margin: 8px 0;
-            padding-left: 10px;
-            color: #701a75;
-        }
-
-        /* FORMULARIO DE PARTICIPAR */
+        /* FORMULARIO */
         .form-participar {
             display: flex;
             flex-direction: column;
@@ -291,9 +242,7 @@
 <body>
 
 <header>
-    <!-- Título con degradado Arcoíris -->
     <div class="logo">ORILLA</div>
-    <!-- Subtítulo con colores Lésbicos -->
     <p class="subtitulo">Revista lésbica, cultural y del sur</p>
 
     <nav>
@@ -307,7 +256,6 @@
 
 <main>
 
-    <!-- PORTADA -->
     <section class="portada">
         <div class="portada-texto">
             <span class="categoria">EDICIÓN Nº 01 — MEMORIA LÉSBICA</span>
@@ -325,17 +273,13 @@
         </div>
     </section>
 
-
-    <!-- PARTICIPÁ (AL PRINCIPIO) -->
     <section id="participa-inicio" class="participa">
         <div class="titulo-seccion">
             <span>01</span>
             <h2>PARTICIPÁ: ¿QUERÉS CONTARNOS TU HISTORIA?</h2>
         </div>
 
-        <p>
-            Buscamos relatos de vida, poemas, fotos o reflexiones de mujeres lesbianas de todo el país.
-        </p>
+        <p>Buscamos relatos de vida, poemas, fotos o reflexiones de mujeres lesbianas de todo el país.</p>
 
         <form class="form-participar" action="mailto:contacto@revistaorilla.com" method="post" enctype="text/plain">
             <input type="text" name="nombre" placeholder="Tu nombre o seudónimo" required>
@@ -346,8 +290,6 @@
         </form>
     </section>
 
-
-    <!-- SECCIÓN 02: ACTUALIDAD Y DERECHOS (EN ÍTEMS) -->
     <section id="actualidad" class="seccion">
         <div class="titulo-seccion">
             <span>02</span>
@@ -355,72 +297,17 @@
         </div>
 
         <div class="lista-items">
-
-            <!-- ÍTEM 1 -->
             <article class="item-horizontal">
                 <span>ACTUALIDAD / MEMORIA E HISTORIA</span>
-                <h3>Archivos comunitarios y el rescate gráfico</h3>
+                <h3>Archivos comunitarios, rescate gráfico y redes de ayuda</h3>
                 <p>
-                    Colectivas independientes y proyectos como "Potencia Tortillera" continúan digitalizando fanzines y publicaciones históricas desde los años 80.
+                    Colectivas independientes, fanzines históricos, repositorios de la CHA y recursos de asesoramiento legal y contención en Argentina.
                 </p>
-                <details>
-                    <summary>LEER MÁS →</summary>
-                    <div class="texto-completo">
-                        <p>
-                            Durante décadas, la literatura, la poesía y el periodismo lésbico en la Argentina circularon en la clandestinidad y la autogestión.
-                        </p>
-                        <p>
-                            Hoy, los archivos comunitarios rescatan volantes, fotos de marchas y publicaciones históricas para reconstruir nuestra memoria colectiva.
-                        </p>
-                    </div>
-                </details>
+                <a href="actualidad.html" class="btn-link">CONTINUAR LEYENDO LA SECCIÓN COMPLETA →</a>
             </article>
-
-            <!-- ÍTEM 2 -->
-            <article class="item-horizontal">
-                <span>ACTUALIDAD / ALERTAS</span>
-                <h3>Monitoreo territorial y redes de contención</h3>
-                <p>
-                    Vigilancia activa frente a discursos discriminatorios y exigencia de cumplimiento de los protocolos de atención médica y legal.
-                </p>
-                <details>
-                    <summary>LEER MÁS →</summary>
-                    <div class="texto-completo">
-                        <p>
-                            Organizaciones y colectivas independientes tejen redes de respuesta rápida ante situaciones de violencia institucional o discriminación.
-                        </p>
-                        <p>
-                            Se articulan acompañamientos legales y redes de contención entre pares para garantizar el derecho a la salud integral.
-                        </p>
-                    </div>
-                </details>
-            </article>
-
-            <!-- ÍTEM 3 -->
-            <article class="item-horizontal">
-                <span>DERECHOS EN ARGENTINA</span>
-                <h3>Marco normativo nacional y leyes vigentes</h3>
-                <p>
-                    Avances con la Ley de Matrimonio Igualitario (26.618) e Identidad de Género (26.743) y el desafío de su plena aplicación en las provincias.
-                </p>
-                <details>
-                    <summary>LEER MÁS →</summary>
-                    <div class="texto-completo">
-                        <p>
-                            Aunque Argentina cuenta con leyes pioneras como la Ley 26.618 y la Ley 26.743, el desafío actual es su efectividad en todo el país.
-                        </p>
-                        <p>
-                            Seguimos exigiendo el acceso real a la fertilización asistida sin discriminación y la capacitación en diversidad.
-                        </p>
-                    </div>
-                </details>
-            </article>
-
         </div>
     </section>
 
-
-    <!-- SECCIÓN 03: HISTORIAS DEL SUR Y VIEDMA (EN ÍTEMS) -->
     <section id="sur" class="sur">
         <div class="titulo-seccion">
             <span>03</span>
@@ -428,46 +315,16 @@
         </div>
 
         <div class="lista-items">
-
-            <!-- ÍTEM 1 -->
             <article class="item-horizontal">
                 <span>COMARCA VIEDMA - PATAGONES</span>
                 <h3>Redes lésbicas a orillas del río Negro</h3>
                 <p>
                     Espacios de resistencia, encuentros plurinacionales, talleres y militancia organizada en Viedma y Carmen de Patagones.
                 </p>
-                <details>
-                    <summary>LEER MÁS →</summary>
-                    <div class="texto-completo">
-                        <p>
-                            La posición de Viedma como puerta de la Patagonia fomenta espacios de encuentro, marchas locales y talleres comunitarios.
-                        </p>
-                    </div>
-                </details>
             </article>
-
-            <!-- ÍTEM 2 -->
-            <article class="item-horizontal">
-                <span>PATAGONIA Y TERRITORIO</span>
-                <h3>Comarca, Cordillera y Estepa Rionegrina</h3>
-                <p>
-                    Redes de afecto que unen Bariloche, El Bolsón, Viedma y el Valle Inferior frente a las grandes distancias geográficas.
-                </p>
-                <details>
-                    <summary>LEER MÁS →</summary>
-                    <div class="texto-completo">
-                        <p>
-                            Tejiendo alianzas culturales y afectivas para habitar el territorio patagónico con soberanía y visibilidad.
-                        </p>
-                    </div>
-                </details>
-            </article>
-
         </div>
     </section>
 
-
-    <!-- SECCIÓN 04: CULTURA Y LITERATURA (EN ÍTEMS) -->
     <section id="cultura" class="literatura">
         <div class="titulo-seccion">
             <span>04</span>
@@ -475,76 +332,22 @@
         </div>
 
         <div class="lista-items">
-
-            <!-- ÍTEM 1 -->
             <article class="item-horizontal">
-                <span>LESBIANAS Y CULTURA</span>
-                <h3>Expresiones culturales y editoriales independientes</h3>
+                <span>AUTORAS Y LETRAS</span>
+                <h3>Grandes referentes de las letras argentinas y poesía patagónica</h3>
                 <p>
-                    Publicaciones artesanales, fanzines, fotografía y arte visual con perspectiva sáfica e identidad propia del Sur.
+                    Diana Bellessi, Sylvia Molloy, Macky Corbalán y las nuevas voces poéticas del sur contemporáneo.
                 </p>
-                <details>
-                    <summary>LEER MÁS →</summary>
-                    <div class="texto-completo">
-                        <p>
-                            Difusión de proyectos autogestivos, muestras de arte y festivales de poesía independiente en las provincias.
-                        </p>
-                    </div>
-                </details>
             </article>
-
-            <!-- ÍTEM 2 -->
-            <article class="item-horizontal">
-                <span>AUTORAS</span>
-                <h3>Grandes referentes de las letras argentinas</h3>
-                <blockquote>
-                    “Hay mujeres que llegan a nuestra vida como llega el agua a la tierra seca.”
-                </blockquote>
-                <p>
-                    Diana Bellessi, Sylvia Molloy, Macky Corbalán y las nuevas voces poéticas de la Patagonia contemporánea.
-                </p>
-                <details>
-                    <summary>LEER MÁS →</summary>
-                    <div class="texto-completo">
-                        <p>
-                            Recorrido analítico y biográfico por las obras fundantes de la poesía y narrativa lésbica en el país.
-                        </p>
-                    </div>
-                </details>
-            </article>
-
-            <!-- ÍTEM 3 -->
-            <article class="item-horizontal">
-                <span>LITERATURA</span>
-                <h3>Recomendaciones de libros y lecturas sáficas</h3>
-                <p>
-                    Reseñas literarias, recomendaciones mensuales y análisis de textos clásicos y contemporáneos.
-                </p>
-                <details>
-                    <summary>LEER MÁS →</summary>
-                    <div class="texto-completo">
-                        <p>
-                            Sugerencias de lectura y clubes de libros para enriquecer la biblioteca lésbica comunitaria.
-                        </p>
-                    </div>
-                </details>
-            </article>
-
         </div>
     </section>
 
-
-    <!-- PARTICIPÁ (AL FINAL) -->
     <section id="participa-fin" class="participa">
         <div class="titulo-seccion">
             <span>05</span>
             <h2>ENVÍA TU COLABORACIÓN</h2>
         </div>
-
-        <p>
-            ¿Querés publicar en ORILLA? Dejanos tu mensaje, propuesta o texto:
-        </p>
-
+        <p>¿Querés publicar en ORILLA? Dejanos tu mensaje, propuesta o texto:</p>
         <form class="form-participar" action="mailto:contacto@revistaorilla.com" method="post" enctype="text/plain">
             <input type="text" name="nombre" placeholder="Tu nombre o seudónimo" required>
             <input type="email" name="email" placeholder="Tu correo electrónico" required>

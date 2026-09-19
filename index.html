@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -10,153 +9,222 @@
     <link rel="stylesheet" href="estilos.css">
     
     <style>
-        /* Estilos modernos para que la revista sea hermosa y ordenada */
-        html {
-            scroll-behavior: smooth; /* Hace que la pantalla se deslice suavemente al usar los botones */
-        }
         body {
-            font-family: 'Segoe UI', Arial, sans-serif;
-            background-color: #fcfbfa;
-            margin: 0;
-            padding: 0;
+            background-color: #f8f9fa; /* Fondo gris claro suave para resaltar los bloques */
         }
-        .contenedor {
-            max-width: 900px;
-            margin: 0 auto;
-            padding: 20px;
-        }
+        
+        /* Estilo para los cuadros independientes y separados de cada sección */
         .tarjeta-contenido {
             background-color: #ffffff;
-            border: 1px solid #ebedf0;
-            border-radius: 16px;
-            padding: 40px;
-            margin-bottom: 50px;
-            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.03);
-            display: flex;
-            flex-direction: column;
-            gap: 20px;
-        }
-        .tarjeta-imagen {
-            width: 100%;
-            max-height: 380px;
-            object-fit: cover;
+            border: 1px solid #e2e8f0;
             border-radius: 12px;
-            margin-bottom: 10px;
+            padding: 35px;
+            margin-bottom: 45px; /* Gran separación para que respire el diseño */
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
         }
+
+        /* Más aire y separación para los bloques grandes de la página */
         section {
-            margin-bottom: 70px !important;
-            scroll-margin-top: 40px; /* Deja espacio arriba cuando el botón te lleva a la sección */
+            margin-bottom: 65px !important;
         }
+
         .titulo-seccion {
-            font-size: 1.8rem;
-            border-bottom: 2px solid #6a11cb;
-            padding-bottom: 10px;
-            margin-bottom: 35px;
-            color: #111111;
-            font-weight: bold;
+            margin-bottom: 30px;
         }
-        h1 { font-size: 2.6rem; margin: 10px 0; line-height: 1.2; color: #111111; }
-        h3 { font-size: 1.8rem; margin: 5px 0; color: #1a1a1a; }
-        p { line-height: 1.7; color: #444444; font-size: 1.1rem; margin: 0 0 15px 0; }
-        .categoria { color: #6a11cb; font-weight: bold; text-transform: uppercase; letter-spacing: 1.5px; font-size: 0.9rem; }
-        
-        .boton-leer-mas {
-            display: inline-block;
-            align-self: flex-start;
-            padding: 12px 28px;
-            background-color: #6a11cb;
-            color: white !important;
-            text-decoration: none;
-            border-radius: 8px;
-            font-weight: bold;
-            box-shadow: 0 4px 12px rgba(106, 17, 203, 0.15);
-            transition: all 0.2s;
-        }
-        .boton-leer-mas:hover {
-            background-color: #550cb5;
-            transform: translateY(-1px);
+
+        p {
+            line-height: 1.7;
+            color: #333333;
+            margin-bottom: 15px;
         }
     </style>
 </head>
 
 <body>
 
-<div class="contenedor">
-
 <header>
-    <div class="logo" style="font-size: 3rem; font-weight: 900; letter-spacing: 3px; text-align: center; margin-top: 30px;">ORILLA</div>
-    <p class="subtitulo" style="text-align: center; font-style: italic; color: #666; margin-bottom: 40px;">Revista lésbica, cultural y del sur</p>
-    <nav style="display: flex; justify-content: center; gap: 20px; margin-bottom: 50px; border-bottom: 1px solid #eee; padding-bottom: 20px;">
-        <a href="#seccion-bienvenida" style="text-decoration: none; color: #111; font-weight: 600;">BIENVENIDA</a>
-        <a href="#seccion-derechos" style="text-decoration: none; color: #111; font-weight: 600;">DERECHOS</a>
-        <a href="#seccion-cultura" style="text-decoration: none; color: #111; font-weight: 600;">CULTURA</a>
+
+    <div class="logo">
+        ORILLA
+    </div>
+
+    <p class="subtitulo">
+        Revista lésbica, cultural y del sur
+    </p>
+
+    <nav>
+        <a href="#">ACTUALIDAD</a>
+        <a href="#">HISTORIAS</a>
+        <a href="#">CULTURA</a>
+        <a href="#">LITERATURA</a>
+        <a href="#">ARCHIVO</a>
+        <a href="#">AGENDA</a>
     </nav>
+
 </header>
+
 
 <main>
 
-    <!-- PORTADA: HISTORIA DE BIENVENIDA COMPLETA -->
-    <section id="seccion-bienvenida" class="portada">
-        <div class="tarjeta-contenido">
-            <span class="categoria">EDITORIAL DE BIENVENIDA · EDICIÓN Nº 01</span>
-            <h1>La herencia del té y las fotocopias: por qué hacemos ORILLA hoy</h1>
+    <!-- PORTADA PRINCIPAL CON LA BIENVENIDA COMPLETA -->
+    <section class="portada tarjeta-contenido" style="margin-top: 20px;">
+
+        <div class="portada-texto" style="max-width: 100%;">
+
+            <span class="categoria" style="color: #6a11cb; font-weight: bold; letter-spacing: 1px;">EDITORIAL DE BIENVENIDA · EDICIÓN Nº 01</span>
+
+            <h1 style="font-size: 2.5rem; margin-top: 15px; margin-bottom: 25px; line-height: 1.2;">
+                La herencia del té y las fotocopias:<br>
+                por qué hacemos ORILLA hoy
+            </h1>
+
             <p>
-                Si hoy estás leyendo esto desde la pantalla de tu celular o tu computadora, queremos invitarte a hacer un viaje cortito en el tiempo. Imagínate que estamos a finales de los años 80 en Argentina. La democracia estaba naciendo, pero las calles seguían siendo un lugar hostil para nosotras. Vivir el deseo, el amor y la identidad lésbica era sinónimo de clandestinidad, de miradas de reojo y de un silencio pesado que dolía en el cuerpo.
+                Si hoy estás leyendo esto desde tu pantalla, queremos invitarte a hacer un viaje cortito en el tiempo. 
+                Imagínate la Argentina de los años 80: la democracia estaba naciendo, pero el lesbianismo todavía se vivía en la clandestinidad y el silencio. 
+                En ese contexto, un grupo de pibas —entre ellas pioneras como Ilse Fuskova y Adriana Carrasco— decidieron que ya no querían esconderse más. 
+                Sin internet ni redes, agarraron máquinas de escribir mecánicas, tijeras y plasticola para fundar las primeras revistas lésbicas del país, armando los fanzines fotocopia por fotocopia.
             </p>
+
             <p>
-                En ese contexto, un grupo de pibas —entre ellas pioneras como Ilse Fuskova y Adriana Carrasco— decidieron que ya no querían esconderse más. No tenían internet, ni redes sociales, ni plataformas gratuitas para publicar. ¿Qué hicieron? Se armaron de valentía, agarraron máquinas de escribir mecánicas, tijeras y plasticola, y fundaron los <em>"Cuadernos de Existencia Lesbiana"</em>. Armaban los fanzines fotocopia por fotocopia en locales prestados a escondidas.
+                Caminaban las calles vendiendo sus cuadernillos para llevarle un mensaje potente a las mujeres que se sentían solas en los bares: 
+                <em>"No estás loca, no eres la única"</em>. El activismo de nuestras ancestras empezó así: tomando el té en departamentos ocultos, escribiendo para sobrevivir y tejiendo redes mano a mano.
             </p>
+
             <p>
-                Cuando los cuadernillos estaban listos, se los metían debajo del brazo y salían a caminar por la Avenida Corrientes. Se acercaban a las mesas de los bares donde veían a mujeres solas o en parejas y, con el corazón latiendo a mil, les decían bajito: <em>"Hola, somos lesbianas y hacemos esta revista. ¿Te interesa?"</em>.
+                Hoy el mundo cambió, scrolleamos en TikTok y publicamos en la nube en cinco minutos. Tenemos herramientas que aquellas pibas ni siquiera podían soñar. 
+                Sin embargo, a pesar de las pantallas, el aislamiento y la necesidad de encontrarnos siguen vigentes en muchos rincones del sur. 
+                Por eso nace <strong>ORILLA</strong>. No hacemos esto solo para rellenar una página web; lo hacemos para continuar esa memoria, para tejer redes y para recordarte que tu historia importa. 
+                Bienvenidas a este espacio. Tomemos el té y construyamos comunidad juntas.
             </p>
-            <p>
-                A veces encontraban rechazo, pero muchas otras veces pasaba algo mágico: a la mujer del otro lado de la mesa se le iluminaban los ojos o se le caía una lágrima. Abrazaba ese cuaderno de papel barato como si fuera un tesoro. ¿Por qué? Porque por primera vez en su vida descubría que no estaba loca, que no estaba enferma y, sobre todo, que no era la única en el mundo. El activismo de nuestras ancestras empezó así: tomando el té en departamentos ocultos, escribiendo para sobrevivir y tejiendo redes mano a mano.
-            </p>
-            <p>
-                Hoy el mundo es distinto. Consumimos podcasts, scrolleamos en TikTok y podemos subir una revista digital a internet en cinco minutos. Tenemos herramientas que aquellas pibas de los 80 ni siquiera podían soñar. Sin embargo, a pesar de las pantallas, la sensación de aislamiento en algunos rincones del sur sigue existiendo. El vacío histórico a veces se siente cerca.
-            </p>
-            <p>
-                Por eso nace <strong>ORILLA</strong>. No hacemos esto solo para rellenar una página web; lo hacemos para continuar esa misma línea histórica. Escribimos para encontrarnos, para recuperar nuestra memoria y para abrazar a la piba que hoy, en cualquier pueblo o ciudad, entra a este link buscando respuestas. Queremos decirte lo mismo que aquellas pioneras decían con sus fotocopias: no estás sola, tu historia importa y este también es tu espacio.
-            </p>
-            <p><strong>Bienvenidas a ORILLA. Tomemos el té y construyamos comunidad juntas.</strong></p>
-            
-            <!-- Botón para saltar directo a la siguiente nota importante -->
-            <a href="#seccion-derechos" class="boton-leer-mas">LEER NOTA SOBRE DERECHOS →</a>
+
         </div>
+
     </section>
 
 
-    <!-- SECCIÓN 01: DERECHOS -->
-    <section id="seccion-derechos">
-        <div class="titulo-seccion">01 . DERECHOS CONQUISTADOS</div>
-        
-        <div class="tarjeta-contenido">
-            <!-- Imagen alusiva a la Ley de Matrimonio Igualitario en Argentina -->
-            <img class="tarjeta-imagen" src="https://agenciapresentes.org" alt="Congreso de la Nación Argentina iluminado con la bandera LGBT">
-            <span class="categoria">NUESTRAS LEYES</span>
-            <h3>Del Matrimonio Igualitario a la Inseminación: Diseñando nuestras familias</h3>
-            <p>
-                La historia de los derechos de las mujeres lesbianas en nuestro país está marcada por luchas monumentales que torcieron el brazo del destino. En julio de 2010, Argentina hizo historia mundial al convertirse en el primer país de América Latina en consagrar el <strong>Matrimonio Igualitario</strong>. Esta ley no solo otorgó el amparo legal de casarse y compartir herencias o coberturas médicas, sino que transformó por completo la visibilidad del amor entre mujeres.
-            </p>
-            <p>
-                Posteriormente, con la sanción de la Ley de Reproducción Médicamente Asistida, el Estado garantizó el acceso gratuito y universal a tratamientos de inseminación y fertilización para parejas del mismo sexo e identidades diversas. Esto derribó la vieja idea de que la familia era un monopolio heterosexual, permitiendo que la maternidad lésbica floreciera con el respaldo total de la salud pública. 
-            </p>
-            <p>
-                Nuestras familias existen, son completamente legales y hoy las celebramos con orgullo. Con estas leyes consolidadas, las nuevas generaciones de lesbianas en el sur crecen sabiendo que sus vínculos y sus decisiones reproductivas están amparadas por la dignidad y el derecho civil.
-            </p>
-            
-            <a href="#seccion-cultura" class="boton-leer-mas">LEER NOTA SOBRE CULTURA Y LITERATURA →</a>
+    <!-- SECCIÓN 01: ACTUALIDAD Y CONTENIDOS -->
+    <section class="seccion">
+
+        <div class="titulo-seccion">
+            <span>01</span>
+            <h2>ACTUALIDAD Y DERECHOS</h2>
         </div>
+
+        <div class="noticias">
+
+            <article class="tarjeta-contenido">
+                <span class="categoria">DERECHOS</span>
+                <h3>
+                    Lo que está pasando y por qué importa
+                </h3>
+                <p>
+                    Información, contexto y fuentes para entender la actualidad social y política desde una perspectiva colectiva.
+                </p>
+            </article>
+
+            <article class="tarjeta-contenido">
+                <span class="categoria">CULTURA</span>
+                <h3>
+                    Una mirada lésbica sobre el presente
+                </h3>
+                <p>
+                    Cultura, sociedad y las historias que todavía necesitan ser contadas en primera persona.
+                </p>
+            </article>
+
+        </div>
+
     </section>
 
 
-    <!-- SECCIÓN 02: CULTURA Y LITERATURA -->
-    <section id="seccion-cultura">
-        <div class="titulo-seccion">02 . CULTURA Y LITERATURA</div>
-        
-        <div class="tarjeta-contenido">
-            <!-- Imagen alusiva a portadas de libros de literatura sáfica -->
-            <img class="tarjeta-imagen" src="https://esquiregb.com" style="background-color: #6a11cb; object-fit: contain;" alt="Libros de literatura lésbica">
-            <span class="categoria">ESCRITORAS & MEMORIA</span>
-            <h3>La fuerza de encontrarnos en los libros: Literatura escrita por mujeres</h3>
+    <!-- SECCIÓN INTERMEDIA: DESTACADA -->
+    <section class="destacada tarjeta-contenido" style="background-color: #f1f5f9; text-align: center;">
+
+        <div>
+            <p style="font-size: 1.2rem; font-style: italic; color: #475569;">
+                "Historias de mujeres que crecieron lejos de las grandes ciudades y tuvieron que construir sus propios espacios."
+            </p>
+        </div>
+
+    </section>
+
+
+    <!-- SECCIÓN 02: LESBIANAS DEL SUR -->
+    <section class="sur">
+
+        <div class="titulo-seccion">
+            <span>02</span>
+            <h2>LESBIANAS DEL SUR</h2>
+        </div>
+
+        <div class="historia tarjeta-contenido">
+            <span class="categoria">COMUNIDAD</span>
+            <h3>
+                Vivir, amar y ser lesbiana en comunidad
+            </h3>
             <p>
+                Una serie de historias sobre identidad, deseo, vínculos y comunidad en el sur del país.
+            </p>
+        </div>
+
+    </section>
+
+
+    <!-- SECCIÓN 03: LITERATURA -->
+    <section class="literatura">
+
+        <div class="titulo-seccion">
+            <span>03</span>
+            <h2>LITERATURA</h2>
+        </div>
+
+        <div class="tarjeta-contenido">
+            <blockquote style="font-size: 1.3rem; font-weight: 500; border-left: 4px solid #6a11cb; padding-left: 15px; margin: 0 0 20px 0; color: #111111;">
+                "Hay mujeres que llegan a nuestra vida como llega el agua a la tierra seca."
+            </blockquote>
+            <p>
+                Poesía, cuentos y textos de autoras lesbianas para recuperar nuestras narrativas.
+            </p>
+        </div>
+
+    </section>
+
+
+    <!-- SECCIÓN 04: PARTICIPÁ -->
+    <section class="participa tarjeta-contenido" style="text-align: center; background: linear-gradient(135deg, #fdfbf7 0%, #f5f5f5 100%);">
+
+        <h2>
+            ¿QUERÉS CONTARNOS TU HISTORIA?
+        </h2>
+        <p style="max-width: 600px; margin: 0 auto 20px auto;">
+            Buscamos historias, poemas, fotografías, experiencias y textos de mujeres lesbianas que quieran sumar su voz.
+        </p>
+        <button style="padding: 12px 24px; background-color: #111111; color: white; border: none; border-radius: 6px; font-weight: bold; cursor: pointer;">
+            PARTICIPAR
+        </button>
+
+    </section>
+
+</main>
+
+
+<footer>
+
+    <div class="logo">ORILLA</div>
+
+    <p>
+        Revista lésbica, cultural y del sur.
+    </p>
+
+    <div class="redes">
+        Instagram · TikTok · Podcast
+    </div>
+
+    <small>
+        © 2026 ORILLA
+    </small>
+
+</footer>
+
+</body>
+</html>

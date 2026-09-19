@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Historia Real de las Lesbianas en Argentina — ORILLA</title>
+
+    <style>
+        body {
+            font-family: system-ui, -apple-system, sans-serif;
+            background-color: #f7f4f9;
+            color: #2b2b2b;
+            margin: 0;
+            padding: 20px;
+        }
+
+        header {
+            border: 2px solid #a855f7;
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 30px;
+            background-color: #ffffff;
+            text-align: center;
+        }
+
+        .logo a {
+            font-size: 3.5rem;
+            font-weight: 900;
+            letter-spacing: 4px;
+            text-decoration: none;
+            background: linear-gradient(90deg, #e11d48, #f97316, #eab308, #22c55e, #3b82f6, #a855f7);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            display: inline-block;
+        }
+
+        .articulo-completo {
+            max-width: 800px;
+            margin: 0 auto;
+            border: 2px solid #c084fc;
+            border-radius: 12px;
+            padding: 40px;
+            background-color: #ffffff;
+            box-shadow: 0 4px 12px rgba(168, 85, 247, 0.08);
+        }
+
+        .categoria {
+            color: #be185d;
+            font-weight: bold;
+            font-size: 0.9rem;
+        }
+
+        h1 {
+            color: #3b0764;
+            font-size: 2.2rem;
+            margin-top: 10px;
+        }
+
+        .subtitulo-articulo {
+            color: #7e22ce;
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            font-weight: 600;
+        }
+
+        .hito-bloque {
+            margin-bottom: 40px;
+            padding-bottom: 25px;
+            border-bottom: 1px solid #e9d5ff;
+        }
+
+        .hito-bloque h2 {
+            color: #4a0e4e;
+            font-size: 1.4rem;
+            margin-bottom: 15px;
+        }
+
+        .hito-bloque img {
+            width: 100%;
+            max-height: 400px;
+            object-fit: cover;
+            border-radius: 8px;
+            margin: 15px 0;
+            border: 1px solid #c084fc;
+        }
+
+        .hito-bloque p {
+            line-height: 1.8;
+            font-size: 1.05rem;
+            color: #333333;
+        }
+
+        .volver-btn {
+            display: inline-block;
+            margin-top: 20px;
+            color: #7e22ce;
+            font-weight: bold;
+            text-decoration: none;
+            border: 2px solid #a855f7;
+            padding: 12px 24px;
+            border-radius: 8px;
+            transition: all 0.2s ease;
+        }
+
+        .volver-btn:hover {
+            background-color: #7e22ce;
+            color: #ffffff;
+        }
+
+        footer {
+            border: 2px solid #a855f7;
+            border-radius: 12px;
+            padding: 20px;
+            text-align: center;
+            background-color: #2e0854;
+            color: #ffffff;
+            margin-top: 40px;
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <div class="logo"><a href="index.html">ORILLA</a></div>
+</header>
+
+<main>
+    <article class="articulo-completo">
+        <span class="categoria">EDICIÓN Nº 01 — MEMORIA LÉSBICA</span>
+        <h1>¿Dónde están las lesbianas?</h1>
+        <div class="subtitulo-articulo">Cuatro hitos de la historia real en Argentina</div>
+
+        <div class="hito-bloque">
+            <h2>1. Primeras publicaciones clandestinas (1987)</h2>
+            <img src="cuadernos_existencia_lesbica.jpg" alt="Cuadernos de Existencia Lésbica">
+            <p>
+                En plena posdictadura, activistas como Ilse Fuskova y Adriana Carrasco fundaron <em>Cuadernos de Existencia Lésbica</em>. Imprimiendo boletines artesanales en mimeógrafos y repartiéndolos de mano en mano, crearon los primeros canales autogestivos para decir en voz alta lo que la sociedad insistía en ocultar.
+            </p>
+        </div>
+
+        <div class="hito-bloque">
+            <h2>2. La primera vez en televisión abierta (1991)</h2>
+            <img src="ilse_fuskova_tv.jpg" alt="Ilse Fuskova en televisión">
+            <p>
+                En un hito de valentía sin precedentes, Ilse Fuskova se presentó publicly como lesbiana en el programa de almuerzos de Mirtha Legrand. Su testimonio cara a cara rompió el tabú mediático en millones de hogares argentinos.
+            </p>
+        </div>
+
+        <div class="hito-bloque">
+            <h2>3. Pepa Gaitán y el Día de la Visibilidad Lésbica (2010)</h2>
+            <img src="pepa_gaitan.jpg" alt="Natalia Pepa Gaitán">
+            <p>
+                El 7 de marzo de 2010, Natalia "Pepa" Gaitán fue fusilada en Córdoba por el padrastro de su novia a causa de su orientación sexual. Su fusilamiento lesbofóbico movilizó al país y convirtió al <strong>7 de marzo</strong> en el Día de la Visibilidad Lésbica en Argentina, transformando el duelo en una bandera colectiva de lucha y justicia.
+            </p>
+        </div>
+
+        <div class="hito-bloque" style="border-bottom: none;">
+            <h2>4. La marea federal y los Encuentros de Mujeres y Disidencias</h2>
+            <img src="encuentro_mujeres_patagonia.jpg" alt="Encuentro de Mujeres en la Patagonia">
+            <p>
+                Desde los años 90, las lesbianas del interior y de la Patagonia emprendieron viajes de miles de kilómetros para habitar los Encuentros Nacionales. Crearon talleres específicos de lesbianismo y articularon redes de afecto y militancia que sacaron la lucha de las capitales para expandirla a cada rincón del territorio.
+            </p>
+        </div>
+
+        <a href="index.html" class="volver-btn">← VOLVER A LA REVISTA</a>
+    </article>
+</main>
+
+<footer>
+    <small>© 2026 ORILLA — Revista lésbica, cultural y del sur</small>
+</footer>
+
+</body>
+</html>

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ORILLA — Revista lésbica y cultural</title>
+    <title>ORILLA — Revista lésbica, cultural y del sur</title>
 
     <style>
         html {
@@ -294,11 +294,12 @@
     <!-- Título con degradado Arcoíris -->
     <div class="logo">ORILLA</div>
     <!-- Subtítulo con colores Lésbicos -->
-    <p class="subtitulo">Revista lésbica y cultural</p>
+    <p class="subtitulo">Revista lésbica, cultural y del sur</p>
 
     <nav>
         <a href="#participa-inicio">PARTICIPÁ</a>
         <a href="#actualidad">ACTUALIDAD Y DERECHOS</a>
+        <a href="#sur">HISTORIAS Y VIEDMA</a>
         <a href="#cultura">CULTURA Y LITERATURA</a>
         <a href="#participa-fin">CONTACTO</a>
     </nav>
@@ -336,25 +337,17 @@
             Buscamos relatos de vida, poemas, fotos o reflexiones de mujeres lesbianas de todo el país.
         </p>
 
-        <!-- Correo visible para copiar fácil -->
-        <div style="background-color: #fdf2f8; border: 1px dashed #d946ef; padding: 12px; border-radius: 8px; margin-bottom: 15px; text-align: center;">
-            <p style="margin: 0; font-size: 0.9rem; color: #701a75;">
-                ✉️ También podés mandarnos tu material directamente por mail a:<br>
-                <strong style="font-size: 1rem; color: #a21caf;">Contactorevistaorilla@gmail.com</strong>
-            </p>
-        </div>
-
-        <form class="form-participar" action="mailto:Contactorevistaorilla@gmail.com" method="post" enctype="text/plain">
+        <form class="form-participar" action="mailto:contacto@revistaorilla.com" method="post" enctype="text/plain">
             <input type="text" name="nombre" placeholder="Tu nombre o seudónimo" required>
             <input type="email" name="email" placeholder="Tu correo electrónico" required>
-            <input type="text" name="ubicacion" placeholder="Tu ciudad o provincia">
+            <input type="text" name="ubicacion" placeholder="Tu ciudad o provincia (ej. Viedma, Río Negro)">
             <textarea name="mensaje" placeholder="Escribí acá tu texto, poema o lo que quieras compartir..." required></textarea>
             <button type="submit" class="btn-link">ENVIAR COLABORACIÓN</button>
         </form>
     </section>
 
 
-    <!-- SECCIÓN 02: ACTUALIDAD Y DERECHOS -->
+    <!-- SECCIÓN 02: ACTUALIDAD Y DERECHOS (EN ÍTEMS) -->
     <section id="actualidad" class="seccion">
         <div class="titulo-seccion">
             <span>02</span>
@@ -427,10 +420,57 @@
     </section>
 
 
-    <!-- SECCIÓN 03: CULTURA Y LITERATURA -->
-    <section id="cultura" class="literatura">
+    <!-- SECCIÓN 03: HISTORIAS DEL SUR Y VIEDMA (EN ÍTEMS) -->
+    <section id="sur" class="sur">
         <div class="titulo-seccion">
             <span>03</span>
+            <h2>LESBIANAS DEL SUR, VIEDMA Y RÍO NEGRO</h2>
+        </div>
+
+        <div class="lista-items">
+
+            <!-- ÍTEM 1 -->
+            <article class="item-horizontal">
+                <span>COMARCA VIEDMA - PATAGONES</span>
+                <h3>Redes lésbicas a orillas del río Negro</h3>
+                <p>
+                    Espacios de resistencia, encuentros plurinacionales, talleres y militancia organizada en Viedma y Carmen de Patagones.
+                </p>
+                <details>
+                    <summary>LEER MÁS →</summary>
+                    <div class="texto-completo">
+                        <p>
+                            La posición de Viedma como puerta de la Patagonia fomenta espacios de encuentro, marchas locales y talleres comunitarios.
+                        </p>
+                    </div>
+                </details>
+            </article>
+
+            <!-- ÍTEM 2 -->
+            <article class="item-horizontal">
+                <span>PATAGONIA Y TERRITORIO</span>
+                <h3>Comarca, Cordillera y Estepa Rionegrina</h3>
+                <p>
+                    Redes de afecto que unen Bariloche, El Bolsón, Viedma y el Valle Inferior frente a las grandes distancias geográficas.
+                </p>
+                <details>
+                    <summary>LEER MÁS →</summary>
+                    <div class="texto-completo">
+                        <p>
+                            Tejiendo alianzas culturales y afectivas para habitar el territorio patagónico con soberanía y visibilidad.
+                        </p>
+                    </div>
+                </details>
+            </article>
+
+        </div>
+    </section>
+
+
+    <!-- SECCIÓN 04: CULTURA Y LITERATURA (EN ÍTEMS) -->
+    <section id="cultura" class="literatura">
+        <div class="titulo-seccion">
+            <span>04</span>
             <h2>LESBIANAS, CULTURA, AUTORAS Y LITERATURA</h2>
         </div>
 
@@ -441,7 +481,7 @@
                 <span>LESBIANAS Y CULTURA</span>
                 <h3>Expresiones culturales y editoriales independientes</h3>
                 <p>
-                    Publicaciones artesanales, fanzines, fotografía y arte visual con perspectiva sáfica e identidad propia.
+                    Publicaciones artesanales, fanzines, fotografía y arte visual con perspectiva sáfica e identidad propia del Sur.
                 </p>
                 <details>
                     <summary>LEER MÁS →</summary>
@@ -461,7 +501,7 @@
                     “Hay mujeres que llegan a nuestra vida como llega el agua a la tierra seca.”
                 </blockquote>
                 <p>
-                    Diana Bellessi, Sylvia Molloy, Macky Corbalán y las nuevas voces poéticas contemporáneas.
+                    Diana Bellessi, Sylvia Molloy, Macky Corbalán y las nuevas voces poéticas de la Patagonia contemporánea.
                 </p>
                 <details>
                     <summary>LEER MÁS →</summary>
@@ -497,7 +537,7 @@
     <!-- PARTICIPÁ (AL FINAL) -->
     <section id="participa-fin" class="participa">
         <div class="titulo-seccion">
-            <span>04</span>
+            <span>05</span>
             <h2>ENVÍA TU COLABORACIÓN</h2>
         </div>
 
@@ -505,15 +545,7 @@
             ¿Querés publicar en ORILLA? Dejanos tu mensaje, propuesta o texto:
         </p>
 
-        <!-- Correo visible para copiar fácil -->
-        <div style="background-color: #fdf2f8; border: 1px dashed #d946ef; padding: 12px; border-radius: 8px; margin-bottom: 15px; text-align: center;">
-            <p style="margin: 0; font-size: 0.9rem; color: #701a75;">
-                ✉️ También podés mandarnos tu material directamente por mail a:<br>
-                <strong style="font-size: 1rem; color: #a21caf;">Contactorevistaorilla@gmail.com</strong>
-            </p>
-        </div>
-
-        <form class="form-participar" action="mailto:Contactorevistaorilla@gmail.com" method="post" enctype="text/plain">
+        <form class="form-participar" action="mailto:contacto@revistaorilla.com" method="post" enctype="text/plain">
             <input type="text" name="nombre" placeholder="Tu nombre o seudónimo" required>
             <input type="email" name="email" placeholder="Tu correo electrónico" required>
             <input type="text" name="ubicacion" placeholder="Tu ciudad o provincia">
@@ -526,7 +558,7 @@
 
 <footer>
     <div class="logo">ORILLA</div>
-    <p>Revista lésbica y cultural.</p>
+    <p>Revista lésbica, cultural y del sur.</p>
     <div class="redes">Instagram · TikTok · Podcast</div>
     <small>© 2026 ORILLA</small>
 </footer>

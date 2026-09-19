@@ -8,29 +8,34 @@
 
     <link rel="stylesheet" href="estilos.css">
     
-    <!-- Estilos añadidos para separar las secciones y crear los cuadros independientes -->
     <style>
         body {
-            background-color: #f8f9fa; /* Un fondo gris muy claro para que resalten los cuadros */
+            background-color: #f8f9fa; /* Fondo gris claro suave para resaltar los bloques */
         }
         
-        /* Estilo para los cuadros independientes de cada noticia */
-        .noticias article {
+        /* Estilo para los cuadros independientes y separados de cada sección */
+        .tarjeta-contenido {
             background-color: #ffffff;
             border: 1px solid #e2e8f0;
             border-radius: 12px;
-            padding: 30px;
-            margin-bottom: 35px; /* Más separación entre un cuadro y otro */
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.04);
+            padding: 35px;
+            margin-bottom: 45px; /* Gran separación para que respire el diseño */
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
         }
 
-        /* Más aire para el resto de las secciones principales de la revista */
+        /* Más aire y separación para los bloques grandes de la página */
         section {
-            margin-bottom: 70px !important; /* Separa los bloques grandes de la página */
+            margin-bottom: 65px !important;
         }
 
         .titulo-seccion {
-            margin-bottom: 35px;
+            margin-bottom: 30px;
+        }
+
+        p {
+            line-height: 1.7;
+            color: #333333;
+            margin-bottom: 15px;
         }
     </style>
 </head>
@@ -61,91 +66,70 @@
 
 <main>
 
-    <section class="portada">
+    <!-- PORTADA PRINCIPAL CON LA BIENVENIDA COMPLETA -->
+    <section class="portada tarjeta-contenido" style="margin-top: 20px;">
 
-        <div class="portada-texto">
+        <div class="portada-texto" style="max-width: 100%;">
 
-            <span class="categoria">EDICIÓN Nº 01</span>
+            <span class="categoria" style="color: #6a11cb; font-weight: bold; letter-spacing: 1px;">EDITORIAL DE BIENVENIDA · EDICIÓN Nº 01</span>
 
-            <h1>
-                ¿Dónde están<br>
-                las lesbianas?
+            <h1 style="font-size: 2.5rem; margin-top: 15px; margin-bottom: 25px; line-height: 1.2;">
+                La herencia del té y las fotocopias:<br>
+                por qué hacemos ORILLA hoy
             </h1>
 
             <p>
-                Una revista para contar nuestras historias,
-                recuperar nuestra memoria y mirar el presente
-                desde una perspectiva lésbica.
+                Si hoy estás leyendo esto desde tu pantalla, queremos invitarte a hacer un viaje cortito en el tiempo. 
+                Imagínate la Argentina de los años 80: la democracia estaba naciendo, pero el lesbianismo todavía se vivía en la clandestinidad y el silencio. 
+                En ese contexto, un grupo de pibas —entre ellas pioneras como Ilse Fuskova y Adriana Carrasco— decidieron que ya no querían esconderse más. 
+                Sin internet ni redes, agarraron máquinas de escribir mecánicas, tijeras y plasticola para fundar las primeras revistas lésbicas del país, armando los fanzines fotocopia por fotocopia.
             </p>
 
-            <button>
-                LEER LA EDICIÓN
-            </button>
+            <p>
+                Caminaban las calles vendiendo sus cuadernillos para llevarle un mensaje potente a las mujeres que se sentían solas en los bares: 
+                <em>"No estás loca, no eres la única"</em>. El activismo de nuestras ancestras empezó así: tomando el té en departamentos ocultos, escribiendo para sobrevivir y tejiendo redes mano a mano.
+            </p>
 
-        </div>
-
-        <div class="portada-imagen">
-
-            <img
-                src="escritoras_lesbianas.jpg"
-                alt="Escritoras_lesbianas"
-            >
+            <p>
+                Hoy el mundo cambió, scrolleamos en TikTok y publicamos en la nube en cinco minutos. Tenemos herramientas que aquellas pibas ni siquiera podían soñar. 
+                Sin embargo, a pesar de las pantallas, el aislamiento y la necesidad de encontrarnos siguen vigentes en muchos rincones del sur. 
+                Por eso nace <strong>ORILLA</strong>. No hacemos esto solo para rellenar una página web; lo hacemos para continuar esa memoria, para tejer redes y para recordarte que tu historia importa. 
+                Bienvenidas a este espacio. Tomemos el té y construyamos comunidad juntas.
+            </p>
 
         </div>
 
     </section>
 
 
+    <!-- SECCIÓN 01: ACTUALIDAD Y CONTENIDOS -->
     <section class="seccion">
 
         <div class="titulo-seccion">
             <span>01</span>
-            <h2>ACTUALIDAD</h2>
+            <h2>ACTUALIDAD Y DERECHOS</h2>
         </div>
 
         <div class="noticias">
 
-           <!-- Cuadro 1: Actualidad -->
-            <article>
-                <span class="categoria">EDITORIAL DE BIENVENIDA</span>
-                <h3>La herencia del té y las fotocopias: por qué hacemos ORILLA hoy</h3>
-                <p>
-                    Si hoy estás leyendo esto desde tu pantalla, queremos invitarte a hacer un viaje cortito en el tiempo. 
-                    Imagínate la Argentina de los años 80: no había internet ni redes, y el lesbianismo se vivía en la clandestinidad. 
-                    En ese contexto de silencio, un grupo de pibas agarró máquinas de escribir, tijeras y plasticola para fundar las primeras revistas lésbicas del país. 
-                    Caminaban las calles vendiendo fanzines fotocopiados para llevarle un mensaje a las mujeres que se sentían solas en los bares: "No estás loca, no eres la única".
-                </p>
-                <p>
-                    Hoy el mundo cambió, scrolleamos en TikTok y publicamos en la nube. Pero el aislamiento y la necesidad de encontrarnos siguen vigentes en muchos rincones del sur. 
-                    Por eso nace <strong>ORILLA</strong>. Escribimos para continuar esa memoria, para tejer redes y para recordarte que tu historia importa. Bienvenidas a este espacio.
-                </p>
-                <a href="#">SEGUIR LEYENDO →</a>
-            </article>
-
-            <!-- Cuadro 2: Derechos -->
-            <article>
+            <article class="tarjeta-contenido">
                 <span class="categoria">DERECHOS</span>
                 <h3>
                     Lo que está pasando y por qué importa
                 </h3>
                 <p>
-                    Información, contexto y fuentes para
-                    entender la actualidad.
+                    Información, contexto y fuentes para entender la actualidad social y política desde una perspectiva colectiva.
                 </p>
-                <a href="#">LEER MÁS →</a>
             </article>
 
-            <!-- Cuadro 3: Cultura -->
-            <article>
+            <article class="tarjeta-contenido">
                 <span class="categoria">CULTURA</span>
                 <h3>
                     Una mirada lésbica sobre el presente
                 </h3>
                 <p>
-                    Cultura, sociedad y las historias que
-                    todavía necesitan ser contadas.
+                    Cultura, sociedad y las historias que todavía necesitan ser contadas en primera persona.
                 </p>
-                <a href="#">LEER MÁS →</a>
             </article>
 
         </div>
@@ -153,22 +137,19 @@
     </section>
 
 
-    <section class="destacada">
+    <!-- SECCIÓN INTERMEDIA: DESTACADA -->
+    <section class="destacada tarjeta-contenido" style="background-color: #f1f5f9; text-align: center;">
 
         <div>
-
-            <p>
-                Historias de mujeres que crecieron lejos
-                de las grandes ciudades y tuvieron que
-                construir sus propios espacios.
+            <p style="font-size: 1.2rem; font-style: italic; color: #475569;">
+                "Historias de mujeres que crecieron lejos de las grandes ciudades y tuvieron que construir sus propios espacios."
             </p>
-            
-
         </div>
 
     </section>
 
 
+    <!-- SECCIÓN 02: LESBIANAS DEL SUR -->
     <section class="sur">
 
         <div class="titulo-seccion">
@@ -176,28 +157,20 @@
             <h2>LESBIANAS DEL SUR</h2>
         </div>
 
-        <p class="introduccion">
-            Historias de mujeres lesbianas
-        </p>
-
-        <div class="historia">
-
+        <div class="historia tarjeta-contenido">
+            <span class="categoria">COMUNIDAD</span>
             <h3>
                 Vivir, amar y ser lesbiana en comunidad
             </h3>
-
             <p>
-                Una serie de historias sobre identidad,
-                deseo, vínculos y comunidad en el sur.
+                Una serie de historias sobre identidad, deseo, vínculos y comunidad en el sur del país.
             </p>
-
-            <a href="#">CONOCER LA HISTORIA →</a>
-
         </div>
 
     </section>
 
 
+    <!-- SECCIÓN 03: LITERATURA -->
     <section class="literatura">
 
         <div class="titulo-seccion">
@@ -205,33 +178,28 @@
             <h2>LITERATURA</h2>
         </div>
 
-        <!-- Se arregló la comilla inicial tipográfica -->
-        <blockquote>
-            "Hay mujeres que llegan a nuestra vida
-            como llega el agua a la tierra seca."
-        </blockquote>
-
-        <p>
-            Poesía, cuentos y textos de autoras lesbianas.
-        </p>
-
-        <a href="#">LEER LITERATURA →</a>
+        <div class="tarjeta-contenido">
+            <blockquote style="font-size: 1.3rem; font-weight: 500; border-left: 4px solid #6a11cb; padding-left: 15px; margin: 0 0 20px 0; color: #111111;">
+                "Hay mujeres que llegan a nuestra vida como llega el agua a la tierra seca."
+            </blockquote>
+            <p>
+                Poesía, cuentos y textos de autoras lesbianas para recuperar nuestras narrativas.
+            </p>
+        </div>
 
     </section>
 
 
-    <section class="participa">
+    <!-- SECCIÓN 04: PARTICIPÁ -->
+    <section class="participa tarjeta-contenido" style="text-align: center; background: linear-gradient(135deg, #fdfbf7 0%, #f5f5f5 100%);">
 
         <h2>
             ¿QUERÉS CONTARNOS TU HISTORIA?
         </h2>
-
-        <p>
-            Buscamos historias, poemas, fotografías,
-            experiencias y textos de mujeres lesbianas.
+        <p style="max-width: 600px; margin: 0 auto 20px auto;">
+            Buscamos historias, poemas, fotografías, experiencias y textos de mujeres lesbianas que quieran sumar su voz.
         </p>
-
-        <button>
+        <button style="padding: 12px 24px; background-color: #111111; color: white; border: none; border-radius: 6px; font-weight: bold; cursor: pointer;">
             PARTICIPAR
         </button>
 

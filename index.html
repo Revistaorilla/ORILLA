@@ -229,7 +229,7 @@
             line-height: 1.3;
         }
 
-        /* ESTILO PARA LA BURBUJA / CARTEL DE ÚLTIMO MOMENTO CON ARCOÍRIS 🌈 */
+        /* ESTILO NUEVO: BURBUJA DE ÚLTIMO MOMENTO CON FOTO Y ARCOÍRIS 🌈 */
         .alerta-arcoiris {
             background: linear-gradient(135deg, #fff5f7 0%, #fdf2f8 100%);
             border: 2px solid #e11d48;
@@ -251,11 +251,37 @@
             background: linear-gradient(90deg, #e11d48, #f97316, #eab308, #22c55e, #3b82f6, #a855f7);
         }
 
+        .alerta-grid {
+            display: flex;
+            gap: 20px;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .alerta-imagen {
+            flex: 0 1 260px;
+            text-align: center;
+            margin: 0 auto;
+        }
+
+        .alerta-imagen img {
+            width: 100%;
+            height: 160px;
+            object-fit: cover;
+            border-radius: 10px;
+            border: 2px solid #fda4af;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+        }
+
+        .alerta-contenido {
+            flex: 1 1 400px;
+        }
+
         .alerta-header {
             display: flex;
             align-items: center;
             justify-content: space-between;
-            margin-bottom: 12px;
+            margin-bottom: 10px;
             flex-wrap: wrap;
             gap: 10px;
         }
@@ -265,7 +291,7 @@
             color: #ffffff;
             font-size: 0.75rem;
             font-weight: 900;
-            padding: 5px 12px;
+            padding: 4px 10px;
             border-radius: 20px;
             letter-spacing: 1.2px;
             text-transform: uppercase;
@@ -281,27 +307,18 @@
 
         .alerta-arcoiris h3 {
             color: #881337;
-            margin: 0 0 10px 0;
-            font-size: 1.35rem;
+            margin: 0 0 8px 0;
+            font-size: 1.25rem;
             line-height: 1.3;
             font-weight: 800;
         }
 
         .alerta-sub {
-            font-size: 0.95rem;
+            font-size: 0.9rem;
             font-weight: 600;
             color: #9f1239;
             margin: 0 0 14px 0;
             line-height: 1.4;
-        }
-
-        .alerta-cuerpo {
-            font-size: 0.88rem;
-            color: #333333;
-            line-height: 1.6;
-            margin-bottom: 18px;
-            border-left: 3px solid #f43f5e;
-            padding-left: 12px;
         }
 
         .btn-alerta {
@@ -513,18 +530,22 @@
         </div>
     </section>
 
-    <!-- BURBUJA / CARTEL DE ÚLTIMO MOMENTO CON DETALLE ARCOÍRIS (ENTRE CARRUSELES) -->
+    <!-- BURBUJA / CARTEL DE ÚLTIMO MOMENTO CON FOTO Y ARCOÍRIS 🌈 -->
     <div class="alerta-arcoiris">
-        <div class="alerta-header">
-            <span class="badge-urgente">🚨 ÚLTIMO MOMENTO</span>
-            <span class="alerta-ubicacion">BUENOS AIRES</span>
+        <div class="alerta-grid">
+            <div class="alerta-imagen">
+                <img src="marcha_orgullo.jpg" alt="Marcha del Orgullo CABA">
+            </div>
+            <div class="alerta-contenido">
+                <div class="alerta-header">
+                    <span class="badge-urgente">🚨 ÚLTIMO MOMENTO</span>
+                    <span class="alerta-ubicacion">BUENOS AIRES</span>
+                </div>
+                <h3>Tensión en CABA por la suspensión de la Marcha del Orgullo</h3>
+                <p class="alerta-sub">El Gobierno porteño restringió eventos públicos por la llegada del Papa León XIV y pidió cambiar de fecha la movilización, pero los organizadores ratificaron el 7 de noviembre.</p>
+                <a href="noticia-tension-marcha.html" class="btn-alerta">LEER LA NOTICIA COMPLETA →</a>
+            </div>
         </div>
-        <h3>Tensión en CABA por la suspensión de la Marcha del Orgullo</h3>
-        <p class="alerta-sub">El Gobierno porteño restringió eventos públicos por la llegada del Papa León XIV y pidió cambiar de fecha la movilización, pero los organizadores ratificaron el 7 de noviembre.</p>
-        <div class="alerta-cuerpo">
-            A raíz del masivo operativo de seguridad por la llegada del papa León XIV, el Gobierno porteño prohibió actos masivos en el espacio público entre el 6 y el 13 de noviembre, afectando la 35ª edición de la Marcha del Orgullo LGBT+. Desde la Comisión Organizadora (COMO) rechazaron categóricamente la postergación exigida por la gestión de Jorge Macri, advirtiendo que un cambio imprevisto perjudica a miles de delegaciones y ratificando que la marcha se realizará el 7 de noviembre: <em>“Cuando el odio avanza, el Orgullo en las calles es resistencia”</em>.
-        </div>
-        <a href="noticia-tension-marcha.html" class="btn-alerta">LEER LA NOTICIA COMPLETA →</a>
     </div>
 
     <!-- CARRUSEL 2: ACTUALIDAD Y CULTURA -->

@@ -525,7 +525,7 @@
             <h2>PARTICIPÁ Y JUGÁ CON NOSOTRAS</h2>
         </div>
 
-        <!-- Envío de colaboración general -->
+        <!-- Envío de colaboración general (Sigue mandando mail a Formspree) -->
         <div style="margin-bottom: 25px;">
             <h3 style="color: #701a75; margin-bottom: 5px; font-size: 1.05rem;">Envianos tu material</h3>
             <p style="margin: 0 0 8px 0; font-size: 0.9rem;">Dejanos tu relato, poema, ilustración o reflexión para la próxima edición:</p>
@@ -540,25 +540,25 @@
 
         <hr style="border: none; border-top: 1px solid #f472b6; margin: 20px 0;">
 
-        <!-- BLOQUE JUEGO / CÁDAVER EXQUISITO CON VISUALIZACIÓN DEL POEMA -->
+        <!-- BLOQUE JUEGO / CÁDAVER EXQUISITO CON ACTUALIZACIÓN EN VIVO -->
         <div class="bloque-juego">
             <span class="etiqueta-tarjeta" style="color: #9333ea;">ZONA LÚDICA / ANÓNIMO</span>
             <h3>Jugá un ratito: Cadáver Exquisito Lésbico</h3>
             <p style="font-size: 0.85rem; color: #444; margin-bottom: 8px;">
-                Acá podés leer cómo viene quedando el poema colectivo y sumar tu verso:
+                Escribí tu verso y sumalo al poema colectivo que se va armando abajo:
             </p>
 
-            <!-- Visualización de cómo va quedando el poema -->
-            <div class="poema-en-curso">
+            <!-- Visualización dinámica del poema -->
+            <div id="poema-en-curso" class="poema-en-curso">
                 "Encendemos la noche con fósforos prestados...<br>
                 la memoria arde en las esquinas del sur...<br>
                 tejiendo redes donde el viento no nos alcanza..."
             </div>
-            <small style="color: #666; font-size: 0.8rem; display: block; margin-bottom: 12px;">*(Los versos se van actualizando a medida que los sumamos a la edición)*</small>
+            <small style="color: #666; font-size: 0.8rem; display: block; margin-bottom: 12px;">*(Tus versos se suman automáticamente al poema)*</small>
 
-            <form class="form-juego" action="https://formspree.io/f/xrpbeeol" method="POST">
-                <textarea name="verso_colaboracion_anonima" placeholder="Escribí tu verso para continuar el poema..." required></textarea>
-                <button type="submit" class="btn-link">ENVIAR MI VERSO</button>
+            <form id="form-juego" class="form-juego" onsubmit="guardarVerso(event)">
+                <textarea id="input-verso" name="verso_colaboracion_anonima" placeholder="Escribí tu verso para continuar el poema..." required></textarea>
+                <button type="submit" class="btn-link">SUMAR MI VERSO</button>
             </form>
         </div>
 
@@ -581,8 +581,9 @@
     <small>© 2026 ORILLA</small>
 </footer>
 
-<!-- SCRIPT PARA EL CONTADOR AUTOMÁTICO DE VISITAS -->
+<!-- SCRIPTS DE CONTADOR Y CÁDAVER EXQUISITO -->
 <script>
+    // Contador de visitas
     fetch('https://api.countapi.xyz/hit/revistaorilla-sur/visitas')
         .then(response => response.json())
         .then(data => {
@@ -591,6 +592,32 @@
         .catch(error => {
             document.getElementById('contador-visitas').innerText = '1,420';
         });
+
+    // Recuperar versos guardados al cargar la página
+    document.addEventListener("DOMContentLoaded", function() {
+        let versosGuardados = localStorage.getItem("poema_colectivo_orilla");
+        if (versosGuardados) {
+            document.getElementById("poema-en-curso").innerHTML = versosGuardados;
+        }
+    });
+
+    // Función para sumar versos en vivo
+    function guardarVerso(event) {
+        event.preventDefault();
+        let input = document.getElementById("input-verso");
+        let versoTexto = input.value.trim();
+        
+        if(versoTexto !== "") {
+            let contenedorPoema = document.getElementById("poema-en-curso");
+            contenedorPoema.innerHTML += "<br>" + versoTexto + "...";
+            
+            // Guardamos el estado actual en el navegador de la lectora
+            localStorage.setItem("poema_colectivo_orilla", contenedorPoema.innerHTML);
+            
+            input.value = "";
+            alert("¡Verso sumado al poema colectivo con éxito!");
+        }
+    }
 </script>
 
 </body>

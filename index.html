@@ -229,6 +229,99 @@
             line-height: 1.3;
         }
 
+        /* ESTILO PARA LA BURBUJA / CARTEL DE ÚLTIMO MOMENTO CON ARCOÍRIS 🌈 */
+        .alerta-arcoiris {
+            background: linear-gradient(135deg, #fff5f7 0%, #fdf2f8 100%);
+            border: 2px solid #e11d48;
+            border-radius: 16px;
+            padding: 24px;
+            margin-bottom: 25px;
+            box-shadow: 0 8px 25px rgba(225, 29, 72, 0.12);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .alerta-arcoiris::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 6px;
+            background: linear-gradient(90deg, #e11d48, #f97316, #eab308, #22c55e, #3b82f6, #a855f7);
+        }
+
+        .alerta-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 12px;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .badge-urgente {
+            background: linear-gradient(90deg, #e11d48, #f43f5e);
+            color: #ffffff;
+            font-size: 0.75rem;
+            font-weight: 900;
+            padding: 5px 12px;
+            border-radius: 20px;
+            letter-spacing: 1.2px;
+            text-transform: uppercase;
+            box-shadow: 0 2px 5px rgba(225, 29, 72, 0.3);
+        }
+
+        .alerta-ubicacion {
+            font-size: 0.8rem;
+            color: #9f1239;
+            font-weight: bold;
+            letter-spacing: 0.5px;
+        }
+
+        .alerta-arcoiris h3 {
+            color: #881337;
+            margin: 0 0 10px 0;
+            font-size: 1.35rem;
+            line-height: 1.3;
+            font-weight: 800;
+        }
+
+        .alerta-sub {
+            font-size: 0.95rem;
+            font-weight: 600;
+            color: #9f1239;
+            margin: 0 0 14px 0;
+            line-height: 1.4;
+        }
+
+        .alerta-cuerpo {
+            font-size: 0.88rem;
+            color: #333333;
+            line-height: 1.6;
+            margin-bottom: 18px;
+            border-left: 3px solid #f43f5e;
+            padding-left: 12px;
+        }
+
+        .btn-alerta {
+            display: inline-block;
+            background: linear-gradient(135deg, #a21caf, #e11d48);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 8px;
+            font-weight: bold;
+            text-decoration: none;
+            transition: transform 0.2s ease, opacity 0.2s ease;
+            font-size: 0.85rem;
+            box-shadow: 0 4px 10px rgba(162, 28, 175, 0.2);
+        }
+
+        .btn-alerta:hover {
+            opacity: 0.95;
+            transform: translateY(-2px);
+        }
+
         /* DISEÑO DE DOS COLUMNAS PARA LA SECCIÓN PARTICIPAR / JUGAR */
         .contenedor-dos-columnas {
             display: grid;
@@ -420,6 +513,20 @@
         </div>
     </section>
 
+    <!-- BURBUJA / CARTEL DE ÚLTIMO MOMENTO CON DETALLE ARCOÍRIS (ENTRE CARRUSELES) -->
+    <div class="alerta-arcoiris">
+        <div class="alerta-header">
+            <span class="badge-urgente">🚨 ÚLTIMO MOMENTO</span>
+            <span class="alerta-ubicacion">BUENOS AIRES</span>
+        </div>
+        <h3>Tensión en CABA por la suspensión de la Marcha del Orgullo</h3>
+        <p class="alerta-sub">El Gobierno porteño restringió eventos públicos por la llegada del Papa León XIV y pidió cambiar de fecha la movilización, pero los organizadores ratificaron el 7 de noviembre.</p>
+        <div class="alerta-cuerpo">
+            A raíz del masivo operativo de seguridad por la llegada del papa León XIV, el Gobierno porteño prohibió actos masivos en el espacio público entre el 6 y el 13 de noviembre, afectando la 35ª edición de la Marcha del Orgullo LGBT+. Desde la Comisión Organizadora (COMO) rechazaron categóricamente la postergación exigida por la gestión de Jorge Macri, advirtiendo que un cambio imprevisto perjudica a miles de delegaciones y ratificando que la marcha se realizará el 7 de noviembre: <em>“Cuando el odio avanza, el Orgullo en las calles es resistencia”</em>.
+        </div>
+        <a href="noticia-tension-marcha.html" class="btn-alerta">LEER LA NOTICIA COMPLETA →</a>
+    </div>
+
     <!-- CARRUSEL 2: ACTUALIDAD Y CULTURA -->
     <section id="secciones-interes" class="seccion">
         <div class="titulo-seccion">
@@ -558,17 +665,15 @@
 
 <!-- SCRIPTS: CÁDAVER EXQUISITO Y CONTADOR DE VISITAS -->
 <script>
-    // 1. Lógica del Cadáver Exquisito
     document.addEventListener("DOMContentLoaded", function() {
         let versosGuardados = localStorage.getItem("poema_colectivo_orilla");
         if (versosGuardados) {
             document.getElementById("poema-en-curso").innerHTML = versosGuardados;
         }
 
-        // 2. Lógica del Contador de Visitas Automático
         let visitas = localStorage.getItem("visitas_revista_orilla");
         if (!visitas) {
-            visitas = 1240; // Número base inicial de arranque
+            visitas = 1240; 
         } else {
             visitas = parseInt(visitas) + 1;
         }

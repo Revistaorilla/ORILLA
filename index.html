@@ -73,8 +73,8 @@
         main section {
             border: 2px solid #e879f9;
             border-radius: 12px;
-            padding: 25px;
-            margin-bottom: 30px;
+            padding: 20px;
+            margin-bottom: 25px;
             background-color: #ffffff;
             box-shadow: 0 4px 12px rgba(168, 85, 247, 0.05);
         }
@@ -84,20 +84,20 @@
             align-items: center;
             gap: 12px;
             border-bottom: 2px solid #f472b6;
-            padding-bottom: 8px;
-            margin-bottom: 20px;
+            padding-bottom: 6px;
+            margin-bottom: 15px;
         }
 
         .titulo-seccion span {
             color: #c026d3;
             font-weight: bold;
-            font-size: 1.2rem;
+            font-size: 1.1rem;
         }
 
         .titulo-seccion h2 {
             color: #701a75;
             margin: 0;
-            font-size: 1.3rem;
+            font-size: 1.2rem;
         }
 
         .portada {
@@ -145,29 +145,120 @@
             display: inline-block;
             background-color: #a21caf;
             color: white;
-            padding: 12px 20px;
+            padding: 10px 18px;
             border-radius: 8px;
             font-weight: bold;
             text-decoration: none;
             transition: background-color 0.2s ease;
             border: none;
             cursor: pointer;
-            margin-top: 10px;
+            margin-top: 8px;
+            font-size: 0.9rem;
         }
 
         .btn-link:hover {
             background-color: #c026d3;
         }
 
+        /* ESTILOS DEL CARRUSEL HORIZONTAL */
+        .carrusel-contenedor {
+            display: flex;
+            gap: 15px;
+            overflow-x: auto;
+            scroll-snap-type: x mandatory;
+            padding-bottom: 10px;
+            margin-top: 5px;
+        }
+
+        .tarjeta-carrusel {
+            flex: 0 0 260px;
+            background-color: #fdf2f8;
+            border-left: 4px solid #be185d;
+            border-radius: 0 8px 8px 0;
+            padding: 15px;
+            scroll-snap-align: start;
+            box-shadow: 0 2px 8px rgba(168, 85, 247, 0.05);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .etiqueta-tarjeta {
+            color: #be185d;
+            font-size: 0.7rem;
+            font-weight: bold;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+            display: block;
+            margin-bottom: 4px;
+        }
+
+        .tarjeta-carrusel h3 {
+            color: #701a75;
+            margin: 4px 0 8px 0;
+            font-size: 1rem;
+        }
+
+        .tarjeta-carrusel p {
+            font-size: 0.85rem;
+            color: #444;
+            margin: 0;
+            line-height: 1.3;
+        }
+
+        .carrusel-contenedor::-webkit-scrollbar {
+            height: 6px;
+        }
+        .carrusel-contenedor::-webkit-scrollbar-track {
+            background: #fdf4ff;
+            border-radius: 3px;
+        }
+        .carrusel-contenedor::-webkit-scrollbar-thumb {
+            background: #d946ef;
+            border-radius: 3px;
+        }
+
+        /* FORMULARIO MÁS COMPACTO */
+        .form-participar-compacto {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+            margin-top: 10px;
+        }
+
+        .form-participar-compacto input {
+            padding: 8px 10px;
+            border: 1.5px solid #e879f9;
+            border-radius: 6px;
+            font-family: inherit;
+            font-size: 0.9rem;
+        }
+
+        .form-participar-compacto textarea {
+            grid-column: span 2;
+            height: 70px;
+            padding: 8px 10px;
+            border: 1.5px solid #e879f9;
+            border-radius: 6px;
+            font-family: inherit;
+            resize: vertical;
+            font-size: 0.9rem;
+        }
+
+        .form-participar-compacto button {
+            grid-column: span 2;
+            width: fit-content;
+        }
+
         .lista-items {
             display: flex;
             flex-direction: column;
-            gap: 15px;
+            gap: 12px;
         }
 
         .item-horizontal {
             border-left: 4px solid #be185d;
-            padding: 16px 20px;
+            padding: 14px 18px;
             background-color: #fdf2f8;
             border-radius: 0 8px 8px 0;
         }
@@ -182,59 +273,36 @@
 
         .item-horizontal h3 {
             color: #701a75;
-            margin: 6px 0;
-            font-size: 1.1rem;
+            margin: 4px 0;
+            font-size: 1.05rem;
         }
 
         .item-horizontal p {
-            font-size: 0.92rem;
+            font-size: 0.9rem;
             color: #444;
-            margin: 4px 0 10px 0;
+            margin: 4px 0 8px 0;
             line-height: 1.4;
         }
 
-        .form-participar {
-            display: flex;
-            flex-direction: column;
-            gap: 12px;
-            max-width: 600px;
-            margin-top: 15px;
-        }
-
-        .form-participar input,
-        .form-participar textarea {
-            width: 100%;
-            padding: 10px;
-            border: 1.5px solid #e879f9;
-            border-radius: 6px;
-            font-family: inherit;
-            box-sizing: border-box;
-        }
-
-        .form-participar textarea {
-            height: 100px;
-            resize: vertical;
-        }
-
         .info-correo {
-            margin-top: 15px;
-            font-size: 0.95rem;
+            margin-top: 10px;
+            font-size: 0.85rem;
             color: #4a044e;
         }
 
         footer {
             border: 2px solid #a855f7;
             border-radius: 12px;
-            padding: 24px;
+            padding: 20px;
             text-align: center;
             background-color: #4a044e;
             color: #ffffff;
         }
 
         footer .redes {
-            margin: 10px 0;
+            margin: 8px 0;
             color: #f472b6;
-            font-size: 0.9rem;
+            font-size: 0.85rem;
         }
     </style>
 </head>
@@ -246,16 +314,16 @@
     <p class="subtitulo">Revista lésbica, cultural y del sur</p>
 
     <nav>
+        <a href="#noticias">AGENDA</a>
+        <a href="#actualidad">ACTUALIDAD</a>
+        <a href="#cultura">CULTURA</a>
         <a href="#participa-inicio">PARTICIPÁ</a>
-        <a href="#actualidad">ACTUALIDAD Y DERECHOS</a>
-        <a href="#noticias">AGENDA Y NOTICIAS</a>
-        <a href="#cultura">CULTURA Y LITERATURA</a>
-        <a href="#participa-fin">CONTACTO</a>
     </nav>
 </header>
 
 <main>
 
+    <!-- PORTADA -->
     <section class="portada">
         <div class="portada-texto">
             <span class="categoria">EDICIÓN Nº 01 — MEMORIA LÉSBICA</span>
@@ -273,27 +341,35 @@
         </div>
     </section>
 
-    <section id="participa-inicio" class="participa">
+    <!-- CARRUSEL DE NOTICIAS Y AGENDA (UBICADO EN EL ESPACIO SOLICITADO) -->
+    <section id="noticias" class="seccion">
         <div class="titulo-seccion">
             <span>01</span>
-            <h2>PARTICIPÁ DE LA REVISTA</h2>
+            <h2>AGENDA Y MOVIMIENTO RECIENTE</h2>
         </div>
 
-        <p>Buscamos relatos de vida, poemas, fotos o reflexiones de mujeres lesbianas de todo el país.</p>
+        <div class="carrusel-contenedor">
+            <article class="tarjeta-carrusel">
+                <span class="etiqueta-tarjeta">CALLES Y VISIBILIDAD</span>
+                <h3>La Marcha del Orgullo</h3>
+                <p>Ocupar el espacio público como grito político contra los discursos de odio.</p>
+            </article>
 
-        <form class="form-participar" action="https://formspree.io/f/xrpbeeol" method="POST">
-            <input type="text" name="nombre" placeholder="Tu nombre o seudónimo" required>
-            <input type="email" name="email" placeholder="Tu correo electrónico" required>
-            <input type="text" name="ubicacion" placeholder="Tu ciudad o provincia (ej. Viedma, Río Negro)">
-            <textarea name="mensaje" placeholder="Escribí acá tu texto, poema o lo que quieras compartir..." required></textarea>
-            <button type="submit" class="btn-link">ENVIAR COLABORACIÓN</button>
-        </form>
+            <article class="tarjeta-carrusel">
+                <span class="etiqueta-tarjeta">FEDERALISMO</span>
+                <h3>Encuentro Plurinacional</h3>
+                <p>Participación histórica en talleres autogestivos y redes federales.</p>
+            </article>
 
-        <div class="info-correo">
-            ¿Preferís escribirnos de forma directa? Podes hacerlo a: <strong>contacto@revistaorilla.com</strong>
+            <article class="tarjeta-carrusel">
+                <span class="etiqueta-tarjeta">CULTURA Y ARCHIVO</span>
+                <h3>Fanzines y rescate gráfico</h3>
+                <p>Digitalización de publicaciones históricas de colectivas independientes.</p>
+            </article>
         </div>
     </section>
 
+    <!-- SECCIÓN: ACTUALIDAD Y DERECHOS -->
     <section id="actualidad" class="seccion">
         <div class="titulo-seccion">
             <span>02</span>
@@ -312,40 +388,16 @@
         </div>
     </section>
 
-    <section id="noticias" class="seccion">
-        <div class="titulo-seccion">
-            <span>03</span>
-            <h2>AGENDA Y MOVIMIENTO: MARCHA Y ENCUENTROS</h2>
-        </div>
-
-        <div class="lista-items">
-            <article class="item-horizontal">
-                <span>CALLES Y VISIBILIDAD</span>
-                <h3>La Marcha del Orgullo: Ocupar el espacio público</h3>
-                <p>
-                    Cada movilización es un grito político contra los discursos de odio y una celebración de nuestros amores, alianzas y genealogías disidentes.
-                </p>
-            </article>
-
-            <article class="item-horizontal">
-                <span>FEDERALISMO Y DEBATE</span>
-                <h3>Encuentro Plurinacional: Talleres y organización</h3>
-                <p>
-                    La participación histórica del movimiento lésbico, tortas y transfeminista en los talleres autogestivos de los Encuentros Plurinacionales, tejiendo redes federales.
-                </p>
-            </article>
-        </div>
-    </section>
-
+    <!-- SECCIÓN: CULTURA Y LITERATURA -->
     <section id="cultura" class="literatura">
         <div class="titulo-seccion">
-            <span>04</span>
-            <h2>LESBIANAS, CULTURA, AUTORAS Y LITERATURA</h2>
+            <span>03</span>
+            <h2>LESBIANAS, CULTURA Y LITERATURA</h2>
         </div>
 
         <div class="lista-items">
             <article class="item-horizontal">
-                <span>AUTORAS, DRAMATURGAS Y ARTISTAS</span>
+                <span>AUTORAS Y ARTISTAS</span>
                 <h3>Grandes referentes de las letras argentinas y poesía patagónica</h3>
                 <p>
                     Diana Bellessi, Sylvia Molloy, Macky Corbalán y las nuevas voces poéticas del sur contemporáneo.
@@ -355,23 +407,23 @@
         </div>
     </section>
 
-    <section id="participa-fin" class="participa">
+    <!-- PARTICIPÁ (VERSIÓN REDUCIDA Y COMPACTA) -->
+    <section id="participa-inicio" class="participa">
         <div class="titulo-seccion">
-            <span>05</span>
-            <h2>CONTACTO Y ENVÍOS</h2>
+            <span>04</span>
+            <h2>PARTICIPÁ DE LA REVISTA</h2>
         </div>
-        <p>¿Querés publicar en ORILLA o tenés alguna consulta? Dejanos tu mensaje:</p>
-        
-        <form class="form-participar" action="https://formspree.io/f/xrpbeeol" method="POST">
-            <input type="text" name="nombre" placeholder="Tu nombre o seudónimo" required>
-            <input type="email" name="email" placeholder="Tu correo electrónico" required>
-            <input type="text" name="ubicacion" placeholder="Tu ciudad o provincia">
-            <textarea name="mensaje" placeholder="Escribí tu mensaje o colaboración aquí..." required></textarea>
-            <button type="submit" class="btn-link">ENVIAR COLABORACIÓN</button>
+        <p style="margin: 0 0 8px 0; font-size: 0.9rem;">Dejanos tu relato, poema o reflexión para la próxima edición:</p>
+
+        <form class="form-participar-compacto" action="https://formspree.io/f/xrpbeeol" method="POST">
+            <input type="text" name="nombre" placeholder="Nombre o seudónimo" required>
+            <input type="email" name="email" placeholder="Correo electrónico" required>
+            <textarea name="mensaje" placeholder="Escribí acá tu colaboración..." required></textarea>
+            <button type="submit" class="btn-link">ENVIAR</button>
         </form>
 
         <div class="info-correo">
-            O escribinos directamente a: <strong>contacto@revistaorilla.com</strong>
+            Oscribinos a: <strong>contacto@revistaorilla.com</strong>
         </div>
     </section>
 
@@ -380,7 +432,6 @@
 <footer>
     <div class="logo">ORILLA</div>
     <p>Revista lésbica, cultural y del sur.</p>
-    <p style="margin: 8px 0; color: #f472b6;">Correo: contacto@revistaorilla.com</p>
     <div class="redes">Instagram · TikTok · Podcast</div>
     <small>© 2026 ORILLA</small>
 </footer>

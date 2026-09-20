@@ -227,7 +227,7 @@
             line-height: 1.3;
         }
 
-        /* MINI FORMULARIO DENTRO DE LA TARJETA DEL CARRUSEL */
+        /* MINI FORMULARIO ANÓNIMO DENTRO DE LA TARJETA */
         .form-carrusel {
             display: flex;
             flex-direction: column;
@@ -235,17 +235,14 @@
             margin-top: 6px;
         }
 
-        .form-carrusel input, .form-carrusel textarea {
+        .form-carrusel textarea {
             padding: 6px 8px;
             border: 1px solid #e879f9;
             border-radius: 4px;
             font-family: inherit;
             font-size: 0.8rem;
             background: #fff;
-        }
-
-        .form-carrusel textarea {
-            height: 50px;
+            height: 55px;
             resize: none;
         }
 
@@ -388,7 +385,7 @@
         </div>
     </section>
 
-    <!-- CARRUSEL CON TARJETAS Y EL FORMULARIO INTERACTIVO INTEGRADO -->
+    <!-- CARRUSEL CON TARJETAS Y EL FORMULARIO INTERACTIVO ANÓNIMO -->
     <section id="noticias" class="seccion">
         <div class="titulo-seccion">
             <span>01</span>
@@ -410,18 +407,17 @@
                     <a href="noticia-barracas.html" class="btn-link" style="padding: 6px 12px; font-size: 0.8rem; text-align: center;">LEER NOTA →</a>
                 </article>
 
-                <!-- Tarjeta 2: INTERACTIVA (Cadáver Exquisito en el carrusel) -->
+                <!-- Tarjeta 2: INTERACTIVA ANÓNIMA (Cadáver Exquisito en el carrusel) -->
                 <article class="tarjeta-carrusel" style="background-color: #fae8ff; border-left-color: #9333ea;">
                     <div>
-                        <span class="etiqueta-tarjeta" style="color: #9333ea;">INTERACTIVO / POESÍA</span>
+                        <span class="etiqueta-tarjeta" style="color: #9333ea;">INTERACTIVO / ANÓNIMO</span>
                         <h3>Cadáver Exquisito Lésbico</h3>
                         <p style="font-size: 0.75rem; font-style: italic; margin-bottom: 4px;">"Encendemos la noche con fósforos prestados..."</p>
                         
-                        <!-- Mini formulario integrado -->
+                        <!-- Mini formulario anónimo -->
                         <form class="form-carrusel" action="https://formspree.io/f/xrpbeeol" method="POST">
-                            <input type="text" name="nombre_poeta" placeholder="Tu nombre / seudónimo" required>
-                            <textarea name="verso_colaboracion" placeholder="Sumá tu verso acá..." required></textarea>
-                            <button type="submit">ENVIAR VERSO</button>
+                            <textarea name="verso_colaboracion_anonima" placeholder="Escribí tu verso anónimo acá..." required></textarea>
+                            <button type="submit">ENVIAR ANÓNIMO</button>
                         </form>
                     </div>
                 </article>
@@ -450,14 +446,13 @@
 
                 <article class="tarjeta-carrusel" style="background-color: #fae8ff; border-left-color: #9333ea;">
                     <div>
-                        <span class="etiqueta-tarjeta" style="color: #9333ea;">INTERACTIVO / POESÍA</span>
+                        <span class="etiqueta-tarjeta" style="color: #9333ea;">INTERACTIVO / ANÓNIMO</span>
                         <h3>Cadáver Exquisito Lésbico</h3>
                         <p style="font-size: 0.75rem; font-style: italic; margin-bottom: 4px;">"Encendemos la noche con fósforos prestados..."</p>
                         
                         <form class="form-carrusel" action="https://formspree.io/f/xrpbeeol" method="POST">
-                            <input type="text" name="nombre_poeta" placeholder="Tu nombre / seudónimo" required>
-                            <textarea name="verso_colaboracion" placeholder="Sumá tu verso acá..." required></textarea>
-                            <button type="submit">ENVIAR VERSO</button>
+                            <textarea name="verso_colaboracion_anonima" placeholder="Escribí tu verso anónimo acá..." required></textarea>
+                            <button type="submit">ENVIAR ANÓNIMO</button>
                         </form>
                     </div>
                 </article>

@@ -1,4 +1,391 @@
-<!-- CARRUSEL CON TARJETAS -->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ORILLA — Revista lésbica, cultural y del sur</title>
+
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: system-ui, -apple-system, sans-serif;
+            background-color: #fcf8fa;
+            color: #2b2b2b;
+            margin: 0;
+            padding: 20px;
+        }
+
+        header {
+            border: 2px solid #a855f7;
+            border-radius: 12px;
+            padding: 24px;
+            margin-bottom: 30px;
+            background-color: #ffffff;
+            text-align: center;
+        }
+
+        .logo {
+            font-size: 3.5rem;
+            font-weight: 900;
+            letter-spacing: 4px;
+            margin-bottom: 5px;
+            background: linear-gradient(90deg, #e11d48, #f97316, #eab308, #22c55e, #3b82f6, #a855f7);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            display: inline-block;
+        }
+
+        .subtitulo {
+            font-size: 1.1rem;
+            color: #a21caf;
+            margin-top: 0;
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+
+        nav {
+            background-color: #4a044e;
+            padding: 12px;
+            border-radius: 8px;
+            display: flex;
+            justify-content: center;
+            gap: 18px;
+            flex-wrap: wrap;
+            border-bottom: 4px solid #d946ef;
+        }
+
+        nav a {
+            color: #ffffff;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 0.85rem;
+            letter-spacing: 0.5px;
+            transition: color 0.2s ease;
+        }
+
+        nav a:hover {
+            color: #f472b6;
+        }
+
+        main section {
+            border: 2px solid #e879f9;
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 25px;
+            background-color: #ffffff;
+            box-shadow: 0 4px 12px rgba(168, 85, 247, 0.05);
+        }
+
+        .titulo-seccion {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            border-bottom: 2px solid #f472b6;
+            padding-bottom: 6px;
+            margin-bottom: 15px;
+        }
+
+        .titulo-seccion span {
+            color: #c026d3;
+            font-weight: bold;
+            font-size: 1.1rem;
+        }
+
+        .titulo-seccion h2 {
+            color: #701a75;
+            margin: 0;
+            font-size: 1.2rem;
+        }
+
+        .portada {
+            display: flex;
+            gap: 25px;
+            align-items: center;
+            flex-wrap: wrap;
+            background: linear-gradient(135deg, #ffffff 0%, #fdf4ff 100%);
+        }
+
+        .portada-texto {
+            flex: 1 1 500px;
+        }
+
+        .portada-imagen {
+            flex: 0 1 320px;
+            text-align: center;
+            margin: 0 auto;
+        }
+
+        .portada-imagen img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            border: 1px solid #e879f9;
+        }
+
+        .categoria {
+            color: #be185d;
+            font-weight: bold;
+            font-size: 0.85rem;
+            letter-spacing: 1px;
+            display: block;
+            margin-bottom: 8px;
+        }
+
+        .portada h1 {
+            color: #701a75;
+            font-size: 2rem;
+            margin-top: 0;
+            line-height: 1.2;
+        }
+
+        .btn-link {
+            display: inline-block;
+            background-color: #a21caf;
+            color: white;
+            padding: 10px 18px;
+            border-radius: 8px;
+            font-weight: bold;
+            text-decoration: none;
+            transition: background-color 0.2s ease;
+            border: none;
+            cursor: pointer;
+            margin-top: 8px;
+            font-size: 0.9rem;
+        }
+
+        .btn-link:hover {
+            background-color: #c026d3;
+        }
+
+        /* CARRUSEL AUTOMÁTICO CON MOVIMIENTO Y DESLIZAMIENTO */
+        .carrusel-ventana {
+            overflow: hidden;
+            width: 100%;
+            padding: 10px 0;
+        }
+
+        .carrusel-pistas {
+            display: flex;
+            gap: 20px;
+            width: max-content;
+            animation: desplazarCarrusel 38s linear infinite;
+        }
+
+        .carrusel-pistas:hover {
+            animation-play-state: paused;
+        }
+
+        @keyframes desplazarCarrusel {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(calc(-315px * 4 - 80px)); }
+        }
+
+        .tarjeta-carrusel {
+            flex: 0 0 315px;
+            background-color: #fdf2f8;
+            border-left: 4px solid #be185d;
+            border-radius: 0 8px 8px 0;
+            padding: 15px;
+            box-shadow: 0 2px 8px rgba(168, 85, 247, 0.05);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .tarjeta-carrusel img {
+            width: 100%;
+            height: 130px;
+            object-fit: cover;
+            border-radius: 6px;
+            margin-bottom: 8px;
+            border: 1px solid #f472b6;
+        }
+
+        .etiqueta-tarjeta {
+            color: #be185d;
+            font-size: 0.7rem;
+            font-weight: bold;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+            display: block;
+            margin-bottom: 4px;
+        }
+
+        .tarjeta-carrusel h3 {
+            color: #701a75;
+            margin: 4px 0 6px 0;
+            font-size: 0.95rem;
+        }
+
+        .tarjeta-carrusel p {
+            font-size: 0.8rem;
+            color: #444;
+            margin: 0 0 8px 0;
+            line-height: 1.3;
+        }
+
+        /* MINI FORMULARIO ANÓNIMO DENTRO DE LA TARJETA */
+        .form-carrusel {
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+            margin-top: 6px;
+        }
+
+        .form-carrusel textarea {
+            padding: 6px 8px;
+            border: 1px solid #e879f9;
+            border-radius: 4px;
+            font-family: inherit;
+            font-size: 0.8rem;
+            background: #fff;
+            height: 55px;
+            resize: none;
+        }
+
+        .form-carrusel button {
+            background-color: #a21caf;
+            color: white;
+            border: none;
+            padding: 6px;
+            border-radius: 4px;
+            font-weight: bold;
+            font-size: 0.75rem;
+            cursor: pointer;
+            transition: background-color 0.2s;
+        }
+
+        .form-carrusel button:hover {
+            background-color: #c026d3;
+        }
+
+        /* FORMULARIO GENERAL */
+        .form-participar-compacto {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+            margin-top: 10px;
+        }
+
+        .form-participar-compacto input {
+            padding: 8px 10px;
+            border: 1.5px solid #e879f9;
+            border-radius: 6px;
+            font-family: inherit;
+            font-size: 0.9rem;
+        }
+
+        .form-participar-compacto textarea {
+            grid-column: span 2;
+            height: 70px;
+            padding: 8px 10px;
+            border: 1.5px solid #e879f9;
+            border-radius: 6px;
+            font-family: inherit;
+            resize: vertical;
+            font-size: 0.9rem;
+        }
+
+        .form-participar-compacto button {
+            grid-column: span 2;
+            width: fit-content;
+        }
+
+        .lista-items {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .item-horizontal {
+            border-left: 4px solid #be185d;
+            padding: 14px 18px;
+            background-color: #fdf2f8;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .item-horizontal span {
+            color: #be185d;
+            font-size: 0.75rem;
+            font-weight: bold;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+        }
+
+        .item-horizontal h3 {
+            color: #701a75;
+            margin: 4px 0;
+            font-size: 1.05rem;
+        }
+
+        .item-horizontal p {
+            font-size: 0.9rem;
+            color: #444;
+            margin: 4px 0 8px 0;
+            line-height: 1.4;
+        }
+
+        .info-correo {
+            margin-top: 10px;
+            font-size: 0.85rem;
+            color: #4a044e;
+        }
+
+        footer {
+            border: 2px solid #a855f7;
+            border-radius: 12px;
+            padding: 20px;
+            text-align: center;
+            background-color: #4a044e;
+            color: #ffffff;
+        }
+
+        footer .redes {
+            margin: 8px 0;
+            color: #f472b6;
+            font-size: 0.85rem;
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <div class="logo">ORILLA</div>
+    <p class="subtitulo">Revista lésbica, cultural y del sur</p>
+
+    <nav>
+        <a href="#noticias">AGENDA Y NOTICIAS</a>
+        <a href="#actualidad">ACTUALIDAD</a>
+        <a href="#cultura">CULTURA</a>
+        <a href="#participa-inicio">PARTICIPÁ</a>
+    </nav>
+</header>
+
+<main>
+
+    <!-- PORTADA -->
+    <section class="portada">
+        <div class="portada-texto">
+            <span class="categoria">EDICIÓN Nº 01 — MEMORIA LÉSBICA</span>
+            <h1>¿Dónde están las lesbianas?<br><small style="font-size: 1.1rem; color: #a21caf;">Cuatro hitos de la historia real en Argentina</small></h1>
+            
+            <p>
+                La historia lésbica en Argentina se escribió rompiendo el silencio, ocupando las calles y transformando el dolor en memoria organizada:
+            </p>
+
+            <a href="historia-lesbica.html" class="btn-link">CONTINUAR LEYENDO LA HISTORIA COMPLETA →</a>
+        </div>
+
+        <div class="portada-imagen">
+            <img src="foto_escritoras.jpeg" alt="Escritoras lesbianas">
+        </div>
+    </section>
+
+    <!-- CARRUSEL CON TARJETAS -->
     <section id="noticias" class="seccion">
         <div class="titulo-seccion">
             <span>01</span>
@@ -45,7 +432,7 @@
                     </div>
                 </article>
 
-                <!-- Tarjeta 4: Encuentro Plurinacional (Actualizada con las grupas y Córdoba 2026) -->
+                <!-- Tarjeta 4: Encuentro Plurinacional (Córdoba 2026) -->
                 <article class="tarjeta-carrusel">
                     <div>
                         <img src="foto_escritoras.jpeg" alt="Encuentro Plurinacional Córdoba">
@@ -103,3 +490,73 @@
             </div>
         </div>
     </section>
+
+    <!-- SECCIÓN: ACTUALIDAD Y DERECHOS -->
+    <section id="actualidad" class="seccion">
+        <div class="titulo-seccion">
+            <span>02</span>
+            <h2>ACTUALIDAD Y DERECHOS</h2>
+        </div>
+
+        <div class="lista-items">
+            <article class="item-horizontal">
+                <span>ACTUALIDAD / MEMORIA E HISTORIA</span>
+                <h3>Archivos comunitarios, rescate gráfico y redes de ayuda</h3>
+                <p>
+                    Colectivas independientes, fanzines históricos, repositorios de la CHA y recursos de asesoramiento legal y contención en Argentina.
+                </p>
+                <a href="actualidad.html" class="btn-link">CONTINUAR LEYENDO LA SECCIÓN COMPLETA →</a>
+            </article>
+        </div>
+    </section>
+
+    <!-- SECCIÓN: CULTURA Y LITERATURA -->
+    <section id="cultura" class="literatura">
+        <div class="titulo-seccion">
+            <span>03</span>
+            <h2>LESBIANAS, CULTURA Y LITERATURA</h2>
+        </div>
+
+        <div class="lista-items">
+            <article class="item-horizontal">
+                <span>AUTORAS Y ARTISTAS</span>
+                <h3>Grandes referentes de las letras argentinas y poesía patagónica</h3>
+                <p>
+                    Diana Bellessi, Sylvia Molloy, Macky Corbalán y las nuevas voces poéticas del sur contemporáneo.
+                </p>
+                <a href="cultura.html" class="btn-link">CONTINUAR LEYENDO LA SECCIÓN COMPLETA →</a>
+            </article>
+        </div>
+    </section>
+
+    <!-- PARTICIPÁ (COMPACTO) -->
+    <section id="participa-inicio" class="participa">
+        <div class="titulo-seccion">
+            <span>04</span>
+            <h2>PARTICIPÁ DE LA REVISTA</h2>
+        </div>
+        <p style="margin: 0 0 8px 0; font-size: 0.9rem;">Dejanos tu relato, poema o reflexión para la próxima edición:</p>
+
+        <form class="form-participar-compacto" action="https://formspree.io/f/xrpbeeol" method="POST">
+            <input type="text" name="nombre" placeholder="Nombre o seudónimo" required>
+            <input type="email" name="email" placeholder="Correo electrónico" required>
+            <textarea name="mensaje" placeholder="Escribí acá tu colaboración..." required></textarea>
+            <button type="submit" class="btn-link">ENVIAR</button>
+        </form>
+
+        <div class="info-correo">
+            O escribinos a: <strong>contacto@revistaorilla.com</strong>
+        </div>
+    </section>
+
+</main>
+
+<footer>
+    <div class="logo">ORILLA</div>
+    <p>Revista lésbica, cultural y del sur.</p>
+    <div class="redes">Instagram · TikTok · Podcast</div>
+    <small>© 2026 ORILLA</small>
+</footer>
+
+</body>
+</html>

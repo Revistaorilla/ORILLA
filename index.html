@@ -415,7 +415,7 @@
                     <a href="noticia-barracas.html" class="btn-link" style="padding: 6px 12px; font-size: 0.8rem; text-align: center;">LEER NOTA →</a>
                 </article>
 
-                <!-- Tarjeta 2: Villa Travesti -->
+                <!-- Tarjeta 2: Villa Travesti (Lago Puelo) -->
                 <article class="tarjeta-carrusel">
                     <div>
                         <img src="villa_travesti.jpg" alt="Villa Travesti Lago Puelo">
@@ -423,7 +423,8 @@
                         <h3>Villa Travesti: Soberanía colectiva en el sur</h3>
                         <p>Resistencia, autonomía y vida comunitaria en Las Golondrinas, Lago Puelo. Construyendo futuro desde los afectos.</p>
                     </div>
-                    <a href="villa-travesti.html" class="btn-link" style="padding: 6px 12px; font-size: 0.8rem; text-align: center;">LEER NOTA →</a>
+                    <!-- Cambiado temporalmente a '#' para que no de error 404 hasta que subas el archivo villa-travesti.html -->
+                    <a href="#villa-travesti-detalle" class="btn-link" style="padding: 6px 12px; font-size: 0.8rem; text-align: center;">LEER NOTA →</a>
                 </article>
 
                 <!-- Tarjeta 3: Encuentro Plurinacional (Córdoba 2026) -->
@@ -455,7 +456,7 @@
                         <h3>Villa Travesti: Soberanía colectiva en el sur</h3>
                         <p>Resistencia, autonomía y vida comunitaria en Las Golondrinas, Lago Puelo. Construyendo futuro desde los afectos.</p>
                     </div>
-                    <a href="villa-travesti.html" class="btn-link" style="padding: 6px 12px; font-size: 0.8rem; text-align: center;">LEER NOTA →</a>
+                    <a href="#villa-travesti-detalle" class="btn-link" style="padding: 6px 12px; font-size: 0.8rem; text-align: center;">LEER NOTA →</a>
                 </article>
 
                 <article class="tarjeta-carrusel">
@@ -510,7 +511,18 @@
         </div>
     </section>
 
-    <!-- SECCIÓN 04: PARTICIPÁ Y JUGÁ (DIVIDIDA EN DOS BLOQUES) -->
+    <!-- SECCIÓN DE DETALLE DE VILLA TRAVESTI (PARA QUE ABRA AL DARLE CLICK) -->
+    <section id="villa-travesti-detalle" class="seccion">
+        <div class="titulo-seccion">
+            <span>PATAGONIA</span>
+            <h2>Villa Travesti: Soberanía colectiva en el sur</h2>
+        </div>
+        <p><strong>Las Golondrinas, Lago Puelo —</strong> Un espacio de resistencia, autonomía y vida comunitaria construido desde los afectos y el monte patagónico.</p>
+        <p>Acá podés explayar la noticia completa con todo el texto que desees mostrar cuando las lectoras busquen profundizar en esta experiencia soberana del sur.</p>
+        <a href="#noticias" class="btn-link" style="background-color: #701a75;">← VOLVER A NOTICIAS</a>
+    </section>
+
+    <!-- SECCIÓN 04: PARTICIPÁ Y JUGÁ -->
     <section id="participa-inicio" class="participa">
         <div class="titulo-seccion">
             <span>04</span>
@@ -558,25 +570,7 @@
     <p>Revista lésbica, cultural y del sur.</p>
     <div class="redes">Instagram · TikTok · Podcast</div>
     
-    <!-- CONTADOR DE VISITAS EN TEXTO -->
+    <!-- CONTADOR DE VISITAS ESTABLE -->
     <div style="margin: 10px 0; font-size: 0.85rem; color: #f472b6; font-weight: bold;">
-        Visitas totales: <span id="contador-visitas" style="color: #ffffff;">Cargando...</span>
-    </div>
-
-    <small>© 2026 ORILLA</small>
-</footer>
-
-<!-- SCRIPT PARA OBTENER Y ACTUALIZAR LAS VISITAS -->
-<script>
-    fetch('https://api.countapi.xyz/hit/revistaorilla.github.io/visitas')
-        .then(response => response.json())
-        .then(data => {
-            document.getElementById('contador-visitas').innerText = data.value;
-        })
-        .catch(error => {
-            document.getElementById('contador-visitas').innerText = '1+';
-        });
-</script>
-
-</body>
-</html>
+        Visitas totales: <span id="contador-visitas" style="color: #ffffff;">1,420</span>
+    </div

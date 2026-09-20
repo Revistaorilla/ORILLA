@@ -160,27 +160,49 @@
             background-color: #c026d3;
         }
 
-        /* ESTILOS DEL CARRUSEL HORIZONTAL */
-        .carrusel-contenedor {
+        /* CARRUSEL AUTOMÁTICO CON MOVIMIENTO Y DESLIZAMIENTO */
+        .carrusel-ventana {
+            overflow: hidden;
+            width: 100%;
+            padding: 10px 0;
+        }
+
+        .carrusel-pistas {
             display: flex;
-            gap: 15px;
-            overflow-x: auto;
-            scroll-snap-type: x mandatory;
-            padding-bottom: 10px;
-            margin-top: 5px;
+            gap: 20px;
+            width: max-content;
+            animation: desplazarCarrusel 25s linear infinite;
+        }
+
+        /* Pausa el movimiento automático cuando apoyás el mouse encima para poder leer o hacer clic */
+        .carrusel-pistas:hover {
+            animation-play-state: paused;
+        }
+
+        @keyframes desplazarCarrusel {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(calc(-300px * 3 - 60px)); }
         }
 
         .tarjeta-carrusel {
-            flex: 0 0 260px;
+            flex: 0 0 300px;
             background-color: #fdf2f8;
             border-left: 4px solid #be185d;
             border-radius: 0 8px 8px 0;
             padding: 15px;
-            scroll-snap-align: start;
             box-shadow: 0 2px 8px rgba(168, 85, 247, 0.05);
             display: flex;
             flex-direction: column;
             justify-content: space-between;
+        }
+
+        .tarjeta-carrusel img {
+            width: 100%;
+            height: 140px;
+            object-fit: cover;
+            border-radius: 6px;
+            margin-bottom: 10px;
+            border: 1px solid #f472b6;
         }
 
         .etiqueta-tarjeta {
@@ -202,23 +224,11 @@
         .tarjeta-carrusel p {
             font-size: 0.85rem;
             color: #444;
-            margin: 0;
+            margin: 0 0 10px 0;
             line-height: 1.3;
         }
 
-        .carrusel-contenedor::-webkit-scrollbar {
-            height: 6px;
-        }
-        .carrusel-contenedor::-webkit-scrollbar-track {
-            background: #fdf4ff;
-            border-radius: 3px;
-        }
-        .carrusel-contenedor::-webkit-scrollbar-thumb {
-            background: #d946ef;
-            border-radius: 3px;
-        }
-
-        /* FORMULARIO MÁS COMPACTO */
+        /* FORMULARIO COMPACTO */
         .form-participar-compacto {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -314,7 +324,7 @@
     <p class="subtitulo">Revista lésbica, cultural y del sur</p>
 
     <nav>
-        <a href="#noticias">AGENDA</a>
+        <a href="#noticias">AGENDA Y NOTICIAS</a>
         <a href="#actualidad">ACTUALIDAD</a>
         <a href="#cultura">CULTURA</a>
         <a href="#participa-inicio">PARTICIPÁ</a>
@@ -341,31 +351,82 @@
         </div>
     </section>
 
-    <!-- CARRUSEL DE NOTICIAS Y AGENDA (UBICADO EN EL ESPACIO SOLICITADO) -->
+    <!-- CARRUSEL DE NOTICIAS CON MOVIMIENTO AUTOMÁTICO E IMÁGENES -->
     <section id="noticias" class="seccion">
         <div class="titulo-seccion">
             <span>01</span>
-            <h2>AGENDA Y MOVIMIENTO RECIENTE</h2>
+            <h2>AGENDA Y NOTICIAS RECIENTES</h2>
         </div>
+        <p style="margin: 0 0 10px 0; font-size: 0.85rem; color: #666;">Las tarjetas se desplazan solas (podes apoyar el mouse para pausar).</p>
 
-        <div class="carrusel-contenedor">
-            <article class="tarjeta-carrusel">
-                <span class="etiqueta-tarjeta">CALLES Y VISIBILIDAD</span>
-                <h3>La Marcha del Orgullo</h3>
-                <p>Ocupar el espacio público como grito político contra los discursos de odio.</p>
-            </article>
+        <div class="carrusel-ventana">
+            <div class="carrusel-pistas">
+                
+                <!-- Noticia 1: Triple Lesbicidio de Barracas -->
+                <article class="tarjeta-carrusel">
+                    <div>
+                        <img src="barracas.jpeg" alt="Juicio Lesbicidio de Barracas">
+                        <span class="etiqueta-tarjeta">JUSTICIA / BARRACAS</span>
+                        <h3>Juicio final por el triple lesbicidio</h3>
+                        <p>A dos años del ataque en la pensión, el juicio contra Barrientos entra en alegatos exigiendo condena por crimen de odio.</p>
+                    </div>
+                    <a href="noticia-barracas.html" class="btn-link" style="padding: 6px 12px; font-size: 0.8rem; text-align: center;">LEER NOTA →</a>
+                </article>
 
-            <article class="tarjeta-carrusel">
-                <span class="etiqueta-tarjeta">FEDERALISMO</span>
-                <h3>Encuentro Plurinacional</h3>
-                <p>Participación histórica en talleres autogestivos y redes federales.</p>
-            </article>
+                <!-- Noticia 2: Marcha del Orgullo -->
+                <article class="tarjeta-carrusel">
+                    <div>
+                        <img src="orgullo.jpeg" alt="Marcha del Orgullo">
+                        <span class="etiqueta-tarjeta">CALLES Y VISIBILIDAD</span>
+                        <h3>La Marcha del Orgullo</h3>
+                        <p>Ocupar el espacio público como grito político contra los discursos de odio y defensa de derechos.</p>
+                    </div>
+                    <a href="#" class="btn-link" style="padding: 6px 12px; font-size: 0.8rem; text-align: center;">LEER NOTA →</a>
+                </article>
 
-            <article class="tarjeta-carrusel">
-                <span class="etiqueta-tarjeta">CULTURA Y ARCHIVO</span>
-                <h3>Fanzines y rescate gráfico</h3>
-                <p>Digitalización de publicaciones históricas de colectivas independientes.</p>
-            </article>
+                <!-- Noticia 3: Encuentro Plurinacional -->
+                <article class="tarjeta-carrusel">
+                    <div>
+                        <img src="encuentro.jpeg" alt="Encuentro Plurinacional">
+                        <span class="etiqueta-tarjeta">FEDERALISMO</span>
+                        <h3>Encuentro Plurinacional</h3>
+                        <p>Participación histórica en talleres autogestivos tejiendo redes federales y comunitarias.</p>
+                    </div>
+                    <a href="#" class="btn-link" style="padding: 6px 12px; font-size: 0.8rem; text-align: center;">LEER NOTA →</a>
+                </article>
+
+                <!-- Duplicamos las mismas tarjetas para que el movimiento fluido automático sea continuo e infinito -->
+                <article class="tarjeta-carrusel">
+                    <div>
+                        <img src="barracas.jpeg" alt="Juicio Lesbicidio de Barracas">
+                        <span class="etiqueta-tarjeta">JUSTICIA / BARRACAS</span>
+                        <h3>Juicio final por el triple lesbicidio</h3>
+                        <p>A dos años del ataque en la pensión, el juicio contra Barrientos entra en alegatos exigiendo condena por crimen de odio.</p>
+                    </div>
+                    <a href="noticia-barracas.html" class="btn-link" style="padding: 6px 12px; font-size: 0.8rem; text-align: center;">LEER NOTA →</a>
+                </article>
+
+                <article class="tarjeta-carrusel">
+                    <div>
+                        <img src="orgullo.jpeg" alt="Marcha del Orgullo">
+                        <span class="etiqueta-tarjeta">CALLES Y VISIBILIDAD</span>
+                        <h3>La Marcha del Orgullo</h3>
+                        <p>Ocupar el espacio público como grito político contra los discursos de odio y defensa de derechos.</p>
+                    </div>
+                    <a href="#" class="btn-link" style="padding: 6px 12px; font-size: 0.8rem; text-align: center;">LEER NOTA →</a>
+                </article>
+
+                <article class="tarjeta-carrusel">
+                    <div>
+                        <img src="encuentro.jpeg" alt="Encuentro Plurinacional">
+                        <span class="etiqueta-tarjeta">FEDERALISMO</span>
+                        <h3>Encuentro Plurinacional</h3>
+                        <p>Participación histórica en talleres autogestivos tejiendo redes federales y comunitarias.</p>
+                    </div>
+                    <a href="#" class="btn-link" style="padding: 6px 12px; font-size: 0.8rem; text-align: center;">LEER NOTA →</a>
+                </article>
+
+            </div>
         </div>
     </section>
 
@@ -407,7 +468,7 @@
         </div>
     </section>
 
-    <!-- PARTICIPÁ (VERSIÓN REDUCIDA Y COMPACTA) -->
+    <!-- PARTICIPÁ (COMPACTO) -->
     <section id="participa-inicio" class="participa">
         <div class="titulo-seccion">
             <span>04</span>
@@ -423,7 +484,7 @@
         </form>
 
         <div class="info-correo">
-            Oscribinos a: <strong>contacto@revistaorilla.com</strong>
+            O escribinos a: <strong>contacto@revistaorilla.com</strong>
         </div>
     </section>
 

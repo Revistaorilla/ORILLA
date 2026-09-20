@@ -230,28 +230,6 @@
             line-height: 1.3;
         }
 
-        /* CONTENIDO EXTENDIDO DENTRO DE LA TARJETA (ACORDEÓN FIJO) */
-        .contenido-extendido {
-            max-height: 0;
-            overflow: hidden;
-            transition: max-height 0.4s ease-out;
-            font-size: 0.75rem;
-            color: #333;
-            line-height: 1.3;
-        }
-
-        .tarjeta-carrusel.expandida {
-            background-color: #fae8ff;
-        }
-
-        .tarjeta-carrusel.expandida .contenido-extendido {
-            max-height: 220px; 
-            padding-top: 6px;
-            border-top: 1px dashed #f472b6;
-            margin-top: 6px;
-            overflow-y: auto; 
-        }
-
         /* FORMULARIO GENERAL COMPACTO */
         .form-participar-compacto {
             display: grid;
@@ -440,22 +418,15 @@
                     <a href="noticia-barracas.html" class="btn-link" style="padding: 6px 12px; font-size: 0.8rem; text-align: center;">LEER NOTA →</a>
                 </article>
 
-                <!-- Tarjeta 2: Villa Travesti (Lago Puelo) - Con flecha horizontal -->
-                <article class="tarjeta-carrusel tarjeta-puelo">
+                <!-- Tarjeta 2: Villa Travesti (Lago Puelo) - Corregida a enlace -->
+                <article class="tarjeta-carrusel">
                     <div>
                         <img src="villa_travesti.jpg" alt="Villa Travesti Lago Puelo">
                         <span class="etiqueta-tarjeta">PATAGONIA / SOBERANÍA</span>
                         <h3>Villa Travesti: Soberanía colectiva en el sur</h3>
-                        <p>Resistencia, autonomía y vida comunitaria en Las Golondrinas, Lago Puelo.</p>
-                        
-                        <!-- Contenido desplegable interno -->
-                        <div class="contenido-extendido">
-                            <p><strong>Las Golondrinas, Lago Puelo —</strong> En el corazón del valle patagónico, un entramado de autonomías y resistencia comunitaria gesta una de las experiencias políticas más potentes.</p>
-                            <p>Lejos de las lógicas individualistas, Villa Travesti se consolida como un refugio y territorio soberano de cuerpas disidentes. La tierra se trabaja de manera colectiva.</p>
-                            <p><em>"Construimos futuro desde la ternura radical"</em>, señalan las compañeras.</p>
-                        </div>
+                        <p>Resistencia, autonomía y vida comunitaria en Las Golondrinas, Lago Puelo, construyendo futuro desde los afectos.</p>
                     </div>
-                    <button class="btn-link btn-alternar-puelo" style="padding: 6px 12px; font-size: 0.8rem; text-align: center; width: 100%;">LEER NOTA →</button>
+                    <a href="noticia-villa-travesti.html" class="btn-link" style="padding: 6px 12px; font-size: 0.8rem; text-align: center;">LEER NOTA →</a>
                 </article>
 
                 <!-- Tarjeta 3: Encuentro Plurinacional (Córdoba 2026) -->
@@ -480,21 +451,14 @@
                     <a href="noticia-barracas.html" class="btn-link" style="padding: 6px 12px; font-size: 0.8rem; text-align: center;">LEER NOTA →</a>
                 </article>
 
-                <!-- Duplicado Tarjeta 2 (Villa Travesti) -->
-                <article class="tarjeta-carrusel tarjeta-puelo">
+                <article class="tarjeta-carrusel">
                     <div>
                         <img src="villa_travesti.jpg" alt="Villa Travesti Lago Puelo">
                         <span class="etiqueta-tarjeta">PATAGONIA / SOBERANÍA</span>
                         <h3>Villa Travesti: Soberanía colectiva en el sur</h3>
-                        <p>Resistencia, autonomía y vida comunitaria en Las Golondrinas, Lago Puelo.</p>
-                        
-                        <div class="contenido-extendido">
-                            <p><strong>Las Golondrinas, Lago Puelo —</strong> En el corazón del valle patagónico, un entramado de autonomías y resistencia comunitaria gesta una de las experiencias políticas más potentes.</p>
-                            <p>Lejos de las lógicas individualistas, Villa Travesti se consolida como un refugio y territorio soberano de cuerpas disidentes. La tierra se trabaja de manera colectiva.</p>
-                            <p><em>"Construimos futuro desde la ternura radical"</em>, señalan las compañeras.</p>
-                        </div>
+                        <p>Resistencia, autonomía y vida comunitaria en Las Golondrinas, Lago Puelo, construyendo futuro desde los afectos.</p>
                     </div>
-                    <button class="btn-link btn-alternar-puelo" style="padding: 6px 12px; font-size: 0.8rem; text-align: center; width: 100%;">LEER NOTA →</button>
+                    <a href="noticia-villa-travesti.html" class="btn-link" style="padding: 6px 12px; font-size: 0.8rem; text-align: center;">LEER NOTA →</a>
                 </article>
 
                 <article class="tarjeta-carrusel">
@@ -549,7 +513,7 @@
         </div>
     </section>
 
-    <!-- SECCIÓN 04: PARTICIPÁ Y JUGÁ (RESTAURADA) -->
+    <!-- SECCIÓN 04: PARTICIPÁ Y JUGÁ -->
     <section id="participa-inicio" class="participa">
         <div class="titulo-seccion">
             <span>04</span>
@@ -603,39 +567,6 @@
 
     <small>© 2026 ORILLA</small>
 </footer>
-
-<!-- SCRIPT DEL ACORDEÓN -->
-<script>
-    document.addEventListener("DOMContentLoaded", function() {
-        const botonesPuelo = document.querySelectorAll('.btn-alternar-puelo');
-        
-        botonesPuelo.forEach(function(boton) {
-            boton.addEventListener('click', function(e) {
-                e.preventDefault();
-                const tarjeta = this.closest('.tarjeta-puelo');
-                
-                if (tarjeta) {
-                    const estaExpandida = tarjeta.classList.contains('expandida');
-                    
-                    // Cierra todas las copias o tarjetas abiertas de puelo
-                    document.querySelectorAll('.tarjeta-puelo').forEach(t => {
-                        t.classList.remove('expandida');
-                        const b = t.querySelector('.btn-alternar-puelo');
-                        if (b) b.textContent = "LEER NOTA →";
-                    });
-
-                    if (!estaExpandida) {
-                        tarjeta.classList.add('expandida');
-                        this.textContent = "CERRAR NOTA ←";
-                    } else {
-                        tarjeta.classList.remove('expandida');
-                        this.textContent = "LEER NOTA →";
-                    }
-                }
-            });
-        });
-    });
-</script>
 
 </body>
 </html>

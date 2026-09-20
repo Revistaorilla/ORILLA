@@ -171,7 +171,6 @@
             display: flex;
             gap: 20px;
             width: max-content;
-            /* Ajustado el tiempo para que fluya cómodo con 4 tarjetas principales */
             animation: desplazarCarrusel 38s linear infinite;
         }
 
@@ -181,7 +180,6 @@
 
         @keyframes desplazarCarrusel {
             0% { transform: translateX(0); }
-            /* Se actualizó el cálculo tomando en cuenta las 4 tarjetas (315px de ancho + 20px de gap) */
             100% { transform: translateX(calc(-315px * 4 - 80px)); }
         }
 
@@ -387,7 +385,7 @@
         </div>
     </section>
 
-    <!-- CARRUSEL CON TARJETAS (INCLUYENDO VILLA TRAVESTI) -->
+    <!-- CARRUSEL CON TARJETAS -->
     <section id="noticias" class="seccion">
         <div class="titulo-seccion">
             <span>01</span>
@@ -409,10 +407,10 @@
                     <a href="noticia-barracas.html" class="btn-link" style="padding: 6px 12px; font-size: 0.8rem; text-align: center;">LEER NOTA →</a>
                 </article>
 
-                <!-- Tarjeta 2: Villa Travesti (NUEVA) -->
+                <!-- Tarjeta 2: Villa Travesti (CAMBIAR AQUÍ EL NOMBRE DE LA FOTO SI ES NECESARIO) -->
                 <article class="tarjeta-carrusel">
                     <div>
-                        <img src="foto_escritoras.jpeg" alt="Villa Travesti Lago Puelo">
+                        <img src="villa_travesti.jpg" alt="Villa Travesti Lago Puelo">
                         <span class="etiqueta-tarjeta">PATAGONIA / SOBERANÍA</span>
                         <h3>Villa Travesti: Soberanía colectiva en el sur</h3>
                         <p>Resistencia, autonomía y vida comunitaria en Las Golondrinas, Lago Puelo. Construyendo futuro desde los afectos.</p>
@@ -445,7 +443,7 @@
                     <a href="#" class="btn-link" style="padding: 6px 12px; font-size: 0.8rem; text-align: center;">LEER NOTA →</a>
                 </article>
 
-                <!-- DUPLICADOS PARA MANTENER EL EFECTO DE MOVIMIENTO INFINITO FLUIDO -->
+                <!-- DUPLICADOS PARA EL MOVIMIENTO INFINITO -->
                 <article class="tarjeta-carrusel">
                     <div>
                         <img src="barracas.jpeg" alt="Juicio Lesbicidio de Barracas">
@@ -458,7 +456,7 @@
 
                 <article class="tarjeta-carrusel">
                     <div>
-                        <img src="foto_escritoras.jpeg" alt="Villa Travesti Lago Puelo">
+                        <img src="villa_travesti.jpg" alt="Villa Travesti Lago Puelo">
                         <span class="etiqueta-tarjeta">PATAGONIA / SOBERANÍA</span>
                         <h3>Villa Travesti: Soberanía colectiva en el sur</h3>
                         <p>Resistencia, autonomía y vida comunitaria en Las Golondrinas, Lago Puelo. Construyendo futuro desde los afectos.</p>

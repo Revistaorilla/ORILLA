@@ -239,7 +239,7 @@
         }
 
         .form-participar-compacto input {
-            padding: 8px 10px;
+            padding: 10px;
             border: 1.5px solid #e879f9;
             border-radius: 6px;
             font-family: inherit;
@@ -248,8 +248,8 @@
 
         .form-participar-compacto textarea {
             grid-column: span 2;
-            height: 70px;
-            padding: 8px 10px;
+            height: 90px;
+            padding: 10px;
             border: 1.5px solid #e879f9;
             border-radius: 6px;
             font-family: inherit;
@@ -260,83 +260,6 @@
         .form-participar-compacto button {
             grid-column: span 2;
             width: fit-content;
-        }
-
-        /* BLOQUE JUEGO / CÁDAVER EXQUISITO */
-        .bloque-juego {
-            background: linear-gradient(135deg, #fae8ff 0%, #fdf4ff 100%);
-            border: 2px dashed #c026d3;
-            border-radius: 10px;
-            padding: 18px;
-            margin-top: 20px;
-        }
-
-        .bloque-juego h3 {
-            color: #701a75;
-            margin-top: 0;
-            margin-bottom: 5px;
-            font-size: 1.1rem;
-        }
-
-        .form-juego {
-            display: flex;
-            flex-direction: column;
-            gap: 8px;
-            margin-top: 10px;
-        }
-
-        .form-juego textarea {
-            padding: 10px;
-            border: 1px solid #d946ef;
-            border-radius: 6px;
-            font-family: inherit;
-            font-size: 0.9rem;
-            background: #fff;
-            height: 65px;
-            resize: none;
-        }
-
-        .form-juego button {
-            background-color: #9333ea;
-            width: fit-content;
-        }
-
-        .form-juego button:hover {
-            background-color: #7e22ce;
-        }
-
-        .lista-items {
-            display: flex;
-            flex-direction: column;
-            gap: 12px;
-        }
-
-        .item-horizontal {
-            border-left: 4px solid #be185d;
-            padding: 14px 18px;
-            background-color: #fdf2f8;
-            border-radius: 0 8px 8px 0;
-        }
-
-        .item-horizontal span {
-            color: #be185d;
-            font-size: 0.75rem;
-            font-weight: bold;
-            letter-spacing: 0.5px;
-            text-transform: uppercase;
-        }
-
-        .item-horizontal h3 {
-            color: #701a75;
-            margin: 4px 0;
-            font-size: 1.05rem;
-        }
-
-        .item-horizontal p {
-            font-size: 0.9rem;
-            color: #444;
-            margin: 4px 0 8px 0;
-            line-height: 1.4;
         }
 
         .info-correo {
@@ -370,9 +293,8 @@
 
     <nav>
         <a href="#noticias">AGENDA Y NOTICIAS</a>
-        <a href="#actualidad">ACTUALIDAD</a>
-        <a href="#cultura">CULTURA</a>
-        <a href="#participa-inicio">PARTICIPÁ Y JUGÁ</a>
+        <a href="#secciones-interes">ACTUALIDAD Y CULTURA</a>
+        <a href="#participa-inicio">PARTICIPÁ</a>
     </nav>
 </header>
 
@@ -396,7 +318,7 @@
         </div>
     </section>
 
-    <!-- CARRUSEL AUTOMÁTICO CON LAS TARJETAS -->
+    <!-- CARRUSEL 1: AGENDA Y NOTICIAS -->
     <section id="noticias" class="seccion">
         <div class="titulo-seccion">
             <span>01</span>
@@ -418,7 +340,7 @@
                     <a href="noticia-barracas.html" class="btn-link" style="padding: 6px 12px; font-size: 0.8rem; text-align: center;">LEER NOTA →</a>
                 </article>
 
-                <!-- Tarjeta 2: Villa Travesti (Lago Puelo) - Apuntando correctamente a villa-travesti.html -->
+                <!-- Tarjeta 2: Villa Travesti (Lago Puelo) -->
                 <article class="tarjeta-carrusel">
                     <div>
                         <img src="villa_travesti.jpg" alt="Villa Travesti Lago Puelo">
@@ -475,77 +397,95 @@
         </div>
     </section>
 
-    <!-- SECCIÓN: ACTUALIDAD Y DERECHOS -->
-    <section id="actualidad" class="seccion">
+    <!-- CARRUSEL 2: ACTUALIDAD Y CULTURA (Secciones 02 y 03 unificadas en carrusel) -->
+    <section id="secciones-interes" class="seccion">
         <div class="titulo-seccion">
             <span>02</span>
-            <h2>ACTUALIDAD Y DERECHOS</h2>
+            <h2>ACTUALIDAD Y CULTURA</h2>
         </div>
+        <p style="margin: 0 0 10px 0; font-size: 0.85rem; color: #666;">Nuestras secciones especiales y notas de fondo:</p>
 
-        <div class="lista-items">
-            <article class="item-horizontal">
-                <span>ACTUALIDAD / MEMORIA E HISTORIA</span>
-                <h3>Archivos comunitarios, rescate gráfico y redes de ayuda</h3>
-                <p>
-                    Colectivas independientes, fanzines históricos, repositorios de la CHA y recursos de asesoramiento legal y contención en Argentina.
-                </p>
-                <a href="actualidad.html" class="btn-link">CONTINUAR LEYENDO LA SECCIÓN COMPLETA →</a>
-            </article>
+        <div class="carrusel-ventana">
+            <div class="carrusel-pistas">
+                
+                <!-- Tarjeta Actualidad -->
+                <article class="tarjeta-carrusel">
+                    <div>
+                        <span class="etiqueta-tarjeta">ACTUALIDAD / DERECHOS</span>
+                        <h3>Archivos comunitarios y rescate gráfico</h3>
+                        <p>Colectivas independientes, fanzines históricos y recursos de asesoramiento legal y contención en Argentina.</p>
+                    </div>
+                    <a href="actualidad.html" class="btn-link" style="padding: 6px 12px; font-size: 0.8rem; text-align: center;">LEER SECCIÓN →</a>
+                </article>
+
+                <!-- Tarjeta Cultura -->
+                <article class="tarjeta-carrusel">
+                    <div>
+                        <span class="etiqueta-tarjeta">CULTURA / LITERATURA</span>
+                        <h3>Grandes referentes y poesía patagónica</h3>
+                        <p>Diana Bellessi, Sylvia Molloy, Macky Corbalán y las nuevas voces poéticas del sur contemporáneo.</p>
+                    </div>
+                    <a href="cultura.html" class="btn-link" style="padding: 6px 12px; font-size: 0.8rem; text-align: center;">LEER SECCIÓN →</a>
+                </article>
+
+                <!-- Tarjeta Extra / Espacio -->
+                <article class="tarjeta-carrusel">
+                    <div>
+                        <span class="etiqueta-tarjeta">MEMORIA / HISTORIA</span>
+                        <h3>¿Dónde están las lesbianas?</h3>
+                        <p>Recoré los hitos fundamentales de nuestra historia política y social en el país.</p>
+                    </div>
+                    <a href="historia-lesbica.html" class="btn-link" style="padding: 6px 12px; font-size: 0.8rem; text-align: center;">LEER HISTORIA →</a>
+                </article>
+
+                <!-- DUPLICADOS PARA EL MOVIMIENTO INFINITO -->
+                <article class="tarjeta-carrusel">
+                    <div>
+                        <span class="etiqueta-tarjeta">ACTUALIDAD / DERECHOS</span>
+                        <h3>Archivos comunitarios y rescate gráfico</h3>
+                        <p>Colectivas independientes, fanzines históricos y recursos de asesoramiento legal y contención en Argentina.</p>
+                    </div>
+                    <a href="actualidad.html" class="btn-link" style="padding: 6px 12px; font-size: 0.8rem; text-align: center;">LEER SECCIÓN →</a>
+                </article>
+
+                <article class="tarjeta-carrusel">
+                    <div>
+                        <span class="etiqueta-tarjeta">CULTURA / LITERATURA</span>
+                        <h3>Grandes referentes y poesía patagónica</h3>
+                        <p>Diana Bellessi, Sylvia Molloy, Macky Corbalán y las nuevas voces poéticas del sur contemporáneo.</p>
+                    </div>
+                    <a href="cultura.html" class="btn-link" style="padding: 6px 12px; font-size: 0.8rem; text-align: center;">LEER SECCIÓN →</a>
+                </article>
+
+                <article class="tarjeta-carrusel">
+                    <div>
+                        <span class="etiqueta-tarjeta">MEMORIA / HISTORIA</span>
+                        <h3>¿Dónde están las lesbianas?</h3>
+                        <p>Recoré los hitos fundamentales de nuestra historia política y social en el país.</p>
+                    </div>
+                    <a href="historia-lesbica.html" class="btn-link" style="padding: 6px 12px; font-size: 0.8rem; text-align: center;">LEER HISTORIA →</a>
+                </article>
+
+            </div>
         </div>
     </section>
 
-    <!-- SECCIÓN: CULTURA Y LITERATURA -->
-    <section id="cultura" class="literatura">
-        <div class="titulo-seccion">
-            <span>03</span>
-            <h2>LESBIANAS, CULTURA Y LITERATURA</h2>
-        </div>
-
-        <div class="lista-items">
-            <article class="item-horizontal">
-                <span>AUTORAS Y ARTISTAS</span>
-                <h3>Grandes referentes de las letras argentinas y poesía patagónica</h3>
-                <p>
-                    Diana Bellessi, Sylvia Molloy, Macky Corbalán y las nuevas voces poéticas del sur contemporáneo.
-                </p>
-                <a href="cultura.html" class="btn-link">CONTINUAR LEYENDO LA SECCIÓN COMPLETA →</a>
-            </article>
-        </div>
-    </section>
-
-    <!-- SECCIÓN 04: PARTICIPÁ Y JUGÁ -->
+    <!-- SECCIÓN 03: PARTICIPÁ DE LA REVISTA -->
     <section id="participa-inicio" class="participa">
         <div class="titulo-seccion">
-            <span>04</span>
-            <h2>PARTICIPÁ Y JUGÁ CON NOSOTRAS</h2>
+            <span>03</span>
+            <h2>PARTICIPÁ DE LA REVISTA</h2>
         </div>
 
-        <!-- BLOQUE 1: ENVÍO DE COLABORACIÓN -->
-        <div style="margin-bottom: 20px;">
+        <div>
             <h3 style="color: #701a75; margin-bottom: 5px; font-size: 1.05rem;">Envianos tu material</h3>
-            <p style="margin: 0 0 8px 0; font-size: 0.9rem;">Dejanos tu relato, poema o reflexión para la próxima edición:</p>
+            <p style="margin: 0 0 8px 0; font-size: 0.9rem;">Dejanos tu relato, poema, ilustración o reflexión para la próxima edición:</p>
 
             <form class="form-participar-compacto" action="https://formspree.io/f/xrpbeeol" method="POST">
                 <input type="text" name="nombre" placeholder="Nombre o seudónimo" required>
                 <input type="email" name="email" placeholder="Correo electrónico" required>
                 <textarea name="mensaje" placeholder="Escribí acá tu colaboración..." required></textarea>
                 <button type="submit" class="btn-link">ENVIAR COLABORACIÓN</button>
-            </form>
-        </div>
-
-        <hr style="border: none; border-top: 1px solid #f472b6; margin: 20px 0;">
-
-        <!-- BLOQUE 2: JUEGO / CÁDAVER EXQUISITO -->
-        <div class="bloque-juego">
-            <span class="etiqueta-tarjeta" style="color: #9333ea;">ZONA LÚDICA / ANÓNIMO</span>
-            <h3>Jugá un ratito: Cadáver Exquisito Lésbico</h3>
-            <p style="font-size: 0.85rem; color: #444; margin-bottom: 8px;">
-                <em>"Encendemos la noche con fósforos prestados..."</em> Sumá tu verso anónimo y seguí tejiendo el poema colectivo.
-            </p>
-
-            <form class="form-juego" action="https://formspree.io/f/xrpbeeol" method="POST">
-                <textarea name="verso_colaboracion_anonima" placeholder="Escribí tu verso para continuar el poema..." required></textarea>
-                <button type="submit" class="btn-link">ENVIAR MI VERSO</button>
             </form>
         </div>
 

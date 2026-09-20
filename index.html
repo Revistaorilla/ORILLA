@@ -171,7 +171,8 @@
             display: flex;
             gap: 20px;
             width: max-content;
-            animation: desplazarCarrusel 30s linear infinite;
+            /* Ajustado el tiempo para que fluya cómodo con 4 tarjetas principales */
+            animation: desplazarCarrusel 38s linear infinite;
         }
 
         .carrusel-pistas:hover {
@@ -180,7 +181,8 @@
 
         @keyframes desplazarCarrusel {
             0% { transform: translateX(0); }
-            100% { transform: translateX(calc(-315px * 3 - 60px)); }
+            /* Se actualizó el cálculo tomando en cuenta las 4 tarjetas (315px de ancho + 20px de gap) */
+            100% { transform: translateX(calc(-315px * 4 - 80px)); }
         }
 
         .tarjeta-carrusel {
@@ -385,13 +387,13 @@
         </div>
     </section>
 
-    <!-- CARRUSEL CON TARJETAS Y EL FORMULARIO INTERACTIVO ANÓNIMO -->
+    <!-- CARRUSEL CON TARJETAS (INCLUYENDO VILLA TRAVESTI) -->
     <section id="noticias" class="seccion">
         <div class="titulo-seccion">
             <span>01</span>
             <h2>AGENDA Y NOTICIAS RECIENTES</h2>
         </div>
-        <p style="margin: 0 0 10px 0; font-size: 0.85rem; color: #666;">Las tarjetas se desplazan solas (apoyá el mouse para pausar y participar).</p>
+        <p style="margin: 0 0 10px 0; font-size: 0.85rem; color: #666;">Las tarjetas se desplazan solas (apoyá el mouse para pausar).</p>
 
         <div class="carrusel-ventana">
             <div class="carrusel-pistas">
@@ -407,14 +409,24 @@
                     <a href="noticia-barracas.html" class="btn-link" style="padding: 6px 12px; font-size: 0.8rem; text-align: center;">LEER NOTA →</a>
                 </article>
 
-                <!-- Tarjeta 2: INTERACTIVA ANÓNIMA (Cadáver Exquisito en el carrusel) -->
+                <!-- Tarjeta 2: Villa Travesti (NUEVA) -->
+                <article class="tarjeta-carrusel">
+                    <div>
+                        <img src="foto_escritoras.jpeg" alt="Villa Travesti Lago Puelo">
+                        <span class="etiqueta-tarjeta">PATAGONIA / SOBERANÍA</span>
+                        <h3>Villa Travesti: Soberanía colectiva en el sur</h3>
+                        <p>Resistencia, autonomía y vida comunitaria en Las Golondrinas, Lago Puelo. Construyendo futuro desde los afectos.</p>
+                    </div>
+                    <a href="villa-travesti.html" class="btn-link" style="padding: 6px 12px; font-size: 0.8rem; text-align: center;">LEER NOTA →</a>
+                </article>
+
+                <!-- Tarjeta 3: INTERACTIVA ANÓNIMA (Cadáver Exquisito) -->
                 <article class="tarjeta-carrusel" style="background-color: #fae8ff; border-left-color: #9333ea;">
                     <div>
                         <span class="etiqueta-tarjeta" style="color: #9333ea;">INTERACTIVO / ANÓNIMO</span>
                         <h3>Cadáver Exquisito Lésbico</h3>
                         <p style="font-size: 0.75rem; font-style: italic; margin-bottom: 4px;">"Encendemos la noche con fósforos prestados..."</p>
                         
-                        <!-- Mini formulario anónimo -->
                         <form class="form-carrusel" action="https://formspree.io/f/xrpbeeol" method="POST">
                             <textarea name="verso_colaboracion_anonima" placeholder="Escribí tu verso anónimo acá..." required></textarea>
                             <button type="submit">ENVIAR ANÓNIMO</button>
@@ -422,7 +434,7 @@
                     </div>
                 </article>
 
-                <!-- Tarjeta 3: Encuentro Plurinacional -->
+                <!-- Tarjeta 4: Encuentro Plurinacional -->
                 <article class="tarjeta-carrusel">
                     <div>
                         <img src="foto_escritoras.jpeg" alt="Encuentro Plurinacional">
@@ -433,7 +445,7 @@
                     <a href="#" class="btn-link" style="padding: 6px 12px; font-size: 0.8rem; text-align: center;">LEER NOTA →</a>
                 </article>
 
-                <!-- Duplicadas para mantener el efecto de movimiento infinito fluido -->
+                <!-- DUPLICADOS PARA MANTENER EL EFECTO DE MOVIMIENTO INFINITO FLUIDO -->
                 <article class="tarjeta-carrusel">
                     <div>
                         <img src="barracas.jpeg" alt="Juicio Lesbicidio de Barracas">
@@ -442,6 +454,16 @@
                         <p>A dos años del ataque en la pensión, el juicio entra en alegatos exigiendo condena por crimen de odio.</p>
                     </div>
                     <a href="noticia-barracas.html" class="btn-link" style="padding: 6px 12px; font-size: 0.8rem; text-align: center;">LEER NOTA →</a>
+                </article>
+
+                <article class="tarjeta-carrusel">
+                    <div>
+                        <img src="foto_escritoras.jpeg" alt="Villa Travesti Lago Puelo">
+                        <span class="etiqueta-tarjeta">PATAGONIA / SOBERANÍA</span>
+                        <h3>Villa Travesti: Soberanía colectiva en el sur</h3>
+                        <p>Resistencia, autonomía y vida comunitaria en Las Golondrinas, Lago Puelo. Construyendo futuro desde los afectos.</p>
+                    </div>
+                    <a href="villa-travesti.html" class="btn-link" style="padding: 6px 12px; font-size: 0.8rem; text-align: center;">LEER NOTA →</a>
                 </article>
 
                 <article class="tarjeta-carrusel" style="background-color: #fae8ff; border-left-color: #9333ea;">

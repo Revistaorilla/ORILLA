@@ -154,8 +154,6 @@
             cursor: pointer;
             margin-top: 8px;
             font-size: 0.9rem;
-            position: relative;
-            z-index: 20;
         }
 
         .btn-link:hover {
@@ -177,6 +175,7 @@
             animation: desplazarCarrusel 35s linear infinite;
         }
 
+        /* Al pasar el mouse por el carrusel se pausa */
         .carrusel-pistas:hover {
             animation-play-state: paused;
         }
@@ -196,6 +195,7 @@
             display: flex;
             flex-direction: column;
             justify-content: space-between;
+            transition: all 0.3s ease;
         }
 
         .tarjeta-carrusel img {
@@ -228,6 +228,31 @@
             color: #444;
             margin: 0 0 8px 0;
             line-height: 1.3;
+        }
+
+        /* CONTENIDO EXTENDIDO DENTRO DE LA TARJETA (ACORDEÓN) */
+        .contenido-extendido {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s ease-out, padding 0.3s ease;
+            font-size: 0.8rem;
+            color: #333;
+            line-height: 1.4;
+            border-top: 0px solid #f472b6;
+            margin-top: 0;
+        }
+
+        .tarjeta-carrusel.expandida {
+            flex: 0 0 420px; /* Se agranda un poco la tarjeta para acomodar el texto */
+            background-color: #fae8ff;
+        }
+
+        .tarjeta-carrusel.expandida .contenido-extendido {
+            max-height: 350px; /* Altura suficiente para mostrar el texto interior */
+            padding-top: 8px;
+            border-top: 1px dashed #f472b6;
+            margin-top: 8px;
+            overflow-y: auto; /* Por si el texto es largo, permite scrollear dentro de la tarjeta */
         }
 
         /* FORMULARIO GENERAL COMPACTO */
@@ -396,13 +421,13 @@
         </div>
     </section>
 
-    <!-- CARRUSEL AUTOMÁTICO CON LAS TARJETAS (INCLUIDA LA DE LAGO PUELO) -->
+    <!-- CARRUSEL AUTOMÁTICO CON LAS TARJETAS -->
     <section id="noticias" class="seccion">
         <div class="titulo-seccion">
             <span>01</span>
             <h2>AGENDA Y NOTICIAS RECIENTES</h2>
         </div>
-        <p style="margin: 0 0 10px 0; font-size: 0.85rem; color: #666;">Las tarjetas se desplazan solas (apoyá el mouse encima para pausar).</p>
+        <p style="margin: 0 0 10px 0; font-size: 0.85rem; color: #666;">Las tarjetas se desplazan solas (apoyá el mouse encima para pausar y leer).</p>
 
         <div class="carrusel-ventana">
             <div class="carrusel-pistas">
@@ -418,15 +443,22 @@
                     <a href="noticia-barracas.html" class="btn-link" style="padding: 6px 12px; font-size: 0.8rem; text-align: center;">LEER NOTA →</a>
                 </article>
 
-                <!-- Tarjeta 2: Villa Travesti (Lago Puelo) - Con clase única para forzar el clic -->
-                <article class="tarjeta-carrusel">
+                <!-- Tarjeta 2: Villa Travesti (Lago Puelo) - Desplegable dentro del carrusel -->
+                <article class="tarjeta-carrusel tarjeta-puelo">
                     <div>
                         <img src="villa_travesti.jpg" alt="Villa Travesti Lago Puelo">
                         <span class="etiqueta-tarjeta">PATAGONIA / SOBERANÍA</span>
                         <h3>Villa Travesti: Soberanía colectiva en el sur</h3>
                         <p>Resistencia, autonomía y vida comunitaria en Las Golondrinas, Lago Puelo. Construyendo futuro desde los afectos.</p>
+                        
+                        <!-- Contenido que se despliega al hacer clic -->
+                        <div class="contenido-extendido">
+                            <p><strong>Las Golondrinas, Lago Puelo —</strong> En el corazón del valle patagónico, un entramado de autonomías, afectos y resistencia comunitaria gesta una de las experiencias políticas más potentes de la región sur.</p>
+                            <p>Lejos de las lógicas individualistas, Villa Travesti se consolida como un refugio y territorio soberano de cuerpas disidentes. Aquí la tierra se trabaja de manera colectiva y la autogestión florece contra el ajuste.</p>
+                            <p><em>"Construimos futuro desde la ternura radical"</em>, señalan las compañeras.</p>
+                        </div>
                     </div>
-                    <a href="#villa-travesti-detalle" class="btn-leer-puelo btn-link" style="padding: 6px 12px; font-size: 0.8rem; text-align: center;">LEER NOTA →</a>
+                    <button class="btn-link btn-alternar-puelo" style="padding: 6px 12px; font-size: 0.8rem; text-align: center; width: 100%;">LEER NOTA ↓</button>
                 </article>
 
                 <!-- Tarjeta 3: Encuentro Plurinacional (Córdoba 2026) -->
@@ -451,14 +483,21 @@
                     <a href="noticia-barracas.html" class="btn-link" style="padding: 6px 12px; font-size: 0.8rem; text-align: center;">LEER NOTA →</a>
                 </article>
 
-                <article class="tarjeta-carrusel">
+                <!-- Duplicado Tarjeta 2 (Villa Travesti) - También conectado al script -->
+                <article class="tarjeta-carrusel tarjeta-puelo">
                     <div>
                         <img src="villa_travesti.jpg" alt="Villa Travesti Lago Puelo">
                         <span class="etiqueta-tarjeta">PATAGONIA / SOBERANÍA</span>
                         <h3>Villa Travesti: Soberanía colectiva en el sur</h3>
                         <p>Resistencia, autonomía y vida comunitaria en Las Golondrinas, Lago Puelo. Construyendo futuro desde los afectos.</p>
+                        
+                        <div class="contenido-extendido">
+                            <p><strong>Las Golondrinas, Lago Puelo —</strong> En el corazón del valle patagónico, un entramado de autonomías, afectos y resistencia comunitaria gesta una de las experiencias políticas más potentes de la región sur.</p>
+                            <p>Lejos de las lógicas individualistas, Villa Travesti se consolida como un refugio y territorio soberano de cuerpas disidentes. Aquí la tierra se trabaja de manera colectiva y la autogestión florece contra el ajuste.</p>
+                            <p><em>"Construimos futuro desde la ternura radical"</em>, señalan las compañeras.</p>
+                        </div>
                     </div>
-                    <a href="#villa-travesti-detalle" class="btn-leer-puelo btn-link" style="padding: 6px 12px; font-size: 0.8rem; text-align: center;">LEER NOTA →</a>
+                    <button class="btn-link btn-alternar-puelo" style="padding: 6px 12px; font-size: 0.8rem; text-align: center; width: 100%;">LEER NOTA ↓</button>
                 </article>
 
                 <article class="tarjeta-carrusel">
@@ -513,19 +552,6 @@
         </div>
     </section>
 
-    <!-- DETALLE DE LAGO PUELO (DONDE BAJA LA PÁGINA AL HACER CLIC EN 'LEER NOTA') -->
-    <section id="villa-travesti-detalle" class="seccion" style="background: linear-gradient(135deg, #fdf4ff 0%, #fff 100%);">
-        <div class="titulo-seccion">
-            <span>PATAGONIA / COBERTURA ESPECIAL</span>
-            <h2>Villa Travesti: Soberanía colectiva en el sur</h2>
-        </div>
-        <p><strong>Las Golondrinas, Lago Puelo —</strong> En el corazón del valle patagónico, un entramado de autonomías, afectos y resistencia comunitaria gesta una de las experiencias políticas más potentes de la región sur.</p>
-        <p>Lejos de las lógicas individualistas de las grandes urbes, Villa Travesti se consolida como un refugio y un territorio soberano de cuerpas disidentes. Aquí la tierra se trabaja de manera colectiva, las redes de cuidado sostienen las urgencias cotidianas y la cultura autogestiva florece contra el ajuste y el desamparo estatal.</p>
-        <p><em>"Construimos futuro desde la ternura radical y la defensa irrestricta de nuestros espacios"</em>, señalan las compañeras que habitan y custodian este rincón patagónico, demostrando que otra economía y otra forma de habitar el mundo son posibles.</p>
-        <br>
-        <a href="#noticias" class="btn-link" style="background-color: #701a75;">↑ VOLVER AL CARRUSEL</a>
-    </section>
-
     <!-- SECCIÓN 04: PARTICIPÁ Y JUGÁ -->
     <section id="participa-inicio" class="participa">
         <div class="titulo-seccion">
@@ -539,23 +565,4 @@
             <p style="margin: 0 0 8px 0; font-size: 0.9rem;">Dejanos tu relato, poema o reflexión para la próxima edición:</p>
 
             <form class="form-participar-compacto" action="https://formspree.io/f/xrpbeeol" method="POST">
-                <input type="text" name="nombre" placeholder="Nombre o seudónimo" required>
-                <input type="email" name="email" placeholder="Correo electrónico" required>
-                <textarea name="mensaje" placeholder="Escribí acá tu colaboración..." required></textarea>
-                <button type="submit" class="btn-link">ENVIAR COLABORACIÓN</button>
-            </form>
-        </div>
-
-        <hr style="border: none; border-top: 1px solid #f472b6; margin: 20px 0;">
-
-        <!-- BLOQUE 2: JUEGO / CÁDAVER EXQUISITO -->
-        <div class="bloque-juego">
-            <span class="etiqueta-tarjeta" style="color: #9333ea;">ZONA LÚDICA / ANÓNIMO</span>
-            <h3>Jugá un ratito: Cadáver Exquisito Lésbico</h3>
-            <p style="font-size: 0.85rem; color: #444; margin-bottom: 8px;">
-                <em>"Encendemos la noche con fósforos prestados..."</em> Sumá tu verso anónimo y seguí tejiendo el poema colectivo.
-            </p>
-
-            <form class="form-juego" action="https://formspree.io/f/xrpbeeol" method="POST">
-                <textarea name="verso_colaboracion_anonima" placeholder="Escribí tu verso para continuar el poema..." required></textarea>
-                <button type="submit" class="
+                <i

@@ -1,5 +1,3 @@
-Acá tenés el código entero y listo para copiar y pegar directamente en tu archivo index.html. Ya tiene el guión bajo exacto en la imagen (encuentro_cordoba.jpg) para que coincida con tu repositorio.
-Copiá todo esto, reemplazá lo que tenías en index.html y guardá los cambios:
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -162,7 +160,7 @@ Copiá todo esto, reemplazá lo que tenías en index.html y guardá los cambios:
             background-color: #c026d3;
         }
 
-        /* CARRUSEL AUTOMÁTICO CON MOVIMIENTO Y DESLIZAMIENTO */
+        /* CARRUSEL AUTOMÁTICO DE 3 TARJETAS */
         .carrusel-ventana {
             overflow: hidden;
             width: 100%;
@@ -173,7 +171,7 @@ Copiá todo esto, reemplazá lo que tenías en index.html y guardá los cambios:
             display: flex;
             gap: 20px;
             width: max-content;
-            animation: desplazarCarrusel 38s linear infinite;
+            animation: desplazarCarrusel 30s linear infinite;
         }
 
         .carrusel-pistas:hover {
@@ -182,7 +180,7 @@ Copiá todo esto, reemplazá lo que tenías en index.html y guardá los cambios:
 
         @keyframes desplazarCarrusel {
             0% { transform: translateX(0); }
-            100% { transform: translateX(calc(-315px * 4 - 80px)); }
+            100% { transform: translateX(calc(-315px * 3 - 60px)); }
         }
 
         .tarjeta-carrusel {
@@ -229,42 +227,7 @@ Copiá todo esto, reemplazá lo que tenías en index.html y guardá los cambios:
             line-height: 1.3;
         }
 
-        /* MINI FORMULARIO ANÓNIMO DENTRO DE LA TARJETA */
-        .form-carrusel {
-            display: flex;
-            flex-direction: column;
-            gap: 6px;
-            margin-top: 6px;
-        }
-
-        .form-carrusel textarea {
-            padding: 6px 8px;
-            border: 1px solid #e879f9;
-            border-radius: 4px;
-            font-family: inherit;
-            font-size: 0.8rem;
-            background: #fff;
-            height: 55px;
-            resize: none;
-        }
-
-        .form-carrusel button {
-            background-color: #a21caf;
-            color: white;
-            border: none;
-            padding: 6px;
-            border-radius: 4px;
-            font-weight: bold;
-            font-size: 0.75rem;
-            cursor: pointer;
-            transition: background-color 0.2s;
-        }
-
-        .form-carrusel button:hover {
-            background-color: #c026d3;
-        }
-
-        /* FORMULARIO GENERAL */
+        /* FORMULARIO GENERAL COMPACTO */
         .form-participar-compacto {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -294,6 +257,49 @@ Copiá todo esto, reemplazá lo que tenías en index.html y guardá los cambios:
         .form-participar-compacto button {
             grid-column: span 2;
             width: fit-content;
+        }
+
+        /* BLOQUE JUEGO / CÁDAVER EXQUISITO */
+        .bloque-juego {
+            background: linear-gradient(135deg, #fae8ff 0%, #fdf4ff 100%);
+            border: 2px dashed #c026d3;
+            border-radius: 10px;
+            padding: 18px;
+            margin-top: 20px;
+        }
+
+        .bloque-juego h3 {
+            color: #701a75;
+            margin-top: 0;
+            margin-bottom: 5px;
+            font-size: 1.1rem;
+        }
+
+        .form-juego {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            margin-top: 10px;
+        }
+
+        .form-juego textarea {
+            padding: 10px;
+            border: 1px solid #d946ef;
+            border-radius: 6px;
+            font-family: inherit;
+            font-size: 0.9rem;
+            background: #fff;
+            height: 65px;
+            resize: none;
+        }
+
+        .form-juego button {
+            background-color: #9333ea;
+            width: fit-content;
+        }
+
+        .form-juego button:hover {
+            background-color: #7e22ce;
         }
 
         .lista-items {
@@ -363,7 +369,7 @@ Copiá todo esto, reemplazá lo que tenías en index.html y guardá los cambios:
         <a href="#noticias">AGENDA Y NOTICIAS</a>
         <a href="#actualidad">ACTUALIDAD</a>
         <a href="#cultura">CULTURA</a>
-        <a href="#participa-inicio">PARTICIPÁ</a>
+        <a href="#participa-inicio">PARTICIPÁ Y JUGÁ</a>
     </nav>
 </header>
 
@@ -387,7 +393,7 @@ Copiá todo esto, reemplazá lo que tenías en index.html y guardá los cambios:
         </div>
     </section>
 
-    <!-- CARRUSEL CON TARJETAS -->
+    <!-- CARRUSEL CON LAS 3 TARJETAS PRINCIPALES -->
     <section id="noticias" class="seccion">
         <div class="titulo-seccion">
             <span>01</span>
@@ -420,21 +426,7 @@ Copiá todo esto, reemplazá lo que tenías en index.html y guardá los cambios:
                     <a href="villa-travesti.html" class="btn-link" style="padding: 6px 12px; font-size: 0.8rem; text-align: center;">LEER NOTA →</a>
                 </article>
 
-                <!-- Tarjeta 3: INTERACTIVA ANÓNIMA (Cadáver Exquisito) -->
-                <article class="tarjeta-carrusel" style="background-color: #fae8ff; border-left-color: #9333ea;">
-                    <div>
-                        <span class="etiqueta-tarjeta" style="color: #9333ea;">INTERACTIVO / ANÓNIMO</span>
-                        <h3>Cadáver Exquisito Lésbico</h3>
-                        <p style="font-size: 0.75rem; font-style: italic; margin-bottom: 4px;">"Encendemos la noche con fósforos prestados..."</p>
-                        
-                        <form class="form-carrusel" action="https://formspree.io/f/xrpbeeol" method="POST">
-                            <textarea name="verso_colaboracion_anonima" placeholder="Escribí tu verso anónimo acá..." required></textarea>
-                            <button type="submit">ENVIAR ANÓNIMO</button>
-                        </form>
-                    </div>
-                </article>
-
-                <!-- Tarjeta 4: Encuentro Plurinacional (Córdoba 2026) -->
+                <!-- Tarjeta 3: Encuentro Plurinacional (Córdoba 2026) -->
                 <article class="tarjeta-carrusel">
                     <div>
                         <img src="encuentro_cordoba.jpg" alt="Encuentro Plurinacional Córdoba">
@@ -445,7 +437,7 @@ Copiá todo esto, reemplazá lo que tenías en index.html y guardá los cambios:
                     <a href="encuentro-cordoba.html" class="btn-link" style="padding: 6px 12px; font-size: 0.8rem; text-align: center;">LEER NOTA →</a>
                 </article>
 
-                <!-- DUPLICADOS PARA EL MOVIMIENTO INFINITO -->
+                <!-- DUPLICADOS PARA EL MOVIMIENTO INFINITO SUAVE -->
                 <article class="tarjeta-carrusel">
                     <div>
                         <img src="barracas.jpeg" alt="Juicio Lesbicidio de Barracas">
@@ -464,19 +456,6 @@ Copiá todo esto, reemplazá lo que tenías en index.html y guardá los cambios:
                         <p>Resistencia, autonomía y vida comunitaria en Las Golondrinas, Lago Puelo. Construyendo futuro desde los afectos.</p>
                     </div>
                     <a href="villa-travesti.html" class="btn-link" style="padding: 6px 12px; font-size: 0.8rem; text-align: center;">LEER NOTA →</a>
-                </article>
-
-                <article class="tarjeta-carrusel" style="background-color: #fae8ff; border-left-color: #9333ea;">
-                    <div>
-                        <span class="etiqueta-tarjeta" style="color: #9333ea;">INTERACTIVO / ANÓNIMO</span>
-                        <h3>Cadáver Exquisito Lésbico</h3>
-                        <p style="font-size: 0.75rem; font-style: italic; margin-bottom: 4px;">"Encendemos la noche con fósforos prestados..."</p>
-                        
-                        <form class="form-carrusel" action="https://formspree.io/f/xrpbeeol" method="POST">
-                            <textarea name="verso_colaboracion_anonima" placeholder="Escribí tu verso anónimo acá..." required></textarea>
-                            <button type="submit">ENVIAR ANÓNIMO</button>
-                        </form>
-                    </div>
                 </article>
 
                 <article class="tarjeta-carrusel">
@@ -531,23 +510,44 @@ Copiá todo esto, reemplazá lo que tenías en index.html y guardá los cambios:
         </div>
     </section>
 
-    <!-- PARTICIPÁ (COMPACTO) -->
+    <!-- SECCIÓN 04: PARTICIPÁ Y JUGÁ (DIVIDIDA EN DOS BLOQUES) -->
     <section id="participa-inicio" class="participa">
         <div class="titulo-seccion">
             <span>04</span>
-            <h2>PARTICIPÁ DE LA REVISTA</h2>
+            <h2>PARTICIPÁ Y JUGÁ CON NOSOTRAS</h2>
         </div>
-        <p style="margin: 0 0 8px 0; font-size: 0.9rem;">Dejanos tu relato, poema o reflexión para la próxima edición:</p>
 
-        <form class="form-participar-compacto" action="https://formspree.io/f/xrpbeeol" method="POST">
-            <input type="text" name="nombre" placeholder="Nombre o seudónimo" required>
-            <input type="email" name="email" placeholder="Correo electrónico" required>
-            <textarea name="mensaje" placeholder="Escribí acá tu colaboración..." required></textarea>
-            <button type="submit" class="btn-link">ENVIAR</button>
-        </form>
+        <!-- BLOQUE 1: ENVÍO DE COLABORACIÓN -->
+        <div style="margin-bottom: 20px;">
+            <h3 style="color: #701a75; margin-bottom: 5px; font-size: 1.05rem;">Envianos tu material</h3>
+            <p style="margin: 0 0 8px 0; font-size: 0.9rem;">Dejanos tu relato, poema o reflexión para la próxima edición:</p>
 
-        <div class="info-correo">
-            O escribinos a: <strong>contacto@revistaorilla.com</strong>
+            <form class="form-participar-compacto" action="https://formspree.io/f/xrpbeeol" method="POST">
+                <input type="text" name="nombre" placeholder="Nombre o seudónimo" required>
+                <input type="email" name="email" placeholder="Correo electrónico" required>
+                <textarea name="mensaje" placeholder="Escribí acá tu colaboración..." required></textarea>
+                <button type="submit" class="btn-link">ENVIAR COLABORACIÓN</button>
+            </form>
+        </div>
+
+        <hr style="border: none; border-top: 1px solid #f472b6; margin: 20px 0;">
+
+        <!-- BLOQUE 2: JUEGO / CÁDAVER EXQUISITO -->
+        <div class="bloque-juego">
+            <span class="etiqueta-tarjeta" style="color: #9333ea;">ZONA LÚDICA / ANÓNIMO</span>
+            <h3>Jugá un ratito: Cadáver Exquisito Lésbico</h3>
+            <p style="font-size: 0.85rem; color: #444; margin-bottom: 8px;">
+                <em>"Encendemos la noche con fósforos prestados..."</em> Sumá tu verso anónimo y seguí tejiendo el poema colectivo.
+            </p>
+
+            <form class="form-juego" action="https://formspree.io/f/xrpbeeol" method="POST">
+                <textarea name="verso_colaboracion_anonima" placeholder="Escribí tu verso para continuar el poema..." required></textarea>
+                <button type="submit" class="btn-link">ENVIAR MI VERSO</button>
+            </form>
+        </div>
+
+        <div class="info-correo" style="text-align: center; margin-top: 15px;">
+            O escribinos directamente a: <strong>contacto@revistaorilla.com</strong>
         </div>
     </section>
 

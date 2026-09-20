@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Las grupas rumbo al 39° Encuentro — ORILLA</title>
+
     <style>
         body {
             font-family: system-ui, -apple-system, sans-serif;
@@ -11,29 +12,32 @@
             color: #2b2b2b;
             margin: 0;
             padding: 20px;
+            line-height: 1.6;
+        }
+
+        .contenedor {
             max-width: 800px;
-            margin-left: auto;
-            margin-right: auto;
+            margin: 0 auto;
+            background-color: #ffffff;
+            border: 2px solid #e879f9;
+            border-radius: 12px;
+            padding: 30px;
+            box-shadow: 0 4px 12px rgba(168, 85, 247, 0.05);
         }
-        header {
-            margin-bottom: 20px;
-        }
-        .btn-volver {
+
+        .volver {
             display: inline-block;
-            background-color: #a21caf;
-            color: white;
-            padding: 8px 14px;
-            border-radius: 6px;
+            margin-bottom: 20px;
+            color: #a21caf;
             text-decoration: none;
             font-weight: bold;
-            font-size: 0.85rem;
-            margin-bottom: 20px;
+            font-size: 0.9rem;
         }
-        h1 {
-            color: #701a75;
-            font-size: 2.2rem;
-            margin-top: 0;
+
+        .volver:hover {
+            text-decoration: underline;
         }
+
         .categoria {
             color: #be185d;
             font-weight: bold;
@@ -43,58 +47,70 @@
             display: block;
             margin-bottom: 8px;
         }
-        p {
-            line-height: 1.6;
-            font-size: 1.05rem;
-            color: #333;
+
+        h1 {
+            color: #701a75;
+            font-size: 2.2rem;
+            margin-top: 0;
+            line-height: 1.2;
         }
-        blockquote {
-            border-left: 4px solid #be185d;
-            margin: 20px 0;
-            padding-left: 15px;
-            font-style: italic;
-            color: #4a044e;
-            background-color: #fdf2f8;
-            padding-top: 10px;
-            padding-bottom: 10px;
-            border-radius: 0 8px 8px 0;
-        }
-        img {
+
+        .imagen-nota {
             width: 100%;
-            height: auto;
+            max-height: 400px;
+            object-fit: cover;
             border-radius: 8px;
+            border: 1px solid #f472b6;
             margin: 20px 0;
-            border: 1px solid #e879f9;
+        }
+
+        p {
+            font-size: 1.05rem;
+            color: #444;
+            margin-bottom: 15px;
+        }
+
+        .destacado {
+            background-color: #fdf2f8;
+            border-left: 4px solid #be185d;
+            padding: 15px 20px;
+            margin: 20px 0;
+            border-radius: 0 8px 8px 0;
+            font-style: italic;
+            color: #701a75;
         }
     </style>
 </head>
+
 <body>
 
-    <header>
-        <a href="index.html" class="btn-volver">← Volver al inicio</a>
-        <span class="categoria">Córdoba 2026 / Grupas / Federalismo</span>
-        <h1>Las grupas rumbo al 39° Encuentro Plurinacional</h1>
-    </header>
+<div class="contenedor">
+    <a href="index.html" class="volver">← Volver al inicio</a>
 
-    <main>
-        <img src="foto_escritoras.jpeg" alt="Encuentro Plurinacional Córdoba">
+    <span class="categoria">CÓRDOBA 2026 / GRUPAS / FEDERALISMO</span>
+    <h1>Las grupas rumbo al 39° Encuentro</h1>
 
-        <p>El mapa del descontento y de la organización federal ya tiene coordenadas marcadas. Los próximos <strong>10, 11 y 12 de octubre de 2026</strong>, la ciudad de <strong>Córdoba</strong> se convertirá en el epicentro del <strong>39° Encuentro Plurinacional de Mujeres, Lesbianas, Travestis, Trans, Bisexuales, Intersexuales y No Binaries</strong>.</p>
-        
-        <p>A pocos meses de una nueva edición de este hito único en el mundo —que convoca a miles de personas y a un centenar de talleres autogestivos—, el motor ya está en marcha desde las bases.</p>
+    <!-- AQUÍ ESTÁ LA FOTO CORRECTA DE CÓRDOBA -->
+    <img src="encuentro_cordoba.jpg" alt="Encuentro Plurinacional Córdoba" class="imagen-nota">
 
-        <h2>La fuerza que viene de abajo</h2>
-        
-        <p>Frente a un contexto político y económico de ajuste feroz, donde los discursos de odio intentan recortar derechos e instaurar el miedo, la respuesta no viene de las superestructuras, sino del trabajo invisible, constante y territorial de las <strong>grupas</strong>.</p>
+    <p>
+        Este 10, 11 y 12 de octubre, la provincia de Córdoba se prepara para recibir al motor de la marea feminista, disidente y plurinacional: la autogestión y la fuerza territorial que se organiza desde cada rincón del país.
+    </p>
 
-        <blockquote>
-            "Lo que se teje en ronda, codo a codo y entre compañeras, no se rompe más."
-        </blockquote>
+    <div class="destacado">
+        "El encuentro es nuestro refugio, nuestra asamblea permanente y el espacio donde la potencia lésbica se hace cuerpo en las calles."
+    </div>
 
-        <p>Sindicatos docentes, asambleas barriales, colectivas trans-travestis, organizaciones territoriales y centros de estudiantes de todo el país ya están aceitando la maquinaria logística: organizando colectivos, armando pre-inscripciones, levantando fondos y discutiendo en rondas los ejes que llevarán a los plenarios.</p>
+    <p>
+        Las distintas grupas y comisiones de trabajo vienen aceitando los debates en torno al federalismo, la soberanía territorial y las estrategias de supervivencia colectiva frente a los contextos adversos. 
+    </p>
 
-        <p>Ir a Córdoba este octubre no es solo viajar a un evento: es responder al disciplinamiento con la potencia de la autogestión. Es garantizar que los pañuelos sigan en las calles, que la memoria de las luchas no se apague y que las grupas sigan demostrando que, frente al individualismo, la única salida es colectiva.</p>
-    </main>
+    <p>
+        Nos encontramos para abrazarnos, debatir, sostener los fogones encendidos y seguir construyendo genealogías propias desde el sur.
+    </p>
+
+    <a href="index.html" class="volver" style="margin-top: 30px;">← Volver al inicio</a>
+</div>
 
 </body>
 </html>

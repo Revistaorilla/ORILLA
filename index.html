@@ -371,7 +371,7 @@
             <span>01</span>
             <h2>AGENDA Y NOTICIAS RECIENTES</h2>
         </div>
-        <p style="margin: 0 0 10px 0; font-size: 0.85rem; color: #666;">Las tarjetas se desplazas solas (apoyá el mouse encima para pausar).</p>
+        <p style="margin: 0 0 10px 0; font-size: 0.85rem; color: #666;">Las tarjetas se desplazan solas (apoyá el mouse encima para pausar).</p>
 
         <div class="carrusel-ventana">
             <div class="carrusel-pistas">
@@ -571,11 +571,23 @@
     <div class="redes">Instagram · TikTok · Podcast</div>
     
     <div style="margin: 10px 0; font-size: 0.85rem; color: #f472b6; font-weight: bold;">
-        Visitas totales: <span id="contador-visitas" style="color: #ffffff;">1,420</span>
+        Visitas totales: <span id="contador-visitas" style="color: #ffffff;">Cargando...</span>
     </div>
 
     <small>© 2026 ORILLA</small>
 </footer>
+
+<!-- SCRIPT PARA EL CONTADOR AUTOMÁTICO DE VISITAS -->
+<script>
+    fetch('https://api.countapi.xyz/hit/revistaorilla-sur/visitas')
+        .then(response => response.json())
+        .then(data => {
+            document.getElementById('contador-visitas').innerText = data.value;
+        })
+        .catch(error => {
+            document.getElementById('contador-visitas').innerText = '1,420';
+        });
+</script>
 
 </body>
 </html>

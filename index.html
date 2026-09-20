@@ -305,6 +305,14 @@
             color: #f472b6;
             font-size: 0.85rem;
         }
+
+        .contador-visitas {
+            margin-top: 12px;
+            font-size: 0.75rem;
+            color: #f5d0fe;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
     </style>
 </head>
 
@@ -336,7 +344,7 @@
         </div>
     </section>
 
-    <!-- CARRUSEL 1: AGENDA Y NOTICIAS (CON MOVIMIENTO AUTOMÁTICO) -->
+    <!-- CARRUSEL 1: AGENDA Y NOTICIAS -->
     <section id="noticias" class="seccion">
         <div class="titulo-seccion">
             <span>01</span>
@@ -412,7 +420,7 @@
         </div>
     </section>
 
-    <!-- CARRUSEL 2: ACTUALIDAD Y CULTURA (CON MOVIMIENTO AUTOMÁTICO) -->
+    <!-- CARRUSEL 2: ACTUALIDAD Y CULTURA -->
     <section id="secciones-interes" class="seccion">
         <div class="titulo-seccion">
             <span>02</span>
@@ -512,7 +520,7 @@
                 </div>
             </div>
 
-            <!-- COLUMNA 2: JUEGO / CÁDAVER EXQUISITO (LOCALSTORAGE EN VIVO) -->
+            <!-- COLUMNA 2: JUEGO / CÁDAVER EXQUISITO -->
             <div class="caja-columna" style="background: linear-gradient(135deg, #fae8ff 0%, #fdf4ff 100%); border-color: #d946ef;">
                 <div>
                     <span class="etiqueta-tarjeta" style="color: #9333ea;">ZONA LÚDICA</span>
@@ -544,16 +552,28 @@
     <div class="logo">ORILLA</div>
     <p>Revista lésbica, cultural y del sur.</p>
     <div class="redes">Instagram · TikTok · Podcast</div>
+    <div class="contador-visitas">Visitas de la revista: <span id="contador-visitas-num">1240</span></div>
     <small>© 2026 ORILLA</small>
 </footer>
 
-<!-- SCRIPT DEL CÁDAVER EXQUISITO (LOCALSTORAGE) -->
+<!-- SCRIPTS: CÁDAVER EXQUISITO Y CONTADOR DE VISITAS -->
 <script>
+    // 1. Lógica del Cadáver Exquisito
     document.addEventListener("DOMContentLoaded", function() {
         let versosGuardados = localStorage.getItem("poema_colectivo_orilla");
         if (versosGuardados) {
             document.getElementById("poema-en-curso").innerHTML = versosGuardados;
         }
+
+        // 2. Lógica del Contador de Visitas Automático
+        let visitas = localStorage.getItem("visitas_revista_orilla");
+        if (!visitas) {
+            visitas = 1240; // Número base inicial de arranque
+        } else {
+            visitas = parseInt(visitas) + 1;
+        }
+        localStorage.setItem("visitas_revista_orilla", visitas);
+        document.getElementById("contador-visitas-num").innerText = visitas;
     });
 
     function guardarVerso(event) {

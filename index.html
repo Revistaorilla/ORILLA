@@ -558,13 +558,25 @@
     <p>Revista lésbica, cultural y del sur.</p>
     <div class="redes">Instagram · TikTok · Podcast</div>
     
-    <!-- CONTADOR DE VISITAS VISIBLE -->
-    <div style="margin: 10px 0; font-size: 0.8rem; color: #f472b6;">
-        Visitas totales: <img src="https://api.countapi.xyz/hit/revistaorilla.github.io/visitas" alt="Contador de visitas" style="vertical-align: middle;" />
+    <!-- CONTADOR DE VISITAS EN TEXTO -->
+    <div style="margin: 10px 0; font-size: 0.85rem; color: #f472b6; font-weight: bold;">
+        Visitas totales: <span id="contador-visitas" style="color: #ffffff;">Cargando...</span>
     </div>
 
     <small>© 2026 ORILLA</small>
 </footer>
+
+<!-- SCRIPT PARA OBTENER Y ACTUALIZAR LAS VISITAS -->
+<script>
+    fetch('https://api.countapi.xyz/hit/revistaorilla.github.io/visitas')
+        .then(response => response.json())
+        .then(data => {
+            document.getElementById('contador-visitas').innerText = data.value;
+        })
+        .catch(error => {
+            document.getElementById('contador-visitas').innerText = '1+';
+        });
+</script>
 
 </body>
 </html>

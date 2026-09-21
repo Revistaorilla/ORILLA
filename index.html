@@ -92,6 +92,10 @@
             white-space: nowrap;
         }
 
+        nav a:hover {
+            color: var(--color-acento);
+        }
+
         /* CONTENEDOR PRINCIPAL VERTICAL */
         main {
             max-width: 800px;
@@ -137,6 +141,52 @@
             letter-spacing: 0.5px;
         }
 
+        /* BOTONES */
+        .btn {
+            display: inline-block;
+            background-color: var(--color-primario);
+            color: white;
+            padding: 8px 14px;
+            border-radius: 6px;
+            font-weight: bold;
+            text-decoration: none;
+            font-size: 0.8rem;
+            transition: background 0.2s;
+            text-align: center;
+        }
+
+        .btn:hover {
+            background-color: var(--color-secundario);
+        }
+
+        /* PORTADA / NOTA PRINCIPAL */
+        .portada-principal {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .portada-imagen img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 8px;
+            border: 1px solid var(--borde-suave);
+        }
+
+        .portada-texto h1 {
+            color: var(--color-primario);
+            font-size: 1.5rem;
+            margin: 0 0 10px 0;
+            line-height: 1.2;
+        }
+
+        .portada-texto p {
+            color: #4b5563;
+            font-size: 0.95rem;
+            margin-bottom: 15px;
+        }
+
         /* HITOS Y CALENDARIO INTERACTIVO MÓVIL */
         .hitos-box {
             background: linear-gradient(135deg, #f5f3ff 0%, #ffffff 100%);
@@ -145,7 +195,7 @@
 
         .hitos-box h2 {
             color: var(--color-primario);
-            font-size: 1.3rem;
+            font-size: 1.2rem;
             margin: 5px 0 8px 0;
             font-weight: 800;
         }
@@ -172,155 +222,28 @@
             background: white;
             border: 1px solid var(--borde-suave);
             border-radius: 8px;
-            padding: 12px;
-        }
-
-        .lista-fechas-vertical {
-            display: flex;
-            flex-direction: column;
-            gap: 8px;
-        }
-
-        .item-fecha {
-            background: #faf5ff;
-            border: 1px solid var(--borde-suave);
-            border-radius: 6px;
-            padding: 8px 10px;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .item-fecha .fecha-tag {
-            background: var(--color-acento);
-            color: white;
-            font-size: 0.65rem;
-            font-weight: bold;
-            padding: 3px 6px;
-            border-radius: 4px;
-            white-space: nowrap;
-        }
-
-        .item-fecha .fecha-titulo {
-            font-size: 0.8rem;
-            font-weight: 700;
-        }
-
-        .detalle-efemeride-grande {
-            padding: 10px;
-            background: #fdf8f6;
-            border-left: 3px solid var(--color-acento);
-            border-radius: 4px;
-            font-size: 0.8rem;
-            color: #333;
-            margin-top: 10px;
-            display: none;
-        }
-
-        /* INFORMACIÓN DETALLADA DEL GALPÓN ZATTI */
-        .galpon-box {
-            background: linear-gradient(135deg, #fdf4ff 0%, #ffffff 100%);
-            border: 1px solid #d946ef;
-        }
-
-        .galpon-box h3 {
-            color: var(--color-primario);
-            font-size: 1.15rem;
-            margin: 5px 0 8px 0;
-            font-weight: 800;
-        }
-
-        .galpon-box img {
-            width: 100%;
-            height: 160px;
-            object-fit: cover;
-            border-radius: 6px;
-            margin-bottom: 12px;
-            border: 1px solid var(--borde-suave);
-        }
-
-        .galpon-box p {
-            font-size: 0.85rem;
-            color: #333;
-            margin: 0 0 10px 0;
-            line-height: 1.5;
-        }
-
-        .galpon-info-destacada {
-            background: #ffffff;
-            border-left: 4px solid var(--color-secundario);
-            padding: 10px 12px;
-            border-radius: 4px;
-            margin: 10px 0;
-            font-size: 0.83rem;
-            color: #4b5563;
-        }
-
-        /* CARTEL ALERTA / ESTADÍSTICAS */
-        .cartel-alerta {
-            background: linear-gradient(135deg, #fff1f2 0%, #ffe4e6 100%);
-            border: 2px solid var(--color-acento);
-            border-radius: 10px;
-            padding: 18px;
-        }
-
-        .cartel-alerta h3 {
-            color: #9f1239;
-            margin: 5px 0 8px 0;
-            font-size: 1.1rem;
-        }
-
-        .cifras-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 10px;
-            margin-top: 12px;
-        }
-
-        .tarjeta-cifra {
-            background: white;
-            padding: 10px;
-            border-radius: 6px;
-            border: 1px solid #fecdd3;
-            text-align: center;
-        }
-
-        .tarjeta-cifra .numero {
-            font-size: 1.4rem;
-            font-weight: 900;
-            color: var(--color-acento);
-        }
-
-        .tarjeta-cifra .etiqueta-cifra {
-            font-size: 0.7rem;
-            font-weight: 700;
-            color: #4b5563;
-        }
-
-        /* NOTICIAS Y TARJETAS */
-        .noticia-destacada {
-            background: linear-gradient(135deg, #fff5f7 0%, #ffffff 100%);
-            border: 1px solid #fda4af;
-            border-left: 4px solid var(--color-acento);
-            border-radius: 8px;
             padding: 15px;
         }
 
-        .noticia-destacada img {
-            width: 100%;
-            height: 150px;
-            object-fit: cover;
-            border-radius: 6px;
-            margin-bottom: 10px;
+        .hito-item {
+            border-left: 3px solid var(--color-acento);
+            padding-left: 10px;
+            margin-bottom: 12px;
         }
 
-        .noticia-destacada h3 {
-            color: #881337;
-            font-size: 1.1rem;
-            margin: 5px 0 8px 0;
+        .hito-item h4 {
+            margin: 0 0 4px 0;
+            color: var(--color-primario);
+            font-size: 0.9rem;
         }
 
+        .hito-item p {
+            margin: 0;
+            font-size: 0.8rem;
+            color: #555;
+        }
+
+        /* GRILLA DE NOTICIAS Y TARJETAS */
         .grilla-tarjetas {
             display: flex;
             flex-direction: column;
@@ -332,41 +255,67 @@
             border: 1px solid var(--borde-suave);
             border-radius: 8px;
             padding: 15px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
         }
 
         .tarjeta img {
             width: 100%;
-            height: 140px;
+            height: 160px;
             object-fit: cover;
             border-radius: 6px;
-            margin-bottom: 8px;
         }
 
         .tarjeta h3 {
             color: var(--color-primario);
-            font-size: 0.95rem;
-            margin: 5px 0 6px 0;
+            font-size: 1rem;
+            margin: 0;
         }
 
         .tarjeta p {
-            font-size: 0.8rem;
+            font-size: 0.85rem;
             color: #555;
-            margin: 0 0 10px 0;
+            margin: 0;
         }
 
-        .btn {
-            display: block;
-            background-color: var(--color-primario);
-            color: white;
-            padding: 8px 12px;
+        /* NOTICIA DESTACADA */
+        .noticia-reciente-box {
+            background: linear-gradient(135deg, #fff5f7 0%, #ffffff 100%);
+            border: 1px solid #fda4af;
+            border-left: 5px solid var(--color-acento);
+            border-radius: 8px;
+            padding: 15px;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .noticia-reciente-box img {
+            width: 100%;
+            height: 160px;
+            object-fit: cover;
             border-radius: 6px;
-            font-weight: bold;
-            text-decoration: none;
-            font-size: 0.8rem;
-            text-align: center;
         }
 
-        /* SECCIÓN PARTICIPATIVA */
+        .noticia-reciente-box h3 {
+            color: #881337;
+            margin: 0 0 8px 0;
+            font-size: 1.1rem;
+        }
+
+        /* SECCIÓN PARTICIPACIÓN Y JUEGO */
+        .caja-participacion {
+            background: #fdf4ff;
+            border: 1px solid var(--borde-suave);
+            border-radius: 8px;
+            padding: 15px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            margin-bottom: 15px;
+        }
+
         .form-compacto {
             display: flex;
             flex-direction: column;
@@ -375,10 +324,13 @@
         }
 
         .form-compacto input, .form-compacto textarea {
-            padding: 8px;
+            padding: 10px;
             border: 1px solid var(--borde-suave);
             border-radius: 6px;
-            font-size: 0.8rem;
+            font-family: inherit;
+            font-size: 0.85rem;
+            width: 100%;
+            box-sizing: border-box;
         }
 
         .form-compacto textarea {
@@ -392,9 +344,46 @@
             border-radius: 6px;
             padding: 10px;
             font-style: italic;
-            font-size: 0.8rem;
+            font-size: 0.82rem;
             color: var(--color-primario);
             margin: 8px 0;
+            max-height: 80px;
+            overflow-y: auto;
+        }
+
+        /* SALUD COMUNITARIA & RECOMENDACIONES */
+        .alerta-arcoiris {
+            background: linear-gradient(135deg, #f5f3ff 0%, #ffffff 100%);
+            border: 2px solid var(--color-primario);
+            border-radius: 10px;
+            padding: 15px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .alerta-arcoiris::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #581c87, #a21caf, #e11d48);
+        }
+
+        .alerta-sub {
+            font-size: 0.82rem;
+            color: #4b5563;
+            margin: 0 0 10px 0;
+            line-height: 1.4;
+        }
+
+        .caja-lateral iframe {
+            width: 100%;
+            height: 160px;
+            border-radius: 6px;
+            margin-bottom: 10px;
+            border: none;
         }
 
         /* FOOTER */
@@ -402,194 +391,208 @@
             background-color: var(--color-primario);
             color: white;
             text-align: center;
-            padding: 20px 15px;
+            padding: 25px 15px;
             margin-top: 30px;
             border-top: 4px solid var(--color-secundario);
-            font-size: 0.8rem;
+        }
+
+        footer .logo {
+            font-size: 1.5rem;
+            margin-bottom: 8px;
+        }
+
+        .contador {
+            font-size: 0.7rem;
+            color: #f3e8ff;
+            margin-top: 8px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
         }
     </style>
 </head>
 <body>
 
-    <!-- HEADER MÓVIL CON MENÚ DESLIZABLE -->
+    <!-- CABECERA Y MENÚ MÓVIL -->
     <header>
         <div class="header-container">
             <div class="logo-area">
                 <span class="logo">ORILLA</span>
-                <span class="subtitulo">Género y Cultura</span>
+                <span class="subtitulo">Cultura y perspectiva de género</span>
             </div>
             <nav>
                 <a href="#hitos">Hitos</a>
-                <a href="#galpon">Galpón Zatti</a>
-                <a href="#impacto-odio">Estadísticas</a>
-                <a href="#voces">Actualidad</a>
+                <a href="#voces">Voces</a>
+                <a href="#actualidad">Miradas</a>
                 <a href="#participa">Participá</a>
+                <a href="#musica">Música</a>
             </nav>
         </div>
     </header>
 
     <main>
 
-        <!-- SECCIÓN 1: HITOS IMPORTANTES CON CALENDARIO DESPLEGABLE -->
+        <!-- PORTADA / NOTA PRINCIPAL -->
+        <section class="tarjeta-seccion portada-principal">
+            <div class="portada-texto">
+                <span class="badge">Edición Nº 01 — Memoria Lésbica</span>
+                <h1>¿Dónde están las lesbianas? Cuatro hitos de la memoria real en Argentina</h1>
+                <p>La historia se escribe rompiendo el silencio, ocupando las calles y transformando el dolor en memoria organizada desde los territorios.</p>
+                <a href="historia-lesbica.html" class="btn">Leer nota completa →</a>
+            </div>
+            <div class="portada-imagen">
+                <img src="foto_escritoras.jpeg" alt="Escritoras lesbianas">
+            </div>
+        </section>
+
+        <!-- SECCIÓN: HITOS Y CALENDARIO INTERACTIVO -->
         <section id="hitos" class="tarjeta-seccion hitos-box">
-            <span class="badge">Agenda Colectiva</span>
-            <h2>Hitos Importantes</h2>
-            <p style="font-size: 0.85rem; color: #4b5563; margin-bottom: 10px;">Fechas clave y momentos históricos de la comunidad LGBT+ en Argentina.</p>
+            <span class="badge">Archivo Histórico</span>
+            <h2>Memoria en Línea de Tiempo</h2>
+            <p class="alerta-sub">Explorá los momentos clave que transformaron el activismo y los derechos en el sur y el país.</p>
             
             <button class="btn-desplegar-calendario" onclick="toggleCalendario()">
-                <span>📅 Ver Calendario de Fechas</span>
-                <span id="flecha-icono">▼</span>
+                <span>Ver hitos y efemérides destacadas</span>
+                <span id="icono-flecha">▼</span>
             </button>
 
             <div id="panel-calendario" class="panel-calendario-desplegado">
-                <div class="lista-fechas-vertical">
-                    <div class="item-fecha" onclick="mostrarDetalleHito('7 de Marzo', 'Día de la Visibilidad Lésbica en Argentina: Conmemoración histórica, organización y resistencia comunitaria.')">
-                        <span class="fecha-tag">7 MAR</span>
-                        <span class="fecha-titulo">Visibilidad Lésbica</span>
-                    </div>
-
-                    <div class="item-fecha" onclick="mostrarDetalleHito('9 de Mayo', 'Sanción de la Ley de Identidad de Género (Ley 26.743): Pionera en el mundo por reconocer el derecho a la autodeterminación.')">
-                        <span class="fecha-tag">9 MAY</span>
-                        <span class="fecha-titulo">Ley de Identidad de Género</span>
-                    </div>
-
-                    <div class="item-fecha" onclick="mostrarDetalleHito('17 de Mayo', 'Día Internacional contra la LGTBfobia: Eliminación de la homosexualidad de la lista de la OMS en 1990.')">
-                        <span class="fecha-tag">17 MAY</span>
-                        <span class="fecha-titulo">Contra la LGTBfobia</span>
-                    </div>
-
-                    <div class="item-fecha" onclick="mostrarDetalleHito('28 de Junio', 'Día Internacional del Orgullo LGBT+: Hito fundacional de Stonewall (Nueva York, 1969).')">
-                        <span class="fecha-tag">28 JUN</span>
-                        <span class="fecha-titulo">Día del Orgullo LGBT+</span>
-                    </div>
-
-                    <div class="item-fecha" onclick="mostrarDetalleHito('20 de Agosto', 'Día del Activismo por la Diversidad Sexual: En memoria de Carlos Jáuregui.')">
-                        <span class="fecha-tag">20 AGO</span>
-                        <span class="fecha-titulo">Activismo por la Diversidad</span>
-                    </div>
-
-                    <div class="item-fecha" onclick="mostrarDetalleHito('Primer Sábado de Noviembre', 'Marcha del Orgullo: Movilización popular por la visibilidad y derechos.')">
-                        <span class="fecha-tag">NOV</span>
-                        <span class="fecha-titulo">Marcha del Orgullo</span>
-                    </div>
+                <div class="hito-item">
+                    <h4>1988 — Primeras Coordinaciones</h4>
+                    <p>Agrupamientos autónomos lesbianos comienzan a tejer redes clandestinas en Buenos Aires y el interior.</p>
                 </div>
-
-                <div id="caja-detalle-hito" class="detalle-efemeride-grande">
-                    Tocá una fecha para ver su detalle.
+                <div class="hito-item">
+                    <h4>2010 — Ley de Matrimonio Igualitario</h4>
+                    <p>Un piso de derechos conquistado gracias a la marea militante y el litigio estratégico.</p>
+                </div>
+                <div class="hito-item">
+                    <h4>2022 — Autonomía Patagónica</h4>
+                    <p>Fortalecimiento de espacios comunitarios y soberanía disidente en la comarca andina y Viedma.</p>
                 </div>
             </div>
         </section>
 
-        <!-- SECCIÓN 2: INFORMACIÓN DETALLADA DEL GALPÓN ZATTI -->
-        <section id="galpon" class="tarjeta-seccion galpon-box">
-            <span class="badge" style="background-color: #fdf2f8; color: #a21caf; border-color: #f0abfc;">Soberanía Sanitaria y Territorial</span>
-            <h3>El Galpón y la Salud Comunitaria en Viedma</h3>
-            <img src="galpon-zatti.jpg" alt="Galpón Zatti Viedma">
-            
-            <p><strong>Espacio de referencia y cuidado:</strong> En el predio del Hospital Artémides Zatti (con ingreso principal por calle Rivadavia) funciona la Unidad de VIH/SIDA e ITS, consolidando un espacio de atención integral, libre de estigmas y con perspectiva de género y diversidad.</p>
-            
-            <div class="galpon-info-destacada">
-                <p style="margin: 0 0 5px 0;"><strong>💉 Testeo rápido y consejería:</strong> Espacio de asesoramiento confidencial, entrega de métodos de prevención y acompañamiento comunitario.</p>
-                <p style="margin: 0;"><strong>⏰ Horarios de atención:</strong> Lunes a viernes de 8:00 a 14:00 h. Demanda espontánea (sin turno previo ni orden médica necesaria).</p>
-            </div>
-
-            <p style="margin-bottom: 0;">Un enclave fundamental en la soberanía sanitaria local, articulando la salud pública con las necesidades de los colectivos sexo-genéricos de la región.</p>
-        </section>
-
-        <!-- SECCIÓN 3: ESTADÍSTICAS / CRÍMENES DE ODIO -->
-        <section id="impacto-odio" class="cartel-alerta">
-            <span class="badge" style="background-color: #fee2e2; color: #991b1b; border-color: #fca5a5;">Observatorio Nacional</span>
-            <h3>⚠️ 80 Crímenes de Odio en el año</h3>
-            <p style="font-size: 0.85rem; color: #7f1d1d; margin: 5px 0 10px 0;">Registro oficial documentado sobre la violencia sistemática en Argentina.</p>
-            <div class="cifras-grid">
-                <div class="tarjeta-cifra">
-                    <div class="numero">80</div>
-                    <div class="etiqueta-cifra">Fallecimientos</div>
+        <!-- BLOQUE: VOCES Y REGISTROS -->
+        <section id="voces" class="tarjeta-seccion">
+            <div class="seccion-titulo">Voces y Registros</div>
+            <div class="noticia-reciente-box">
+                <div>
+                    <img src="marcha_orgullo.jpg" alt="Marcha del Orgullo CABA">
                 </div>
-                <div class="tarjeta-cifra">
-                    <div class="numero">227</div>
-                    <div class="etiqueta-cifra">Casos totales</div>
+                <div>
+                    <span class="badge" style="background-color: #fee2e2; color: #991b1b; border-color: #fca5a5;">Actualidad Comunitaria</span>
+                    <h3>Marcha del Orgullo: la Ciudad pidió reprogramarla pero las organizaciones la ratificaron</h3>
+                    <p>Ante la solicitud del gobierno porteño de mover la fecha por operativos de seguridad, las comisiones organizadoras ratificaron la movilización amparadas en la ley.</p>
+                    <a href="noticia-tension-marcha.html" class="btn">Ampliar información →</a>
                 </div>
             </div>
         </section>
 
-        <!-- SECCIÓN 4: VOZ Y ACTUALIDAD -->
-        <section id="voces" class="noticia-destacada">
-            <img src="marcha_orgullo.jpg" alt="Marcha del Orgullo">
-            <span class="badge" style="background-color: #fee2e2; color: #991b1b; border-color: #fca5a5;">Actualidad</span>
-            <h3>Marcha del Orgullo: organizaciones ratificaron la movilización</h3>
-            <p style="font-size: 0.85rem; color: #333; margin-bottom: 10px;">Ante la solicitud de reprogramación municipal, las comisiones ratificaron la fecha amparadas en la ley.</p>
-            <a href="noticia-tension-marcha.html" class="btn">Ampliar información →</a>
-        </section>
-
-        <!-- SECCIÓN 5: MIRADAS Y DERECHOS -->
-        <section class="tarjeta-seccion">
+        <!-- SECCIÓN: MIRADAS Y DERECHOS -->
+        <section id="actualidad" class="tarjeta-seccion">
             <div class="seccion-titulo">Miradas y Derechos</div>
             <div class="grilla-tarjetas">
                 <article class="tarjeta">
-                    <img src="barracas.jpeg" alt="Barracas">
-                    <span class="badge">Justicia</span>
-                    <h3>Juicio final por el triple lesbicidio de Barracas</h3>
-                    <p>A dos años del ataque, el juicio exige condena firme por crimen de odio.</p>
+                    <img src="barracas.jpeg" alt="Juicio Barracas">
+                    <div>
+                        <span class="badge">Justicia</span>
+                        <h3>Juicio final por el triple lesbicidio de Barracas</h3>
+                        <p>A dos años del ataque en la pensión, el juicio entra en alegatos exigiendo condena firme por crimen de odio.</p>
+                    </div>
                     <a href="noticia-barracas.html" class="btn">Leer nota</a>
                 </article>
 
                 <article class="tarjeta">
                     <img src="villa_travesti.jpg" alt="Villa Travesti">
-                    <span class="badge">Patagonia</span>
-                    <h3>Villa Travesti: Soberanía colectiva en el sur</h3>
-                    <p>Resistencia y autonomía comunitaria en Las Golondrinas, Lago Puelo.</p>
+                    <div>
+                        <span class="badge">Patagonia</span>
+                        <h3>Villa Travesti: Soberanía colectiva en el sur</h3>
+                        <p>Resistencia, autonomía y vida comunitaria en Las Golondrinas, Lago Puelo, construyendo futuro desde los afectos.</p>
+                    </div>
                     <a href="villa-travesti.html" class="btn">Leer nota</a>
-                </article>
-
-                <article class="tarjeta">
-                    <img src="encuentro_cordoba.jpg" alt="Encuentro Córdoba">
-                    <span class="badge">Encuentro</span>
-                    <h3>Rumbo al 39° Encuentro Plurinacional</h3>
-                    <p>Córdoba se prepara para recibir la fuerza territorial colectiva.</p>
-                    <a href="encuentro-cordoba.html" class="btn">Leer nota</a>
                 </article>
             </div>
         </section>
 
-        <!-- SECCIÓN 6: PARTICIPÁ Y JUGÁ -->
-        <section id="participa" class="tarjeta-seccion" style="background-color: #fdf4ff;">
-            <div class="seccion-titulo">Participá y Jugá</div>
+        <!-- SOBERANÍA SANITARIA: HOSPITAL ZATTI -->
+        <section class="alerta-arcoiris">
+            <span class="badge" style="background-color: #fdf2f8; color: var(--color-acento); border-color: #fbcfe8;">Soberanía Sanitaria</span>
+            <h3 style="color: var(--color-primario); margin: 5px 0 8px 0;">Hospital Artemides Zatti (Viedma)</h3>
+            <p class="alerta-sub">En el predio del hospital (ingreso por calle Rivadavia), funciona la <strong>Unidad de VIH/SIDA e ITS</strong>. Un espacio clave de residencia y cuidado sin estigmas.</p>
+            <p class="alerta-sub"><strong>Horarios:</strong> Lunes a viernes de 8:00 a 14:00 h (Demanda espontánea sin turno previo).</p>
+            <a href="salud-zatti.html" id="btn-abrir-zatti" class="btn" style="width: 100%; box-sizing: border-box; text-align: center; margin-top: 5px;">Conocer más detalles →</a>
+        </section>
+
+        <!-- SECCIÓN: PARTICIPÁ Y JUGÁ -->
+        <section id="participa" class="tarjeta-seccion">
+            <div class="seccion-titulo">Participá y Jugá con nosotras</div>
             
-            <div style="margin-bottom: 20px;">
+            <!-- Envío de material -->
+            <div class="caja-participacion">
                 <span class="badge">Colaboraciones</span>
-                <h3 style="color: var(--color-primario); font-size: 0.95rem; margin: 5px 0;">Envianos tu material</h3>
+                <h3 style="color: var(--color-primario); margin: 0;">Envianos tu material</h3>
+                <p style="font-size: 0.85rem; color: #555; margin: 0;">Dejanos tu relato, poema o reflexión para sumar a la revista:</p>
                 <form class="form-compacto" action="https://formspree.io/f/xrpbeeol" method="POST">
                     <input type="text" name="nombre" placeholder="Nombre o seudónimo" required>
                     <input type="email" name="email" placeholder="Correo electrónico" required>
                     <textarea name="mensaje" placeholder="Escribí acá tu colaboración..." required></textarea>
-                    <button type="submit" class="btn">Enviar material</button>
+                    <button type="submit" class="btn" style="border:none; cursor:pointer;">Enviar material</button>
                 </form>
             </div>
 
-            <div>
+            <!-- Cadáver Exquisito -->
+            <div class="caja-participacion" style="background: #faf5ff;">
                 <span class="badge" style="background-color: #fae8ff; color: #7e22ce; border-color: #f0abfc;">Zona Lúdica</span>
-                <h3 style="color: var(--color-primario); font-size: 0.95rem; margin: 5px 0;">Cadáver Exquisito Lésbico</h3>
+                <h3 style="color: var(--color-primario); margin: 0;">Cadáver Exquisito Lésbico</h3>
+                <p style="font-size: 0.85rem; color: #555; margin: 0;">Sumá tu verso al poema colectivo en curso:</p>
+
                 <div id="poema-en-curso" class="poema-box">
                     "Encendemos la noche con fósforos prestados...<br>
-                    la memoria arde en las esquinas del sur..."
+                    la memoria arde en las esquinas del sur...<br>
+                    tejiendo redes donde el viento no nos alcanza..."
                 </div>
+
                 <form id="form-juego" class="form-compacto" onsubmit="guardarVerso(event)">
-                    <textarea id="input-verso" placeholder="Sumá tu verso..." required style="height: 40px;"></textarea>
-                    <button type="submit" class="btn" style="background-color: #7e22ce;">Sumar verso</button>
+                    <textarea id="input-verso" placeholder="Escribí tu verso..." required style="height: 45px;"></textarea>
+                    <button type="submit" class="btn" style="background-color: #7e22ce; border:none; cursor:pointer;">Sumar verso</button>
                 </form>
             </div>
+        </section>
+
+        <!-- RECOMENDACIÓN / BANDA SONORA -->
+        <section id="musica" class="tarjeta-seccion caja-lateral">
+            <span class="badge" style="background-color: #fae8ff; color: #7e22ce; border-color: #f0abfc;">Recomendación</span>
+            <h3 style="color: var(--color-primario); margin: 5px 0 8px 0;">Mugre — "Ni Tu Perra"</h3>
+            <iframe src="https://www.youtube.com/embed/rzTRwztisDI" title="MUGRE - NI TU PERRA (Video Oficial)" allowfullscreen></iframe>
+            <p style="font-size: 0.85rem; color: #555; margin-bottom: 10px;">Potencia sonora, rock y texturas crudas. Un proyecto imperdible comandado por mujeres que sacude los parlantes.</p>
+            <a href="https://youtu.be/rzTRwztisDI" target="_blank" class="btn" style="background-color: #7e22ce; width: 100%; box-sizing: border-box; text-align: center;">Ver en YouTube →</a>
         </section>
 
     </main>
 
     <!-- FOOTER -->
     <footer>
-        <div class="logo" style="font-size: 1.4rem;">ORILLA</div>
-        <p style="margin: 5px 0;">Cultura y perspectiva de género — Viedma, Río Negro</p>
-        <div style="font-size: 0.75rem; margin-top: 8px;">Visitas: <span id="contador-visitas-num">1240</span></div>
-        <small style="display: block; margin-top: 10px; opacity: 0.8;">© 2026 ORILLA</small>
+        <div class="logo">ORILLA</div>
+        <p style="font-size: 0.85rem; margin: 5px 0;">Cultura y perspectiva de género — Viedma, Río Negro</p>
+        <p style="font-size: 0.75rem; color: #f3e8ff; margin: 8px 0;">Instagram · TikTok · Podcast</p>
+        <div class="contador">Visitas de la revista: <span id="contador-visitas-num">1240</span></div>
+        <small style="display: block; margin-top: 12px; opacity: 0.8;">© 2026 ORILLA</small>
     </footer>
+
+    <!-- VENTANA MODAL SALUD ZATTI -->
+    <div id="modal-zatti" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.6); z-index:1000; justify-content:center; align-items:center; padding: 15px;">
+        <div style="background:white; padding:20px; border-radius:12px; max-width:450px; width:100%; position:relative; box-shadow: 0 4px 20px rgba(0,0,0,0.2); box-sizing: border-box;">
+            <button onclick="cerrarModal()" style="position:absolute; top:12px; right:12px; background:none; border:none; font-size:1.1rem; cursor:pointer; font-weight:bold;">✕</button>
+            <span class="badge" style="background-color: #fdf2f8; color: var(--color-acento); border-color: #fbcfe8;">Soberanía Sanitaria</span>
+            <h3 style="color: var(--color-primario); margin-top:5px; font-size: 1.1rem;">Hospital Artemides Zatti — Viedma</h3>
+            <p style="font-size: 0.85rem; color: #4b5563;"><strong>Unidad de VIH/SIDA e ITS:</strong> Funciona en el predio del hospital con ingreso por calle Rivadavia. Espacio de atención y cuidado comunitario libre de estigmas.</p>
+            <ul style="font-size: 0.85rem; color: #4b5563; padding-left: 18px; line-height: 1.5;">
+                <li><strong>Días y horarios:</strong> Lunes a viernes de 8:00 a 14:00 h.</li>
+                <li><strong>Modalidad:</strong> Demanda espontánea (sin turno previo).</li>
+                <li><strong>Contacto:</strong> Cel. 02920-421626 | Fijo 420130 (int. 130)</li>
+            </ul>
+            <button onclick="cerrarModal()" class="btn" style="width:100%; margin-top:10px; border:none; cursor:pointer;">Cerrar ventana</button>
+        </div>
+    </div>
 
     <!-- SCRIPTS -->
     <script>
@@ -609,6 +612,18 @@
             document.getElementById("contador-visitas-num").innerText = visitas;
         });
 
+        function toggleCalendario() {
+            let panel = document.getElementById("panel-calendario");
+            let flecha = document.getElementById("icono-flecha");
+            if (panel.style.display === "block") {
+                panel.style.display = "none";
+                flecha.innerText = "▼";
+            } else {
+                panel.style.display = "block";
+                flecha.innerText = "▲";
+            }
+        }
+
         function guardarVerso(event) {
             event.preventDefault();
             let input = document.getElementById("input-verso");
@@ -623,22 +638,13 @@
             }
         }
 
-        function toggleCalendario() {
-            let panel = document.getElementById("panel-calendario");
-            let flecha = document.getElementById("flecha-icono");
-            if (panel.style.display === "block") {
-                panel.style.display = "none";
-                flecha.innerText = "▼";
-            } else {
-                panel.style.display = "block";
-                flecha.innerText = "▲";
-            }
-        }
+        document.getElementById("btn-abrir-zatti").addEventListener("click", function(e) {
+            e.preventDefault();
+            document.getElementById("modal-zatti").style.display = "flex";
+        });
 
-        function mostrarDetalleHito(fecha, descripcion) {
-            let caja = document.getElementById("caja-detalle-hito");
-            caja.style.display = "block";
-            caja.innerHTML = `<strong>${fecha}:</strong> ${descripcion}`;
+        function cerrarModal() {
+            document.getElementById("modal-zatti").style.display = "none";
         }
     </script>
 </body>

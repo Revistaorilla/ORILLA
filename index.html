@@ -119,18 +119,7 @@
             border-bottom: 2px solid var(--accent-light);
         }
 
-        .lead-article h3 {
-            font-size: 1.6rem;
-            color: var(--secondary);
-            margin-bottom: 0.8rem;
-        }
-
-        .lead-article p {
-            margin-bottom: 1rem;
-            color: var(--text);
-        }
-
-        /* Miradas y Derechos Grid */
+        /* Miradas y Derechos Grid (Las 4 noticias juntas) */
         .rights-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
@@ -326,7 +315,6 @@
             </div>
             <nav>
                 <ul>
-                    <li><a href="#portada">Portada</a></li>
                     <li><a href="#miradas">Miradas y Derechos</a></li>
                     <li><a href="#cultura">Cultura y Memoria</a></li>
                     <li><a href="#participa">Participá</a></li>
@@ -338,50 +326,46 @@
     <div class="main-layout">
         <div class="content-area">
             
-            <!-- PORTADA / NOTA PRINCIPAL -->
-            <section id="portada" class="lead-article">
-                <h2>Portada</h2>
-                <h3>Memorias disidentes y archivos comunitarios en la Patagonia</h3>
-                <p>Recuperar las historias que habitan los márgenes es una tarea urgente para construir comunidad. Desde Viedma y la región, exploramos cómo los archivos afectivos y las prácticas culturales transforman nuestro presente político y social.</p>
-                <p>Este espacio nace para tramar redes, reflexionar sobre las violencias cotidianas y celebrar los horizontes de emancipación colectiva con anclaje territorial.</p>
-            </section>
-
-            <!-- MIRADAS Y DERECHOS -->
+            <!-- MIRADAS Y DERECHOS: LAS 4 NOTICIAS REAGRUPADAS -->
             <section id="miradas">
                 <h2>Miradas y Derechos</h2>
                 <p style="margin-bottom: 1rem; font-size: 0.95rem; color: var(--text-light);">Actualidad, cobertura territorial y análisis sobre derechos humanos, justicia y luchas feministas y sexodiversas.</p>
                 
                 <div class="rights-grid">
+                    <!-- 1. Marcha del Orgullo -->
                     <div class="right-card">
                         <div>
                             <h4>Marcha del Orgullo</h4>
                             <p>Cobertura especial de las movilizaciones locales y regionales en defensa de los derechos conquistados y contra el ajuste.</p>
                         </div>
-                        <a href="#contacto" class="btn">Leer más</a>
+                        <a href="#" class="btn">Leer más</a>
                     </div>
 
+                    <!-- 2. Triple Lesbicidio de Barracas -->
                     <div class="right-card">
                         <div>
                             <h4>Triple Lesbicidio de Barracas</h4>
                             <p>Exigimos justicia y memoria por el crimen de odio perpetrado contra Romina, Pamela y Roxana. ¡Basta de lesbofobia!</p>
                         </div>
-                        <a href="#contacto" class="btn">Leer más</a>
+                        <a href="#" class="btn">Leer más</a>
                     </div>
 
+                    <!-- 3. Villa Travesti -->
                     <div class="right-card">
                         <div>
                             <h4>Villa Travesti (Patagonia)</h4>
                             <p>Memorias, resistencias y organización comunitaria de las identidades travestis y trans en el territorio patagónico.</p>
                         </div>
-                        <a href="#contacto" class="btn">Leer más</a>
+                        <a href="#" class="btn">Leer más</a>
                     </div>
 
+                    <!-- 4. Encuentro Plurinacional -->
                     <div class="right-card">
                         <div>
                             <h4>Encuentro Plurinacional</h4>
                             <p>Articulación, debates y talleres de las grupas rumbo a una nueva edición del Encuentro Plurinacional de Mujeres y Disidencias.</p>
                         </div>
-                        <a href="#contacto" class="btn">Leer más</a>
+                        <a href="#" class="btn">Leer más</a>
                     </div>
                 </div>
             </section>
@@ -478,7 +462,6 @@
     </footer>
 
     <script>
-        // Contador de visitas local
         let visitas = localStorage.getItem('orilla_visitas');
         if (!visitas) {
             visitas = 142;
@@ -488,7 +471,6 @@
         localStorage.setItem('orilla_visitas', visitas);
         document.getElementById('contador-visitas').innerText = String(visitas).padStart(6, '0');
 
-        // Cadáver Exquisito
         function agregarVerso() {
             const input = document.getElementById('nuevo-verso');
             const texto = input.value.trim();
@@ -502,7 +484,6 @@
             }
         }
 
-        // Modal
         function abrirModal() {
             document.getElementById('modal-salud').style.display = 'flex';
         }

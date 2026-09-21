@@ -130,48 +130,54 @@
             border-radius: 4px;
             text-transform: uppercase;
             letter-spacing: 0.5px;
-            margin-bottom: 10px;
+            margin-bottom: 8px;
             border: 1px solid #fbcfe8;
         }
 
-        /* SECCIÓN PRINCIPAL / PORTADA */
-        .portada-principal {
-            display: grid;
-            grid-template-columns: 2fr 1fr;
-            gap: 30px;
+        /* SECCIÓN HITOS DE LA HISTORIA ARGENTINA (COMPACTA) */
+        .hitos-historia-box {
             background: var(--color-tarjeta);
             border: 1px solid var(--borde-suave);
+            border-left: 5px solid var(--color-secundario);
             border-radius: 12px;
-            padding: 30px;
+            padding: 20px;
             box-shadow: 0 4px 15px rgba(168, 85, 247, 0.04);
-            align-items: center;
         }
 
-        @media (max-width: 768px) {
-            .portada-principal {
-                grid-template-columns: 1fr;
-            }
-        }
-
-        .portada-texto h1 {
+        .hitos-historia-box h1 {
             color: var(--color-primario);
-            font-size: 2rem;
-            margin: 0 0 15px 0;
+            font-size: 1.4rem;
+            margin: 0 0 8px 0;
             line-height: 1.2;
         }
 
-        .portada-texto p {
+        .hitos-historia-box p {
             color: #4b5563;
-            font-size: 1rem;
-            margin-bottom: 20px;
+            font-size: 0.9rem;
+            margin-bottom: 12px;
         }
 
-        .portada-imagen img {
-            width: 100%;
-            height: 240px;
-            object-fit: cover;
-            border-radius: 8px;
-            border: 1px solid var(--borde-suave);
+        /* LISTA DE LOGROS Y LEYES */
+        .logros-lista {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            font-size: 0.85rem;
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+            color: #333;
+        }
+
+        .logros-lista li {
+            background: #fdf4ff;
+            padding: 8px 12px;
+            border-radius: 6px;
+            border: 1px solid #fbcfe8;
+        }
+
+        .logros-lista strong {
+            color: var(--color-acento);
         }
 
         .btn {
@@ -330,7 +336,7 @@
             line-height: 1.4;
         }
 
-        /* SECCIÓN PARTICIPAR Y JUGAR (DOS COLUMNAS) */
+        /* SECCIÓN PARTICIPAR Y JUGÁ (DOS COLUMNAS) */
         .participacion-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -421,10 +427,10 @@
                 <span class="subtitulo">Cultura y perspectiva de género</span>
             </div>
             <nav>
+                <a href="#hitos">Hitos</a>
                 <a href="#voces">Voces y Registros</a>
                 <a href="#actualidad">Miradas</a>
                 <a href="#cultura">Cultura y Memoria</a>
-                <a href="#galpon">El Galpón</a>
                 <a href="#musica">Banda Sonora</a>
                 <a href="#participa">Participá</a>
             </nav>
@@ -437,17 +443,18 @@
             <!-- COLUMNA IZQUIERDA (CONTENIDO CENTRAL) -->
             <div class="columna-izquierda">
 
-                <!-- PORTADA / NOTA PRINCIPAL -->
-                <section class="portada-principal">
-                    <div class="portada-texto">
-                        <span class="badge">Edición Nº 01 — Memoria Lésbica</span>
-                        <h1>¿Dónde están las lesbianas? Cuatro hitos de la memoria real en Argentina</h1>
-                        <p>La historia se escribe rompiendo el silencio, ocupando las calles y transformando el dolor en memoria organizada desde los territorios.</p>
-                        <a href="historia-lesbica.html" class="btn">Leer nota completa →</a>
-                    </div>
-                    <div class="portada-imagen">
-                        <img src="foto_escritoras.jpeg" alt="Escritoras lesbianas">
-                    </div>
+                <!-- SECCIÓN: HITOS DE LA HISTORIA ARGENTINA -->
+                <section id="hitos" class="hitos-historia-box">
+                    <span class="badge">Memoria y Derechos</span>
+                    <h1>Hitos de la historia argentina</h1>
+                    <p>Conquistas fundamentales, leyes y momentos clave en la construcción de derechos de nuestra comunidad:</p>
+                    
+                    <ul class="logros-lista">
+                        <li><strong>1996:</strong> Incorporación de la orientación sexual en la Constitución de la Ciudad de Buenos Aires.</li>
+                        <li><strong>2010:</strong> Sanción de la Ley de Matrimonio Igualitario.</li>
+                        <li><strong>2012:</strong> Aprobación histórica de la Ley de Identidad de Género (N° 26.743).</li>
+                        <li><strong>2020:</strong> Decreto de Cupo Laboral Travesti-Trans en el sector público nacional (N° 721/20).</li>
+                    </ul>
                 </section>
 
                 <!-- BLOQUE: VOCES Y REGISTROS -->
@@ -527,27 +534,6 @@
                     </div>
                 </section>
 
-                <!-- SECCIÓN: EL GALPÓN / CENTRO CULTURAL -->
-                <section id="galpon">
-                    <div class="seccion-titulo">El Galpón / Centro Cultural</div>
-                    <div class="tarjeta" style="background: linear-gradient(135deg, #fdf4ff 0%, #ffffff 100%);">
-                        <span class="badge" style="background-color: #f3e8ff; color: #7e22ce; border-color: #d8b4fe;">Territorio y Autogestión</span>
-                        <h3 style="color: var(--color-primario); font-size: 1.1rem; margin-top: 5px;">Espacio de Encuentro, Talleres y Resistencia Cultural</h3>
-                        <p style="color: #4b5563; font-size: 0.9rem; margin-bottom: 12px;">
-                            El Galpón funciona como un punto neurálgico de articulación comunitaria en Viedma. Espacio abierto a ferias autogestivas, asambleas, cine debate y formación disidente.
-                        </p>
-                        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 10px; margin-bottom: 15px; font-size: 0.8rem; color: #333;">
-                            <div style="background: white; padding: 10px; border-radius: 6px; border: 1px solid #fbcfe8;">
-                                <strong>📍 Ubicación:</strong><br>Zona Comarca Viedma - Patagones
-                            </div>
-                            <div style="background: white; padding: 10px; border-radius: 6px; border: 1px solid #fbcfe8;">
-                                <strong>🗓️ Actividades:</strong><br>Ferias, talleres y asambleas semanales
-                            </div>
-                        </div>
-                        <a href="galpon.html" class="btn" style="width: fit-content; background-color: #7e22ce;">Conocer agenda de El Galpón →</a>
-                    </div>
-                </section>
-
                 <!-- SECCIÓN: BANDA SONORA -->
                 <section id="musica">
                     <div class="seccion-titulo">Banda Sonora: Recomendadas</div>
@@ -616,7 +602,6 @@
                 <div class="alerta-arcoiris">
                     <span class="badge" style="background-color: #fdf2f8; color: var(--color-acento); border-color: #fbcfe8;">Soberanía Sanitaria</span>
                     <h3>Testeo, prevención y redes</h3>
-                    <!-- Incorporación de la foto del hospital -->
                     <img src="hospital_zatti.jpg" alt="Hospital Artemides Zatti - Viedma">
                     <p class="alerta-sub">En el predio del <strong>Hospital Artemides Zatti</strong> (ingreso por calle Rivadavia), funciona la <strong>Unidad de VIH/SIDA e ITS</strong>. Espacio clave de atención comunitaria sin estigmas.</p>
                     <p class="alerta-sub"><strong>Horarios:</strong> Lunes a viernes de 8:00 a 14:00 h.</p>

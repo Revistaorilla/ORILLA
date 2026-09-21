@@ -218,7 +218,7 @@
             display: none;
         }
 
-        /* INFORMACIÓN DEL GALPÓN / HOSPITAL ZATTI */
+        /* INFORMACIÓN DETALLADA DEL GALPÓN ZATTI */
         .galpon-box {
             background: linear-gradient(135deg, #fdf4ff 0%, #ffffff 100%);
             border: 1px solid #d946ef;
@@ -226,8 +226,9 @@
 
         .galpon-box h3 {
             color: var(--color-primario);
-            font-size: 1.1rem;
+            font-size: 1.15rem;
             margin: 5px 0 8px 0;
+            font-weight: 800;
         }
 
         .galpon-box img {
@@ -235,14 +236,25 @@
             height: 160px;
             object-fit: cover;
             border-radius: 6px;
-            margin-bottom: 10px;
+            margin-bottom: 12px;
             border: 1px solid var(--borde-suave);
         }
 
         .galpon-box p {
             font-size: 0.85rem;
-            color: #4b5563;
+            color: #333;
             margin: 0 0 10px 0;
+            line-height: 1.5;
+        }
+
+        .galpon-info-destacada {
+            background: #ffffff;
+            border-left: 4px solid var(--color-secundario);
+            padding: 10px 12px;
+            border-radius: 4px;
+            margin: 10px 0;
+            font-size: 0.83rem;
+            color: #4b5563;
         }
 
         /* CARTEL ALERTA / ESTADÍSTICAS */
@@ -431,7 +443,7 @@
 
             <div id="panel-calendario" class="panel-calendario-desplegado">
                 <div class="lista-fechas-vertical">
-                    <div class="item-fecha" onclick="mostrarDetalleHito('7 de Marzo', 'Día de la Visibilidad Lésbica en Argentina: Conmemoración histórica y resistencia comunitaria.')">
+                    <div class="item-fecha" onclick="mostrarDetalleHito('7 de Marzo', 'Día de la Visibilidad Lésbica en Argentina: Conmemoración histórica, organización y resistencia comunitaria.')">
                         <span class="fecha-tag">7 MAR</span>
                         <span class="fecha-titulo">Visibilidad Lésbica</span>
                     </div>
@@ -468,14 +480,20 @@
             </div>
         </section>
 
-        <!-- SECCIÓN 2: INFORMACIÓN DEL GALPÓN ZATTI (RECUPERADA) -->
+        <!-- SECCIÓN 2: INFORMACIÓN DETALLADA DEL GALPÓN ZATTI -->
         <section id="galpon" class="tarjeta-seccion galpon-box">
-            <span class="badge" style="background-color: #fdf2f8; color: #a21caf; border-color: #f0abfc;">Soberanía Sanitaria</span>
-            <h3>Hospital Artemides Zatti — Viedma</h3>
+            <span class="badge" style="background-color: #fdf2f8; color: #a21caf; border-color: #f0abfc;">Soberanía Sanitaria y Territorial</span>
+            <h3>El Galpón y la Salud Comunitaria en Viedma</h3>
             <img src="galpon-zatti.jpg" alt="Galpón Zatti Viedma">
-            <p><strong>Testeo, prevención y redes:</strong> En el predio del Hospital Artemides Zatti (ingreso por calle Rivadavia) funciona la Unidad de VIH/SIDA e ITS. Un espacio clave de residencia y cuidado sin estigmas.</p>
-            <p style="margin-bottom: 5px;"><strong>Horarios:</strong> Lunes a viernes de 8:00 a 14:00 h.</p>
-            <p style="margin-bottom: 0;"><strong>Demanda espontánea:</strong> Sin turno previo ni orden médica.</p>
+            
+            <p><strong>Espacio de referencia y cuidado:</strong> En el predio del Hospital Artémides Zatti (con ingreso principal por calle Rivadavia) funciona la Unidad de VIH/SIDA e ITS, consolidando un espacio de atención integral, libre de estigmas y con perspectiva de género y diversidad.</p>
+            
+            <div class="galpon-info-destacada">
+                <p style="margin: 0 0 5px 0;"><strong>💉 Testeo rápido y consejería:</strong> Espacio de asesoramiento confidencial, entrega de métodos de prevención y acompañamiento comunitario.</p>
+                <p style="margin: 0;"><strong>⏰ Horarios de atención:</strong> Lunes a viernes de 8:00 a 14:00 h. Demanda espontánea (sin turno previo ni orden médica necesaria).</p>
+            </div>
+
+            <p style="margin-bottom: 0;">Un enclave fundamental en la soberanía sanitaria local, articulando la salud pública con las necesidades de los colectivos sexo-genéricos de la región.</p>
         </section>
 
         <!-- SECCIÓN 3: ESTADÍSTICAS / CRÍMENES DE ODIO -->

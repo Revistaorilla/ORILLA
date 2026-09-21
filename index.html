@@ -607,7 +607,6 @@
                     <button onclick="abrirModal()" class="btn" style="width: 100%; box-sizing: border-box; text-align: center; border:none; cursor:pointer; padding: 6px 12px; font-size: 0.8rem;">Más información →</button>
                 </div>
 
-                <!-- SECCIÓN DE MÚSICA UBICADA DEBAJO DEL TESTEO -->
                 <section id="musica" class="tarjeta" style="background: linear-gradient(135deg, #fdf4ff 0%, #ffffff 100%); margin: 0;">
                     <div>
                         <iframe src="https://www.youtube.com/embed/rzTRwztisDI" title="MUGRE - NI TU PERRA (Video Oficial)" allowfullscreen></iframe>
@@ -624,29 +623,41 @@
                     
                     <img src="https://raw.githubusercontent.com/Revistaorilla/ORILLA/main/rosa_salvaje.jpg" alt="Socorristas en Red - Rosa Salvaje" style="width: 100%; height: 160px; object-fit: cover; border-radius: 6px; margin: 10px 0; border: 1px solid var(--borde-suave);">
 
-                    <p style="font-size: 0.85rem; color: #4b5563; line-height: 1.5;">
-                        A nivel estructural, Socorristas en Red es una articulación feminista federal nacida en 2012 e impulsada inicialmente por la Colectiva Feminista La Revuelta de Neuquén. Desde sus orígenes, se ha consolidado como una red nacional que agrupa a distintas colectivas a lo largo del país, unidas por el compromiso de acompañar abortos seguros, feministas y amorosos, garantizando información confiable y despojando a la práctica de la culpa, el miedo y la clandestinidad.
-                    </p>
-                    <p style="font-size: 0.85rem; color: #4b5563; line-height: 1.5;">
-                        Sumergirse en este universo —tal como reflexiona la periodista y escritora Laura Rosso— implica encarnar una práctica que trasciende la asistencia sanitaria: significa sentir en el propio cuerpo el valor del "hacer amoroso y acuerpado". Acompañar un proceso de estas características no es un acto aislado, sino una experiencia profundamente humana atravesada por el cuerpo, la escucha sin juicios y el cuidado colectivo.
+                    <p style="font-size: 0.85rem; color: #4b5563; line-height: 1.5; margin-bottom: 12px;">
+                        A nivel estructural, Socorristas en Red es una articulación feminista federal nacida en 2012...
                     </p>
 
-                    <h3 style="color: var(--color-primario); font-size: 0.95rem; margin-top: 15px;">1. Romper la soledad y visibilizar lo cotidiano</h3>
-                    <p style="font-size: 0.85rem; color: #4b5563; line-height: 1.5;">
-                        Históricamente, el aborto estuvo confinado al tabú y al silencio. El socorrismo irrumpe para desarticular esa lógica: ya no se aborta más en soledad. Los abortos se ven, se nombran y se charlan. Poner la palabra en común permite que las personas gestantes se reconozcan entre sí, tejiendo redes que fortalecen la autonomía y devienen en formas vitales de resistencia frente a la hostilidad del mundo patriarcal.
-                    </p>
+                    <!-- CONTENIDO OCULTO QUE SE DESPLIEGA CON EL BOTÓN -->
+                    <div id="texto-ampliado-socorristas" style="display: none;">
+                        <p style="font-size: 0.85rem; color: #4b5563; line-height: 1.5;">
+                            ...e impulsada inicialmente por la Colectiva Feminista La Revuelta de Neuquén. Desde sus orígenes, se ha consolidado como una red nacional que agrupa a distintas colectivas a lo largo del país, unidas por el compromiso de acompañar abortos seguros, feministas y amorosos, garantizando información confiable y despojando a la práctica de la culpa, el miedo y la clandestinidad.
+                        </p>
+                        <p style="font-size: 0.85rem; color: #4b5563; line-height: 1.5;">
+                            Sumergirse en este universo —tal como reflexiona la periodista y escritora Laura Rosso— implica encarnar una práctica que trasciende la asistencia sanitaria: significa sentir en el propio cuerpo el valor del "hacer amoroso y acuerpado". Acompañar un proceso de estas características no es un acto aislado, sino una experiencia profundamente humana atravesada por el cuerpo, la escucha sin juicios y el cuidado colectivo.
+                        </p>
 
-                    <h3 style="color: var(--color-primario); font-size: 0.95rem; margin-top: 15px;">2. Producción de conocimiento y disputa de sentidos</h3>
-                    <p style="font-size: 0.85rem; color: #4b5563; line-height: 1.5;">
-                        La red no se limita a responder a una urgencia práctica, sino que produce un saber propio y situado. A través de registros, relatos y sistematizaciones, las socorristas legitiman saberes que tensionan los sentidos dominantes sobre la salud sexual y reproductiva. Este conocimiento se expande y dialoga activamente con la comunidad y el Estado en todos sus niveles.
-                    </p>
+                        <h3 style="color: var(--color-primario); font-size: 0.95rem; margin-top: 15px;">1. Romper la soledad y visibilizar lo cotidiano</h3>
+                        <p style="font-size: 0.85rem; color: #4b5563; line-height: 1.5;">
+                            Históricamente, el aborto estuvo confinado al tabú y al silencio. El socorrismo irrumpe para desarticular esa lógica: ya no se aborta más en soledad. Los abortos se ven, se nombran y se charlan. Poner la palabra en común permite que las personas gestantes se reconozcan entre sí, tejiendo redes que fortalecen la autonomía y devienen en formas vitales de resistencia frente a la hostilidad del mundo patriarcal.
+                        </p>
 
-                    <div style="background: #fdf2f8; border-left: 4px solid #e11d48; padding: 12px; border-radius: 0 8px 8px 0; margin-top: 15px;">
-                        <h3 style="color: #881337; margin: 0 0 4px 0; font-size: 0.95rem;">El arraigo local: Socorristas en Viedma</h3>
-                        <p style="font-size: 0.85rem; color: #4b5563; margin: 0; line-height: 1.5;">
-                            Toda esta marea federal se hace cuerpo, voz y territorio en nuestra comarca. En Viedma, estas redes de complicidad y cuidado feminista se sostienen activamente bajo el nombre de la colectiva local Rosa Salvaje.
+                        <h3 style="color: var(--color-primario); font-size: 0.95rem; margin-top: 15px;">2. Producción de conocimiento y disputa de sentidos</h3>
+                        <p style="font-size: 0.85rem; color: #4b5563; line-height: 1.5;">
+                            La red no se limita a responder a una urgencia práctica, sino que produce un saber propio y situado. A través de registros, relatos y sistematizaciones, las socorristas legitiman saberes que tensionan los sentidos dominantes sobre la salud sexual y reproductiva. Este conocimiento se expande y dialoga activamente con la comunidad y el Estado en todos sus niveles.
                         </p>
                     </div>
+
+                    <div style="background: #fdf2f8; border-left: 4px solid #e11d48; padding: 12px; border-radius: 0 8px 8px 0; margin-top: 15px; margin-bottom: 15px;">
+                        <h3 style="color: #881337; margin: 0 0 4px 0; font-size: 0.95rem;">El arraigo local: Socorristas en Viedma</h3>
+                        <p style="font-size: 0.85rem; color: #4b5563; margin: 0 0 8px 0; line-height: 1.5;">
+                            Toda esta marea federal se hace cuerpo, voz y territorio en nuestra comarca. En Viedma, estas redes de complicidad y cuidado feminista se sostienen activamente bajo el nombre de la colectiva local <strong>Rosa Salvaje</strong>.
+                        </p>
+                        <p style="font-size: 0.85rem; color: #881337; margin: 0; font-weight: bold;">
+                            📞 Teléfono de contacto / Acompañamientos: <a href="https://wa.me/5492920635246" target="_blank" style="color: #e11d48; text-decoration: none;">2920 635246</a>
+                        </p>
+                    </div>
+
+                    <button id="btn-leer-mas" onclick="toggleSocorristas()" class="btn" style="width: 100%; box-sizing: border-box; text-align: center; border:none; cursor:pointer; padding: 8px 12px; font-size: 0.85rem; background-color: var(--color-secundario);">Leer más ↓</button>
                 </section>
 
             </aside>
@@ -704,6 +715,19 @@
                 localStorage.setItem("poema_colectivo_orilla", contenedorPoema.innerHTML);
                 input.value = "";
                 alert("¡Verso sumado con éxito!");
+            }
+        }
+
+        function toggleSocorristas() {
+            let textoExtra = document.getElementById("texto-ampliado-socorristas");
+            let boton = document.getElementById("btn-leer-mas");
+            
+            if (textoExtra.style.display === "none") {
+                textoExtra.style.display = "block";
+                boton.innerText = "Ocultar ↑";
+            } else {
+                textoExtra.style.display = "none";
+                boton.innerText = "Leer más ↓";
             }
         }
 

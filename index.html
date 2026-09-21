@@ -242,7 +242,7 @@
 
         .tarjeta img {
             width: 100%;
-            height: 140px;
+            height: 180px;
             object-fit: cover;
             border-radius: 6px;
             margin-bottom: 12px;
@@ -342,6 +342,7 @@
 </head>
 <body>
 
+    <!-- CABECERA Y MENÚ FIJO ORDENADA -->
     <header>
         <div class="header-container">
             <div class="logo-area">
@@ -352,6 +353,7 @@
                 <a href="#voces">Voces y Registros</a>
                 <a href="#actualidad">Miradas</a>
                 <a href="#cultura">Cultura y Memoria</a>
+                <a href="#musica">Banda Sonora</a>
                 <a href="#participa">Participá</a>
             </nav>
         </div>
@@ -359,6 +361,7 @@
 
     <main>
 
+        <!-- PORTADA / NOTA PRINCIPAL -->
         <section class="portada-principal">
             <div class="portada-texto">
                 <span class="badge">Edición Nº 01 — Memoria Lésbica</span>
@@ -371,6 +374,7 @@
             </div>
         </section>
 
+        <!-- BLOQUE: VOCES Y REGISTROS -->
         <section id="voces">
             <div class="seccion-titulo">Voces y Registros</div>
             <div class="noticia-reciente-box">
@@ -386,6 +390,7 @@
             </div>
         </section>
 
+        <!-- SECCIÓN: MIRADAS Y DERECHOS -->
         <section id="actualidad">
             <div class="seccion-titulo">Miradas y Derechos</div>
             <div class="grilla-tarjetas">
@@ -421,6 +426,7 @@
             </div>
         </section>
 
+        <!-- SECCIÓN: CULTURA Y MEMORIA -->
         <section id="cultura">
             <div class="seccion-titulo">Cultura y Memoria</div>
             <div class="grilla-tarjetas">
@@ -445,10 +451,28 @@
             </div>
         </section>
 
+        <!-- SECCIÓN: BANDA SONORA -->
+        <section id="musica">
+            <div class="seccion-titulo">Banda Sonora: Recomendadas</div>
+            <div class="grilla-tarjetas">
+                <article class="tarjeta" style="background: linear-gradient(135deg, #fdf4ff 0%, #ffffff 100%);">
+                    <div>
+                        <img src="1000851842.jpg" alt="Banda Mugre">
+                        <span class="badge" style="background-color: #fae8ff; color: #7e22ce; border-color: #f0abfc;">Sonidos en Loop</span>
+                        <h3>Mugre</h3>
+                        <p>Potencia sonora, rock y texturas crudas. Un proyecto imperdible comandado por mujeres que sacude los parlantes y despliega una energía única.</p>
+                    </div>
+                    <a href="https://www.youtube.com" target="_blank" class="btn" style="background-color: #7e22ce; text-align: center;">Escuchar en YouTube / Spotify →</a>
+                </article>
+            </div>
+        </section>
+
+        <!-- SECCIÓN: PARTICIPÁ Y JUGÁ -->
         <section id="participa">
             <div class="seccion-titulo">Participá y Jugá con nosotras</div>
             <div class="participacion-grid">
                 
+                <!-- Columna 1: Enviar material -->
                 <div class="caja-participacion">
                     <div>
                         <span class="badge">Colaboraciones</span>
@@ -464,6 +488,7 @@
                     </div>
                 </div>
 
+                <!-- Columna 2: Cadáver Exquisito -->
                 <div class="caja-participacion">
                     <div>
                         <span class="badge" style="background-color: #fae8ff; color: #7e22ce; border-color: #f0abfc;">Zona Lúdica</span>
@@ -488,14 +513,16 @@
 
     </main>
 
+    <!-- FOOTER -->
     <footer>
         <div class="logo">ORILLA</div>
         <p style="font-size: 0.9rem; margin: 5px 0;">Cultura y perspectiva de género — Viedma, Río Negro</p>
-        <p style="font-size: 0.8rem; color: #f3e8ff; margin: 10px 0;">Instagram · TikTok · Podcast</p>
+        <p style="font-size: 0.80rem; color: #f3e8ff; margin: 10px 0;">Instagram · TikTok · Podcast</p>
         <div class="contador">Visitas de la revista: <span id="contador-visitas-num">1240</span></div>
         <small style="display: block; margin-top: 15px; opacity: 0.8;">© 2026 ORILLA</small>
     </footer>
 
+    <!-- SCRIPTS -->
     <script>
         document.addEventListener("DOMContentLoaded", function() {
             let versosGuardados = localStorage.getItem("poema_colectivo_orilla");

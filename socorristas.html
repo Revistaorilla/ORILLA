@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Socorristas en Red y Rosa Salvaje — ORILLA</title>
+    <style>
+        :root {
+            --color-primario: #581c87;
+            --color-secundario: #a21caf;
+            --color-acento: #e11d48;
+            --color-fondo: #fcf8fa;
+            --color-tarjeta: #ffffff;
+            --color-texto: #2b2b2b;
+            --borde-suave: #f0abfc;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: system-ui, -apple-system, sans-serif;
+            background-color: var(--color-fondo);
+            color: var(--color-texto);
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
+
+        /* HEADER Y NAVEGACIÓN */
+        header {
+            background-color: #ffffff;
+            border-bottom: 2px solid var(--borde-suave);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 10px rgba(88, 28, 135, 0.04);
+        }
+
+        .header-container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 15px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .logo-area {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .logo {
+            font-size: 2.2rem;
+            font-weight: 900;
+            letter-spacing: 3px;
+            background: linear-gradient(90deg, #e11d48, #a855f7);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin: 0;
+            line-height: 1;
+            text-decoration: none;
+        }
+
+        .subtitulo {
+            font-size: 0.75rem;
+            color: var(--color-secundario);
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-top: 4px;
+        }
+
+        .btn-volver {
+            background-color: var(--color-primario);
+            color: white;
+            padding: 8px 16px;
+            border-radius: 6px;
+            font-weight: bold;
+            text-decoration: none;
+            font-size: 0.85rem;
+            transition: background 0.2s;
+        }
+
+        .btn-volver:hover {
+            background-color: var(--color-secundario);
+        }
+
+        /* CONTENIDO PRINCIPAL */
+        main {
+            max-width: 900px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        .articulo-completo {
+            background: var(--color-tarjeta);
+            border: 1px solid var(--borde-suave);
+            border-radius: 12px;
+            padding: 30px;
+            box-shadow: 0 4px 15px rgba(88, 28, 135, 0.04);
+        }
+
+        .badge {
+            display: inline-block;
+            background-color: #fee2e2;
+            color: #991b1b;
+            font-size: 0.75rem;
+            font-weight: 800;
+            padding: 4px 10px;
+            border-radius: 4px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 12px;
+            border: 1px solid #fca5a5;
+        }
+
+        h1 {
+            color: #881337;
+            font-size: 1.8rem;
+            margin-top: 0;
+            margin-bottom: 20px;
+            line-height: 1.25;
+        }
+
+        .imagen-principal {
+            width: 100%;
+            max-height: 400px;
+            object-fit: cover;
+            border-radius: 8px;
+            margin-bottom: 25px;
+            border: 1px solid var(--borde-suave);
+        }
+
+        h2 {
+            color: var(--color-primario);
+            font-size: 1.25rem;
+            margin-top: 30px;
+            border-bottom: 2px solid var(--color-secundario);
+            padding-bottom: 6px;
+        }
+
+        p {
+            font-size: 0.95rem;
+            color: #374151;
+            margin-bottom: 15px;
+        }
+
+        .caja-destacada {
+            background: #fff5f7;
+            border-left: 4px solid var(--color-acento);
+            padding: 15px 20px;
+            border-radius: 0 8px 8px 0;
+            margin: 25px 0;
+            font-size: 0.95rem;
+            color: #500724;
+        }
+
+        /* FOOTER */
+        footer {
+            background-color: var(--color-primario);
+            color: white;
+            text-align: center;
+            padding: 25px 20px;
+            margin-top: 60px;
+            border-top: 4px solid var(--color-secundario);
+        }
+
+        footer .logo-footer {
+            font-size: 1.6rem;
+            font-weight: 900;
+            letter-spacing: 2px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- CABECERA -->
+    <header>
+        <div class="header-container">
+            <div class="logo-area">
+                <a href="index.html" class="logo">ORILLA</a>
+                <span class="subtitulo">Cultura y perspectiva de género</span>
+            </div>
+            <nav>
+                <a href="index.html" class="btn-volver">← Volver al inicio</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- CONTENIDO -->
+    <main>
+        <article class="articulo-completo">
+            <span class="badge">Red Federal de Acompañamiento</span>
+            <h1>Socorristas en Red: Abrazar el territorio, disputar los sentidos</h1>
+            
+            <img src="rosa_salvaje.jpg" alt="Colectiva Rosa Salvaje Viedma" class="imagen-principal">
+
+            <p>Nacida en 2012 e impulsada inicialmente por la Colectiva Feminista <strong>La Revuelta</strong> de Neuquén, la red nacional consolida un compromiso histórico e inquebrantable: acompañar abortos seguros, feministas y amorosos en cada rincón del país.</p>
+
+            <p>El socorrismo se plantea no solo como una práctica de acompañamiento e información validada científicamente frente a la clandestinidad y el abandono estatal, sino como una herramienta política de transformación social que rompe con la culpa, el estigma y la soledad impuestas por el patriarcado.</p>
+
+            <h2>El hacer en la comarca: Colectiva Rosa Salvaje</h2>
+
+            <p>En nuestra comarca (Viedma y Carmen de Patagones), este hacer amoroso, acuerpado y feminista se sostiene activamente a través de la colectiva local <strong>Rosa Salvaje</strong>.</p>
+
+            <div class="caja-destacada">
+                "Romper la soledad y tejer redes de autonomía frente a la hostilidad patriarcal es el motor cotidiano de nuestras grupas en el territorio."
+            </div>
+
+            <p>Desde las líneas telefónicas de consulta hasta los encuentros cara a cara, las socorristas construyen soberanía sobre los cuerpos y las decisiones, tejiendo tramas comunitarias que garantizan información segura, contención afectiva y defensa irrestricta de los derechos conquistados.</p>
+
+            <h2>Principios rectores</h2>
+            <p><strong>Autonomía, confidencialidad, horizontalidad y confianza mutua.</strong> El socorrismo feminista enseña que cuando una mujer o persona gestante decide abortar, no está sola: se activa una red solidaria que abraza, acompaña y legitima la potencia de decidir.</p>
+        </article>
+    </main>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="logo-footer">ORILLA</div>
+        <p style="font-size: 0.85rem; margin: 4px 0;">Cultura y perspectiva de género — Viedma, Río Negro</p>
+        <small style="display: block; margin-top: 10px; opacity: 0.8;">© 2026 ORILLA</small>
+    </footer>
+
+</body>
+</html>

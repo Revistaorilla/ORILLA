@@ -174,7 +174,7 @@
             background-color: var(--color-secundario);
         }
 
-        /* BLOQUE VOCES Y REGISTROS */
+        /* SECCIÓN TÍTULOS */
         .seccion-titulo {
             font-size: 1.2rem;
             font-weight: 800;
@@ -196,6 +196,7 @@
             grid-template-columns: 280px 1fr;
             gap: 25px;
             align-items: center;
+            margin-bottom: 20px;
         }
 
         @media (max-width: 768px) {
@@ -262,7 +263,7 @@
             margin: 0 0 15px 0;
         }
 
-        /* SECCIÓN PARTICIPAR Y JUGÁ (DOS COLUMNAS) */
+        /* SECCIÓN PARTICIPAR Y JUGAR (DOS COLUMNAS) */
         .participacion-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -352,9 +353,10 @@
                 <span class="subtitulo">Cultura y perspectiva de género</span>
             </div>
             <nav>
-                <a href="#voces">Voces y Registros</a>
+                <a href="#actualidad">Actualidad</a>
+                <a href="#derechos">Miradas y Derechos</a>
                 <a href="#cultura">Cultura y Memoria</a>
-                <a href="#recomendaciones">Recomendaciones</a>
+                <a href="#musica">Banda Sonora</a>
                 <a href="#participa">Participá</a>
             </nav>
         </div>
@@ -375,9 +377,10 @@
             </div>
         </section>
 
-        <!-- BLOQUE: VOCES Y REGISTROS (ACTUALIDAD) -->
-        <section id="voces">
-            <div class="seccion-titulo">Voces y Registros</div>
+        <!-- SECCIÓN: ACTUALIDAD (ANTES VOCES Y REGISTROS) -->
+        <section id="actualidad">
+            <div class="seccion-titulo">Actualidad</div>
+            
             <div class="noticia-reciente-box">
                 <div>
                     <img src="marcha_orgullo.jpg" alt="Marcha del Orgullo CABA">
@@ -389,21 +392,60 @@
                     <a href="noticia-tension-marcha.html" class="btn">Ampliar información →</a>
                 </div>
             </div>
+
+            <!-- Noticias recuperadas en esta sección -->
+            <div class="grilla-tarjetas">
+                <article class="tarjeta">
+                    <div>
+                        <img src="encuentro_cordoba.jpg" alt="Encuentro Córdoba">
+                        <span class="badge">Encuentro</span>
+                        <h3>Las grupas rumbo al 39° Encuentro Plurinacional</h3>
+                        <p>Córdoba se prepara para recibir al motor de la marea: la autogestión y la fuerza territorial colectiva.</p>
+                    </div>
+                    <a href="encuentro-cordoba.html" class="btn">Leer nota</a>
+                </article>
+
+                <article class="tarjeta">
+                    <div>
+                        <span class="badge">Archivos</span>
+                        <h3>Rescate gráfico y fanzines comunitarios</h3>
+                        <p>Colectivas independientes y recursos de asesoramiento legal y contención en distintos puntos del país.</p>
+                    </div>
+                    <a href="archivos-conquistas.html" class="btn">Explorar sección</a>
+                </article>
+            </div>
+        </section>
+
+        <!-- SECCIÓN: MIRADAS Y DERECHOS -->
+        <section id="derechos">
+            <div class="seccion-titulo">Miradas y Derechos</div>
+            <div class="grilla-tarjetas">
+                <article class="tarjeta">
+                    <div>
+                        <img src="barracas.jpeg" alt="Juicio Barracas">
+                        <span class="badge">Justicia</span>
+                        <h3>Juicio final por el triple lesbicidio de Barracas</h3>
+                        <p>A dos años del ataque en la pensión, el juicio entra en alegatos exigiendo condena firme por crimen de odio.</p>
+                    </div>
+                    <a href="noticia-barracas.html" class="btn">Leer nota</a>
+                </article>
+
+                <article class="tarjeta">
+                    <div>
+                        <img src="villa_travesti.jpg" alt="Villa Travesti">
+                        <span class="badge">Patagonia</span>
+                        <h3>Villa Travesti: Soberanía colectiva en el sur</h3>
+                        <p>Resistencia, autonomía y vida comunitaria en Las Golondrinas, Lago Puelo, construyendo futuro desde los afectos.</p>
+                    </div>
+                    <a href="villa-travesti.html" class="btn">Leer nota</a>
+                </article>
+            </div>
         </section>
 
         <!-- SECCIÓN: CULTURA Y MEMORIA -->
         <section id="cultura">
             <div class="seccion-titulo">Cultura y Memoria</div>
             <div class="grilla-tarjetas">
-                <article class="tarjeta">
-                    <div>
-                        <span class="badge">Archivos</span>
-                        <h3>Archivos comunitarios y conquistas históricas</h3>
-                        <p>Recorrido por las leyes fundamentales, derechos conquistados y normativas que transformaron la historia de la diversidad y los géneros en Argentina.</p>
-                    </div>
-                    <a href="archivos-conquistas.html" class="btn">Leer más →</a>
-                </article>
-
                 <article class="tarjeta">
                     <div>
                         <img src="referentes.jpg" alt="Referentes">
@@ -416,9 +458,9 @@
             </div>
         </section>
 
-        <!-- SECCIÓN: RECOMENDACIONES -->
-        <section id="recomendaciones">
-            <div class="seccion-titulo">Recomendaciones</div>
+        <!-- SECCIÓN: BANDA SONORA -->
+        <section id="musica">
+            <div class="seccion-titulo">Banda Sonora: Recomendadas</div>
             <div class="grilla-tarjetas">
                 <article class="tarjeta" style="background: linear-gradient(135deg, #fdf4ff 0%, #ffffff 100%);">
                     <div>
@@ -437,6 +479,7 @@
             <div class="seccion-titulo">Participá y Jugá con nosotras</div>
             <div class="participacion-grid">
                 
+                <!-- Columna 1: Enviar material -->
                 <div class="caja-participacion">
                     <div>
                         <span class="badge">Colaboraciones</span>
@@ -452,6 +495,7 @@
                     </div>
                 </div>
 
+                <!-- Columna 2: Cadáver Exquisito -->
                 <div class="caja-participacion">
                     <div>
                         <span class="badge" style="background-color: #fae8ff; color: #7e22ce; border-color: #f0abfc;">Zona Lúdica</span>

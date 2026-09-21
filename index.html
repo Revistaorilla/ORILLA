@@ -289,11 +289,11 @@
         }
 
         .alerta-arcoiris {
-            background: linear-gradient(135deg, #fff5f7 0%, #fdf2f8 100%);
-            border: 2px solid #e11d48;
+            background: linear-gradient(135deg, #f5f3ff 0%, #ffffff 100%);
+            border: 2px solid var(--color-primario);
             border-radius: 12px;
             padding: 18px;
-            box-shadow: 0 4px 15px rgba(225, 29, 72, 0.08);
+            box-shadow: 0 4px 15px rgba(88, 28, 135, 0.08);
             position: relative;
             overflow: hidden;
         }
@@ -305,11 +305,11 @@
             left: 0;
             right: 0;
             height: 5px;
-            background: linear-gradient(90deg, #e11d48, #f97316, #eab308, #22c55e, #3b82f6, #a855f7);
+            background: linear-gradient(90deg, #581c87, #a21caf, #e11d48);
         }
 
         .alerta-arcoiris h3 {
-            color: #881337;
+            color: var(--color-primario);
             margin: 8px 0 6px 0;
             font-size: 1.05rem;
             font-weight: 800;
@@ -317,7 +317,7 @@
 
         .alerta-sub {
             font-size: 0.82rem;
-            color: #9f1239;
+            color: #4b5563;
             margin: 0 0 12px 0;
             line-height: 1.4;
         }
@@ -433,7 +433,6 @@
 </head>
 <body>
 
-    <!-- CABECERA Y MENÚ FIJO ORDENADA -->
     <header>
         <div class="header-container">
             <div class="logo-area">
@@ -452,13 +451,10 @@
 
     <main>
 
-        <!-- LAYOUT PRINCIPAL: CONTENIDO A LA IZQUIERDA / BARRA VERTICAL A LA DERECHA -->
         <div class="layout-principal">
 
-            <!-- COLUMNA IZQUIERDA (CONTENIDO CENTRAL) -->
             <div class="columna-izquierda">
 
-                <!-- PORTADA / NOTA PRINCIPAL -->
                 <section class="portada-principal">
                     <div class="portada-texto">
                         <span class="badge">Edición Nº 01 — Memoria Lésbica</span>
@@ -471,7 +467,6 @@
                     </div>
                 </section>
 
-                <!-- BLOQUE: VOCES Y REGISTROS -->
                 <section id="voces">
                     <div class="seccion-titulo">Voces y Registros</div>
                     <div class="noticia-reciente-box">
@@ -487,7 +482,6 @@
                     </div>
                 </section>
 
-                <!-- SECCIÓN: MIRADAS Y DERECHOS -->
                 <section id="actualidad">
                     <div class="seccion-titulo">Miradas y Derechos</div>
                     <div class="grilla-tarjetas">
@@ -523,7 +517,6 @@
                     </div>
                 </section>
 
-                <!-- SECCIÓN: CULTURA Y MEMORIA -->
                 <section id="cultura">
                     <div class="seccion-titulo">Cultura y Memoria</div>
                     <div class="grilla-tarjetas">
@@ -548,12 +541,10 @@
                     </div>
                 </section>
 
-                <!-- SECCIÓN: PARTICIPÁ Y JUGÁ -->
                 <section id="participa">
                     <div class="seccion-titulo">Participá y Jugá con nosotras</div>
                     <div class="participacion-grid">
                         
-                        <!-- Columna 1: Enviar material -->
                         <div class="caja-participacion">
                             <div>
                                 <span class="badge">Colaboraciones</span>
@@ -569,7 +560,6 @@
                             </div>
                         </div>
 
-                        <!-- Columna 2: Cadáver Exquisito -->
                         <div class="caja-participacion">
                             <div>
                                 <span class="badge" style="background-color: #fae8ff; color: #7e22ce; border-color: #f0abfc;">Zona Lúdica</span>
@@ -594,18 +584,18 @@
 
             </div>
 
-            <!-- COLUMNA DERECHA (BARRA VERTICAL: GALPÓN + BANDA SONORA DEBAJO) -->
             <aside class="sidebar-derecha">
 
-                <!-- 1. NOTICIA DEL GALPÓN -->
                 <div class="alerta-arcoiris">
-                    <span class="badge" style="background-color: #fee2e2; color: #991b1b; border-color: #fca5a5;">Urgente / Ocupación</span>
-                    <h3>Desalojo violento y resistencia en el galpón cultural</h3>
-                    <p class="alerta-sub">Operativo policial en la madrugada desató protestas de vecinas y artistas autoconvocadas en defensa del espacio barrial.</p>
-                    <a href="noticia-galpon.html" class="btn" style="width: 100%; box-sizing: border-box; text-align: center;">Ampliar información →</a>
+                    <span class="badge" style="background-color: #fdf2f8; color: var(--color-acento); border-color: #fbcfe8;">Soberanía Sanitaria</span>
+                    <h3>Testeo, prevención y redes</h3>
+                    <p class="alerta-sub">En el predio del <strong>Hospital Artemides Zatti</strong> (ingreso por calle Rivadavia), funciona la <strong>Unidad de VIH/SIDA e ITS</strong>. Un espacio clave de residencia y cuidado sin estigmas.</p>
+                    <p class="alerta-sub"><strong>Horarios:</strong> Lunes a viernes de 8:00 a 14:00 h.</p>
+                    <p class="alerta-sub"><strong>Demanda espontánea:</strong> Sin turno previo ni orden médica.</p>
+                    <p class="alerta-sub" style="margin-bottom: 12px;"><strong>Trabajo en red:</strong> Articulación directa con los CAPS barriales y organizaciones sociales.</p>
+                    <a href="salud-zatti.html" class="btn" style="width: 100%; box-sizing: border-box; text-align: center;">Más información →</a>
                 </div>
 
-                <!-- 2. BANDA SONORA / RECOMENDACIONES (DEBAJO DEL GALPÓN) -->
                 <div id="musica" class="caja-lateral">
                     <span class="badge" style="background-color: #fae8ff; color: #7e22ce; border-color: #f0abfc;">Recomendación</span>
                     <h3>Mugre — "Ni Tu Perra"</h3>
@@ -620,7 +610,6 @@
 
     </main>
 
-    <!-- FOOTER -->
     <footer>
         <div class="logo">ORILLA</div>
         <p style="font-size: 0.9rem; margin: 5px 0;">Cultura y perspectiva de género — Viedma, Río Negro</p>
@@ -629,7 +618,6 @@
         <small style="display: block; margin-top: 15px; opacity: 0.8;">© 2026 ORILLA</small>
     </footer>
 
-    <!-- SCRIPTS -->
     <script>
         document.addEventListener("DOMContentLoaded", function() {
             let versosGuardados = localStorage.getItem("poema_colectivo_orilla");

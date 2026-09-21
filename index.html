@@ -119,31 +119,44 @@
             border-bottom: 2px solid var(--accent-light);
         }
 
-        /* SECCIÓN HITOS ORDENADA Y LIMPIA */
+        /* SECCIÓN COMPACTA: HITOS DE LA MEMORIA REAL */
         .hitos-compacto {
             background: linear-gradient(135deg, #fdf4ff 0%, #ffffff 100%);
             border-left: 4px solid var(--secondary);
         }
 
-        .hitos-contenido-flex {
-            display: flex;
-            flex-direction: column;
-            gap: 1rem;
+        .hitos-grid-interno {
+            display: grid;
+            grid-template-columns: 1fr auto;
+            gap: 1.5rem;
+            align-items: center;
         }
 
-        .hitos-texto-arriba p {
-            font-size: 0.95rem;
-            color: var(--text);
+        @media (max-width: 650px) {
+            .hitos-grid-interno {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .hitos-info h3 {
+            font-size: 1.25rem;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+
+        .hitos-info p {
+            font-size: 0.9rem;
+            color: var(--text-light);
             margin-bottom: 0.8rem;
         }
 
         .efemerides-lista {
             list-style: none;
+            margin-top: 0.8rem;
             font-size: 0.85rem;
             display: flex;
             flex-direction: column;
             gap: 0.4rem;
-            margin-bottom: 1rem;
         }
 
         .efemerides-lista li {
@@ -157,19 +170,19 @@
             min-width: 75px;
         }
 
-        .hitos-imagen-abajo {
-            width: 100%;
-            max-width: 300px;
+        .hitos-img img {
+            width: 180px;
+            height: 120px;
+            object-fit: cover;
             border-radius: 6px;
-            overflow: hidden;
             border: 1px solid var(--border);
         }
 
-        .hitos-imagen-abajo img {
-            width: 100%;
-            height: auto;
-            display: block;
-            object-fit: cover;
+        @media (max-width: 650px) {
+            .hitos-img img {
+                width: 100%;
+                height: 150px;
+            }
         }
 
         /* Miradas y Derechos Grid */
@@ -383,33 +396,27 @@
     <div class="main-layout">
         <div class="content-area">
             
-            <!-- SECCIÓN HITOS REESTRUCTURADA -->
+            <!-- SECCIÓN COMPACTA: HITOS DE LA MEMORIA REAL -->
             <section id="hitos" class="hitos-compacto">
-                <span style="font-size: 0.75rem; color: var(--accent); text-transform: uppercase; font-weight: bold; letter-spacing: 1px;">Memoria histórica</span>
-                <h2 style="margin-top: 0.2rem;">Hitos de la memoria real en Argentina</h2>
-                
-                <div class="hitos-contenido-flex">
-                    <div class="hitos-texto-arriba">
-                        <p>La historia se escribe rompiendo el silencio y organizando la resistencia desde los territorios.</p>
+                <h2>Hitos de la memoria real</h2>
+                <div class="hitos-grid-interno">
+                    <div class="hitos-info">
+                        <h3>Archivos y resistencias de la comunidad</h3>
+                        <p>La historia se escribe rompiendo el silencio, ocupando las calles y transformando el dolor en memoria organizada desde los territorios.</p>
                         
                         <ul class="efemerides-lista">
-                            <li><strong>7 de Marzo:</strong> Día de la Visibilidad Lésbica.</li>
-                            <li><strong>1 de Julio:</strong> Organización de agrupaciones político-lesbianas.</li>
-                            <li><strong>Noviembre:</strong> Marchas históricas del Orgullo disidente.</li>
+                            <li><strong>7 de Marzo:</strong> Día de la Visibilidad Lésbica en Argentina (en memoria de Campana).</li>
+                            <li><strong>1 de Julio:</strong> Fundación histórica de las primeras agrupaciones político-lesbianas.</li>
+                            <li><strong>Noviembre:</strong> Aniversario de las primeras Marchas del Orgullo disidente en el país.</li>
                         </ul>
                     </div>
-
-                    <div class="hitos-imagen-abajo">
+                    <div class="hitos-img">
                         <img src="foto_escritoras.jpeg" alt="Escritoras y archivo histórico">
-                    </div>
-
-                    <div>
-                        <a href="#" class="btn">Leer nota completa →</a>
                     </div>
                 </div>
             </section>
 
-            <!-- MIRADAS Y DERECHOS (4 noticias) -->
+            <!-- MIRADAS Y DERECHOS -->
             <section id="miradas">
                 <h2>Miradas y Derechos</h2>
                 <p style="margin-bottom: 0.8rem; font-size: 0.9rem; color: var(--text-light);">Actualidad, cobertura territorial y análisis sobre derechos humanos, justicia y luchas feministas y sexodiversas.</p>
@@ -505,7 +512,7 @@
                 </div>
             </div>
 
-            <!-- WIDGET MULTIMEDIA (Banda Sonora / Recomendados) -->
+            <!-- WIDGET MULTIMEDIA -->
             <div class="widget">
                 <h3>Banda Sonora / Recomendados</h3>
                 <p>Escuchá producciones sonoras, podcasts y contenidos recomendados.</p>
@@ -581,4 +588,4 @@
         }
     </script>
 </body>
-</html>
+</html> suplnte

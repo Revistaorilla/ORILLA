@@ -167,6 +167,7 @@
             text-decoration: none;
             font-size: 0.85rem;
             transition: background 0.2s;
+            text-align: center;
         }
 
         .btn:hover {
@@ -240,12 +241,13 @@
             box-shadow: 0 2px 8px rgba(0,0,0,0.02);
         }
 
-        .tarjeta img {
+        .tarjeta img, .tarjeta iframe {
             width: 100%;
             height: 180px;
             object-fit: cover;
             border-radius: 6px;
             margin-bottom: 12px;
+            border: none;
         }
 
         .tarjeta h3 {
@@ -401,7 +403,7 @@
                         <h3>Juicio final por el triple lesbicidio de Barracas</h3>
                         <p>A dos años del ataque en la pensión, el juicio entra en alegatos exigiendo condena firme por crimen de odio.</p>
                     </div>
-                    <a href="noticia-barracas.html" class="btn" style="text-align: center;">Leer nota</a>
+                    <a href="noticia-barracas.html" class="btn">Leer nota</a>
                 </article>
 
                 <article class="tarjeta">
@@ -411,7 +413,7 @@
                         <h3>Villa Travesti: Soberanía colectiva en el sur</h3>
                         <p>Resistencia, autonomía y vida comunitaria en Las Golondrinas, Lago Puelo, construyendo futuro desde los afectos.</p>
                     </div>
-                    <a href="villa-travesti.html" class="btn" style="text-align: center;">Leer nota</a>
+                    <a href="villa-travesti.html" class="btn">Leer nota</a>
                 </article>
 
                 <article class="tarjeta">
@@ -421,7 +423,7 @@
                         <h3>Las grupas rumbo al 39° Encuentro Plurinacional</h3>
                         <p>Córdoba se prepara para recibir al motor de la marea: la autogestión y la fuerza territorial colectiva.</p>
                     </div>
-                    <a href="encuentro-cordoba.html" class="btn" style="text-align: center;">Leer nota</a>
+                    <a href="encuentro-cordoba.html" class="btn">Leer nota</a>
                 </article>
             </div>
         </section>
@@ -436,7 +438,7 @@
                         <h3>Rescate gráfico y fanzines comunitarios</h3>
                         <p>Colectivas independientes y recursos de asesoramiento legal y contención en distintos puntos del país.</p>
                     </div>
-                    <a href="actualidad.html" class="btn" style="text-align: center;">Explorar sección</a>
+                    <a href="actualidad.html" class="btn">Explorar sección</a>
                 </article>
 
                 <article class="tarjeta">
@@ -446,7 +448,7 @@
                         <h3>Grandes referentes y poesía patagónica</h3>
                         <p>Diana Bellessi, Sylvia Molloy, Macky Corbalán y las nuevas voces poéticas del sur contemporáneo.</p>
                     </div>
-                    <a href="cultura.html" class="btn" style="text-align: center;">Explorar sección</a>
+                    <a href="cultura.html" class="btn">Explorar sección</a>
                 </article>
             </div>
         </section>
@@ -457,12 +459,14 @@
             <div class="grilla-tarjetas">
                 <article class="tarjeta" style="background: linear-gradient(135deg, #fdf4ff 0%, #ffffff 100%);">
                     <div>
-                        <img src="1000851842.jpg" alt="Banda Mugre">
+                        <!-- Reproductor embebido con el tema exacto -->
+                        <iframe src="https://www.youtube.com/embed/rzTRwztisDI" title="MUGRE - NI TU PERRA (Video Oficial)" allowfullscreen></iframe>
                         <span class="badge" style="background-color: #fae8ff; color: #7e22ce; border-color: #f0abfc;">Sonidos en Loop</span>
-                        <h3>Mugre</h3>
+                        <h3>Mugre — "Ni Tu Perra"</h3>
                         <p>Potencia sonora, rock y texturas crudas. Un proyecto imperdible comandado por mujeres que sacude los parlantes y despliega una energía única.</p>
                     </div>
-                    <a href="https://www.youtube.com" target="_blank" class="btn" style="background-color: #7e22ce; text-align: center;">Escuchar en YouTube / Spotify →</a>
+                    <!-- Enlace directo específico al videoclip -->
+                    <a href="https://youtu.be/rzTRwztisDI" target="_blank" class="btn" style="background-color: #7e22ce;">Ver "Ni Tu Perra" en YouTube →</a>
                 </article>
             </div>
         </section>

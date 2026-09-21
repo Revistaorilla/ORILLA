@@ -93,11 +93,27 @@
             color: var(--color-acento);
         }
 
-        /* CONTENEDOR PRINCIPAL */
+        /* CONTENEDOR Y LAYOUT DE DOS COLUMNAS */
         main {
             max-width: 1100px;
             margin: 30px auto;
             padding: 0 20px;
+        }
+
+        .layout-principal {
+            display: grid;
+            grid-template-columns: 1fr 320px;
+            gap: 30px;
+            align-items: start;
+        }
+
+        @media (max-width: 1024px) {
+            .layout-principal {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .columna-izquierda {
             display: flex;
             flex-direction: column;
             gap: 40px;
@@ -118,16 +134,17 @@
             border: 1px solid #fbcfe8;
         }
 
-        /* SECCIÓN PRINCIPAL / PORTADA */
+        /* SECCIÓN COMPACTA: HITOS DE LA MEMORIA REAL */
         .portada-principal {
             display: grid;
             grid-template-columns: 2fr 1fr;
-            gap: 30px;
+            gap: 20px;
             background: var(--color-tarjeta);
             border: 1px solid var(--borde-suave);
             border-radius: 12px;
-            padding: 30px;
+            padding: 20px;
             box-shadow: 0 4px 15px rgba(168, 85, 247, 0.04);
+            align-items: center;
         }
 
         @media (max-width: 768px) {
@@ -138,20 +155,38 @@
 
         .portada-texto h1 {
             color: var(--color-primario);
-            font-size: 2rem;
-            margin: 0 0 15px 0;
+            font-size: 1.5rem;
+            margin: 0 0 10px 0;
             line-height: 1.2;
         }
 
         .portada-texto p {
             color: #4b5563;
-            font-size: 1rem;
-            margin-bottom: 20px;
+            font-size: 0.9rem;
+            margin-bottom: 12px;
+        }
+
+        .efemerides-lista {
+            list-style: none;
+            padding: 0;
+            margin: 0 0 15px 0;
+            font-size: 0.8rem;
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+        }
+
+        .efemerides-lista li {
+            color: #333;
+        }
+
+        .efemerides-lista strong {
+            color: var(--color-acento);
         }
 
         .portada-imagen img {
             width: 100%;
-            height: 240px;
+            height: 160px;
             object-fit: cover;
             border-radius: 8px;
             border: 1px solid var(--borde-suave);
@@ -174,7 +209,7 @@
             background-color: var(--color-secundario);
         }
 
-        /* BLOQUE VOCES Y REGISTROS */
+        /* TÍTULOS DE SECCIÓN */
         .seccion-titulo {
             font-size: 1.2rem;
             font-weight: 800;
@@ -186,47 +221,10 @@
             letter-spacing: 0.5px;
         }
 
-        .noticia-reciente-box {
-            background: linear-gradient(135deg, #fff5f7 0%, #ffffff 100%);
-            border: 1px solid #fda4af;
-            border-left: 5px solid var(--color-acento);
-            border-radius: 8px;
-            padding: 25px;
-            display: grid;
-            grid-template-columns: 280px 1fr;
-            gap: 25px;
-            align-items: center;
-        }
-
-        @media (max-width: 768px) {
-            .noticia-reciente-box {
-                grid-template-columns: 1fr;
-            }
-        }
-
-        .noticia-reciente-box img {
-            width: 100%;
-            height: 170px;
-            object-fit: cover;
-            border-radius: 6px;
-        }
-
-        .noticia-reciente-box h3 {
-            color: #881337;
-            margin: 0 0 10px 0;
-            font-size: 1.3rem;
-        }
-
-        .noticia-reciente-box p {
-            font-size: 0.95rem;
-            color: #333;
-            margin: 0 0 15px 0;
-        }
-
-        /* GRILLA DE TARJETAS ORDENADAS */
+        /* GRILLA DE TARJETAS */
         .grilla-tarjetas {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
             gap: 20px;
         }
 
@@ -243,7 +241,7 @@
 
         .tarjeta img, .tarjeta iframe {
             width: 100%;
-            height: 180px;
+            height: 160px;
             object-fit: cover;
             border-radius: 6px;
             margin-bottom: 12px;
@@ -262,7 +260,48 @@
             margin: 0 0 15px 0;
         }
 
-        /* SECCIÓN PARTICIPAR Y JUGAR (DOS COLUMNAS) */
+        /* BARRA LATERAL DERECHA (VERTICAL) */
+        .sidebar-derecha {
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+        }
+
+        .alerta-arcoiris {
+            background: linear-gradient(135deg, #f5f3ff 0%, #ffffff 100%);
+            border: 2px solid var(--color-primario);
+            border-radius: 12px;
+            padding: 18px;
+            box-shadow: 0 4px 15px rgba(88, 28, 135, 0.08);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .alerta-arcoiris::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 5px;
+            background: linear-gradient(90deg, #581c87, #a21caf, #e11d48);
+        }
+
+        .alerta-arcoiris h3 {
+            color: var(--color-primario);
+            margin: 8px 0 6px 0;
+            font-size: 1.05rem;
+            font-weight: 800;
+        }
+
+        .alerta-sub {
+            font-size: 0.82rem;
+            color: #4b5563;
+            margin: 0 0 12px 0;
+            line-height: 1.4;
+        }
+
+        /* SECCIÓN PARTICIPAR Y JUGAR */
         .participacion-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -298,6 +337,7 @@
             border-radius: 6px;
             font-family: inherit;
             font-size: 0.85rem;
+            width: 100%;
         }
 
         .form-compacto textarea {
@@ -352,9 +392,10 @@
                 <span class="subtitulo">Cultura y perspectiva de género</span>
             </div>
             <nav>
-                <a href="#voces">Voces y Registros</a>
+                <a href="#hitos">Hitos</a>
                 <a href="#actualidad">Miradas</a>
                 <a href="#cultura">Cultura y Memoria</a>
+                <a href="#galpon">El Galpón</a>
                 <a href="#musica">Banda Sonora</a>
                 <a href="#participa">Participá</a>
             </nav>
@@ -362,159 +403,199 @@
     </header>
 
     <main>
+        <div class="layout-principal">
 
-        <!-- PORTADA / NOTA PRINCIPAL -->
-        <section class="portada-principal">
-            <div class="portada-texto">
-                <span class="badge">Edición Nº 01 — Memoria Lésbica</span>
-                <h1>¿Dónde están las lesbianas? Cuatro hitos de la memoria real en Argentina</h1>
-                <p>La historia se escribe rompiendo el silencio, ocupando las calles y transformando el dolor en memoria organizada desde los territorios.</p>
-                <a href="historia-lesbica.html" class="btn">Leer nota completa →</a>
-            </div>
-            <div class="portada-imagen">
-                <img src="foto_escritoras.jpeg" alt="Escritoras lesbianas">
-            </div>
-        </section>
+            <!-- COLUMNA IZQUIERDA (CONTENIDO CENTRAL) -->
+            <div class="columna-izquierda">
 
-        <!-- BLOQUE: VOCES Y REGISTROS -->
-        <section id="voces">
-            <div class="seccion-titulo">Voces y Registros</div>
-            <div class="noticia-reciente-box">
-                <div>
-                    <img src="marcha_orgullo.jpg" alt="Marcha del Orgullo CABA">
-                </div>
-                <div>
-                    <span class="badge" style="background-color: #fee2e2; color: #991b1b; border-color: #fca5a5;">Actualidad Comunitaria</span>
-                    <h3>Marcha del Orgullo: la Ciudad pidió reprogramarla pero las organizaciones la ratificaron</h3>
-                    <p>Ante la solicitud del gobierno porteño de mover la fecha por operativos de seguridad, las comisiones organizadoras ratificaron la movilización amparadas en la ley.</p>
-                    <a href="noticia-tension-marcha.html" class="btn">Ampliar información →</a>
-                </div>
-            </div>
-        </section>
-
-        <!-- SECCIÓN: MIRADAS Y DERECHOS -->
-        <section id="actualidad">
-            <div class="seccion-titulo">Miradas y Derechos</div>
-            <div class="grilla-tarjetas">
-                <article class="tarjeta">
-                    <div>
-                        <img src="barracas.jpeg" alt="Juicio Barracas">
-                        <span class="badge">Justicia</span>
-                        <h3>Juicio final por el triple lesbicidio de Barracas</h3>
-                        <p>A dos años del ataque en la pensión, el juicio entra en alegatos exigiendo condena firme por crimen de odio.</p>
-                    </div>
-                    <a href="noticia-barracas.html" class="btn">Leer nota</a>
-                </article>
-
-                <article class="tarjeta">
-                    <div>
-                        <img src="villa_travesti.jpg" alt="Villa Travesti">
-                        <span class="badge">Patagonia</span>
-                        <h3>Villa Travesti: Soberanía colectiva en el sur</h3>
-                        <p>Resistencia, autonomía y vida comunitaria en Las Golondrinas, Lago Puelo, construyendo futuro desde los afectos.</p>
-                    </div>
-                    <a href="villa-travesti.html" class="btn">Leer nota</a>
-                </article>
-
-                <article class="tarjeta">
-                    <div>
-                        <img src="encuentro_cordoba.jpg" alt="Encuentro Córdoba">
-                        <span class="badge">Encuentro</span>
-                        <h3>Las grupas rumbo al 39° Encuentro Plurinacional</h3>
-                        <p>Córdoba se prepara para recibir al motor de la marea: la autogestión y la fuerza territorial colectiva.</p>
-                    </div>
-                    <a href="encuentro-cordoba.html" class="btn">Leer nota</a>
-                </article>
-            </div>
-        </section>
-
-        <!-- SECCIÓN: CULTURA Y MEMORIA -->
-        <section id="cultura">
-            <div class="seccion-titulo">Cultura y Memoria</div>
-            <div class="grilla-tarjetas">
-                <article class="tarjeta">
-                    <div>
-                        <span class="badge">Archivos</span>
-                        <h3>Rescate gráfico y fanzines comunitarios</h3>
-                        <p>Colectivas independientes y recursos de asesoramiento legal y contención en distintos puntos del país.</p>
-                    </div>
-                    <a href="actualidad.html" class="btn">Explorar sección</a>
-                </article>
-
-                <article class="tarjeta">
-                    <div>
-                        <img src="referentes.jpg" alt="Referentes">
-                        <span class="badge">Literatura</span>
-                        <h3>Grandes referentes y poesía patagónica</h3>
-                        <p>Diana Bellessi, Sylvia Molloy, Macky Corbalán y las nuevas voces poéticas del sur contemporáneo.</p>
-                    </div>
-                    <a href="cultura.html" class="btn">Explorar sección</a>
-                </article>
-            </div>
-        </section>
-
-        <!-- SECCIÓN: BANDA SONORA -->
-        <section id="musica">
-            <div class="seccion-titulo">Banda Sonora: Recomendadas</div>
-            <div class="grilla-tarjetas">
-                <article class="tarjeta" style="background: linear-gradient(135deg, #fdf4ff 0%, #ffffff 100%);">
-                    <div>
-                        <!-- Reproductor embebido con el tema exacto -->
-                        <iframe src="https://www.youtube.com/embed/rzTRwztisDI" title="MUGRE - NI TU PERRA (Video Oficial)" allowfullscreen></iframe>
-                        <span class="badge" style="background-color: #fae8ff; color: #7e22ce; border-color: #f0abfc;">Sonidos en Loop</span>
-                        <h3>Mugre — "Ni Tu Perra"</h3>
-                        <p>Potencia sonora, rock y texturas crudas. Un proyecto imperdible comandado por mujeres que sacude los parlantes y despliega una energía única.</p>
-                    </div>
-                    <!-- Enlace directo específico al videoclip -->
-                    <a href="https://youtu.be/rzTRwztisDI" target="_blank" class="btn" style="background-color: #7e22ce;">Ver "Ni Tu Perra" en YouTube →</a>
-                </article>
-            </div>
-        </section>
-
-        <!-- SECCIÓN: PARTICIPÁ Y JUGÁ -->
-        <section id="participa">
-            <div class="seccion-titulo">Participá y Jugá con nosotras</div>
-            <div class="participacion-grid">
-                
-                <!-- Columna 1: Enviar material -->
-                <div class="caja-participacion">
-                    <div>
-                        <span class="badge">Colaboraciones</span>
-                        <h3 style="color: var(--color-primario); margin: 5px 0 8px 0;">Envianos tu material</h3>
-                        <p style="font-size: 0.85rem; color: #555; margin-bottom: 10px;">Dejanos tu relato, poema o reflexión para sumar a la revista:</p>
+                <!-- SECCIÓN COMPACTA: HITOS DE LA MEMORIA REAL -->
+                <section id="hitos" class="portada-principal">
+                    <div class="portada-texto">
+                        <span class="badge">Memoria Histórica</span>
+                        <h1>Hitos de la memoria real en Argentina</h1>
+                        <p>La historia se escribe rompiendo el silencio y organizando la resistencia desde los territorios.</p>
                         
-                        <form class="form-compacto" action="https://formspree.io/f/xrpbeeol" method="POST">
-                            <input type="text" name="nombre" placeholder="Nombre o seudónimo" required>
-                            <input type="email" name="email" placeholder="Correo electrónico" required>
-                            <textarea name="mensaje" placeholder="Escribí acá tu colaboración..." required></textarea>
-                            <button type="submit" class="btn" style="width: fit-content; border:none; cursor:pointer;">Enviar material</button>
-                        </form>
+                        <ul class="efemerides-lista">
+                            <li><strong>7 de Marzo:</strong> Día de la Visibilidad Lésbica.</li>
+                            <li><strong>1 de Julio:</strong> Organización de agrupaciones político-lesbianas.</li>
+                            <li><strong>Noviembre:</strong> Marchas históricas del Orgullo disidente.</li>
+                        </ul>
+                        <a href="historia-lesbica.html" class="btn" style="padding: 6px 12px; font-size: 0.78rem;">Leer nota completa →</a>
                     </div>
-                </div>
+                    <div class="portada-imagen">
+                        <img src="foto_escritoras.jpeg" alt="Escritoras lesbianas y archivo histórico">
+                    </div>
+                </section>
 
-                <!-- Columna 2: Cadáver Exquisito -->
-                <div class="caja-participacion">
-                    <div>
-                        <span class="badge" style="background-color: #fae8ff; color: #7e22ce; border-color: #f0abfc;">Zona Lúdica</span>
-                        <h3 style="color: var(--color-primario); margin: 5px 0 8px 0;">Cadáver Exquisito Lésbico</h3>
-                        <p style="font-size: 0.85rem; color: #555; margin-bottom: 5px;">Sumá tu verso al poema colectivo en curso:</p>
+                <!-- SECCIÓN: MIRADAS Y DERECHOS -->
+                <section id="actualidad">
+                    <div class="seccion-titulo">Miradas y Derechos</div>
+                    <div class="grilla-tarjetas">
+                        <article class="tarjeta">
+                            <div>
+                                <img src="marcha_orgullo.jpg" alt="Marcha del Orgullo">
+                                <span class="badge" style="background-color: #fee2e2; color: #991b1b; border-color: #fca5a5;">Actualidad</span>
+                                <h3>Marcha del Orgullo ratificada por organizaciones</h3>
+                                <p>Ante la solicitud del gobierno porteño de mover la fecha, las comisiones ratificaron la movilización amparadas en la ley.</p>
+                            </div>
+                            <a href="noticia-tension-marcha.html" class="btn">Leer nota</a>
+                        </article>
 
-                        <div id="poema-en-curso" class="poema-box">
-                            "Encendemos la noche con fósforos prestados...<br>
-                            la memoria arde en las esquinas del sur...<br>
-                            tejiendo redes donde el viento no nos alcanza..."
+                        <article class="tarjeta">
+                            <div>
+                                <img src="barracas.jpeg" alt="Juicio Barracas">
+                                <span class="badge">Justicia</span>
+                                <h3>Juicio final por el triple lesbicidio de Barracas</h3>
+                                <p>A dos años del ataque en la pensión, el juicio exige condena firme por crimen de odio.</p>
+                            </div>
+                            <a href="noticia-barracas.html" class="btn">Leer nota</a>
+                        </article>
+
+                        <article class="tarjeta">
+                            <div>
+                                <img src="villa_travesti.jpg" alt="Villa Travesti">
+                                <span class="badge">Patagonia</span>
+                                <h3>Villa Travesti: Soberanía colectiva en el sur</h3>
+                                <p>Resistencia, autonomía y vida comunitaria en Las Golondrinas, Lago Puelo.</p>
+                            </div>
+                            <a href="villa-travesti.html" class="btn">Leer nota</a>
+                        </article>
+
+                        <article class="tarjeta">
+                            <div>
+                                <img src="encuentro_cordoba.jpg" alt="Encuentro Córdoba">
+                                <span class="badge">Encuentro</span>
+                                <h3>Las grupas rumbo al Encuentro Plurinacional</h3>
+                                <p>Córdoba se prepara para recibir el motor de la marea: autogestión y fuerza territorial colectiva.</p>
+                            </div>
+                            <a href="encuentro-cordoba.html" class="btn">Leer nota</a>
+                        </article>
+                    </div>
+                </section>
+
+                <!-- SECCIÓN: CULTURA Y MEMORIA -->
+                <section id="cultura">
+                    <div class="seccion-titulo">Cultura y Memoria</div>
+                    <div class="grilla-tarjetas">
+                        <article class="tarjeta">
+                            <div>
+                                <span class="badge">Archivos</span>
+                                <h3>Rescate gráfico y fanzines comunitarios</h3>
+                                <p>Colectivas independientes y recursos de asesoramiento legal y contención en distintos puntos del país.</p>
+                            </div>
+                            <a href="actualidad.html" class="btn">Explorar sección</a>
+                        </article>
+
+                        <article class="tarjeta">
+                            <div>
+                                <img src="referentes.jpg" alt="Referentes">
+                                <span class="badge">Literatura</span>
+                                <h3>Grandes referentes y poesía patagónica</h3>
+                                <p>Diana Bellessi, Sylvia Molloy, Macky Corbalán y las nuevas voces poéticas del sur contemporáneo.</p>
+                            </div>
+                            <a href="cultura.html" class="btn">Explorar sección</a>
+                        </article>
+                    </div>
+                </section>
+
+                <!-- SECCIÓN: EL GALPÓN / CENTRO CULTURAL -->
+                <section id="galpon">
+                    <div class="seccion-titulo">El Galpón / Centro Cultural</div>
+                    <div class="tarjeta" style="background: linear-gradient(135deg, #fdf4ff 0%, #ffffff 100%);">
+                        <span class="badge" style="background-color: #f3e8ff; color: #7e22ce; border-color: #d8b4fe;">Territorio y Autogestión</span>
+                        <h3 style="color: var(--color-primario); font-size: 1.1rem; margin-top: 5px;">Espacio de Encuentro, Talleres y Resistencia Cultural</h3>
+                        <p style="color: #4b5563; font-size: 0.9rem; margin-bottom: 12px;">
+                            El Galpón funciona como un punto neurálgico de articulación comunitaria en Viedma. Espacio abierto a ferias autogestivas, asambleas, cine debate y formación disidente.
+                        </p>
+                        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 10px; margin-bottom: 15px; font-size: 0.8rem; color: #333;">
+                            <div style="background: white; padding: 10px; border-radius: 6px; border: 1px solid #fbcfe8;">
+                                <strong>📍 Ubicación:</strong><br>Zona Comarca Viedma - Patagones
+                            </div>
+                            <div style="background: white; padding: 10px; border-radius: 6px; border: 1px solid #fbcfe8;">
+                                <strong>🗓️ Actividades:</strong><br>Ferias, talleres y asambleas semanales
+                            </div>
+                        </div>
+                        <a href="galpon.html" class="btn" style="width: fit-content; background-color: #7e22ce;">Conocer agenda de El Galpón →</a>
+                    </div>
+                </section>
+
+                <!-- SECCIÓN: BANDA SONORA -->
+                <section id="musica">
+                    <div class="seccion-titulo">Banda Sonora: Recomendadas</div>
+                    <div class="grilla-tarjetas">
+                        <article class="tarjeta" style="background: linear-gradient(135deg, #fdf4ff 0%, #ffffff 100%);">
+                            <div>
+                                <iframe src="https://www.youtube.com/embed/rzTRwztisDI" title="MUGRE - NI TU PERRA (Video Oficial)" allowfullscreen></iframe>
+                                <span class="badge" style="background-color: #fae8ff; color: #7e22ce; border-color: #f0abfc;">Sonidos en Loop</span>
+                                <h3>Mugre — "Ni Tu Perra"</h3>
+                                <p>Potencia sonora, rock y texturas crudas. Un proyecto imperdible comandado por mujeres que sacude los parlantes.</p>
+                            </div>
+                            <a href="https://youtu.be/rzTRwztisDI" target="_blank" class="btn" style="background-color: #7e22ce;">Ver en YouTube →</a>
+                        </article>
+                    </div>
+                </section>
+
+                <!-- SECCIÓN: PARTICIPÁ Y JUGÁ -->
+                <section id="participa">
+                    <div class="seccion-titulo">Participá y Jugá con nosotras</div>
+                    <div class="participacion-grid">
+                        
+                        <!-- Columna 1: Enviar material -->
+                        <div class="caja-participacion">
+                            <div>
+                                <span class="badge">Colaboraciones</span>
+                                <h3 style="color: var(--color-primario); margin: 5px 0 8px 0;">Envianos tu material</h3>
+                                <p style="font-size: 0.85rem; color: #555; margin-bottom: 10px;">Dejanos tu relato, poema o reflexión para sumar a la revista:</p>
+                                
+                                <form class="form-compacto" action="https://formspree.io/f/xrpbeeol" method="POST">
+                                    <input type="text" name="nombre" placeholder="Nombre o seudónimo" required>
+                                    <input type="email" name="email" placeholder="Correo electrónico" required>
+                                    <textarea name="mensaje" placeholder="Escribí acá tu colaboración..." required></textarea>
+                                    <button type="submit" class="btn" style="width: fit-content; border:none; cursor:pointer;">Enviar material</button>
+                                </form>
+                            </div>
                         </div>
 
-                        <form id="form-juego" class="form-compacto" onsubmit="guardarVerso(event)">
-                            <textarea id="input-verso" placeholder="Escribí tu verso..." required style="height: 45px;"></textarea>
-                            <button type="submit" class="btn" style="background-color: #7e22ce; width: fit-content; border:none; cursor:pointer;">Sumar verso</button>
-                        </form>
+                        <!-- Columna 2: Cadáver Exquisito -->
+                        <div class="caja-participacion">
+                            <div>
+                                <span class="badge" style="background-color: #fae8ff; color: #7e22ce; border-color: #f0abfc;">Zona Lúdica</span>
+                                <h3 style="color: var(--color-primario); margin: 5px 0 8px 0;">Cadáver Exquisito Lésbico</h3>
+                                <p style="font-size: 0.85rem; color: #555; margin-bottom: 5px;">Sumá tu verso al poema colectivo en curso:</p>
+
+                                <div id="poema-en-curso" class="poema-box">
+                                    "Encendemos la noche con fósforos prestados...<br>
+                                    la memoria arde en las esquinas del sur...<br>
+                                    tejiendo redes donde el viento no nos alcanza..."
+                                </div>
+
+                                <form id="form-juego" class="form-compacto" onsubmit="guardarVerso(event)">
+                                    <textarea id="input-verso" placeholder="Escribí tu verso..." required style="height: 45px;"></textarea>
+                                    <button type="submit" class="btn" style="background-color: #7e22ce; width: fit-content; border:none; cursor:pointer;">Sumar verso</button>
+                                </form>
+                            </div>
+                        </div>
+
                     </div>
-                </div>
+                </section>
 
             </div>
-        </section>
 
+            <!-- COLUMNA DERECHA (BARRA VERTICAL: SALUD COMUNITARIA / HOSPITAL ZATTI) -->
+            <aside class="sidebar-derecha">
+
+                <div class="alerta-arcoiris">
+                    <span class="badge" style="background-color: #fdf2f8; color: var(--color-acento); border-color: #fbcfe8;">Soberanía Sanitaria</span>
+                    <h3>Testeo, prevención y redes</h3>
+                    <p class="alerta-sub">En el predio del <strong>Hospital Artemides Zatti</strong> (ingreso por calle Rivadavia), funciona la <strong>Unidad de VIH/SIDA e ITS</strong>. Espacio clave de atención comunitaria sin estigmas.</p>
+                    <p class="alerta-sub"><strong>Horarios:</strong> Lunes a viernes de 8:00 a 14:00 h.</p>
+                    <p class="alerta-sub" style="margin-bottom: 12px;"><strong>Demanda espontánea:</strong> Sin turno previo ni orden médica.</p>
+                    <button onclick="abrirModal()" class="btn" style="width: 100%; box-sizing: border-box; text-align: center; border:none; cursor:pointer;">Más información →</button>
+                </div>
+
+            </aside>
+
+        </div>
     </main>
 
     <!-- FOOTER -->
@@ -525,6 +606,22 @@
         <div class="contador">Visitas de la revista: <span id="contador-visitas-num">1240</span></div>
         <small style="display: block; margin-top: 15px; opacity: 0.8;">© 2026 ORILLA</small>
     </footer>
+
+    <!-- VENTANA MODAL SALUD -->
+    <div id="modal-zatti" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.6); z-index:1000; justify-content:center; align-items:center; padding: 20px;">
+        <div style="background:white; padding:30px; border-radius:12px; max-width:500px; width:100%; position:relative; box-shadow: 0 4px 20px rgba(0,0,0,0.2);">
+            <button onclick="cerrarModal()" style="position:absolute; top:15px; right:15px; background:none; border:none; font-size:1.2rem; cursor:pointer; font-weight:bold;">✕</button>
+            <span class="badge" style="background-color: #fdf2f8; color: var(--color-acento); border-color: #fbcfe8;">Soberanía Sanitaria</span>
+            <h3 style="color: var(--color-primario); margin-top:5px;">Hospital Artemides Zatti — Viedma</h3>
+            <p style="font-size: 0.9rem; color: #4b5563;"><strong>Unidad de VIH/SIDA e ITS:</strong> Ingreso por calle Rivadavia. Espacio clave de atención y cuidado comunitario libre de estigmas.</p>
+            <ul style="font-size: 0.9rem; color: #4b5563; padding-left: 20px; line-height: 1.6;">
+                <li><strong>Días y horarios:</strong> Lunes a viernes de 8:00 a 14:00 h.</li>
+                <li><strong>Modalidad:</strong> Demanda espontánea (sin turno previo ni orden médica).</li>
+                <li><strong>Contacto:</strong> Cel. 02920-421626 | Fijo 420130 (int. 130)</li>
+            </ul>
+            <button onclick="cerrarModal()" class="btn" style="width:100%; margin-top:10px; border:none; cursor:pointer;">Cerrar ventana</button>
+        </div>
+    </div>
 
     <!-- SCRIPTS -->
     <script>
@@ -557,6 +654,14 @@
                 alert("¡Verso sumado con éxito!");
             }
         }
+
+        function abrirModal() {
+            document.getElementById("modal-zatti").style.display = "flex";
+        }
+
+        function cerrarModal() {
+            document.getElementById("modal-zatti").style.display = "none";
+        }
     </script>
 </body>
-</html>   ESTE SI
+</html>

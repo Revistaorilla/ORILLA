@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Archivos comunitarios y conquistas históricas — ORILLA</title>
+    <style>
+        :root {
+            --color-primario: #581c87;
+            --color-secundario: #a21caf;
+            --color-acento: #e11d48;
+            --color-fondo: #fcf8fa;
+            --color-tarjeta: #ffffff;
+            --color-texto: #2b2b2b;
+            --borde-suave: #f0abfc;
+        }
+        body {
+            font-family: system-ui, -apple-system, sans-serif;
+            background-color: var(--color-fondo);
+            color: var(--color-texto);
+            margin: 0;
+            padding: 0;
+            line-height: 1.5;
+        }
+        header {
+            background-color: #ffffff;
+            border-bottom: 2px solid var(--borde-suave);
+            padding: 20px;
+            text-align: center;
+        }
+        .logo {
+            font-size: 2rem;
+            font-weight: 950;
+            letter-spacing: 3px;
+            background: linear-gradient(90deg, #e11d48, #a855f7);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-decoration: none;
+        }
+        main {
+            max-width: 1100px;
+            margin: 30px auto;
+            padding: 0 20px;
+        }
+        .seccion-titulo {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--color-primario);
+            border-bottom: 2px solid var(--color-secundario);
+            padding-bottom: 8px;
+            margin-bottom: 25px;
+            text-transform: uppercase;
+        }
+        .grilla-tarjetas {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+        .tarjeta {
+            background: var(--color-tarjeta);
+            border: 1px solid var(--borde-suave);
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.02);
+        }
+        .badge {
+            display: inline-block;
+            background-color: #fdf2f8;
+            color: var(--color-acento);
+            font-size: 0.75rem;
+            font-weight: 800;
+            padding: 4px 10px;
+            border-radius: 4px;
+            text-transform: uppercase;
+            margin-bottom: 10px;
+            border: 1px solid #fbcfe8;
+        }
+        .tarjeta h3 {
+            color: var(--color-primario);
+            font-size: 1.1rem;
+            margin: 5px 0 10px 0;
+        }
+        .tarjeta p {
+            font-size: 0.85rem;
+            color: #555;
+            margin: 0;
+        }
+        .btn-volver {
+            display: inline-block;
+            margin-bottom: 20px;
+            color: var(--color-primario);
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 0.9rem;
+        }
+        .btn-volver:hover {
+            color: var(--color-acento);
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <a href="index.html" class="logo">ORILLA</a>
+    </header>
+
+    <main>
+        <a href="index.html" class="btn-volver">← Volver al inicio</a>
+        
+        <div class="seccion-titulo">Archivos comunitarios y conquistas históricas</div>
+        
+        <div class="grilla-tarjetas">
+            <article class="tarjeta">
+                <span class="badge">Ley 26.618</span>
+                <h3>Matrimonio Igualitario</h3>
+                <p>Sancionada el 15 de julio de 2010, convirtió a Argentina en el primer país de América Latina en garantizar el derecho al matrimonio civil para parejas del mismo sexo.</p>
+            </article>
+
+            <article class="tarjeta">
+                <span class="badge">Ley 26.743</span>
+                <h3>Identidad de Género</h3>
+                <p>Sancionada en 2012 y pionera a nivel mundial, permite el reconocimiento en el DNI con el nombre y género autopercibido sin exigir cirugías ni pericias.</p>
+            </article>
+
+            <article class="tarjeta">
+                <span class="badge">Ley 27.636</span>
+                <h3>Inclusión Laboral Travesti-Trans</h3>
+                <p>Nombrada en honor a Lohana Berkins y Diana Sacayán, establece un piso mínimo de empleo formal en el sector público para reparar la exclusión estructural.</p>
+            </article>
+
+            <article class="tarjeta">
+                <span class="badge">Ley 27.610</span>
+                <h3>Interrupción Voluntaria del Embarazo</h3>
+                <p>Garantiza el derecho a decidir y acceder a la interrupción voluntaria y legal del embarazo hasta la semana 14, así como a la atención integral de la salud.</p>
+            </article>
+
+            <article class="tarjeta">
+                <span class="badge">Ley 26.150</span>
+                <h3>Educación Sexual Integral (ESI)</h3>
+                <p>Establece el derecho de estudiantes a recibir educación sexual integral con perspectiva de diversidad sexual y de género en todos los niveles educativos.</p>
+            </article>
+
+            <article class="tarjeta">
+                <span class="badge">Ley 26.485</span>
+                <h3>Protección Integral contra la Violencia</h3>
+                <p>Previene, sanciona y erradica la violencia contra las mujeres, contemplando de forma transversal las violencias por orientación sexual e identidad de género.</p>
+            </article>
+        </div>
+    </main>
+
+</body>
+</html>

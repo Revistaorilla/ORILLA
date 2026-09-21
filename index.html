@@ -433,6 +433,7 @@
 </head>
 <body>
 
+    <!-- CABECERA Y MENÚ FIJO ORDENADA -->
     <header>
         <div class="header-container">
             <div class="logo-area">
@@ -451,10 +452,13 @@
 
     <main>
 
+        <!-- LAYOUT PRINCIPAL: CONTENIDO A LA IZQUIERDA / BARRA VERTICAL A LA DERECHA -->
         <div class="layout-principal">
 
+            <!-- COLUMNA IZQUIERDA (CONTENIDO CENTRAL) -->
             <div class="columna-izquierda">
 
+                <!-- PORTADA / NOTA PRINCIPAL -->
                 <section class="portada-principal">
                     <div class="portada-texto">
                         <span class="badge">Edición Nº 01 — Memoria Lésbica</span>
@@ -467,6 +471,7 @@
                     </div>
                 </section>
 
+                <!-- BLOQUE: VOCES Y REGISTROS -->
                 <section id="voces">
                     <div class="seccion-titulo">Voces y Registros</div>
                     <div class="noticia-reciente-box">
@@ -482,6 +487,7 @@
                     </div>
                 </section>
 
+                <!-- SECCIÓN: MIRADAS Y DERECHOS -->
                 <section id="actualidad">
                     <div class="seccion-titulo">Miradas y Derechos</div>
                     <div class="grilla-tarjetas">
@@ -517,6 +523,7 @@
                     </div>
                 </section>
 
+                <!-- SECCIÓN: CULTURA Y MEMORIA -->
                 <section id="cultura">
                     <div class="seccion-titulo">Cultura y Memoria</div>
                     <div class="grilla-tarjetas">
@@ -541,10 +548,12 @@
                     </div>
                 </section>
 
+                <!-- SECCIÓN: PARTICIPÁ Y JUGÁ -->
                 <section id="participa">
                     <div class="seccion-titulo">Participá y Jugá con nosotras</div>
                     <div class="participacion-grid">
                         
+                        <!-- Columna 1: Enviar material -->
                         <div class="caja-participacion">
                             <div>
                                 <span class="badge">Colaboraciones</span>
@@ -560,6 +569,7 @@
                             </div>
                         </div>
 
+                        <!-- Columna 2: Cadáver Exquisito -->
                         <div class="caja-participacion">
                             <div>
                                 <span class="badge" style="background-color: #fae8ff; color: #7e22ce; border-color: #f0abfc;">Zona Lúdica</span>
@@ -584,8 +594,10 @@
 
             </div>
 
+            <!-- COLUMNA DERECHA (BARRA VERTICAL: SALUD COMUNITARIA / HOSPITAL ZATTI / GALPÓN + BANDA SONORA DEBAJO) -->
             <aside class="sidebar-derecha">
 
+                <!-- 1. SALUD COMUNITARIA: HOSPITAL ZATTI (VIEDMA) -->
                 <div class="alerta-arcoiris">
                     <span class="badge" style="background-color: #fdf2f8; color: var(--color-acento); border-color: #fbcfe8;">Soberanía Sanitaria</span>
                     <h3>Testeo, prevención y redes</h3>
@@ -593,9 +605,10 @@
                     <p class="alerta-sub"><strong>Horarios:</strong> Lunes a viernes de 8:00 a 14:00 h.</p>
                     <p class="alerta-sub"><strong>Demanda espontánea:</strong> Sin turno previo ni orden médica.</p>
                     <p class="alerta-sub" style="margin-bottom: 12px;"><strong>Trabajo en red:</strong> Articulación directa con los CAPS barriales y organizaciones sociales.</p>
-                    <a href="salud-zatti.html" class="btn" style="width: 100%; box-sizing: border-box; text-align: center;">Más información →</a>
+                    <a href="salud-zatti.html" id="btn-abrir-zatti" class="btn" style="width: 100%; box-sizing: border-box; text-align: center;">Más información →</a>
                 </div>
 
+                <!-- 2. BANDA SONORA / RECOMENDACIONES (DEBAJO DE SALUD COMUNITARIA) -->
                 <div id="musica" class="caja-lateral">
                     <span class="badge" style="background-color: #fae8ff; color: #7e22ce; border-color: #f0abfc;">Recomendación</span>
                     <h3>Mugre — "Ni Tu Perra"</h3>
@@ -610,6 +623,7 @@
 
     </main>
 
+    <!-- FOOTER -->
     <footer>
         <div class="logo">ORILLA</div>
         <p style="font-size: 0.9rem; margin: 5px 0;">Cultura y perspectiva de género — Viedma, Río Negro</p>
@@ -618,6 +632,24 @@
         <small style="display: block; margin-top: 15px; opacity: 0.8;">© 2026 ORILLA</small>
     </footer>
 
+    <!-- VENTANA MODAL (SE MUESTRA AL CLICKEAR EN "MÁS INFORMACIÓN" DEL HOSPITAL ZATTI) -->
+    <div id="modal-zatti" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.6); z-index:1000; justify-content:center; align-items:center;">
+        <div style="background:white; padding:30px; border-radius:12px; max-width:500px; width:90%; position:relative; box-shadow: 0 4px 20px rgba(0,0,0,0.2);">
+            <button onclick="cerrarModal()" style="position:absolute; top:15px; right:15px; background:none; border:none; font-size:1.2rem; cursor:pointer; font-weight:bold;">✕</button>
+            <span class="badge" style="background-color: #fdf2f8; color: var(--color-acento); border-color: #fbcfe8;">Soberanía Sanitaria</span>
+            <h3 style="color: var(--color-primario); margin-top:5px;">Hospital Artemides Zatti — Viedma</h3>
+            <p style="font-size: 0.9rem; color: #4b5563;"><strong>Unidad de VIH/SIDA e ITS:</strong> Funciona en el predio del hospital con ingreso por calle Rivadavia. Es un espacio clave de residencia, atención y cuidado comunitario libre de estigmas.</p>
+            <ul style="font-size: 0.9rem; color: #4b5563; padding-left: 20px; line-height: 1.6;">
+                <li><strong>Días y horarios:</strong> Lunes a viernes de 8:00 a 14:00 h.</li>
+                <li><strong>Modalidad:</strong> Demanda espontánea (sin turno previo ni orden médica).</li>
+                <li><strong>Trabajo en red:</strong> Articulación directa con los CAPS barriales y organizaciones sociales.</li>
+                <li><strong>Contacto:</strong> Cel. 02920-421626 | Fijo 420130 (int. 130)</li>
+            </ul>
+            <button onclick="cerrarModal()" class="btn" style="width:100%; margin-top:10px; border:none; cursor:pointer;">Cerrar ventana</button>
+        </div>
+    </div>
+
+    <!-- SCRIPTS -->
     <script>
         document.addEventListener("DOMContentLoaded", function() {
             let versosGuardados = localStorage.getItem("poema_colectivo_orilla");
@@ -647,6 +679,16 @@
                 input.value = "";
                 alert("¡Verso sumado con éxito!");
             }
+        }
+
+        // Lógica para abrir y cerrar el modal de Salud
+        document.getElementById("btn-abrir-zatti").addEventListener("click", function(e) {
+            e.preventDefault();
+            document.getElementById("modal-zatti").style.display = "flex";
+        });
+
+        function cerrarModal() {
+            document.getElementById("modal-zatti").style.display = "none";
         }
     </script>
 </body>

@@ -6,661 +6,585 @@
     <title>ORILLA — Cultura y perspectiva de género</title>
     <style>
         :root {
-            --color-primario: #581c87;
-            --color-secundario: #a21caf;
-            --color-acento: #e11d48;
-            --color-fondo: #fcf8fa;
-            --color-tarjeta: #ffffff;
-            --color-texto: #2b2b2b;
-            --borde-suave: #f0abfc;
+            --primary: #4a284e;
+            --secondary: #7b3f80;
+            --accent: #d81b60;
+            --accent-light: #f8bbd0;
+            --bg: #f9f6f8;
+            --surface: #ffffff;
+            --text: #2c2c2c;
+            --text-light: #666666;
+            --border: #e0d4df;
         }
 
-        html {
-            scroll-behavior: smooth;
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
         }
 
         body {
-            font-family: system-ui, -apple-system, sans-serif;
-            background-color: var(--color-fondo);
-            color: var(--color-texto);
-            margin: 0;
-            padding: 0;
-            line-height: 1.5;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background-color: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
         }
 
-        /* HEADER Y NAVEGACIÓN ORDENADA */
         header {
-            background-color: #ffffff;
-            border-bottom: 2px solid var(--borde-suave);
+            background-color: var(--primary);
+            color: white;
+            padding: 1.2rem 2rem;
             position: sticky;
             top: 0;
             z-index: 100;
-            box-shadow: 0 2px 10px rgba(88, 28, 135, 0.04);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
         }
 
         .header-container {
-            max-width: 1100px;
+            max-width: 1200px;
             margin: 0 auto;
-            padding: 15px 20px;
             display: flex;
             justify-content: space-between;
             align-items: center;
             flex-wrap: wrap;
-            gap: 15px;
+            gap: 1rem;
         }
 
-        .logo-area {
-            display: flex;
-            flex-direction: column;
-        }
-
-        .logo {
-            font-size: 2.2rem;
-            font-weight: 900;
-            letter-spacing: 3px;
-            background: linear-gradient(90deg, #e11d48, #a855f7);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            margin: 0;
-            line-height: 1;
-        }
-
-        .subtitulo {
-            font-size: 0.75rem;
-            color: var(--color-secundario);
-            font-weight: 700;
-            text-transform: uppercase;
+        .logo-area h1 {
+            font-size: 1.6rem;
             letter-spacing: 1px;
-            margin-top: 4px;
+            color: #fff;
         }
 
-        nav {
+        .logo-area p {
+            font-size: 0.8rem;
+            color: var(--accent-light);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        nav ul {
+            list-style: none;
             display: flex;
-            gap: 20px;
+            gap: 1.5rem;
             flex-wrap: wrap;
-            align-items: center;
         }
 
         nav a {
-            color: var(--color-primario);
+            color: white;
             text-decoration: none;
-            font-weight: 700;
-            font-size: 0.85rem;
+            font-weight: 500;
             transition: color 0.2s;
+            font-size: 0.9rem;
         }
 
         nav a:hover {
-            color: var(--color-acento);
+            color: var(--accent-light);
         }
 
-        /* CONTENEDOR Y LAYOUT DE DOS COLUMNAS */
-        main {
-            max-width: 1100px;
-            margin: 30px auto;
-            padding: 0 20px;
-        }
-
-        .layout-principal {
+        .main-layout {
+            max-width: 1200px;
+            margin: 1.5rem auto;
+            padding: 0 1rem;
             display: grid;
             grid-template-columns: 1fr 320px;
-            gap: 30px;
-            align-items: start;
+            gap: 1.5rem;
         }
 
-        @media (max-width: 1024px) {
-            .layout-principal {
+        @media (max-width: 850px) {
+            .main-layout {
                 grid-template-columns: 1fr;
             }
         }
 
-        .columna-izquierda {
+        .content-area {
             display: flex;
             flex-direction: column;
-            gap: 40px;
+            gap: 1.5rem;
         }
 
-        /* ETIQUETAS Y BADGES */
-        .badge {
-            display: inline-block;
-            background-color: #fdf2f8;
-            color: var(--color-acento);
-            font-size: 0.75rem;
-            font-weight: 800;
-            padding: 4px 10px;
-            border-radius: 4px;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            margin-bottom: 10px;
-            border: 1px solid #fbcfe8;
+        section {
+            background: var(--surface);
+            border-radius: 8px;
+            padding: 1.5rem;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+            border: 1px solid var(--border);
+        }
+
+        h2 {
+            font-size: 1.3rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+            padding-bottom: 0.4rem;
+            border-bottom: 2px solid var(--accent-light);
         }
 
         /* SECCIÓN COMPACTA: HITOS DE LA MEMORIA REAL */
-        .portada-principal {
+        .hitos-compacto {
+            background: linear-gradient(135deg, #fdf4ff 0%, #ffffff 100%);
+            border-left: 4px solid var(--secondary);
+        }
+
+        .hitos-grid-interno {
             display: grid;
-            grid-template-columns: 2fr 1fr;
-            gap: 20px;
-            background: var(--color-tarjeta);
-            border: 1px solid var(--borde-suave);
-            border-radius: 12px;
-            padding: 20px;
-            box-shadow: 0 4px 15px rgba(168, 85, 247, 0.04);
+            grid-template-columns: 1fr auto;
+            gap: 1.5rem;
             align-items: center;
         }
 
-        @media (max-width: 768px) {
-            .portada-principal {
+        @media (max-width: 650px) {
+            .hitos-grid-interno {
                 grid-template-columns: 1fr;
             }
         }
 
-        .portada-texto h1 {
-            color: var(--color-primario);
-            font-size: 1.5rem;
-            margin: 0 0 10px 0;
-            line-height: 1.2;
+        .hitos-info h3 {
+            font-size: 1.25rem;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
         }
 
-        .portada-texto p {
-            color: #4b5563;
+        .hitos-info p {
             font-size: 0.9rem;
-            margin-bottom: 12px;
+            color: var(--text-light);
+            margin-bottom: 0.8rem;
         }
 
         .efemerides-lista {
             list-style: none;
-            padding: 0;
-            margin: 0 0 15px 0;
-            font-size: 0.8rem;
+            margin-top: 0.8rem;
+            font-size: 0.85rem;
             display: flex;
             flex-direction: column;
-            gap: 4px;
+            gap: 0.4rem;
         }
 
         .efemerides-lista li {
-            color: #333;
+            display: flex;
+            gap: 0.5rem;
+            color: var(--text);
         }
 
         .efemerides-lista strong {
-            color: var(--color-acento);
+            color: var(--accent);
+            min-width: 75px;
         }
 
-        .portada-imagen img {
-            width: 100%;
-            height: 160px;
+        .hitos-img img {
+            width: 180px;
+            height: 120px;
             object-fit: cover;
-            border-radius: 8px;
-            border: 1px solid var(--borde-suave);
-        }
-
-        .btn {
-            display: inline-block;
-            background-color: var(--color-primario);
-            color: white;
-            padding: 8px 16px;
             border-radius: 6px;
-            font-weight: bold;
-            text-decoration: none;
-            font-size: 0.85rem;
-            transition: background 0.2s;
-            text-align: center;
+            border: 1px solid var(--border);
         }
 
-        .btn:hover {
-            background-color: var(--color-secundario);
+        @media (max-width: 650px) {
+            .hitos-img img {
+                width: 100%;
+                height: 150px;
+            }
         }
 
-        /* TÍTULOS DE SECCIÓN */
-        .seccion-titulo {
-            font-size: 1.2rem;
-            font-weight: 800;
-            color: var(--color-primario);
-            border-bottom: 2px solid var(--color-secundario);
-            padding-bottom: 8px;
-            margin-bottom: 20px;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-        }
-
-        /* GRILLA DE TARJETAS */
-        .grilla-tarjetas {
+        /* Miradas y Derechos Grid */
+        .rights-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-            gap: 20px;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 1rem;
+            margin-top: 0.8rem;
         }
 
-        .tarjeta {
-            background: var(--color-tarjeta);
-            border: 1px solid var(--borde-suave);
-            border-radius: 8px;
-            padding: 20px;
+        .right-card {
+            background: #faf5f8;
+            border-left: 4px solid var(--accent);
+            padding: 1rem;
+            border-radius: 4px;
             display: flex;
             flex-direction: column;
             justify-content: space-between;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.02);
         }
 
-        .tarjeta img, .tarjeta iframe {
-            width: 100%;
-            height: 160px;
-            object-fit: cover;
-            border-radius: 6px;
-            margin-bottom: 12px;
-            border: none;
+        .right-card h4 {
+            color: var(--primary);
+            margin-bottom: 0.4rem;
+            font-size: 1rem;
         }
 
-        .tarjeta h3 {
-            color: var(--color-primario);
-            font-size: 1.05rem;
-            margin: 5px 0 10px 0;
-        }
-
-        .tarjeta p {
+        .right-card p {
             font-size: 0.85rem;
-            color: #555;
-            margin: 0 0 15px 0;
+            color: var(--text-light);
+            margin-bottom: 0.8rem;
         }
 
-        /* BARRA LATERAL DERECHA (VERTICAL) */
-        .sidebar-derecha {
-            display: flex;
-            flex-direction: column;
-            gap: 25px;
+        .btn {
+            background-color: var(--secondary);
+            color: white;
+            padding: 0.4rem 0.8rem;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            text-decoration: none;
+            font-size: 0.8rem;
+            text-align: center;
+            transition: background 0.2s;
+            display: inline-block;
         }
 
-        .alerta-arcoiris {
-            background: linear-gradient(135deg, #f5f3ff 0%, #ffffff 100%);
-            border: 2px solid var(--color-primario);
-            border-radius: 12px;
-            padding: 18px;
-            box-shadow: 0 4px 15px rgba(88, 28, 135, 0.08);
-            position: relative;
-            overflow: hidden;
+        .btn:hover {
+            background-color: var(--primary);
         }
 
-        .alerta-arcoiris::before {
-            content: "";
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 5px;
-            background: linear-gradient(90deg, #581c87, #a21caf, #e11d48);
+        /* Cultura y Memoria */
+        .culture-content p {
+            margin-bottom: 0.8rem;
+            font-size: 0.9rem;
         }
 
-        .alerta-arcoiris h3 {
-            color: var(--color-primario);
-            margin: 8px 0 6px 0;
-            font-size: 1.05rem;
-            font-weight: 800;
-        }
-
-        .alerta-sub {
-            font-size: 0.82rem;
-            color: #4b5563;
-            margin: 0 0 12px 0;
-            line-height: 1.4;
-        }
-
-        /* SECCIÓN PARTICIPAR Y JUGAR */
-        .participacion-grid {
+        /* Participá y Jugá */
+        .interactive-section {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 20px;
+            gap: 1rem;
         }
 
-        @media (max-width: 768px) {
-            .participacion-grid {
+        @media (max-width: 650px) {
+            .interactive-section {
                 grid-template-columns: 1fr;
             }
         }
 
-        .caja-participacion {
-            background: #fdf4ff;
-            border: 1px solid var(--borde-suave);
-            border-radius: 8px;
-            padding: 20px;
+        .form-group {
+            margin-bottom: 0.8rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.2rem;
+            font-size: 0.85rem;
+            font-weight: 500;
+        }
+
+        .form-group input, .form-group textarea {
+            width: 100%;
+            padding: 0.5rem;
+            border: 1px solid var(--border);
+            border-radius: 4px;
+            font-family: inherit;
+            font-size: 0.85rem;
+        }
+
+        .cadáver-exquisito {
+            background: #faf5f8;
+            padding: 1rem;
+            border-radius: 6px;
+            border: 1px solid var(--border);
             display: flex;
             flex-direction: column;
+            height: 100%;
             justify-content: space-between;
         }
 
-        .form-compacto {
+        #versos-container {
+            max-height: 120px;
+            overflow-y: auto;
+            margin-bottom: 0.8rem;
+            padding-right: 0.4rem;
+            font-style: italic;
+            color: var(--text-light);
+            font-size: 0.85rem;
+        }
+
+        /* Sidebar */
+        sidebar {
             display: flex;
             flex-direction: column;
-            gap: 10px;
-            margin-top: 10px;
+            gap: 1rem;
         }
 
-        .form-compacto input, .form-compacto textarea {
-            padding: 10px;
-            border: 1px solid var(--borde-suave);
-            border-radius: 6px;
-            font-family: inherit;
+        .widget {
+            background: var(--surface);
+            border-radius: 8px;
+            padding: 1.2rem;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+            border: 1px solid var(--border);
+        }
+
+        .widget h3 {
+            font-size: 1.1rem;
+            color: var(--primary);
+            margin-bottom: 0.6rem;
+            border-bottom: 1px solid var(--border);
+            padding-bottom: 0.3rem;
+        }
+
+        .widget p {
             font-size: 0.85rem;
-            width: 100%;
+            color: var(--text-light);
+            margin-bottom: 0.8rem;
         }
 
-        .form-compacto textarea {
-            height: 70px;
-            resize: none;
+        .health-info {
+            background: #f3e9f4;
+            padding: 0.8rem;
+            border-radius: 6px;
+            margin-top: 0.4rem;
         }
 
-        .poema-box {
+        /* Modal */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(0,0,0,0.5);
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+            padding: 1rem;
+        }
+
+        .modal-content {
             background: white;
-            border: 1px solid #d946ef;
-            border-radius: 6px;
-            padding: 12px;
-            font-style: italic;
-            font-size: 0.85rem;
-            color: var(--color-primario);
-            margin: 10px 0;
-            max-height: 80px;
-            overflow-y: auto;
+            padding: 2rem;
+            border-radius: 8px;
+            max-width: 500px;
+            width: 100%;
+            position: relative;
         }
 
-        /* FOOTER */
+        .close-modal {
+            position: absolute;
+            top: 1rem; right: 1rem;
+            background: none;
+            border: none;
+            font-size: 1.2rem;
+            cursor: pointer;
+            color: var(--text-light);
+        }
+
         footer {
-            background-color: var(--color-primario);
+            background-color: var(--primary);
             color: white;
             text-align: center;
-            padding: 30px 20px;
-            margin-top: 50px;
-            border-top: 4px solid var(--color-secundario);
+            padding: 1.5rem 1rem;
+            margin-top: 2rem;
+            font-size: 0.85rem;
         }
 
-        footer .logo {
-            font-size: 1.8rem;
-            margin-bottom: 10px;
-        }
-
-        .contador {
-            font-size: 0.75rem;
-            color: #f3e8ff;
-            margin-top: 10px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
+        footer p {
+            color: var(--accent-light);
         }
     </style>
 </head>
 <body>
 
-    <!-- CABECERA Y MENÚ FIJO ORDENADA -->
     <header>
         <div class="header-container">
             <div class="logo-area">
-                <span class="logo">ORILLA</span>
-                <span class="subtitulo">Cultura y perspectiva de género</span>
+                <h1>ORILLA</h1>
+                <p>Cultura y perspectiva de género</p>
             </div>
             <nav>
-                <a href="#hitos">Hitos</a>
-                <a href="#actualidad">Miradas</a>
-                <a href="#cultura">Cultura y Memoria</a>
-                <a href="#galpon">El Galpón</a>
-                <a href="#musica">Banda Sonora</a>
-                <a href="#participa">Participá</a>
+                <ul>
+                    <li><a href="#hitos">Hitos</a></li>
+                    <li><a href="#miradas">Miradas y Derechos</a></li>
+                    <li><a href="#cultura">Cultura y Memoria</a></li>
+                    <li><a href="#participa">Participá</a></li>
+                </ul>
             </nav>
         </div>
     </header>
 
-    <main>
-        <div class="layout-principal">
-
-            <!-- COLUMNA IZQUIERDA (CONTENIDO CENTRAL) -->
-            <div class="columna-izquierda">
-
-                <!-- SECCIÓN COMPACTA: HITOS DE LA MEMORIA REAL -->
-                <section id="hitos" class="portada-principal">
-                    <div class="portada-texto">
-                        <span class="badge">Memoria Histórica</span>
-                        <h1>Hitos de la memoria real en Argentina</h1>
-                        <p>La historia se escribe rompiendo el silencio y organizando la resistencia desde los territorios.</p>
+    <div class="main-layout">
+        <div class="content-area">
+            
+            <!-- SECCIÓN COMPACTA: HITOS DE LA MEMORIA REAL -->
+            <section id="hitos" class="hitos-compacto">
+                <h2>Hitos de la memoria real</h2>
+                <div class="hitos-grid-interno">
+                    <div class="hitos-info">
+                        <h3>Archivos y resistencias de la comunidad</h3>
+                        <p>La historia se escribe rompiendo el silencio, ocupando las calles y transformando el dolor en memoria organizada desde los territorios.</p>
                         
                         <ul class="efemerides-lista">
-                            <li><strong>7 de Marzo:</strong> Día de la Visibilidad Lésbica.</li>
-                            <li><strong>1 de Julio:</strong> Organización de agrupaciones político-lesbianas.</li>
-                            <li><strong>Noviembre:</strong> Marchas históricas del Orgullo disidente.</li>
+                            <li><strong>7 de Marzo:</strong> Día de la Visibilidad Lésbica en Argentina (en memoria de Campana).</li>
+                            <li><strong>1 de Julio:</strong> Fundación histórica de las primeras agrupaciones político-lesbianas.</li>
+                            <li><strong>Noviembre:</strong> Aniversario de las primeras Marchas del Orgullo disidente en el país.</li>
                         </ul>
-                        <a href="historia-lesbica.html" class="btn" style="padding: 6px 12px; font-size: 0.78rem;">Leer nota completa →</a>
                     </div>
-                    <div class="portada-imagen">
-                        <img src="foto_escritoras.jpeg" alt="Escritoras lesbianas y archivo histórico">
+                    <div class="hitos-img">
+                        <img src="foto_escritoras.jpeg" alt="Escritoras y archivo histórico">
                     </div>
-                </section>
-
-                <!-- SECCIÓN: MIRADAS Y DERECHOS -->
-                <section id="actualidad">
-                    <div class="seccion-titulo">Miradas y Derechos</div>
-                    <div class="grilla-tarjetas">
-                        <article class="tarjeta">
-                            <div>
-                                <img src="marcha_orgullo.jpg" alt="Marcha del Orgullo">
-                                <span class="badge" style="background-color: #fee2e2; color: #991b1b; border-color: #fca5a5;">Actualidad</span>
-                                <h3>Marcha del Orgullo ratificada por organizaciones</h3>
-                                <p>Ante la solicitud del gobierno porteño de mover la fecha, las comisiones ratificaron la movilización amparadas en la ley.</p>
-                            </div>
-                            <a href="noticia-tension-marcha.html" class="btn">Leer nota</a>
-                        </article>
-
-                        <article class="tarjeta">
-                            <div>
-                                <img src="barracas.jpeg" alt="Juicio Barracas">
-                                <span class="badge">Justicia</span>
-                                <h3>Juicio final por el triple lesbicidio de Barracas</h3>
-                                <p>A dos años del ataque en la pensión, el juicio exige condena firme por crimen de odio.</p>
-                            </div>
-                            <a href="noticia-barracas.html" class="btn">Leer nota</a>
-                        </article>
-
-                        <article class="tarjeta">
-                            <div>
-                                <img src="villa_travesti.jpg" alt="Villa Travesti">
-                                <span class="badge">Patagonia</span>
-                                <h3>Villa Travesti: Soberanía colectiva en el sur</h3>
-                                <p>Resistencia, autonomía y vida comunitaria en Las Golondrinas, Lago Puelo.</p>
-                            </div>
-                            <a href="villa-travesti.html" class="btn">Leer nota</a>
-                        </article>
-
-                        <article class="tarjeta">
-                            <div>
-                                <img src="encuentro_cordoba.jpg" alt="Encuentro Córdoba">
-                                <span class="badge">Encuentro</span>
-                                <h3>Las grupas rumbo al Encuentro Plurinacional</h3>
-                                <p>Córdoba se prepara para recibir el motor de la marea: autogestión y fuerza territorial colectiva.</p>
-                            </div>
-                            <a href="encuentro-cordoba.html" class="btn">Leer nota</a>
-                        </article>
-                    </div>
-                </section>
-
-                <!-- SECCIÓN: CULTURA Y MEMORIA -->
-                <section id="cultura">
-                    <div class="seccion-titulo">Cultura y Memoria</div>
-                    <div class="grilla-tarjetas">
-                        <article class="tarjeta">
-                            <div>
-                                <span class="badge">Archivos</span>
-                                <h3>Rescate gráfico y fanzines comunitarios</h3>
-                                <p>Colectivas independientes y recursos de asesoramiento legal y contención en distintos puntos del país.</p>
-                            </div>
-                            <a href="actualidad.html" class="btn">Explorar sección</a>
-                        </article>
-
-                        <article class="tarjeta">
-                            <div>
-                                <img src="referentes.jpg" alt="Referentes">
-                                <span class="badge">Literatura</span>
-                                <h3>Grandes referentes y poesía patagónica</h3>
-                                <p>Diana Bellessi, Sylvia Molloy, Macky Corbalán y las nuevas voces poéticas del sur contemporáneo.</p>
-                            </div>
-                            <a href="cultura.html" class="btn">Explorar sección</a>
-                        </article>
-                    </div>
-                </section>
-
-                <!-- SECCIÓN: EL GALPÓN / CENTRO CULTURAL -->
-                <section id="galpon">
-                    <div class="seccion-titulo">El Galpón / Centro Cultural</div>
-                    <div class="tarjeta" style="background: linear-gradient(135deg, #fdf4ff 0%, #ffffff 100%);">
-                        <span class="badge" style="background-color: #f3e8ff; color: #7e22ce; border-color: #d8b4fe;">Territorio y Autogestión</span>
-                        <h3 style="color: var(--color-primario); font-size: 1.1rem; margin-top: 5px;">Espacio de Encuentro, Talleres y Resistencia Cultural</h3>
-                        <p style="color: #4b5563; font-size: 0.9rem; margin-bottom: 12px;">
-                            El Galpón funciona como un punto neurálgico de articulación comunitaria en Viedma. Espacio abierto a ferias autogestivas, asambleas, cine debate y formación disidente.
-                        </p>
-                        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 10px; margin-bottom: 15px; font-size: 0.8rem; color: #333;">
-                            <div style="background: white; padding: 10px; border-radius: 6px; border: 1px solid #fbcfe8;">
-                                <strong>📍 Ubicación:</strong><br>Zona Comarca Viedma - Patagones
-                            </div>
-                            <div style="background: white; padding: 10px; border-radius: 6px; border: 1px solid #fbcfe8;">
-                                <strong>🗓️ Actividades:</strong><br>Ferias, talleres y asambleas semanales
-                            </div>
-                        </div>
-                        <a href="galpon.html" class="btn" style="width: fit-content; background-color: #7e22ce;">Conocer agenda de El Galpón →</a>
-                    </div>
-                </section>
-
-                <!-- SECCIÓN: BANDA SONORA -->
-                <section id="musica">
-                    <div class="seccion-titulo">Banda Sonora: Recomendadas</div>
-                    <div class="grilla-tarjetas">
-                        <article class="tarjeta" style="background: linear-gradient(135deg, #fdf4ff 0%, #ffffff 100%);">
-                            <div>
-                                <iframe src="https://www.youtube.com/embed/rzTRwztisDI" title="MUGRE - NI TU PERRA (Video Oficial)" allowfullscreen></iframe>
-                                <span class="badge" style="background-color: #fae8ff; color: #7e22ce; border-color: #f0abfc;">Sonidos en Loop</span>
-                                <h3>Mugre — "Ni Tu Perra"</h3>
-                                <p>Potencia sonora, rock y texturas crudas. Un proyecto imperdible comandado por mujeres que sacude los parlantes.</p>
-                            </div>
-                            <a href="https://youtu.be/rzTRwztisDI" target="_blank" class="btn" style="background-color: #7e22ce;">Ver en YouTube →</a>
-                        </article>
-                    </div>
-                </section>
-
-                <!-- SECCIÓN: PARTICIPÁ Y JUGÁ -->
-                <section id="participa">
-                    <div class="seccion-titulo">Participá y Jugá con nosotras</div>
-                    <div class="participacion-grid">
-                        
-                        <!-- Columna 1: Enviar material -->
-                        <div class="caja-participacion">
-                            <div>
-                                <span class="badge">Colaboraciones</span>
-                                <h3 style="color: var(--color-primario); margin: 5px 0 8px 0;">Envianos tu material</h3>
-                                <p style="font-size: 0.85rem; color: #555; margin-bottom: 10px;">Dejanos tu relato, poema o reflexión para sumar a la revista:</p>
-                                
-                                <form class="form-compacto" action="https://formspree.io/f/xrpbeeol" method="POST">
-                                    <input type="text" name="nombre" placeholder="Nombre o seudónimo" required>
-                                    <input type="email" name="email" placeholder="Correo electrónico" required>
-                                    <textarea name="mensaje" placeholder="Escribí acá tu colaboración..." required></textarea>
-                                    <button type="submit" class="btn" style="width: fit-content; border:none; cursor:pointer;">Enviar material</button>
-                                </form>
-                            </div>
-                        </div>
-
-                        <!-- Columna 2: Cadáver Exquisito -->
-                        <div class="caja-participacion">
-                            <div>
-                                <span class="badge" style="background-color: #fae8ff; color: #7e22ce; border-color: #f0abfc;">Zona Lúdica</span>
-                                <h3 style="color: var(--color-primario); margin: 5px 0 8px 0;">Cadáver Exquisito Lésbico</h3>
-                                <p style="font-size: 0.85rem; color: #555; margin-bottom: 5px;">Sumá tu verso al poema colectivo en curso:</p>
-
-                                <div id="poema-en-curso" class="poema-box">
-                                    "Encendemos la noche con fósforos prestados...<br>
-                                    la memoria arde en las esquinas del sur...<br>
-                                    tejiendo redes donde el viento no nos alcanza..."
-                                </div>
-
-                                <form id="form-juego" class="form-compacto" onsubmit="guardarVerso(event)">
-                                    <textarea id="input-verso" placeholder="Escribí tu verso..." required style="height: 45px;"></textarea>
-                                    <button type="submit" class="btn" style="background-color: #7e22ce; width: fit-content; border:none; cursor:pointer;">Sumar verso</button>
-                                </form>
-                            </div>
-                        </div>
-
-                    </div>
-                </section>
-
-            </div>
-
-            <!-- COLUMNA DERECHA (BARRA VERTICAL: SALUD COMUNITARIA / HOSPITAL ZATTI) -->
-            <aside class="sidebar-derecha">
-
-                <div class="alerta-arcoiris">
-                    <span class="badge" style="background-color: #fdf2f8; color: var(--color-acento); border-color: #fbcfe8;">Soberanía Sanitaria</span>
-                    <h3>Testeo, prevención y redes</h3>
-                    <p class="alerta-sub">En el predio del <strong>Hospital Artemides Zatti</strong> (ingreso por calle Rivadavia), funciona la <strong>Unidad de VIH/SIDA e ITS</strong>. Espacio clave de atención comunitaria sin estigmas.</p>
-                    <p class="alerta-sub"><strong>Horarios:</strong> Lunes a viernes de 8:00 a 14:00 h.</p>
-                    <p class="alerta-sub" style="margin-bottom: 12px;"><strong>Demanda espontánea:</strong> Sin turno previo ni orden médica.</p>
-                    <button onclick="abrirModal()" class="btn" style="width: 100%; box-sizing: border-box; text-align: center; border:none; cursor:pointer;">Más información →</button>
                 </div>
+            </section>
 
-            </aside>
+            <!-- MIRADAS Y DERECHOS (4 noticias) -->
+            <section id="miradas">
+                <h2>Miradas y Derechos</h2>
+                <p style="margin-bottom: 0.8rem; font-size: 0.9rem; color: var(--text-light);">Actualidad, cobertura territorial y análisis sobre derechos humanos, justicia y luchas feministas y sexodiversas.</p>
+                
+                <div class="rights-grid">
+                    <div class="right-card">
+                        <div>
+                            <h4>Marcha del Orgullo</h4>
+                            <p>Cobertura especial de las movilizaciones locales y regionales en defensa de los derechos conquistados.</p>
+                        </div>
+                        <a href="#" class="btn">Leer más</a>
+                    </div>
+
+                    <div class="right-card">
+                        <div>
+                            <h4>Triple Lesbicidio de Barracas</h4>
+                            <p>Exigimos justicia y memoria por el crimen de odio perpetrado contra Romina, Pamela y Roxana.</p>
+                        </div>
+                        <a href="#" class="btn">Leer más</a>
+                    </div>
+
+                    <div class="right-card">
+                        <div>
+                            <h4>Villa Travesti (Patagonia)</h4>
+                            <p>Memorias, resistencias y organización comunitaria de las identidades travestis y trans en el sur.</p>
+                        </div>
+                        <a href="#" class="btn">Leer más</a>
+                    </div>
+
+                    <div class="right-card">
+                        <div>
+                            <h4>Encuentro Plurinacional</h4>
+                            <p>Articulación, debates y talleres de las grupas rumbo a una nueva edición del Encuentro.</p>
+                        </div>
+                        <a href="#" class="btn">Leer más</a>
+                    </div>
+                </div>
+            </section>
+
+            <!-- CULTURA Y MEMORIA -->
+            <section id="cultura" class="culture-content">
+                <h2>Cultura y Memoria</h2>
+                <p><strong>Fanzines, poesía y archivos gráficos:</strong> La literatura y el arte gráfico como herramientas de trinchera y afectividad. Recordamos las trayectorias de referentes esenciales como Diana Bellessi y Sylvia Molloy.</p>
+            </section>
+
+            <!-- PARTICIPÁ Y JUGÁ -->
+            <section id="participa">
+                <h2>Participá y Jugá</h2>
+                <div class="interactive-section">
+                    <div>
+                        <h3 style="font-size: 1rem; color: var(--secondary); margin-bottom: 0.6rem;">Envianos tu colaboración</h3>
+                        <form onsubmit="event.preventDefault(); alert('¡Gracias por tu mensaje!');">
+                            <div class="form-group">
+                                <label for="nombre">Nombre o seudónimo</label>
+                                <input type="text" id="nombre" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="mensaje">Aporte / Nota / Comentario</label>
+                                <textarea id="mensaje" rows="2" required></textarea>
+                            </div>
+                            <button type="submit" class="btn">Enviar colaboración</button>
+                        </form>
+                    </div>
+
+                    <div class="cadáver-exquisito">
+                        <div>
+                            <h3 style="font-size: 1rem; color: var(--secondary); margin-bottom: 0.6rem;">Cadáver Exquisito Lésbico</h3>
+                            <div id="versos-container">
+                                <p>"En la orilla del río se tejen los afectos..."</p>
+                                <p>"La memoria encendida rompe el silencio..."</p>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="form-group" style="margin-bottom: 0.4rem;">
+                                <input type="text" id="nuevo-verso" placeholder="Escribí un verso...">
+                            </div>
+                            <button type="button" class="btn" onclick="agregarVerso()" style="width: 100%;">Sumar verso</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
 
         </div>
-    </main>
 
-    <!-- FOOTER -->
-    <footer>
-        <div class="logo">ORILLA</div>
-        <p style="font-size: 0.9rem; margin: 5px 0;">Cultura y perspectiva de género — Viedma, Río Negro</p>
-        <p style="font-size: 0.80rem; color: #f3e8ff; margin: 10px 0;">Instagram · TikTok · Podcast</p>
-        <div class="contador">Visitas de la revista: <span id="contador-visitas-num">1240</span></div>
-        <small style="display: block; margin-top: 15px; opacity: 0.8;">© 2026 ORILLA</small>
-    </footer>
+        <sidebar>
+            <!-- WIDGET SALUD -->
+            <div class="widget">
+                <h3>Soberanía Sanitaria</h3>
+                <p>Información clave sobre salud comunitaria e integral en la región.</p>
+                <div class="health-info">
+                    <p style="font-size: 0.8rem; margin-bottom: 0.4rem;"><strong>Unidad de VIH/SIDA e ITS</strong><br>Hospital Artemides Zatti (Viedma)</p>
+                    <button class="btn" onclick="abrirModal()" style="width: 100%;">Ver horarios y atención</button>
+                </div>
+            </div>
 
-    <!-- VENTANA MODAL SALUD -->
-    <div id="modal-zatti" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.6); z-index:1000; justify-content:center; align-items:center; padding: 20px;">
-        <div style="background:white; padding:30px; border-radius:12px; max-width:500px; width:100%; position:relative; box-shadow: 0 4px 20px rgba(0,0,0,0.2);">
-            <button onclick="cerrarModal()" style="position:absolute; top:15px; right:15px; background:none; border:none; font-size:1.2rem; cursor:pointer; font-weight:bold;">✕</button>
-            <span class="badge" style="background-color: #fdf2f8; color: var(--color-acento); border-color: #fbcfe8;">Soberanía Sanitaria</span>
-            <h3 style="color: var(--color-primario); margin-top:5px;">Hospital Artemides Zatti — Viedma</h3>
-            <p style="font-size: 0.9rem; color: #4b5563;"><strong>Unidad de VIH/SIDA e ITS:</strong> Ingreso por calle Rivadavia. Espacio clave de atención y cuidado comunitario libre de estigmas.</p>
-            <ul style="font-size: 0.9rem; color: #4b5563; padding-left: 20px; line-height: 1.6;">
-                <li><strong>Días y horarios:</strong> Lunes a viernes de 8:00 a 14:00 h.</li>
-                <li><strong>Modalidad:</strong> Demanda espontánea (sin turno previo ni orden médica).</li>
-                <li><strong>Contacto:</strong> Cel. 02920-421626 | Fijo 420130 (int. 130)</li>
-            </ul>
-            <button onclick="cerrarModal()" class="btn" style="width:100%; margin-top:10px; border:none; cursor:pointer;">Cerrar ventana</button>
+            <!-- WIDGET MULTIMEDIA (Banda Sonora / Recomendados) -->
+            <div class="widget">
+                <h3>Banda Sonora / Recomendados</h3>
+                <p>Escuchá producciones sonoras, podcasts y contenidos recomendados.</p>
+                <div style="background: #eee; padding: 1.5rem 1rem; text-align: center; border-radius: 4px; font-size: 0.8rem; color: var(--text-light);">
+                    [ Reproductor / Proyecto Mugre ]
+                </div>
+            </div>
+
+            <!-- WIDGET VISITAS -->
+            <div class="widget" style="text-align: center;">
+                <h3>Visitas</h3>
+                <p style="margin-bottom: 0.3rem; font-size: 0.8rem;">Personas navegando el sitio:</p>
+                <div id="contador-visitas" style="font-size: 1.3rem; font-weight: bold; color: var(--accent);">000142</div>
+            </div>
+        </sidebar>
+    </div>
+
+    <!-- MODAL SALUD -->
+    <div id="modal-salud" class="modal">
+        <div class="modal-content">
+            <button class="close-modal" onclick="cerrarModal()">&times;</button>
+            <h3 style="color: var(--primary); margin-bottom: 1rem;">Atención - Hospital Artemides Zatti</h3>
+            <p style="margin-bottom: 0.8rem;"><strong>Unidad de VIH/SIDA e ITS</strong></p>
+            <p style="font-size: 0.9rem; margin-bottom: 0.5rem;">• <strong>Demanda espontánea:</strong> Lunes a viernes en horarios matutinos.</p>
+            <p style="font-size: 0.9rem; margin-bottom: 0.5rem;">• <strong>Entrega de medicación y testeos rápidos:</strong> Consultar asesoría en consultorio específico.</p>
+            <p style="font-size: 0.9rem; color: var(--text-light); margin-top: 1rem;">Viedma, Río Negro.</p>
         </div>
     </div>
 
-    <!-- SCRIPTS -->
+    <footer>
+        <p>ORILLA — Cultura y perspectiva de género © 2026. Construcción comunitaria y federal.</p>
+    </footer>
+
     <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            let versosGuardados = localStorage.getItem("poema_colectivo_orilla");
-            if (versosGuardados) {
-                document.getElementById("poema-en-curso").innerHTML = versosGuardados;
-            }
+        // Contador de visitas local
+        let visitas = localStorage.getItem('orilla_visitas');
+        if (!visitas) {
+            visitas = 142;
+        } else {
+            visitas = parseInt(visitas) + 1;
+        }
+        localStorage.setItem('orilla_visitas', visitas);
+        document.getElementById('contador-visitas').innerText = String(visitas).padStart(6, '0');
 
-            let visitas = localStorage.getItem("visitas_revista_orilla");
-            if (!visitas) {
-                visitas = 1240; 
-            } else {
-                visitas = parseInt(visitas) + 1;
-            }
-            localStorage.setItem("visitas_revista_orilla", visitas);
-            document.getElementById("contador-visitas-num").innerText = visitas;
-        });
-
-        function guardarVerso(event) {
-            event.preventDefault();
-            let input = document.getElementById("input-verso");
-            let versoTexto = input.value.trim();
-            
-            if(versoTexto !== "") {
-                let contenedorPoema = document.getElementById("poema-en-curso");
-                contenedorPoema.innerHTML += "<br>" + versoTexto + "...";
-                localStorage.setItem("poema_colectivo_orilla", contenedorPoema.innerHTML);
-                input.value = "";
-                alert("¡Verso sumado con éxito!");
+        // Cadáver Exquisito
+        function agregarVerso() {
+            const input = document.getElementById('nuevo-verso');
+            const texto = input.value.trim();
+            if (texto) {
+                const container = document.getElementById('versos-container');
+                const p = document.createElement('p');
+                p.textContent = `"${texto}"`;
+                container.appendChild(p);
+                input.value = '';
+                container.scrollTop = container.scrollHeight;
             }
         }
 
+        // Modal
         function abrirModal() {
-            document.getElementById("modal-zatti").style.display = "flex";
+            document.getElementById('modal-salud').style.display = 'flex';
         }
 
         function cerrarModal() {
-            document.getElementById("modal-zatti").style.display = "none";
+            document.getElementById('modal-salud').style.display = 'none';
+        }
+
+        window.onclick = function(event) {
+            const modal = document.getElementById('modal-salud');
+            if (event.target == modal) {
+                cerrarModal();
+            }
         }
     </script>
 </body>

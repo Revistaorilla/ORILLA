@@ -137,63 +137,135 @@
             border: 1px solid #fbcfe8;
         }
 
-        /* SECCIÓN PRINCIPAL / PORTADA */
-        .portada-principal {
-            display: grid;
-            grid-template-columns: 2fr 1fr;
-            gap: 30px;
-            background: var(--color-tarjeta);
-            border: 1px solid var(--borde-suave);
+        /* NUEVA SECCIÓN: HITOS IMPORTANTES (CALENDARIO INTERACTIVO DESTACADO) */
+        .hitos-destacados-box {
+            background: linear-gradient(135deg, #f5f3ff 0%, #ffffff 100%);
+            border: 2px solid var(--color-primario);
             border-radius: 12px;
             padding: 30px;
-            box-shadow: 0 4px 15px rgba(168, 85, 247, 0.04);
+            box-shadow: 0 4px 20px rgba(88, 28, 135, 0.08);
+            position: relative;
+            overflow: hidden;
         }
 
-        @media (max-width: 768px) {
-            .portada-principal {
-                grid-template-columns: 1fr;
-            }
+        .hitos-destacados-box::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 6px;
+            background: linear-gradient(90deg, #581c87, #a21caf, #e11d48);
         }
 
-        .portada-texto h1 {
+        .hitos-destacados-box h2 {
             color: var(--color-primario);
-            font-size: 1.6rem;
-            margin: 0 0 15px 0;
-            line-height: 1.2;
+            font-size: 1.5rem;
+            margin: 10px 0 5px 0;
+            font-weight: 800;
         }
 
-        .portada-texto p {
+        .hitos-destacados-box p.descripcion-hitos {
             color: #4b5563;
             font-size: 0.95rem;
             margin-bottom: 20px;
         }
 
-        .portada-imagen img {
-            width: 100%;
-            height: 240px;
-            object-fit: cover;
-            border-radius: 8px;
-            border: 1px solid var(--borde-suave);
+        /* BOTÓN / CONTENEDOR DESPLEGABLE DEL CALENDARIO */
+        .contenedor-desplegable-calendario {
+            margin-top: 15px;
         }
 
-        .btn {
-            display: inline-block;
+        .btn-desplegar-calendario {
             background-color: var(--color-primario);
             color: white;
-            padding: 8px 16px;
-            border-radius: 6px;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 8px;
             font-weight: bold;
-            text-decoration: none;
-            font-size: 0.85rem;
-            transition: background 0.2s;
-            text-align: center;
+            font-size: 0.95rem;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            transition: background 0.2s, transform 0.1s;
+            box-shadow: 0 4px 12px rgba(88, 28, 135, 0.15);
         }
 
-        .btn:hover {
+        .btn-desplegar-calendario:hover {
             background-color: var(--color-secundario);
         }
 
-        /* CARTEL LLAMATIVO NUEVO: NÚMEROS REALES DE CRÍMENES DE ODIO */
+        /* CUERPO DEL CALENDARIO DESPLEGABLE */
+        .panel-calendario-desplegado {
+            display: none;
+            margin-top: 15px;
+            background: white;
+            border: 1px solid var(--borde-suave);
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+            animation: fadeIn 0.3s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-5px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .lista-fechas-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 12px;
+            margin-bottom: 15px;
+        }
+
+        .item-fecha {
+            background: #faf5ff;
+            border: 1px solid var(--borde-suave);
+            border-radius: 6px;
+            padding: 10px 14px;
+            cursor: pointer;
+            transition: all 0.2s;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .item-fecha:hover {
+            background-color: #fdf2f8;
+            border-color: var(--color-acento);
+            transform: translateY(-2px);
+        }
+
+        .item-fecha .fecha-tag {
+            background: var(--color-acento);
+            color: white;
+            font-size: 0.72rem;
+            font-weight: bold;
+            padding: 4px 8px;
+            border-radius: 4px;
+            white-space: nowrap;
+        }
+
+        .item-fecha .fecha-titulo {
+            font-size: 0.85rem;
+            font-weight: 700;
+            color: var(--color-texto);
+        }
+
+        .detalle-efemeride-grande {
+            padding: 15px;
+            background: #fdf8f6;
+            border-left: 4px solid var(--color-acento);
+            border-radius: 4px;
+            font-size: 0.9rem;
+            color: #333;
+            margin-top: 10px;
+            display: none;
+        }
+
+        /* CARTEL LLAMATIVO: NÚMEROS REALES DE CRÍMENES DE ODIO */
         .cartel-alerta-impacto {
             background: linear-gradient(135deg, #fff1f2 0%, #ffe4e6 100%);
             border: 2px solid var(--color-acento);
@@ -329,54 +401,28 @@
             margin: 0 0 15px 0;
         }
 
+        .btn {
+            display: inline-block;
+            background-color: var(--color-primario);
+            color: white;
+            padding: 8px 16px;
+            border-radius: 6px;
+            font-weight: bold;
+            text-decoration: none;
+            font-size: 0.85rem;
+            transition: background 0.2s;
+            text-align: center;
+        }
+
+        .btn:hover {
+            background-color: var(--color-secundario);
+        }
+
         /* BARRA LATERAL DERECHA (VERTICAL) */
         .sidebar-derecha {
             display: flex;
             flex-direction: column;
             gap: 25px;
-        }
-
-        .alerta-arcoiris {
-            background: linear-gradient(135deg, #f5f3ff 0%, #ffffff 100%);
-            border: 2px solid var(--color-primario);
-            border-radius: 12px;
-            padding: 18px;
-            box-shadow: 0 4px 15px rgba(88, 28, 135, 0.08);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .alerta-arcoiris::before {
-            content: "";
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 5px;
-            background: linear-gradient(90deg, #581c87, #a21caf, #e11d48);
-        }
-
-        .alerta-arcoiris img {
-            width: 100%;
-            height: 140px;
-            object-fit: cover;
-            border-radius: 6px;
-            margin-bottom: 12px;
-            border: 1px solid var(--borde-suave);
-        }
-
-        .alerta-arcoiris h3 {
-            color: var(--color-primario);
-            margin: 8px 0 6px 0;
-            font-size: 1.05rem;
-            font-weight: 800;
-        }
-
-        .alerta-sub {
-            font-size: 0.82rem;
-            color: #4b5563;
-            margin: 0 0 12px 0;
-            line-height: 1.4;
         }
 
         .caja-lateral {
@@ -498,6 +544,7 @@
                 <span class="subtitulo">Cultura y perspectiva de género</span>
             </div>
             <nav>
+                <a href="#hitos">Hitos Importantes</a>
                 <a href="#voces">Voces y Registros</a>
                 <a href="#impacto-odio">Estadísticas</a>
                 <a href="#actualidad">Miradas</a>
@@ -516,16 +563,59 @@
             <!-- COLUMNA IZQUIERDA (CONTENIDO CENTRAL) -->
             <div class="columna-izquierda">
 
-                <!-- PORTADA / NOTA PRINCIPAL -->
-                <section class="portada-principal">
-                    <div class="portada-texto">
-                        <span class="badge">Edición Nº 01 — Archivos de la Memoria</span>
-                        <h1>Cultura y perspectiva de género en Argentina</h1>
-                        <p>Un recorrido político, documental y de urgencia comunitaria frente a la violencia sistemática y los crímenes motivados por orientación sexual e identidad de género.</p>
-                        <a href="historia-lesbica.html" class="btn">Leer nota completa →</a>
-                    </div>
-                    <div class="portada-imagen">
-                        <img src="foto_escritoras.jpeg" alt="Escritoras y archivo histórico">
+                <!-- NUEVA SECCIÓN PRINCIPAL: HITOS IMPORTANTES CON CALENDARIO INTERACTIVO -->
+                <section id="hitos" class="hitos-destacados-box">
+                    <span class="badge">Memoria y Agenda Colectiva</span>
+                    <h2>Hitos Importantes</h2>
+                    <p class="descripcion-hitos">Un recorrido por las fechas clave, efemérides y momentos históricos de la comunidad LGBT+ en Argentina.</p>
+                    
+                    <!-- Botón interactivo tipo calendario -->
+                    <div class="contenedor-desplegable-calendario">
+                        <button class="btn-desplegar-calendario" onclick="toggleCalendario()">
+                            <span>📅 Ver Calendario de Fechas Importantes</span>
+                            <span id="flecha-icono">▼</span>
+                        </button>
+
+                        <!-- Panel que se despliega al hacer clic -->
+                        <div id="panel-calendario" class="panel-calendario-desplegado">
+                            <p style="font-size: 0.85rem; color: #555; margin-top: 0; margin-bottom: 15px;">Hacé clic en cualquiera de las fechas para conocer los detalles históricos:</p>
+                            
+                            <div class="lista-fechas-grid">
+                                <div class="item-fecha" onclick="mostrarDetalleHito('7 de Marzo', 'Día de la Visibilidad Lésbica en Argentina: Conmemora la lucha histórica, la resistencia comunitaria y el recuerdo de referentes que abrieron camino en la visibilidad y organización de las lesbianas en el país.')">
+                                    <span class="fecha-tag">7 MAR</span>
+                                    <span class="fecha-titulo">Visibilidad Lésbica</span>
+                                </div>
+
+                                <div class="item-fecha" onclick="mostrarDetalleHito('9 de Mayo', 'Sanción de la Ley de Identidad de Género (Ley 26.743): Aprobada en Argentina en 2012, convirtiéndose en un modelo pionero a nivel mundial por garantizar el derecho a la autodeterminación de género sin patologización.')">
+                                    <span class="fecha-tag">9 MAY</span>
+                                    <span class="fecha-titulo">Ley de Identidad de Género</span>
+                                </div>
+
+                                <div class="item-fecha" onclick="mostrarDetalleHito('17 de Mayo', 'Día Internacional contra la Homofobia, la Transfobia y la Bifobia: Conmemora la eliminación de la homosexualidad de la lista de enfermedades mentales por parte de la OMS en 1990.')">
+                                    <span class="fecha-tag">17 MAY</span>
+                                    <span class="fecha-titulo">Contra la LGTBfobia</span>
+                                </div>
+
+                                <div class="item-fecha" onclick="mostrarDetalleHito('28 de Junio', 'Día Internacional del Orgullo LGBT+: Conmemora los históricos disturbios de Stonewall en Nueva York (1969), hito fundacional del movimiento global de liberación sexogenérica.')">
+                                    <span class="fecha-tag">28 JUN</span>
+                                    <span class="fecha-titulo">Día del Orgullo LGBT+</span>
+                                </div>
+
+                                <div class="item-fecha" onclick="mostrarDetalleHito('20 de Agosto', 'Día del Activismo por la Diversidad Sexual: Instaurado en memoria de Carlos Jáuregui, pionero y gran referente histórico de la lucha por los derechos de la diversidad en Argentina.')">
+                                    <span class="fecha-tag">20 AGO</span>
+                                    <span class="fecha-titulo">Activismo por la Diversidad</span>
+                                </div>
+
+                                <div class="item-fecha" onclick="mostrarDetalleHito('Primer Sábado de Noviembre', 'Marcha del Orgullo en Buenos Aires (y réplicas federales): Multitudinaria movilización popular que celebra la visibilidad, exige políticas públicas y reclama ante los crímenes de odio.')">
+                                    <span class="fecha-tag">NOV</span>
+                                    <span class="fecha-titulo">Marcha del Orgullo</span>
+                                </div>
+                            </div>
+
+                            <div id="caja-detalle-hito" class="detalle-efemeride-grande">
+                                Seleccioná una fecha de la lista para ver su reseña histórica.
+                            </div>
+                        </div>
                     </div>
                 </section>
 
@@ -674,19 +764,7 @@
             <!-- COLUMNA DERECHA (BARRA VERTICAL) -->
             <aside class="sidebar-derecha">
 
-                <!-- 1. SALUD COMUNITARIA: HOSPITAL ZATTI (VIEDMA) -->
-                <div class="alerta-arcoiris">
-                    <span class="badge" style="background-color: #fdf2f8; color: var(--color-acento); border-color: #fbcfe8;">Soberanía Sanitaria</span>
-                    <img src="hospital_zatti.jpg" alt="Hospital Artemides Zatti — Viedma">
-                    <h3>Testeo, prevención y redes</h3>
-                    <p class="alerta-sub">En el predio del <strong>Hospital Artemides Zatti</strong> (ingreso por calle Rivadavia), funciona la <strong>Unidad de VIH/SIDA e ITS</strong>. Un espacio clave de residencia y cuidado sin estigmas.</p>
-                    <p class="alerta-sub"><strong>Horarios:</strong> Lunes a viernes de 8:00 a 14:00 h.</p>
-                    <p class="alerta-sub"><strong>Demanda espontánea:</strong> Sin turno previo ni orden médica.</p>
-                    <p class="alerta-sub" style="margin-bottom: 12px;"><strong>Trabajo en red:</strong> Articulación directa con los CAPS barriales y organizaciones sociales.</p>
-                    <a href="salud-zatti.html" id="btn-abrir-zatti" class="btn" style="width: 100%; box-sizing: border-box; text-align: center;">Más información →</a>
-                </div>
-
-                <!-- 2. BANDA SONORA / RECOMENDACIONES -->
+                <!-- BANDA SONORA / RECOMENDACIONES -->
                 <div id="musica" class="caja-lateral">
                     <span class="badge" style="background-color: #fae8ff; color: #7e22ce; border-color: #f0abfc;">Recomendación</span>
                     <h3>Mugre — "Ni Tu Perra"</h3>
@@ -709,23 +787,6 @@
         <div class="contador">Visitas de la revista: <span id="contador-visitas-num">1240</span></div>
         <small style="display: block; margin-top: 15px; opacity: 0.8;">© 2026 ORILLA</small>
     </footer>
-
-    <!-- VENTANA MODAL -->
-    <div id="modal-zatti" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.6); z-index:1000; justify-content:center; align-items:center;">
-        <div style="background:white; padding:30px; border-radius:12px; max-width:500px; width:90%; position:relative; box-shadow: 0 4px 20px rgba(0,0,0,0.2);">
-            <button onclick="cerrarModal()" style="position:absolute; top:15px; right:15px; background:none; border:none; font-size:1.2rem; cursor:pointer; font-weight:bold;">✕</button>
-            <span class="badge" style="background-color: #fdf2f8; color: var(--color-acento); border-color: #fbcfe8;">Soberanía Sanitaria</span>
-            <h3 style="color: var(--color-primario); margin-top:5px;">Hospital Artemides Zatti — Viedma</h3>
-            <p style="font-size: 0.9rem; color: #4b5563;"><strong>Unidad de VIH/SIDA e ITS:</strong> Funciona en el predio del hospital con ingreso por calle Rivadavia. Es un espacio clave de residencia, atención y cuidado comunitario libre de estigmas.</p>
-            <ul style="font-size: 0.9rem; color: #4b5563; padding-left: 20px; line-height: 1.6;">
-                <li><strong>Días y horarios:</strong> Lunes a viernes de 8:00 a 14:00 h.</li>
-                <li><strong>Modalidad:</strong> Demanda espontánea (sin turno previo ni orden médica).</li>
-                <li><strong>Trabajo en red:</strong> Articulación directa con los CAPS barriales y organizaciones sociales.</li>
-                <li><strong>Contacto:</strong> Cel. 02920-421626 | Fijo 420130 (int. 130)</li>
-            </ul>
-            <button onclick="cerrarModal()" class="btn" style="width:100%; margin-top:10px; border:none; cursor:pointer;">Cerrar ventana</button>
-        </div>
-    </div>
 
     <!-- SCRIPTS -->
     <script>
@@ -759,13 +820,24 @@
             }
         }
 
-        document.getElementById("btn-abrir-zatti").addEventListener("click", function(e) {
-            e.preventDefault();
-            document.getElementById("modal-zatti").style.display = "flex";
-        });
+        // Función para abrir y cerrar el panel desplegable del calendario
+        function toggleCalendario() {
+            let panel = document.getElementById("panel-calendario");
+            let flecha = document.getElementById("flecha-icono");
+            if (panel.style.display === "block") {
+                panel.style.display = "none";
+                flecha.innerText = "▼";
+            } else {
+                panel.style.display = "block";
+                flecha.innerText = "▲";
+            }
+        }
 
-        function cerrarModal() {
-            document.getElementById("modal-zatti").style.display = "none";
+        // Función para mostrar los detalles al hacer clic en un hito o fecha
+        function mostrarDetalleHito(fecha, descripcion) {
+            let caja = document.getElementById("caja-detalle-hito");
+            caja.style.display = "block";
+            caja.innerHTML = `<strong>${fecha}:</strong> ${descripcion}`;
         }
     </script>
 </body>

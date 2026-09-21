@@ -30,7 +30,6 @@
 
         header {
             background-color: #ffffff;
-            border-bottom: 2px solid var(--borde-suave);
             position: sticky;
             top: 0;
             z-index: 100;
@@ -46,6 +45,13 @@
             align-items: center;
             flex-wrap: wrap;
             gap: 15px;
+        }
+
+        /* Línea de colores del arcoíris debajo del header */
+        .barra-arcoiris {
+            height: 5px;
+            width: 100%;
+            background: linear-gradient(90deg, #e11d48, #f97316, #eab308, #10b981, #3b82f6, #8b5cf6, #a21caf);
         }
 
         .logo-area {
@@ -460,6 +466,8 @@
                 <a href="#participa">Participá</a>
             </nav>
         </div>
+        <!-- Franja de colores del arcoíris colocada exactamente debajo del menú -->
+        <div class="barra-arcoiris"></div>
     </header>
 
     <main>

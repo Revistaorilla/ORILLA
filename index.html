@@ -119,44 +119,31 @@
             border-bottom: 2px solid var(--accent-light);
         }
 
-        /* SECCIÓN COMPACTA: HITOS DE LA MEMORIA REAL */
+        /* SECCIÓN HITOS ORDENADA Y LIMPIA */
         .hitos-compacto {
             background: linear-gradient(135deg, #fdf4ff 0%, #ffffff 100%);
             border-left: 4px solid var(--secondary);
         }
 
-        .hitos-grid-interno {
-            display: grid;
-            grid-template-columns: 1fr auto;
-            gap: 1.5rem;
-            align-items: center;
+        .hitos-contenido-flex {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
         }
 
-        @media (max-width: 650px) {
-            .hitos-grid-interno {
-                grid-template-columns: 1fr;
-            }
-        }
-
-        .hitos-info h3 {
-            font-size: 1.25rem;
-            color: var(--primary);
-            margin-bottom: 0.5rem;
-        }
-
-        .hitos-info p {
-            font-size: 0.9rem;
-            color: var(--text-light);
+        .hitos-texto-arriba p {
+            font-size: 0.95rem;
+            color: var(--text);
             margin-bottom: 0.8rem;
         }
 
         .efemerides-lista {
             list-style: none;
-            margin-top: 0.8rem;
             font-size: 0.85rem;
             display: flex;
             flex-direction: column;
             gap: 0.4rem;
+            margin-bottom: 1rem;
         }
 
         .efemerides-lista li {
@@ -170,20 +157,19 @@
             min-width: 75px;
         }
 
-        /* IMAGEN PROPORCIONADA Y SIN DEFORMARSE */
-        .hitos-img img {
-            width: 150px;
-            height: 105px;
-            object-fit: cover;
+        .hitos-imagen-abajo {
+            width: 100%;
+            max-width: 300px;
             border-radius: 6px;
+            overflow: hidden;
             border: 1px solid var(--border);
         }
 
-        @media (max-width: 650px) {
-            .hitos-img img {
-                width: 100%;
-                height: 150px;
-            }
+        .hitos-imagen-abajo img {
+            width: 100%;
+            height: auto;
+            display: block;
+            object-fit: cover;
         }
 
         /* Miradas y Derechos Grid */
@@ -397,12 +383,13 @@
     <div class="main-layout">
         <div class="content-area">
             
-            <!-- SECCIÓN COMPACTA: HITOS DE LA MEMORIA REAL -->
+            <!-- SECCIÓN HITOS REESTRUCTURADA -->
             <section id="hitos" class="hitos-compacto">
                 <span style="font-size: 0.75rem; color: var(--accent); text-transform: uppercase; font-weight: bold; letter-spacing: 1px;">Memoria histórica</span>
                 <h2 style="margin-top: 0.2rem;">Hitos de la memoria real en Argentina</h2>
-                <div class="hitos-grid-interno">
-                    <div class="hitos-info">
+                
+                <div class="hitos-contenido-flex">
+                    <div class="hitos-texto-arriba">
                         <p>La historia se escribe rompiendo el silencio y organizando la resistencia desde los territorios.</p>
                         
                         <ul class="efemerides-lista">
@@ -410,12 +397,14 @@
                             <li><strong>1 de Julio:</strong> Organización de agrupaciones político-lesbianas.</li>
                             <li><strong>Noviembre:</strong> Marchas históricas del Orgullo disidente.</li>
                         </ul>
-                        <div style="margin-top: 1rem;">
-                            <a href="#" class="btn">Leer nota completa →</a>
-                        </div>
                     </div>
-                    <div class="hitos-img">
+
+                    <div class="hitos-imagen-abajo">
                         <img src="foto_escritoras.jpeg" alt="Escritoras y archivo histórico">
+                    </div>
+
+                    <div>
+                        <a href="#" class="btn">Leer nota completa →</a>
                     </div>
                 </div>
             </section>

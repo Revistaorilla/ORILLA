@@ -33,7 +33,7 @@
         header {
             background-color: var(--primary);
             color: white;
-            padding: 1.5rem 2rem;
+            padding: 1.2rem 2rem;
             position: sticky;
             top: 0;
             z-index: 100;
@@ -51,13 +51,13 @@
         }
 
         .logo-area h1 {
-            font-size: 1.8rem;
+            font-size: 1.6rem;
             letter-spacing: 1px;
             color: #fff;
         }
 
         .logo-area p {
-            font-size: 0.9rem;
+            font-size: 0.8rem;
             color: var(--accent-light);
             text-transform: uppercase;
             letter-spacing: 2px;
@@ -75,7 +75,7 @@
             text-decoration: none;
             font-weight: 500;
             transition: color 0.2s;
-            font-size: 0.95rem;
+            font-size: 0.9rem;
         }
 
         nav a:hover {
@@ -84,11 +84,11 @@
 
         .main-layout {
             max-width: 1200px;
-            margin: 2rem auto;
+            margin: 1.5rem auto;
             padding: 0 1rem;
             display: grid;
             grid-template-columns: 1fr 320px;
-            gap: 2rem;
+            gap: 1.5rem;
         }
 
         @media (max-width: 850px) {
@@ -100,37 +100,103 @@
         .content-area {
             display: flex;
             flex-direction: column;
-            gap: 2rem;
+            gap: 1.5rem;
         }
 
         section {
             background: var(--surface);
             border-radius: 8px;
-            padding: 2rem;
+            padding: 1.5rem;
             box-shadow: 0 2px 8px rgba(0,0,0,0.04);
             border: 1px solid var(--border);
         }
 
         h2 {
-            font-size: 1.5rem;
+            font-size: 1.3rem;
             color: var(--primary);
-            margin-bottom: 1.2rem;
-            padding-bottom: 0.5rem;
+            margin-bottom: 1rem;
+            padding-bottom: 0.4rem;
             border-bottom: 2px solid var(--accent-light);
         }
 
-        /* Miradas y Derechos Grid (Las 4 noticias juntas) */
+        /* SECCIÓN COMPACTA: HITOS DE LA MEMORIA REAL */
+        .hitos-compacto {
+            background: linear-gradient(135deg, #fdf4ff 0%, #ffffff 100%);
+            border-left: 4px solid var(--secondary);
+        }
+
+        .hitos-grid-interno {
+            display: grid;
+            grid-template-columns: 1fr auto;
+            gap: 1.5rem;
+            align-items: center;
+        }
+
+        @media (max-width: 650px) {
+            .hitos-grid-interno {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .hitos-info h3 {
+            font-size: 1.25rem;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+
+        .hitos-info p {
+            font-size: 0.9rem;
+            color: var(--text-light);
+            margin-bottom: 0.8rem;
+        }
+
+        .efemerides-lista {
+            list-style: none;
+            margin-top: 0.8rem;
+            font-size: 0.85rem;
+            display: flex;
+            flex-direction: column;
+            gap: 0.4rem;
+        }
+
+        .efemerides-lista li {
+            display: flex;
+            gap: 0.5rem;
+            color: var(--text);
+        }
+
+        .efemerides-lista strong {
+            color: var(--accent);
+            min-width: 75px;
+        }
+
+        .hitos-img img {
+            width: 180px;
+            height: 120px;
+            object-fit: cover;
+            border-radius: 6px;
+            border: 1px solid var(--border);
+        }
+
+        @media (max-width: 650px) {
+            .hitos-img img {
+                width: 100%;
+                height: 150px;
+            }
+        }
+
+        /* Miradas y Derechos Grid */
         .rights-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-            gap: 1.2rem;
-            margin-top: 1rem;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 1rem;
+            margin-top: 0.8rem;
         }
 
         .right-card {
             background: #faf5f8;
             border-left: 4px solid var(--accent);
-            padding: 1.2rem;
+            padding: 1rem;
             border-radius: 4px;
             display: flex;
             flex-direction: column;
@@ -139,25 +205,25 @@
 
         .right-card h4 {
             color: var(--primary);
-            margin-bottom: 0.5rem;
-            font-size: 1.1rem;
+            margin-bottom: 0.4rem;
+            font-size: 1rem;
         }
 
         .right-card p {
-            font-size: 0.9rem;
+            font-size: 0.85rem;
             color: var(--text-light);
-            margin-bottom: 1rem;
+            margin-bottom: 0.8rem;
         }
 
         .btn {
             background-color: var(--secondary);
             color: white;
-            padding: 0.5rem 1rem;
+            padding: 0.4rem 0.8rem;
             border: none;
             border-radius: 4px;
             cursor: pointer;
             text-decoration: none;
-            font-size: 0.85rem;
+            font-size: 0.8rem;
             text-align: center;
             transition: background 0.2s;
             display: inline-block;
@@ -169,14 +235,15 @@
 
         /* Cultura y Memoria */
         .culture-content p {
-            margin-bottom: 1rem;
+            margin-bottom: 0.8rem;
+            font-size: 0.9rem;
         }
 
         /* Participá y Jugá */
         .interactive-section {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 1.5rem;
+            gap: 1rem;
         }
 
         @media (max-width: 650px) {
@@ -186,27 +253,28 @@
         }
 
         .form-group {
-            margin-bottom: 1rem;
+            margin-bottom: 0.8rem;
         }
 
         .form-group label {
             display: block;
-            margin-bottom: 0.3rem;
-            font-size: 0.9rem;
+            margin-bottom: 0.2rem;
+            font-size: 0.85rem;
             font-weight: 500;
         }
 
         .form-group input, .form-group textarea {
             width: 100%;
-            padding: 0.6rem;
+            padding: 0.5rem;
             border: 1px solid var(--border);
             border-radius: 4px;
             font-family: inherit;
+            font-size: 0.85rem;
         }
 
         .cadáver-exquisito {
             background: #faf5f8;
-            padding: 1.2rem;
+            padding: 1rem;
             border-radius: 6px;
             border: 1px solid var(--border);
             display: flex;
@@ -216,48 +284,49 @@
         }
 
         #versos-container {
-            max-height: 150px;
+            max-height: 120px;
             overflow-y: auto;
-            margin-bottom: 1rem;
-            padding-right: 0.5rem;
+            margin-bottom: 0.8rem;
+            padding-right: 0.4rem;
             font-style: italic;
             color: var(--text-light);
+            font-size: 0.85rem;
         }
 
         /* Sidebar */
         sidebar {
             display: flex;
             flex-direction: column;
-            gap: 1.5rem;
+            gap: 1rem;
         }
 
         .widget {
             background: var(--surface);
             border-radius: 8px;
-            padding: 1.5rem;
+            padding: 1.2rem;
             box-shadow: 0 2px 8px rgba(0,0,0,0.04);
             border: 1px solid var(--border);
         }
 
         .widget h3 {
-            font-size: 1.2rem;
+            font-size: 1.1rem;
             color: var(--primary);
-            margin-bottom: 0.8rem;
+            margin-bottom: 0.6rem;
             border-bottom: 1px solid var(--border);
-            padding-bottom: 0.4rem;
+            padding-bottom: 0.3rem;
         }
 
         .widget p {
-            font-size: 0.9rem;
+            font-size: 0.85rem;
             color: var(--text-light);
-            margin-bottom: 1rem;
+            margin-bottom: 0.8rem;
         }
 
         .health-info {
             background: #f3e9f4;
-            padding: 1rem;
+            padding: 0.8rem;
             border-radius: 6px;
-            margin-top: 0.5rem;
+            margin-top: 0.4rem;
         }
 
         /* Modal */
@@ -295,9 +364,9 @@
             background-color: var(--primary);
             color: white;
             text-align: center;
-            padding: 2rem 1rem;
-            margin-top: 3rem;
-            font-size: 0.9rem;
+            padding: 1.5rem 1rem;
+            margin-top: 2rem;
+            font-size: 0.85rem;
         }
 
         footer p {
@@ -315,6 +384,7 @@
             </div>
             <nav>
                 <ul>
+                    <li><a href="#hitos">Hitos</a></li>
                     <li><a href="#miradas">Miradas y Derechos</a></li>
                     <li><a href="#cultura">Cultura y Memoria</a></li>
                     <li><a href="#participa">Participá</a></li>
@@ -326,44 +396,60 @@
     <div class="main-layout">
         <div class="content-area">
             
-            <!-- MIRADAS Y DERECHOS: LAS 4 NOTICIAS REAGRUPADAS -->
+            <!-- SECCIÓN COMPACTA: HITOS DE LA MEMORIA REAL -->
+            <section id="hitos" class="hitos-compacto">
+                <h2>Hitos de la memoria real</h2>
+                <div class="hitos-grid-interno">
+                    <div class="hitos-info">
+                        <h3>Archivos y resistencias de la comunidad</h3>
+                        <p>La historia se escribe rompiendo el silencio, ocupando las calles y transformando el dolor en memoria organizada desde los territorios.</p>
+                        
+                        <ul class="efemerides-lista">
+                            <li><strong>7 de Marzo:</strong> Día de la Visibilidad Lésbica en Argentina (en memoria de Campana).</li>
+                            <li><strong>1 de Julio:</strong> Fundación histórica de las primeras agrupaciones político-lesbianas.</li>
+                            <li><strong>Noviembre:</strong> Aniversario de las primeras Marchas del Orgullo disidente en el país.</li>
+                        </ul>
+                    </div>
+                    <div class="hitos-img">
+                        <img src="foto_escritoras.jpeg" alt="Escritoras y archivo histórico">
+                    </div>
+                </div>
+            </section>
+
+            <!-- MIRADAS Y DERECHOS -->
             <section id="miradas">
                 <h2>Miradas y Derechos</h2>
-                <p style="margin-bottom: 1rem; font-size: 0.95rem; color: var(--text-light);">Actualidad, cobertura territorial y análisis sobre derechos humanos, justicia y luchas feministas y sexodiversas.</p>
+                <p style="margin-bottom: 0.8rem; font-size: 0.9rem; color: var(--text-light);">Actualidad, cobertura territorial y análisis sobre derechos humanos, justicia y luchas feministas y sexodiversas.</p>
                 
                 <div class="rights-grid">
-                    <!-- 1. Marcha del Orgullo -->
                     <div class="right-card">
                         <div>
                             <h4>Marcha del Orgullo</h4>
-                            <p>Cobertura especial de las movilizaciones locales y regionales en defensa de los derechos conquistados y contra el ajuste.</p>
+                            <p>Cobertura especial de las movilizaciones locales y regionales en defensa de los derechos conquistados.</p>
                         </div>
                         <a href="#" class="btn">Leer más</a>
                     </div>
 
-                    <!-- 2. Triple Lesbicidio de Barracas -->
                     <div class="right-card">
                         <div>
                             <h4>Triple Lesbicidio de Barracas</h4>
-                            <p>Exigimos justicia y memoria por el crimen de odio perpetrado contra Romina, Pamela y Roxana. ¡Basta de lesbofobia!</p>
+                            <p>Exigimos justicia y memoria por el crimen de odio perpetrado contra Romina, Pamela y Roxana.</p>
                         </div>
                         <a href="#" class="btn">Leer más</a>
                     </div>
 
-                    <!-- 3. Villa Travesti -->
                     <div class="right-card">
                         <div>
                             <h4>Villa Travesti (Patagonia)</h4>
-                            <p>Memorias, resistencias y organización comunitaria de las identidades travestis y trans en el territorio patagónico.</p>
+                            <p>Memorias, resistencias y organización comunitaria de las identidades travestis y trans en el sur.</p>
                         </div>
                         <a href="#" class="btn">Leer más</a>
                     </div>
 
-                    <!-- 4. Encuentro Plurinacional -->
                     <div class="right-card">
                         <div>
                             <h4>Encuentro Plurinacional</h4>
-                            <p>Articulación, debates y talleres de las grupas rumbo a una nueva edición del Encuentro Plurinacional de Mujeres y Disidencias.</p>
+                            <p>Articulación, debates y talleres de las grupas rumbo a una nueva edición del Encuentro.</p>
                         </div>
                         <a href="#" class="btn">Leer más</a>
                     </div>
@@ -373,8 +459,7 @@
             <!-- CULTURA Y MEMORIA -->
             <section id="cultura" class="culture-content">
                 <h2>Cultura y Memoria</h2>
-                <p><strong>Fanzines, poesía y archivos gráficos:</strong> La literatura y el arte gráfico como herramientas de trinchera y afectividad. Recordamos las trayectorias de referentes esenciales como Diana Bellessi y Sylvia Molloy, cuyas escrituras abrieron caminos para pensar los géneros y los deseos.</p>
-                <p>Texturas impresas que circulan de mano en mano, construyendo un patrimonio cultural disidente que se niega al olvido institucional.</p>
+                <p><strong>Fanzines, poesía y archivos gráficos:</strong> La literatura y el arte gráfico como herramientas de trinchera y afectividad. Recordamos las trayectorias de referentes esenciales como Diana Bellessi y Sylvia Molloy.</p>
             </section>
 
             <!-- PARTICIPÁ Y JUGÁ -->
@@ -382,15 +467,15 @@
                 <h2>Participá y Jugá</h2>
                 <div class="interactive-section">
                     <div>
-                        <h3 style="font-size: 1.1rem; color: var(--secondary); margin-bottom: 0.8rem;">Envianos tu colaboración</h3>
-                        <form onsubmit="event.preventDefault(); alert('¡Gracias por tu mensaje! Nos pondremos en contacto.');">
+                        <h3 style="font-size: 1rem; color: var(--secondary); margin-bottom: 0.6rem;">Envianos tu colaboración</h3>
+                        <form onsubmit="event.preventDefault(); alert('¡Gracias por tu mensaje!');">
                             <div class="form-group">
                                 <label for="nombre">Nombre o seudónimo</label>
                                 <input type="text" id="nombre" required>
                             </div>
                             <div class="form-group">
                                 <label for="mensaje">Aporte / Nota / Comentario</label>
-                                <textarea id="mensaje" rows="3" required></textarea>
+                                <textarea id="mensaje" rows="2" required></textarea>
                             </div>
                             <button type="submit" class="btn">Enviar colaboración</button>
                         </form>
@@ -398,14 +483,14 @@
 
                     <div class="cadáver-exquisito">
                         <div>
-                            <h3 style="font-size: 1.1rem; color: var(--secondary); margin-bottom: 0.8rem;">Cadáver Exquisito Lésbico</h3>
+                            <h3 style="font-size: 1rem; color: var(--secondary); margin-bottom: 0.6rem;">Cadáver Exquisito Lésbico</h3>
                             <div id="versos-container">
                                 <p>"En la orilla del río se tejen los afectos..."</p>
                                 <p>"La memoria encendida rompe el silencio..."</p>
                             </div>
                         </div>
                         <div>
-                            <div class="form-group" style="margin-bottom: 0.5rem;">
+                            <div class="form-group" style="margin-bottom: 0.4rem;">
                                 <input type="text" id="nuevo-verso" placeholder="Escribí un verso...">
                             </div>
                             <button type="button" class="btn" onclick="agregarVerso()" style="width: 100%;">Sumar verso</button>
@@ -422,7 +507,7 @@
                 <h3>Soberanía Sanitaria</h3>
                 <p>Información clave sobre salud comunitaria e integral en la región.</p>
                 <div class="health-info">
-                    <p style="font-size: 0.85rem; margin-bottom: 0.5rem;"><strong>Unidad de VIH/SIDA e ITS</strong><br>Hospital Artemides Zatti (Viedma)</p>
+                    <p style="font-size: 0.8rem; margin-bottom: 0.4rem;"><strong>Unidad de VIH/SIDA e ITS</strong><br>Hospital Artemides Zatti (Viedma)</p>
                     <button class="btn" onclick="abrirModal()" style="width: 100%;">Ver horarios y atención</button>
                 </div>
             </div>
@@ -430,8 +515,8 @@
             <!-- WIDGET MULTIMEDIA -->
             <div class="widget">
                 <h3>Banda Sonora / Recomendados</h3>
-                <p>Escuchá producciones sonoras, podcasts y contenidos recomendados por el equipo de Orilla.</p>
-                <div style="background: #eee; padding: 2rem 1rem; text-align: center; border-radius: 4px; font-size: 0.85rem; color: var(--text-light);">
+                <p>Escuchá producciones sonoras, podcasts y contenidos recomendados.</p>
+                <div style="background: #eee; padding: 1.5rem 1rem; text-align: center; border-radius: 4px; font-size: 0.8rem; color: var(--text-light);">
                     [ Reproductor / Proyecto Mugre ]
                 </div>
             </div>
@@ -439,8 +524,8 @@
             <!-- WIDGET VISITAS -->
             <div class="widget" style="text-align: center;">
                 <h3>Visitas</h3>
-                <p style="margin-bottom: 0.5rem;">Personas navegando el sitio:</p>
-                <div id="contador-visitas" style="font-size: 1.5rem; font-weight: bold; color: var(--accent);">000142</div>
+                <p style="margin-bottom: 0.3rem; font-size: 0.8rem;">Personas navegando el sitio:</p>
+                <div id="contador-visitas" style="font-size: 1.3rem; font-weight: bold; color: var(--accent);">000142</div>
             </div>
         </sidebar>
     </div>
@@ -462,6 +547,7 @@
     </footer>
 
     <script>
+        // Contador de visitas local
         let visitas = localStorage.getItem('orilla_visitas');
         if (!visitas) {
             visitas = 142;
@@ -471,6 +557,7 @@
         localStorage.setItem('orilla_visitas', visitas);
         document.getElementById('contador-visitas').innerText = String(visitas).padStart(6, '0');
 
+        // Cadáver Exquisito
         function agregarVerso() {
             const input = document.getElementById('nuevo-verso');
             const texto = input.value.trim();
@@ -484,6 +571,7 @@
             }
         }
 
+        // Modal
         function abrirModal() {
             document.getElementById('modal-salud').style.display = 'flex';
         }

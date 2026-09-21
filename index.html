@@ -157,14 +157,14 @@
 
         .portada-texto h1 {
             color: var(--color-primario);
-            font-size: 1.7rem;
+            font-size: 1.6rem;
             margin: 0 0 15px 0;
             line-height: 1.2;
         }
 
         .portada-texto p {
             color: #4b5563;
-            font-size: 1rem;
+            font-size: 0.95rem;
             margin-bottom: 20px;
         }
 
@@ -240,6 +240,47 @@
             font-size: 0.95rem;
             color: #333;
             margin: 0 0 15px 0;
+        }
+
+        /* BLOQUE ESPECIAL: ARCHIVO DE CRÍMENES DE ODIO */
+        .archivo-odio-box {
+            background: #fff;
+            border: 1px solid #fbcfe8;
+            border-radius: 12px;
+            padding: 25px;
+            box-shadow: 0 4px 12px rgba(225, 29, 72, 0.05);
+        }
+
+        .archivo-odio-box h3 {
+            color: var(--color-acento);
+            margin-top: 0;
+            font-size: 1.2rem;
+        }
+
+        .lista-datos-odio {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 15px;
+            margin-top: 15px;
+        }
+
+        .item-dato {
+            background: #fdf2f8;
+            padding: 15px;
+            border-radius: 8px;
+            border-left: 4px solid var(--color-acento);
+        }
+
+        .item-dato h4 {
+            margin: 0 0 5px 0;
+            color: #881337;
+            font-size: 0.95rem;
+        }
+
+        .item-dato p {
+            margin: 0;
+            font-size: 0.82rem;
+            color: #4b5563;
         }
 
         /* GRILLA DE TARJETAS ORDENADAS */
@@ -451,6 +492,7 @@
             </div>
             <nav>
                 <a href="#voces">Voces y Registros</a>
+                <a href="#memoria-odio">Crímenes de Odio</a>
                 <a href="#actualidad">Miradas</a>
                 <a href="#cultura">Cultura y Memoria</a>
                 <a href="#musica">Recomendaciones</a>
@@ -471,12 +513,35 @@
                 <section class="portada-principal">
                     <div class="portada-texto">
                         <span class="badge">Edición Nº 01 — Archivos de la Memoria</span>
-                        <h1>Hitos de la memoria real en Argentina: Crímenes de odio a gays, lesbianas, travestis y transexuales</h1>
-                        <p>Visibilizar las huellas, la resistencia comunitaria y la exigencia histórica de justicia frente a la violencia sistemática en nuestro país.</p>
+                        <h1>Hitos de la memoria real en Argentina 2.0: Crímenes de odio</h1>
+                        <p>Un recorrido político y documental por la historia de persecuciones, edictos policiales, violencias estructurales y crímenes de odio hacia gays, lesbianas, travestis y transexuales en nuestro país.</p>
                         <a href="historia-lesbica.html" class="btn">Leer nota completa →</a>
                     </div>
                     <div class="portada-imagen">
                         <img src="foto_escritoras.jpeg" alt="Escritoras y archivo histórico">
+                    </div>
+                </section>
+
+                <!-- BLOQUE NUEVO: REGISTRO DE CRÍMENES DE ODIO Y MEMORIA -->
+                <section id="memoria-odio" class="archivo-odio-box">
+                    <span class="badge" style="background-color: #fee2e2; color: #991b1b; border-color: #fca5a5;">Archivo Histórico y Actual</span>
+                    <h3>Radiografía de la violencia sistemática y crímenes de odio</h3>
+                    <p style="font-size: 0.88rem; color: #4b5563; margin-bottom: 15px;">
+                        Los relevamientos de organizaciones de derechos humanos y el Observatorio Nacional de Crímenes de Odio LGBT+ documentan que la violencia no es aislada, sino consecuencia de la falta de políticas públicas, el accionar policial histórico y los discursos de odio.
+                    </p>
+                    <div class="lista-datos-odio">
+                        <div class="item-dato">
+                            <h4>Travestis y Trans</h4>
+                            <p>Concentran el mayor porcentaje histórico de travesticidios y transfemicidios empujados por la exclusión estructural.</p>
+                        </div>
+                        <div class="item-dato">
+                            <h4>Gays y Lesbianas</h4>
+                            <p>Perseguidos históricamente por los edictos policiales, la represión de Estado y crímenes motivados por la orientación sexual.</p>
+                        </div>
+                        <div class="item-dato">
+                            <h4>Memoria y Justicia</h4>
+                            <p>La exigencia firme de condenas por crímenes de odio y el rescate de las biografías borradas de los archivos oficiales.</p>
+                        </div>
                     </div>
                 </section>
 

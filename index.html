@@ -28,7 +28,7 @@
             line-height: 1.5;
         }
 
-        /* HEADER Y NAVEGACIÓN ORDENADA */
+        /* HEADER MÓVIL OPTIMIZADO */
         header {
             background-color: #ffffff;
             border-bottom: 2px solid var(--borde-suave);
@@ -39,14 +39,12 @@
         }
 
         .header-container {
-            max-width: 1100px;
+            max-width: 800px;
             margin: 0 auto;
-            padding: 15px 20px;
+            padding: 12px 15px;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            flex-wrap: wrap;
-            gap: 15px;
         }
 
         .logo-area {
@@ -55,9 +53,9 @@
         }
 
         .logo {
-            font-size: 2.2rem;
+            font-size: 1.8rem;
             font-weight: 900;
-            letter-spacing: 3px;
+            letter-spacing: 2px;
             background: linear-gradient(90deg, #e11d48, #a855f7);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
@@ -66,434 +64,313 @@
         }
 
         .subtitulo {
-            font-size: 0.75rem;
+            font-size: 0.65rem;
             color: var(--color-secundario);
             font-weight: 700;
             text-transform: uppercase;
-            letter-spacing: 1px;
-            margin-top: 4px;
+            letter-spacing: 0.5px;
+            margin-top: 2px;
         }
 
+        /* MENÚ COMPACTO PARA CELULAR */
         nav {
             display: flex;
-            gap: 20px;
-            flex-wrap: wrap;
-            align-items: center;
+            gap: 12px;
+            overflow-x: auto;
+            padding-bottom: 4px;
+        }
+
+        nav::-webkit-scrollbar {
+            display: none;
         }
 
         nav a {
             color: var(--color-primario);
             text-decoration: none;
             font-weight: 700;
-            font-size: 0.85rem;
-            transition: color 0.2s;
+            font-size: 0.75rem;
+            white-space: nowrap;
         }
 
-        nav a:hover {
-            color: var(--color-acento);
-        }
-
-        /* CONTENEDOR PRINCIPAL Y LAYOUT DE DOS COLUMNAS */
+        /* CONTENEDOR PRINCIPAL VERTICAL */
         main {
-            max-width: 1100px;
-            margin: 30px auto;
-            padding: 0 20px;
+            max-width: 800px;
+            margin: 15px auto;
+            padding: 0 15px;
             display: flex;
             flex-direction: column;
-            gap: 40px;
+            gap: 20px;
         }
 
-        .layout-principal {
-            display: grid;
-            grid-template-columns: 1fr 320px;
-            gap: 30px;
-            align-items: start;
-        }
-
-        @media (max-width: 1024px) {
-            .layout-principal {
-                grid-template-columns: 1fr;
-            }
-        }
-
-        .columna-izquierda {
-            display: flex;
-            flex-direction: column;
-            gap: 40px;
-        }
-
-        /* ETIQUETAS Y BADGES */
+        /* ETIQUETAS */
         .badge {
             display: inline-block;
             background-color: #fdf2f8;
             color: var(--color-acento);
-            font-size: 0.75rem;
+            font-size: 0.7rem;
             font-weight: 800;
-            padding: 4px 10px;
+            padding: 3px 8px;
             border-radius: 4px;
             text-transform: uppercase;
             letter-spacing: 0.5px;
-            margin-bottom: 10px;
+            margin-bottom: 8px;
             border: 1px solid #fbcfe8;
         }
 
-        /* NUEVA SECCIÓN: HITOS IMPORTANTES (CALENDARIO INTERACTIVO DESTACADO) */
-        .hitos-destacados-box {
+        /* TARJETAS CONTENEDORAS GENERALES */
+        .tarjeta-seccion {
+            background: var(--color-tarjeta);
+            border: 1px solid var(--borde-suave);
+            border-radius: 10px;
+            padding: 18px;
+            box-shadow: 0 2px 8px rgba(88, 28, 135, 0.03);
+        }
+
+        .seccion-titulo {
+            font-size: 1.1rem;
+            font-weight: 800;
+            color: var(--color-primario);
+            border-bottom: 2px solid var(--color-secundario);
+            padding-bottom: 6px;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        /* HITOS Y CALENDARIO INTERACTIVO MÓVIL */
+        .hitos-box {
             background: linear-gradient(135deg, #f5f3ff 0%, #ffffff 100%);
             border: 2px solid var(--color-primario);
-            border-radius: 12px;
-            padding: 30px;
-            box-shadow: 0 4px 20px rgba(88, 28, 135, 0.08);
-            position: relative;
-            overflow: hidden;
         }
 
-        .hitos-destacados-box::before {
-            content: "";
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 6px;
-            background: linear-gradient(90deg, #581c87, #a21caf, #e11d48);
-        }
-
-        .hitos-destacados-box h2 {
+        .hitos-box h2 {
             color: var(--color-primario);
-            font-size: 1.5rem;
-            margin: 10px 0 5px 0;
+            font-size: 1.3rem;
+            margin: 5px 0 8px 0;
             font-weight: 800;
-        }
-
-        .hitos-destacados-box p.descripcion-hitos {
-            color: #4b5563;
-            font-size: 0.95rem;
-            margin-bottom: 20px;
-        }
-
-        /* BOTÓN / CONTENEDOR DESPLEGABLE DEL CALENDARIO */
-        .contenedor-desplegable-calendario {
-            margin-top: 15px;
         }
 
         .btn-desplegar-calendario {
             background-color: var(--color-primario);
             color: white;
             border: none;
-            padding: 12px 20px;
+            width: 100%;
+            padding: 12px;
             border-radius: 8px;
             font-weight: bold;
-            font-size: 0.95rem;
+            font-size: 0.85rem;
             cursor: pointer;
             display: flex;
+            justify-content: space-between;
             align-items: center;
-            gap: 10px;
-            transition: background 0.2s, transform 0.1s;
-            box-shadow: 0 4px 12px rgba(88, 28, 135, 0.15);
+            margin-top: 10px;
         }
 
-        .btn-desplegar-calendario:hover {
-            background-color: var(--color-secundario);
-        }
-
-        /* CUERPO DEL CALENDARIO DESPLEGABLE */
         .panel-calendario-desplegado {
             display: none;
-            margin-top: 15px;
+            margin-top: 12px;
             background: white;
             border: 1px solid var(--borde-suave);
             border-radius: 8px;
-            padding: 20px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.03);
-            animation: fadeIn 0.3s ease-in-out;
+            padding: 12px;
         }
 
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(-5px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        .lista-fechas-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-            gap: 12px;
-            margin-bottom: 15px;
+        .lista-fechas-vertical {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
         }
 
         .item-fecha {
             background: #faf5ff;
             border: 1px solid var(--borde-suave);
             border-radius: 6px;
-            padding: 10px 14px;
+            padding: 8px 10px;
             cursor: pointer;
-            transition: all 0.2s;
             display: flex;
             align-items: center;
-            gap: 12px;
-        }
-
-        .item-fecha:hover {
-            background-color: #fdf2f8;
-            border-color: var(--color-acento);
-            transform: translateY(-2px);
+            gap: 10px;
         }
 
         .item-fecha .fecha-tag {
             background: var(--color-acento);
             color: white;
-            font-size: 0.72rem;
+            font-size: 0.65rem;
             font-weight: bold;
-            padding: 4px 8px;
+            padding: 3px 6px;
             border-radius: 4px;
             white-space: nowrap;
         }
 
         .item-fecha .fecha-titulo {
-            font-size: 0.85rem;
+            font-size: 0.8rem;
             font-weight: 700;
-            color: var(--color-texto);
         }
 
         .detalle-efemeride-grande {
-            padding: 15px;
+            padding: 10px;
             background: #fdf8f6;
-            border-left: 4px solid var(--color-acento);
+            border-left: 3px solid var(--color-acento);
             border-radius: 4px;
-            font-size: 0.9rem;
+            font-size: 0.8rem;
             color: #333;
             margin-top: 10px;
             display: none;
         }
 
-        /* CARTEL LLAMATIVO: NÚMEROS REALES DE CRÍMENES DE ODIO */
-        .cartel-alerta-impacto {
-            background: linear-gradient(135deg, #fff1f2 0%, #ffe4e6 100%);
-            border: 2px solid var(--color-acento);
-            border-radius: 12px;
-            padding: 25px;
-            box-shadow: 0 6px 20px rgba(225, 29, 72, 0.12);
+        /* INFORMACIÓN DEL GALPÓN / HOSPITAL ZATTI */
+        .galpon-box {
+            background: linear-gradient(135deg, #fdf4ff 0%, #ffffff 100%);
+            border: 1px solid #d946ef;
         }
 
-        .cartel-alerta-impacto h3 {
+        .galpon-box h3 {
+            color: var(--color-primario);
+            font-size: 1.1rem;
+            margin: 5px 0 8px 0;
+        }
+
+        .galpon-box img {
+            width: 100%;
+            height: 160px;
+            object-fit: cover;
+            border-radius: 6px;
+            margin-bottom: 10px;
+            border: 1px solid var(--borde-suave);
+        }
+
+        .galpon-box p {
+            font-size: 0.85rem;
+            color: #4b5563;
+            margin: 0 0 10px 0;
+        }
+
+        /* CARTEL ALERTA / ESTADÍSTICAS */
+        .cartel-alerta {
+            background: linear-gradient(135deg, #fff1f2 0%, #ffe4e6 100%);
+            border: 2px solid var(--color-acento);
+            border-radius: 10px;
+            padding: 18px;
+        }
+
+        .cartel-alerta h3 {
             color: #9f1239;
-            margin-top: 5px;
-            font-size: 1.35rem;
-            display: flex;
-            align-items: center;
-            gap: 8px;
+            margin: 5px 0 8px 0;
+            font-size: 1.1rem;
         }
 
         .cifras-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 15px;
-            margin-top: 15px;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+            margin-top: 12px;
         }
 
         .tarjeta-cifra {
             background: white;
-            padding: 15px;
-            border-radius: 8px;
+            padding: 10px;
+            border-radius: 6px;
             border: 1px solid #fecdd3;
             text-align: center;
         }
 
         .tarjeta-cifra .numero {
-            font-size: 1.8rem;
+            font-size: 1.4rem;
             font-weight: 900;
             color: var(--color-acento);
-            line-height: 1;
-            margin-bottom: 5px;
         }
 
         .tarjeta-cifra .etiqueta-cifra {
-            font-size: 0.8rem;
+            font-size: 0.7rem;
             font-weight: 700;
             color: #4b5563;
-            text-transform: uppercase;
         }
 
-        /* BLOQUE VOCES Y REGISTROS */
-        .seccion-titulo {
-            font-size: 1.2rem;
-            font-weight: 800;
-            color: var(--color-primario);
-            border-bottom: 2px solid var(--color-secundario);
-            padding-bottom: 8px;
-            margin-bottom: 20px;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-        }
-
-        .noticia-reciente-box {
+        /* NOTICIAS Y TARJETAS */
+        .noticia-destacada {
             background: linear-gradient(135deg, #fff5f7 0%, #ffffff 100%);
             border: 1px solid #fda4af;
-            border-left: 5px solid var(--color-acento);
+            border-left: 4px solid var(--color-acento);
             border-radius: 8px;
-            padding: 25px;
-            display: grid;
-            grid-template-columns: 280px 1fr;
-            gap: 25px;
-            align-items: center;
+            padding: 15px;
         }
 
-        @media (max-width: 768px) {
-            .noticia-reciente-box {
-                grid-template-columns: 1fr;
-            }
-        }
-
-        .noticia-reciente-box img {
+        .noticia-destacada img {
             width: 100%;
-            height: 170px;
+            height: 150px;
             object-fit: cover;
             border-radius: 6px;
+            margin-bottom: 10px;
         }
 
-        .noticia-reciente-box h3 {
+        .noticia-destacada h3 {
             color: #881337;
-            margin: 0 0 10px 0;
-            font-size: 1.3rem;
+            font-size: 1.1rem;
+            margin: 5px 0 8px 0;
         }
 
-        .noticia-reciente-box p {
-            font-size: 0.95rem;
-            color: #333;
-            margin: 0 0 15px 0;
-        }
-
-        /* GRILLA DE TARJETAS ORDENADAS */
         .grilla-tarjetas {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
         }
 
         .tarjeta {
             background: var(--color-tarjeta);
             border: 1px solid var(--borde-suave);
             border-radius: 8px;
-            padding: 20px;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.02);
+            padding: 15px;
         }
 
-        .tarjeta img, .tarjeta iframe {
+        .tarjeta img {
             width: 100%;
-            height: 180px;
+            height: 140px;
             object-fit: cover;
             border-radius: 6px;
-            margin-bottom: 12px;
-            border: none;
+            margin-bottom: 8px;
         }
 
         .tarjeta h3 {
             color: var(--color-primario);
-            font-size: 1.05rem;
-            margin: 5px 0 10px 0;
+            font-size: 0.95rem;
+            margin: 5px 0 6px 0;
         }
 
         .tarjeta p {
-            font-size: 0.85rem;
+            font-size: 0.8rem;
             color: #555;
-            margin: 0 0 15px 0;
+            margin: 0 0 10px 0;
         }
 
         .btn {
-            display: inline-block;
+            display: block;
             background-color: var(--color-primario);
             color: white;
-            padding: 8px 16px;
+            padding: 8px 12px;
             border-radius: 6px;
             font-weight: bold;
             text-decoration: none;
-            font-size: 0.85rem;
-            transition: background 0.2s;
+            font-size: 0.8rem;
             text-align: center;
         }
 
-        .btn:hover {
-            background-color: var(--color-secundario);
-        }
-
-        /* BARRA LATERAL DERECHA (VERTICAL) */
-        .sidebar-derecha {
-            display: flex;
-            flex-direction: column;
-            gap: 25px;
-        }
-
-        .caja-lateral {
-            border: 1px solid var(--borde-suave);
-            border-radius: 12px;
-            padding: 18px;
-            background-color: var(--color-tarjeta);
-            box-shadow: 0 4px 12px rgba(168, 85, 247, 0.04);
-        }
-
-        .caja-lateral h3 {
-            color: var(--color-primario);
-            margin: 5px 0 8px 0;
-            font-size: 1.05rem;
-        }
-
-        .caja-lateral p {
-            font-size: 0.82rem;
-            color: #555;
-            margin: 0 0 12px 0;
-            line-height: 1.4;
-        }
-
-        .caja-lateral iframe {
-            width: 100%;
-            height: 140px;
-            border-radius: 6px;
-            margin-bottom: 10px;
-            border: none;
-        }
-
-        /* SECCIÓN: PARTICIPÁ Y JUGÁ (DOS COLUMNAS) */
-        .participacion-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 20px;
-        }
-
-        @media (max-width: 768px) {
-            .participacion-grid {
-                grid-template-columns: 1fr;
-            }
-        }
-
-        .caja-participacion {
-            background: #fdf4ff;
-            border: 1px solid var(--borde-suave);
-            border-radius: 8px;
-            padding: 20px;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-        }
-
+        /* SECCIÓN PARTICIPATIVA */
         .form-compacto {
             display: flex;
             flex-direction: column;
-            gap: 10px;
-            margin-top: 10px;
+            gap: 8px;
+            margin-top: 8px;
         }
 
         .form-compacto input, .form-compacto textarea {
-            padding: 10px;
+            padding: 8px;
             border: 1px solid var(--borde-suave);
             border-radius: 6px;
-            font-family: inherit;
-            font-size: 0.85rem;
+            font-size: 0.8rem;
         }
 
         .form-compacto textarea {
-            height: 70px;
+            height: 60px;
             resize: none;
         }
 
@@ -501,13 +378,11 @@
             background: white;
             border: 1px solid #d946ef;
             border-radius: 6px;
-            padding: 12px;
+            padding: 10px;
             font-style: italic;
-            font-size: 0.85rem;
+            font-size: 0.8rem;
             color: var(--color-primario);
-            margin: 10px 0;
-            max-height: 80px;
-            overflow-y: auto;
+            margin: 8px 0;
         }
 
         /* FOOTER */
@@ -515,41 +390,27 @@
             background-color: var(--color-primario);
             color: white;
             text-align: center;
-            padding: 30px 20px;
-            margin-top: 50px;
+            padding: 20px 15px;
+            margin-top: 30px;
             border-top: 4px solid var(--color-secundario);
-        }
-
-        footer .logo {
-            font-size: 1.8rem;
-            margin-bottom: 10px;
-        }
-
-        .contador {
-            font-size: 0.75rem;
-            color: #f3e8ff;
-            margin-top: 10px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
+            font-size: 0.8rem;
         }
     </style>
 </head>
 <body>
 
-    <!-- CABECERA Y MENÚ FIJO ORDENADA -->
+    <!-- HEADER MÓVIL CON MENÚ DESLIZABLE -->
     <header>
         <div class="header-container">
             <div class="logo-area">
                 <span class="logo">ORILLA</span>
-                <span class="subtitulo">Cultura y perspectiva de género</span>
+                <span class="subtitulo">Género y Cultura</span>
             </div>
             <nav>
-                <a href="#hitos">Hitos Importantes</a>
-                <a href="#voces">Voces y Registros</a>
+                <a href="#hitos">Hitos</a>
+                <a href="#galpon">Galpón Zatti</a>
                 <a href="#impacto-odio">Estadísticas</a>
-                <a href="#actualidad">Miradas</a>
-                <a href="#cultura">Cultura y Memoria</a>
-                <a href="#musica">Recomendaciones</a>
+                <a href="#voces">Actualidad</a>
                 <a href="#participa">Participá</a>
             </nav>
         </div>
@@ -557,235 +418,159 @@
 
     <main>
 
-        <!-- LAYOUT PRINCIPAL: CONTENIDO A LA IZQUIERDA / BARRA VERTICAL A LA DERECHA -->
-        <div class="layout-principal">
+        <!-- SECCIÓN 1: HITOS IMPORTANTES CON CALENDARIO DESPLEGABLE -->
+        <section id="hitos" class="tarjeta-seccion hitos-box">
+            <span class="badge">Agenda Colectiva</span>
+            <h2>Hitos Importantes</h2>
+            <p style="font-size: 0.85rem; color: #4b5563; margin-bottom: 10px;">Fechas clave y momentos históricos de la comunidad LGBT+ en Argentina.</p>
+            
+            <button class="btn-desplegar-calendario" onclick="toggleCalendario()">
+                <span>📅 Ver Calendario de Fechas</span>
+                <span id="flecha-icono">▼</span>
+            </button>
 
-            <!-- COLUMNA IZQUIERDA (CONTENIDO CENTRAL) -->
-            <div class="columna-izquierda">
-
-                <!-- NUEVA SECCIÓN PRINCIPAL: HITOS IMPORTANTES CON CALENDARIO INTERACTIVO -->
-                <section id="hitos" class="hitos-destacados-box">
-                    <span class="badge">Memoria y Agenda Colectiva</span>
-                    <h2>Hitos Importantes</h2>
-                    <p class="descripcion-hitos">Un recorrido por las fechas clave, efemérides y momentos históricos de la comunidad LGBT+ en Argentina.</p>
-                    
-                    <!-- Botón interactivo tipo calendario -->
-                    <div class="contenedor-desplegable-calendario">
-                        <button class="btn-desplegar-calendario" onclick="toggleCalendario()">
-                            <span>📅 Ver Calendario de Fechas Importantes</span>
-                            <span id="flecha-icono">▼</span>
-                        </button>
-
-                        <!-- Panel que se despliega al hacer clic -->
-                        <div id="panel-calendario" class="panel-calendario-desplegado">
-                            <p style="font-size: 0.85rem; color: #555; margin-top: 0; margin-bottom: 15px;">Hacé clic en cualquiera de las fechas para conocer los detalles históricos:</p>
-                            
-                            <div class="lista-fechas-grid">
-                                <div class="item-fecha" onclick="mostrarDetalleHito('7 de Marzo', 'Día de la Visibilidad Lésbica en Argentina: Conmemora la lucha histórica, la resistencia comunitaria y el recuerdo de referentes que abrieron camino en la visibilidad y organización de las lesbianas en el país.')">
-                                    <span class="fecha-tag">7 MAR</span>
-                                    <span class="fecha-titulo">Visibilidad Lésbica</span>
-                                </div>
-
-                                <div class="item-fecha" onclick="mostrarDetalleHito('9 de Mayo', 'Sanción de la Ley de Identidad de Género (Ley 26.743): Aprobada en Argentina en 2012, convirtiéndose en un modelo pionero a nivel mundial por garantizar el derecho a la autodeterminación de género sin patologización.')">
-                                    <span class="fecha-tag">9 MAY</span>
-                                    <span class="fecha-titulo">Ley de Identidad de Género</span>
-                                </div>
-
-                                <div class="item-fecha" onclick="mostrarDetalleHito('17 de Mayo', 'Día Internacional contra la Homofobia, la Transfobia y la Bifobia: Conmemora la eliminación de la homosexualidad de la lista de enfermedades mentales por parte de la OMS en 1990.')">
-                                    <span class="fecha-tag">17 MAY</span>
-                                    <span class="fecha-titulo">Contra la LGTBfobia</span>
-                                </div>
-
-                                <div class="item-fecha" onclick="mostrarDetalleHito('28 de Junio', 'Día Internacional del Orgullo LGBT+: Conmemora los históricos disturbios de Stonewall en Nueva York (1969), hito fundacional del movimiento global de liberación sexogenérica.')">
-                                    <span class="fecha-tag">28 JUN</span>
-                                    <span class="fecha-titulo">Día del Orgullo LGBT+</span>
-                                </div>
-
-                                <div class="item-fecha" onclick="mostrarDetalleHito('20 de Agosto', 'Día del Activismo por la Diversidad Sexual: Instaurado en memoria de Carlos Jáuregui, pionero y gran referente histórico de la lucha por los derechos de la diversidad en Argentina.')">
-                                    <span class="fecha-tag">20 AGO</span>
-                                    <span class="fecha-titulo">Activismo por la Diversidad</span>
-                                </div>
-
-                                <div class="item-fecha" onclick="mostrarDetalleHito('Primer Sábado de Noviembre', 'Marcha del Orgullo en Buenos Aires (y réplicas federales): Multitudinaria movilización popular que celebra la visibilidad, exige políticas públicas y reclama ante los crímenes de odio.')">
-                                    <span class="fecha-tag">NOV</span>
-                                    <span class="fecha-titulo">Marcha del Orgullo</span>
-                                </div>
-                            </div>
-
-                            <div id="caja-detalle-hito" class="detalle-efemeride-grande">
-                                Seleccioná una fecha de la lista para ver su reseña histórica.
-                            </div>
-                        </div>
+            <div id="panel-calendario" class="panel-calendario-desplegado">
+                <div class="lista-fechas-vertical">
+                    <div class="item-fecha" onclick="mostrarDetalleHito('7 de Marzo', 'Día de la Visibilidad Lésbica en Argentina: Conmemoración histórica y resistencia comunitaria.')">
+                        <span class="fecha-tag">7 MAR</span>
+                        <span class="fecha-titulo">Visibilidad Lésbica</span>
                     </div>
-                </section>
 
-                <!-- CARTEL LLAMATIVO: NÚMEROS REALES DE CRÍMENES DE ODIO -->
-                <section id="impacto-odio" class="cartel-alerta-impacto">
-                    <span class="badge" style="background-color: #fee2e2; color: #991b1b; border-color: #fca5a5;">Observatorio Nacional de Crímenes de Odio LGBT+</span>
-                    <h3>⚠️ En lo que va del año ya son 80 crímenes de odio</h3>
-                    <p style="font-size: 0.95rem; color: #7f1d1d; margin: 8px 0 15px 0; font-weight: 600;">
-                        Registro oficial documentado sobre la violencia sistemática y lesiones graves al derecho a la vida en Argentina.
-                    </p>
-                    <div class="cifras-grid">
-                        <div class="tarjeta-cifra">
-                            <div class="numero">80</div>
-                            <div class="etiqueta-cifra">Fallecimientos / Lesiones a la vida</div>
-                        </div>
-                        <div class="tarjeta-cifra">
-                            <div class="numero">227</div>
-                            <div class="etiqueta-cifra">Total de casos e incidentes de violencia</div>
-                        </div>
+                    <div class="item-fecha" onclick="mostrarDetalleHito('9 de Mayo', 'Sanción de la Ley de Identidad de Género (Ley 26.743): Pionera en el mundo por reconocer el derecho a la autodeterminación.')">
+                        <span class="fecha-tag">9 MAY</span>
+                        <span class="fecha-titulo">Ley de Identidad de Género</span>
                     </div>
-                </section>
 
-                <!-- BLOQUE: VOCES Y REGISTROS -->
-                <section id="voces">
-                    <div class="seccion-titulo">Voces y Registros</div>
-                    <div class="noticia-reciente-box">
-                        <div>
-                            <img src="marcha_orgullo.jpg" alt="Marcha del Orgullo CABA">
-                        </div>
-                        <div>
-                            <span class="badge" style="background-color: #fee2e2; color: #991b1b; border-color: #fca5a5;">Actualidad Comunitaria</span>
-                            <h3>Marcha del Orgullo: la Ciudad pidió reprogramarla pero las organizaciones la ratificaron</h3>
-                            <p>Ante la solicitud del gobierno porteño de mover la fecha por operativos de seguridad, las comisiones organizadoras ratificaron la movilización amparadas en la ley.</p>
-                            <a href="noticia-tension-marcha.html" class="btn">Ampliar información →</a>
-                        </div>
+                    <div class="item-fecha" onclick="mostrarDetalleHito('17 de Mayo', 'Día Internacional contra la LGTBfobia: Eliminación de la homosexualidad de la lista de la OMS en 1990.')">
+                        <span class="fecha-tag">17 MAY</span>
+                        <span class="fecha-titulo">Contra la LGTBfobia</span>
                     </div>
-                </section>
 
-                <!-- SECCIÓN: MIRADAS Y DERECHOS -->
-                <section id="actualidad">
-                    <div class="seccion-titulo">Miradas y Derechos</div>
-                    <div class="grilla-tarjetas">
-                        <article class="tarjeta">
-                            <div>
-                                <img src="barracas.jpeg" alt="Juicio Barracas">
-                                <span class="badge">Justicia</span>
-                                <h3>Juicio final por el triple lesbicidio de Barracas</h3>
-                                <p>A dos años del ataque en la pensión, el juicio entra en alegatos exigiendo condena firme por crimen de odio.</p>
-                            </div>
-                            <a href="noticia-barracas.html" class="btn">Leer nota</a>
-                        </article>
-
-                        <article class="tarjeta">
-                            <div>
-                                <img src="villa_travesti.jpg" alt="Villa Travesti">
-                                <span class="badge">Patagonia</span>
-                                <h3>Villa Travesti: Soberanía colectiva en el sur</h3>
-                                <p>Resistencia, autonomía y vida comunitaria en Las Golondrinas, Lago Puelo, construyendo futuro desde los afectos.</p>
-                            </div>
-                            <a href="villa-travesti.html" class="btn">Leer nota</a>
-                        </article>
-
-                        <article class="tarjeta">
-                            <div>
-                                <img src="encuentro_cordoba.jpg" alt="Encuentro Córdoba">
-                                <span class="badge">Encuentro</span>
-                                <h3>Las grupas rumbo al 39° Encuentro Plurinacional</h3>
-                                <p>Córdoba se prepara para recibir al motor de la marea: la autogestión y la fuerza territorial colectiva.</p>
-                            </div>
-                            <a href="encuentro-cordoba.html" class="btn">Leer nota</a>
-                        </article>
+                    <div class="item-fecha" onclick="mostrarDetalleHito('28 de Junio', 'Día Internacional del Orgullo LGBT+: Hito fundacional de Stonewall (Nueva York, 1969).')">
+                        <span class="fecha-tag">28 JUN</span>
+                        <span class="fecha-titulo">Día del Orgullo LGBT+</span>
                     </div>
-                </section>
 
-                <!-- SECCIÓN: CULTURA Y MEMORIA -->
-                <section id="cultura">
-                    <div class="seccion-titulo">Cultura y Memoria</div>
-                    <div class="grilla-tarjetas">
-                        <article class="tarjeta">
-                            <div>
-                                <span class="badge">Archivos</span>
-                                <h3>Rescate gráfico y fanzines comunitarios</h3>
-                                <p>Colectivas independientes y recursos de asesoramiento legal y contención en distintos puntos del país.</p>
-                            </div>
-                            <a href="actualidad.html" class="btn">Explorar sección</a>
-                        </article>
-
-                        <article class="tarjeta">
-                            <div>
-                                <img src="referentes.jpg" alt="Referentes">
-                                <span class="badge">Literatura</span>
-                                <h3>Grandes referentes y poesía patagónica</h3>
-                                <p>Diana Bellessi, Sylvia Molloy, Macky Corbalán y las nuevas voces poéticas del sur contemporáneo.</p>
-                            </div>
-                            <a href="cultura.html" class="btn">Explorar sección</a>
-                        </article>
+                    <div class="item-fecha" onclick="mostrarDetalleHito('20 de Agosto', 'Día del Activismo por la Diversidad Sexual: En memoria de Carlos Jáuregui.')">
+                        <span class="fecha-tag">20 AGO</span>
+                        <span class="fecha-titulo">Activismo por la Diversidad</span>
                     </div>
-                </section>
 
-                <!-- SECCIÓN: PARTICIPÁ Y JUGÁ -->
-                <section id="participa">
-                    <div class="seccion-titulo">Participá y Jugá con nosotras</div>
-                    <div class="participacion-grid">
-                        
-                        <!-- Columna 1: Enviar material -->
-                        <div class="caja-participacion">
-                            <div>
-                                <span class="badge">Colaboraciones</span>
-                                <h3 style="color: var(--color-primario); margin: 5px 0 8px 0;">Envianos tu material</h3>
-                                <p style="font-size: 0.85rem; color: #555; margin-bottom: 10px;">Dejanos tu relato, poema o reflexión para sumar a la revista:</p>
-                                
-                                <form class="form-compacto" action="https://formspree.io/f/xrpbeeol" method="POST">
-                                    <input type="text" name="nombre" placeholder="Nombre o seudónimo" required>
-                                    <input type="email" name="email" placeholder="Correo electrónico" required>
-                                    <textarea name="mensaje" placeholder="Escribí acá tu colaboración..." required></textarea>
-                                    <button type="submit" class="btn" style="width: fit-content; border:none; cursor:pointer;">Enviar material</button>
-                                </form>
-                            </div>
-                        </div>
-
-                        <!-- Columna 2: Cadáver Exquisito -->
-                        <div class="caja-participacion">
-                            <div>
-                                <span class="badge" style="background-color: #fae8ff; color: #7e22ce; border-color: #f0abfc;">Zona Lúdica</span>
-                                <h3 style="color: var(--color-primario); margin: 5px 0 8px 0;">Cadáver Exquisito Lésbico</h3>
-                                <p style="font-size: 0.85rem; color: #555; margin-bottom: 5px;">Sumá tu verso al poema colectivo en curso:</p>
-
-                                <div id="poema-en-curso" class="poema-box">
-                                    "Encendemos la noche con fósforos prestados...<br>
-                                    la memoria arde en las esquinas del sur...<br>
-                                    tejiendo redes donde el viento no nos alcanza..."
-                                </div>
-
-                                <form id="form-juego" class="form-compacto" onsubmit="guardarVerso(event)">
-                                    <textarea id="input-verso" placeholder="Escribí tu verso..." required style="height: 45px;"></textarea>
-                                    <button type="submit" class="btn" style="background-color: #7e22ce; width: fit-content; border:none; cursor:pointer;">Sumar verso</button>
-                                </form>
-                            </div>
-                        </div>
-
+                    <div class="item-fecha" onclick="mostrarDetalleHito('Primer Sábado de Noviembre', 'Marcha del Orgullo: Movilización popular por la visibilidad y derechos.')">
+                        <span class="fecha-tag">NOV</span>
+                        <span class="fecha-titulo">Marcha del Orgullo</span>
                     </div>
-                </section>
-
-            </div>
-
-            <!-- COLUMNA DERECHA (BARRA VERTICAL) -->
-            <aside class="sidebar-derecha">
-
-                <!-- BANDA SONORA / RECOMENDACIONES -->
-                <div id="musica" class="caja-lateral">
-                    <span class="badge" style="background-color: #fae8ff; color: #7e22ce; border-color: #f0abfc;">Recomendación</span>
-                    <h3>Mugre — "Ni Tu Perra"</h3>
-                    <iframe src="https://www.youtube.com/embed/rzTRwztisDI" title="MUGRE - NI TU PERRA (Video Oficial)" allowfullscreen></iframe>
-                    <p>Potencia sonora, rock y texturas crudas. Un proyecto imperdible comandado por mujeres que sacude los parlantes.</p>
-                    <a href="https://youtu.be/rzTRwztisDI" target="_blank" class="btn" style="background-color: #7e22ce; width: 100%; box-sizing: border-box; text-align: center;">Ver en YouTube →</a>
                 </div>
 
-            </aside>
+                <div id="caja-detalle-hito" class="detalle-efemeride-grande">
+                    Tocá una fecha para ver su detalle.
+                </div>
+            </div>
+        </section>
 
-        </div>
+        <!-- SECCIÓN 2: INFORMACIÓN DEL GALPÓN ZATTI (RECUPERADA) -->
+        <section id="galpon" class="tarjeta-seccion galpon-box">
+            <span class="badge" style="background-color: #fdf2f8; color: #a21caf; border-color: #f0abfc;">Soberanía Sanitaria</span>
+            <h3>Hospital Artemides Zatti — Viedma</h3>
+            <img src="galpon-zatti.jpg" alt="Galpón Zatti Viedma">
+            <p><strong>Testeo, prevención y redes:</strong> En el predio del Hospital Artemides Zatti (ingreso por calle Rivadavia) funciona la Unidad de VIH/SIDA e ITS. Un espacio clave de residencia y cuidado sin estigmas.</p>
+            <p style="margin-bottom: 5px;"><strong>Horarios:</strong> Lunes a viernes de 8:00 a 14:00 h.</p>
+            <p style="margin-bottom: 0;"><strong>Demanda espontánea:</strong> Sin turno previo ni orden médica.</p>
+        </section>
+
+        <!-- SECCIÓN 3: ESTADÍSTICAS / CRÍMENES DE ODIO -->
+        <section id="impacto-odio" class="cartel-alerta">
+            <span class="badge" style="background-color: #fee2e2; color: #991b1b; border-color: #fca5a5;">Observatorio Nacional</span>
+            <h3>⚠️ 80 Crímenes de Odio en el año</h3>
+            <p style="font-size: 0.85rem; color: #7f1d1d; margin: 5px 0 10px 0;">Registro oficial documentado sobre la violencia sistemática en Argentina.</p>
+            <div class="cifras-grid">
+                <div class="tarjeta-cifra">
+                    <div class="numero">80</div>
+                    <div class="etiqueta-cifra">Fallecimientos</div>
+                </div>
+                <div class="tarjeta-cifra">
+                    <div class="numero">227</div>
+                    <div class="etiqueta-cifra">Casos totales</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECCIÓN 4: VOZ Y ACTUALIDAD -->
+        <section id="voces" class="noticia-destacada">
+            <img src="marcha_orgullo.jpg" alt="Marcha del Orgullo">
+            <span class="badge" style="background-color: #fee2e2; color: #991b1b; border-color: #fca5a5;">Actualidad</span>
+            <h3>Marcha del Orgullo: organizaciones ratificaron la movilización</h3>
+            <p style="font-size: 0.85rem; color: #333; margin-bottom: 10px;">Ante la solicitud de reprogramación municipal, las comisiones ratificaron la fecha amparadas en la ley.</p>
+            <a href="noticia-tension-marcha.html" class="btn">Ampliar información →</a>
+        </section>
+
+        <!-- SECCIÓN 5: MIRADAS Y DERECHOS -->
+        <section class="tarjeta-seccion">
+            <div class="seccion-titulo">Miradas y Derechos</div>
+            <div class="grilla-tarjetas">
+                <article class="tarjeta">
+                    <img src="barracas.jpeg" alt="Barracas">
+                    <span class="badge">Justicia</span>
+                    <h3>Juicio final por el triple lesbicidio de Barracas</h3>
+                    <p>A dos años del ataque, el juicio exige condena firme por crimen de odio.</p>
+                    <a href="noticia-barracas.html" class="btn">Leer nota</a>
+                </article>
+
+                <article class="tarjeta">
+                    <img src="villa_travesti.jpg" alt="Villa Travesti">
+                    <span class="badge">Patagonia</span>
+                    <h3>Villa Travesti: Soberanía colectiva en el sur</h3>
+                    <p>Resistencia y autonomía comunitaria en Las Golondrinas, Lago Puelo.</p>
+                    <a href="villa-travesti.html" class="btn">Leer nota</a>
+                </article>
+
+                <article class="tarjeta">
+                    <img src="encuentro_cordoba.jpg" alt="Encuentro Córdoba">
+                    <span class="badge">Encuentro</span>
+                    <h3>Rumbo al 39° Encuentro Plurinacional</h3>
+                    <p>Córdoba se prepara para recibir la fuerza territorial colectiva.</p>
+                    <a href="encuentro-cordoba.html" class="btn">Leer nota</a>
+                </article>
+            </div>
+        </section>
+
+        <!-- SECCIÓN 6: PARTICIPÁ Y JUGÁ -->
+        <section id="participa" class="tarjeta-seccion" style="background-color: #fdf4ff;">
+            <div class="seccion-titulo">Participá y Jugá</div>
+            
+            <div style="margin-bottom: 20px;">
+                <span class="badge">Colaboraciones</span>
+                <h3 style="color: var(--color-primario); font-size: 0.95rem; margin: 5px 0;">Envianos tu material</h3>
+                <form class="form-compacto" action="https://formspree.io/f/xrpbeeol" method="POST">
+                    <input type="text" name="nombre" placeholder="Nombre o seudónimo" required>
+                    <input type="email" name="email" placeholder="Correo electrónico" required>
+                    <textarea name="mensaje" placeholder="Escribí acá tu colaboración..." required></textarea>
+                    <button type="submit" class="btn">Enviar material</button>
+                </form>
+            </div>
+
+            <div>
+                <span class="badge" style="background-color: #fae8ff; color: #7e22ce; border-color: #f0abfc;">Zona Lúdica</span>
+                <h3 style="color: var(--color-primario); font-size: 0.95rem; margin: 5px 0;">Cadáver Exquisito Lésbico</h3>
+                <div id="poema-en-curso" class="poema-box">
+                    "Encendemos la noche con fósforos prestados...<br>
+                    la memoria arde en las esquinas del sur..."
+                </div>
+                <form id="form-juego" class="form-compacto" onsubmit="guardarVerso(event)">
+                    <textarea id="input-verso" placeholder="Sumá tu verso..." required style="height: 40px;"></textarea>
+                    <button type="submit" class="btn" style="background-color: #7e22ce;">Sumar verso</button>
+                </form>
+            </div>
+        </section>
 
     </main>
 
     <!-- FOOTER -->
     <footer>
-        <div class="logo">ORILLA</div>
-        <p style="font-size: 0.9rem; margin: 5px 0;">Cultura y perspectiva de género — Viedma, Río Negro</p>
-        <p style="font-size: 0.80rem; color: #f3e8ff; margin: 10px 0;">Instagram · TikTok · Podcast</p>
-        <div class="contador">Visitas de la revista: <span id="contador-visitas-num">1240</span></div>
-        <small style="display: block; margin-top: 15px; opacity: 0.8;">© 2026 ORILLA</small>
+        <div class="logo" style="font-size: 1.4rem;">ORILLA</div>
+        <p style="margin: 5px 0;">Cultura y perspectiva de género — Viedma, Río Negro</p>
+        <div style="font-size: 0.75rem; margin-top: 8px;">Visitas: <span id="contador-visitas-num">1240</span></div>
+        <small style="display: block; margin-top: 10px; opacity: 0.8;">© 2026 ORILLA</small>
     </footer>
 
     <!-- SCRIPTS -->
@@ -820,7 +605,6 @@
             }
         }
 
-        // Función para abrir y cerrar el panel desplegable del calendario
         function toggleCalendario() {
             let panel = document.getElementById("panel-calendario");
             let flecha = document.getElementById("flecha-icono");
@@ -833,7 +617,6 @@
             }
         }
 
-        // Función para mostrar los detalles al hacer clic en un hito o fecha
         function mostrarDetalleHito(fecha, descripcion) {
             let caja = document.getElementById("caja-detalle-hito");
             caja.style.display = "block";

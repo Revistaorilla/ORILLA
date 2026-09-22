@@ -377,12 +377,6 @@
             line-height: 1.35;
         }
 
-        .participacion-grid {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 15px;
-        }
-
         .caja-participacion {
             background: #fdf4ff;
             border: 1px solid var(--borde-suave);
@@ -579,7 +573,7 @@
                     </div>
                 </section>
 
-                <!-- SECCIÓN DE OBRAS LOCALES CON TU FOTO DE PORTADA -->
+                <!-- SECCIÓN DE OBRAS LOCALES -->
                 <section id="artistas">
                     <div class="seccion-titulo">Obras Locales</div>
                     <p style="font-size: 0.85rem; color: #555; margin-bottom: 15px;">Espacio dedicado a producciones artísticas y literarias de nuestra región:</p>
@@ -597,10 +591,10 @@
                     </div>
                 </section>
 
-                <!-- SECCIÓN DE PARTICIPACIÓN Y ENVÍO DE MATERIAL -->
+                <!-- SECCIÓN DE PARTICIPACIÓN Y CORREO ABAJO DEL BOTÓN -->
                 <section id="participa">
                     <div class="seccion-titulo">Envianos tu material</div>
-                    <p style="font-size: 0.85rem; color: #555; margin-bottom: 15px;">¿Tenés un relato, poema o ilustración para compartir? Dejanos tu material:</p>
+                    <p style="font-size: 0.85rem; color: #555; margin-bottom: 15px;">¿Tenés un relato, poema o ilustración para compartir? Dejanos tu material completando el formulario:</p>
                     
                     <div class="caja-participacion">
                         <form class="form-compacto" action="https://formspree.io/f/xrpbeeol" method="POST">
@@ -609,6 +603,7 @@
                             <textarea name="mensaje" placeholder="Escribí tu mensaje o poema acá..." required style="height: 70px;"></textarea>
                             <button type="submit" class="btn" style="width: fit-content; border:none; cursor:pointer; padding: 6px 14px; font-size: 0.8rem;">Enviar</button>
                         </form>
+                        <p style="font-size: 0.82rem; color: #555; margin-top: 12px; margin-bottom: 0;">También podés escribirnos directamente a: <strong style="color: var(--color-primario);">Contactorevistaorilla@gmail.com</strong></p>
                     </div>
                 </section>
 
@@ -700,12 +695,14 @@
         </div>
     </main>
 
+    <!-- FOOTER CON EL CORREO AL FINAL -->
     <footer>
         <div style="padding: 10px 0;">
             <img src="https://raw.githubusercontent.com/Revistaorilla/ORILLA/main/logo_orilla.jpg" alt="ORILLA" class="logo-footer-img">
         </div>
         <p style="font-size: 0.85rem; margin: 4px 0;">Cultura y perspectiva de género — Viedma, Río Negro</p>
-        <div class="contador">Visitas: <span id="contador-visitas-num">1240</span></div>
+        <p style="font-size: 0.85rem; margin: 6px 0;">Contacto: <a href="mailto:Contactorevistaorilla@gmail.com" style="color: #f3e8ff; text-decoration: underline;">Contactorevistaorilla@gmail.com</a></p>
+        <div class="contador">VISITAS: <span id="contador-visitas-num">1650</span></div>
         <small style="display: block; margin-top: 10px; opacity: 0.8;">© 2026 ORILLA</small>
     </footer>
 
@@ -727,7 +724,7 @@
         document.addEventListener("DOMContentLoaded", function() {
             let visitas = localStorage.getItem("visitas_revista_orilla");
             if (!visitas) {
-                visitas = 1240; 
+                visitas = 1650; 
             } else {
                 visitas = parseInt(visitas) + 1;
             }

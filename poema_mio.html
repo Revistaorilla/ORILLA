@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proceso de reorganización — ORILLA</title>
+    <style>
+        :root {
+            --color-primario: #581c87;
+            --color-secundario: #a21caf;
+            --color-acento: #e11d48;
+            --color-fondo: #fcf8fa;
+            --color-tarjeta: #ffffff;
+            --color-texto: #2b2b2b;
+            --borde-suave: #f0abfc;
+        }
+
+        body {
+            font-family: system-ui, -apple-system, sans-serif;
+            background-color: var(--color-fondo);
+            color: var(--color-texto);
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
+
+        header {
+            background-color: #ffffff;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 10px rgba(88, 28, 135, 0.04);
+        }
+
+        .header-container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 12px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .barra-arcoiris {
+            height: 5px;
+            width: 100%;
+            background: linear-gradient(90deg, #e11d48, #f97316, #eab308, #10b981, #3b82f6, #8b5cf6, #a21caf);
+        }
+
+        .logo-principal {
+            font-size: 2rem;
+            font-weight: 900;
+            letter-spacing: 3px;
+            background: linear-gradient(90deg, #e11d48, #a855f7, #581c87);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-decoration: none;
+            text-transform: uppercase;
+        }
+
+        main {
+            max-width: 800px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        .tarjeta-poema-completo {
+            background: var(--color-tarjeta);
+            border: 1px solid var(--borde-suave);
+            border-radius: 12px;
+            padding: 30px;
+            box-shadow: 0 4px 20px rgba(88, 28, 135, 0.06);
+            text-align: center;
+        }
+
+        .badge {
+            display: inline-block;
+            background-color: #fdf2f8;
+            color: var(--color-acento);
+            font-size: 0.75rem;
+            font-weight: 800;
+            padding: 4px 10px;
+            border-radius: 4px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 10px;
+            border: 1px solid #fbcfe8;
+        }
+
+        h1 {
+            color: var(--color-primario);
+            font-size: 1.8rem;
+            margin: 10px 0 5px 0;
+        }
+
+        .autora {
+            font-size: 0.95rem;
+            color: #881337;
+            font-weight: bold;
+            margin-bottom: 25px;
+        }
+
+        .imagen-poema {
+            max-width: 100%;
+            height: auto;
+            max-height: 400px;
+            object-fit: contain;
+            border-radius: 8px;
+            margin: 20px 0;
+            border: 1px solid var(--borde-suave);
+        }
+
+        .texto-poema {
+            font-style: italic;
+            color: #4b5563;
+            font-size: 1rem;
+            line-height: 1.8;
+            text-align: left;
+            max-width: 600px;
+            margin: 30px auto;
+            white-space: pre-line;
+        }
+
+        .btn-volver {
+            display: inline-block;
+            background-color: var(--color-primario);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 6px;
+            font-weight: bold;
+            text-decoration: none;
+            font-size: 0.9rem;
+            margin-top: 20px;
+            transition: background 0.2s;
+        }
+
+        .btn-volver:hover {
+            background-color: var(--color-secundario);
+        }
+
+        footer {
+            background-color: var(--color-primario);
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-top: 50px;
+            font-size: 0.85rem;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="header-container">
+            <a href="index.html" class="logo-principal">ORILLA</a>
+            <a href="index.html" class="btn-volver" style="margin: 0; padding: 6px 14px; font-size: 0.8rem;">← Volver a la Revista</a>
+        </div>
+        <div class="barra-arcoiris"></div>
+    </header>
+
+    <main>
+        <div class="tarjeta-poema-completo">
+            <span class="badge">Obras Locales / Poesía</span>
+            <h1>Proceso de reorganización</h1>
+            <div class="autora">Por Maricel Martinez</div>
+
+            <!-- Aquí se muestra tu foto guardada -->
+            <img src="poema.jpg" alt="Ilustración del poema Proceso de reorganización" class="imagen-poema">
+
+            <div class="texto-poema">Nos desarmaron la historia
+a golpes de ausencia.
+Se llevaron nombres,
+voces,
+cuerpos que todavía respiraban en otros.
+Nos dejaron
+el eco.
+Hijos creciendo con preguntas en la boca,
+nietos con la sangre desordenada,
+apellidos que no encajan
+en el pulso.
+
+Algo fue arrancado
+de raíz.
+
+Y sin embargo,
+hay manos que buscan
+como si la verdad tuviera forma,
+como si pudiera tocarse
+debajo de la tierra,
+en los huesos,
+en la memoria que insiste.
+
+Decir sus nombres
+es volver a armarlos.
+Decirlos
+aunque duela,
+aunque falten,
+aunque tiemble la voz.
+
+Porque el silencio
+también fue parte del daño.
+
+Reorganizar
+no es acomodar el dolor,
+es abrirlo,
+mirarlo de frente,
+hacerle lugar a lo que falta
+sin dejar que desaparezca del todo.
+
+Memoria
+como latido.
+
+Verdad
+como herida que no cierra
+para que no se olvide.
+
+Y en cada identidad que vuelve,
+en cada historia que se nombra,
+algo se reconstruye
+entre ruinas.
+
+No alcanza,
+pero alcanza para seguir.
+
+Para que nunca más
+nos roben la vida
+y también el recuerdo.</div>
+
+            <a href="index.html" class="btn-volver">Volver al inicio de la revista</a>
+        </div>
+    </main>
+
+    <footer>
+        <p>ORILLA — Cultura y perspectiva de género — Viedma, Río Negro</p>
+        <small>© 2026 ORILLA</small>
+    </footer>
+
+</body>
+</html>

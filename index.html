@@ -377,6 +377,12 @@
             line-height: 1.35;
         }
 
+        .participacion-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 15px;
+        }
+
         .caja-participacion {
             background: #fdf4ff;
             border: 1px solid var(--borde-suave);
@@ -486,6 +492,7 @@
                 <a href="#cultura">Cultura y Memoria</a>
                 <a href="#artistas">Obras Locales</a>
                 <a href="#recomendaciones">Recomendaciones</a>
+                <a href="#participa">Participá</a>
                 <a href="#comentarios-seccion">Comentarios</a>
             </nav>
         </div>
@@ -587,6 +594,21 @@
                             </div>
                             <a href="poema_mio.html" class="btn" style="background-color: #7e22ce; padding: 6px 12px; font-size: 0.8rem; text-align: center;">Leer obra completa →</a>
                         </article>
+                    </div>
+                </section>
+
+                <!-- SECCIÓN DE PARTICIPACIÓN Y ENVÍO DE MATERIAL -->
+                <section id="participa">
+                    <div class="seccion-titulo">Envianos tu material</div>
+                    <p style="font-size: 0.85rem; color: #555; margin-bottom: 15px;">¿Tenés un relato, poema o ilustración para compartir? Dejanos tu material:</p>
+                    
+                    <div class="caja-participacion">
+                        <form class="form-compacto" action="https://formspree.io/f/xrpbeeol" method="POST">
+                            <input type="text" name="nombre" placeholder="Nombre o seudónimo" required>
+                            <input type="email" name="email" placeholder="Correo electrónico" required>
+                            <textarea name="mensaje" placeholder="Escribí tu mensaje o poema acá..." required style="height: 70px;"></textarea>
+                            <button type="submit" class="btn" style="width: fit-content; border:none; cursor:pointer; padding: 6px 14px; font-size: 0.8rem;">Enviar</button>
+                        </form>
                     </div>
                 </section>
 
@@ -794,7 +816,6 @@
             }
         }
 
-        // Sin tildes ni caracteres raros para evitar conflictos
         function abrirModal() {
             document.getElementById("modal-zatti").style.display = "flex";
         }

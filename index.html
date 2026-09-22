@@ -415,46 +415,6 @@
             box-shadow: 0 4px 15px rgba(88, 28, 135, 0.05);
         }
 
-        .lista-comentarios {
-            display: flex;
-            flex-direction: column;
-            gap: 12px;
-            margin-top: 15px;
-            max-height: 350px;
-            overflow-y: auto;
-            padding-right: 5px;
-        }
-
-        .comentario-item {
-            background: #fdf4ff;
-            border: 1px solid #fbcfe8;
-            border-radius: 8px;
-            padding: 10px 12px;
-            font-size: 0.85rem;
-            position: relative;
-        }
-
-        .comentario-autor {
-            font-weight: bold;
-            color: var(--color-primario);
-            margin-bottom: 3px;
-        }
-
-        .comentario-texto {
-            color: #333;
-            word-break: break-word;
-        }
-
-        .comentario-fecha {
-            font-size: 0.65rem;
-            color: #777;
-            margin-top: 5px;
-            text-align: right;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
         footer {
             background-color: var(--color-primario);
             color: white;
@@ -573,7 +533,6 @@
                     </div>
                 </section>
 
-                <!-- SECCIÓN DE OBRAS LOCALES -->
                 <section id="artistas">
                     <div class="seccion-titulo">Obras Locales</div>
                     <p style="font-size: 0.85rem; color: #555; margin-bottom: 15px;">Espacio dedicado a producciones artísticas y literarias de nuestra región:</p>
@@ -591,10 +550,9 @@
                     </div>
                 </section>
 
-                <!-- SECCIÓN DE PARTICIPACIÓN Y CORREO ABAJO DEL BOTÓN -->
                 <section id="participa">
                     <div class="seccion-titulo">Envianos tu material</div>
-                    <p style="font-size: 0.85rem; color: #555; margin-bottom: 15px;">¿Tenés un relato, poema o ilustración para compartir? Dejanos tu material completando el formulario:</p>
+                    <p style="font-size: 0.85rem; color: #555; margin-bottom: 15px;">¿Tenés un relato, poema o ilustración para compartir? Dejanos tu material completando el formulario o escríbenos directamente a nuestro correo:</p>
                     
                     <div class="caja-participacion">
                         <form class="form-compacto" action="https://formspree.io/f/xrpbeeol" method="POST">
@@ -603,29 +561,19 @@
                             <textarea name="mensaje" placeholder="Escribí tu mensaje o poema acá..." required style="height: 70px;"></textarea>
                             <button type="submit" class="btn" style="width: fit-content; border:none; cursor:pointer; padding: 6px 14px; font-size: 0.8rem;">Enviar</button>
                         </form>
-                        <p style="font-size: 0.82rem; color: #555; margin-top: 12px; margin-bottom: 0;">También podés escribirnos directamente a: <strong style="color: var(--color-primario);">Contactorevistaorilla@gmail.com</strong></p>
+                        <p style="font-size: 0.85rem; color: var(--color-primario); margin-top: 12px; margin-bottom: 0; font-weight: bold;">
+                            📧 Contactorevistaorilla@gmail.com
+                        </p>
                     </div>
                 </section>
 
-                <!-- SECCIÓN DE COMENTARIOS AL FINAL -->
-                <section id="comentarios-seccion">
-                    <div class="seccion-titulo">Muro de Comentarios y Opiniones</div>
-                    <p style="font-size: 0.85rem; color: #555; margin-bottom: 15px;">Dejá tu mensaje o comentario sobre la revista para compartir con la comunidad:</p>
+                <!-- MURO DE COMENTARIOS PÚBLICOS GLOBAL (DISQUS) -->
+                <section id="comentarios-seccion" class="seccion-comentarios-publicos">
+                    <div class="seccion-titulo" style="border-bottom: none; margin-bottom: 5px;">Muro de Comentarios y Opiniones</div>
+                    <p style="font-size: 0.85rem; color: #555; margin-bottom: 20px;">Dejá tu mensaje o comentario sobre la revista para compartir y leer con toda la comunidad:</p>
                     
-                    <div class="caja-participacion">
-                        <form class="form-compacto" id="form-comentario" onsubmit="enviarComentario(event)">
-                            <input type="text" id="nombre-comentario" placeholder="Tu nombre o seudónimo" required>
-                            <textarea id="texto-comentario" placeholder="Escribí tu comentario aquí..." required style="height: 70px;"></textarea>
-                            <button type="submit" class="btn" style="width: fit-content; border:none; cursor:pointer; padding: 6px 14px; font-size: 0.8rem;">Publicar comentario</button>
-                        </form>
-                    </div>
-
-                    <div class="seccion-comentarios-publicos">
-                        <h3 style="color: var(--color-primario); font-size: 1rem; margin-top: 0;">Comentarios de lectoras/es</h3>
-                        <div id="contenedor-lista-comentarios" class="lista-comentarios">
-                            <!-- Los comentarios cargados aparecerán aquí automáticamente -->
-                        </div>
-                    </div>
+                    <!-- Integración de Disqus -->
+                    <div id="disqus_thread"></div>
                 </section>
 
             </div>
@@ -695,7 +643,6 @@
         </div>
     </main>
 
-    <!-- FOOTER CON EL CORREO AL FINAL -->
     <footer>
         <div style="padding: 10px 0;">
             <img src="https://raw.githubusercontent.com/Revistaorilla/ORILLA/main/logo_orilla.jpg" alt="ORILLA" class="logo-footer-img">
@@ -720,6 +667,7 @@
         </div>
     </div>
 
+    <!-- SCRIPT DE VISITAS Y CONFIGURACIÓN DE DISQUS -->
     <script>
         document.addEventListener("DOMContentLoaded", function() {
             let visitas = localStorage.getItem("visitas_revista_orilla");
@@ -730,75 +678,20 @@
             }
             localStorage.setItem("visitas_revista_orilla", visitas);
             document.getElementById("contador-visitas-num").innerText = visitas;
-
-            cargarComentarios();
         });
 
-        function enviarComentario(event) {
-            event.preventDefault();
-            let nombre = document.getElementById("nombre-comentario").value.trim();
-            let texto = document.getElementById("texto-comentario").value.trim();
-
-            if (nombre !== "" && texto !== "") {
-                let comentarios = JSON.parse(localStorage.getItem("comentarios_orilla")) || [];
-                
-                let nuevoComentario = {
-                    id: Date.now(),
-                    nombre: nombre,
-                    texto: texto,
-                    fecha: new Date().toLocaleDateString() + " a las " + new Date().toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'})
-                };
-
-                comentarios.unshift(nuevoComentario);
-                localStorage.setItem("comentarios_orilla", JSON.stringify(comentarios));
-
-                document.getElementById("nombre-comentario").value = "";
-                document.getElementById("texto-comentario").value = "";
-                
-                cargarComentarios();
-                alert("¡Comentario publicado con éxito!");
-            }
-        }
-
-        function cargarComentarios() {
-            let contenedor = document.getElementById("contenedor-lista-comentarios");
-            let comentarios = JSON.parse(localStorage.getItem("comentarios_orilla")) || [
-                { id: 1, nombre: "Lucía M.", texto: "¡Hermosa edición! Muy necesaria la info en la Patagonia.", fecha: "Ayer" }
-            ];
-
-            if (comentarios.length === 0) {
-                contenedor.innerHTML = "<p style='font-size:0.82rem; color:#777; text-align:center;'>Aún no hay comentarios. ¡Sé la primera en dejar uno!</p>";
-                return;
-            }
-
-            let html = "";
-            comentarios.forEach(c => {
-                html += `
-                    <div class="comentario-item" id="comentario-${c.id}">
-                        <div class="comentario-autor">${escapeHtml(c.nombre)}</div>
-                        <div class="comentario-texto">${escapeHtml(c.texto)}</div>
-                        <div class="comentario-fecha">
-                            <span>${c.fecha}</span>
-                            <button onclick="borrarComentario(${c.id})" style="background:none; border:none; color:#e11d48; cursor:pointer; font-size:0.7rem; font-weight:bold;" title="Borrar si es ofensivo">🗑️ Borrar</button>
-                        </div>
-                    </div>
-                `;
-            });
-            contenedor.innerHTML = html;
-        }
-
-        function borrarComentario(id) {
-            if (confirm("¿Estás segura de querer eliminar este comentario?")) {
-                let comentarios = JSON.parse(localStorage.getItem("comentarios_orilla")) || [];
-                comentarios = comentarios.filter(c => c.id !== id);
-                localStorage.setItem("comentarios_orilla", JSON.stringify(comentarios));
-                cargarComentarios();
-            }
-        }
-
-        function escapeHtml(text) {
-            return text.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
-        }
+        /* CONFIGURACIÓN DE DISQUS */
+        var disqus_config = function () {
+            this.page.url = window.location.href;  
+            this.page.identifier = "revista-orilla-index"; 
+        };
+        
+        (function() { 
+            var d = document, s = d.createElement('script');
+            s.src = 'https://revistaorilla.disqus.com/embed.js'; 
+            s.setAttribute('data-timestamp', +new Date());
+            (d.head || d.body).appendChild(s);
+        })();
 
         function toggleSocorristas() {
             let textoExtra = document.getElementById("texto-ampliado-socorristas");

@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+   <!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
@@ -9,7 +9,7 @@
             --color-primario: #581c87;
             --color-secundario: #a21caf;
             --color-acento: #e11d48;
-            --color-fondo: #fcf8fa;
+            --color-fondo: #f5f0f3;
             --color-tarjeta: #ffffff;
             --color-texto: #2b2b2b;
             --borde-suave: #f0abfc;
@@ -88,7 +88,7 @@
 
         nav {
             display: flex;
-            gap: 20px;
+            gap: 15px;
             flex-wrap: wrap;
             align-items: center;
         }
@@ -99,35 +99,47 @@
             font-weight: 700;
             font-size: 0.85rem;
             transition: color 0.2s;
+            cursor: pointer;
         }
 
-        nav a:hover {
+        nav a:hover, nav a.activo {
             color: var(--color-acento);
         }
 
         main {
-            max-width: 1100px;
-            margin: 30px auto;
+            max-width: 1050px;
+            margin: 25px auto;
             padding: 0 20px;
         }
 
-        .layout-principal {
-            display: grid;
-            grid-template-columns: 1fr 340px;
-            gap: 30px;
-            align-items: start;
+        /* Contenedor Efecto Revista / Páginas */
+        .revista-hoja {
+            display: none;
+            background: var(--color-tarjeta);
+            border: 1px solid var(--borde-suave);
+            border-radius: 12px;
+            padding: 30px;
+            box-shadow: 0 8px 30px rgba(88, 28, 135, 0.08);
+            min-height: 520px;
+            animation: fadeIn 0.4s ease-in-out;
         }
 
-        @media (max-width: 1024px) {
-            .layout-principal {
-                grid-template-columns: 1fr;
-            }
+        .revista-hoja.activa {
+            display: block;
         }
 
-        .columna-izquierda {
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(6px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Controles de navegación de páginas */
+        .revista-controles {
             display: flex;
-            flex-direction: column;
-            gap: 30px;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 20px;
+            padding: 10px 0;
         }
 
         .badge {
@@ -145,41 +157,33 @@
         }
 
         .hitos-historia-box {
-            background: var(--color-tarjeta);
+            background: #fdf4ff;
             border: 1px solid var(--borde-suave);
             border-left: 4px solid var(--color-secundario);
             border-radius: 8px;
-            padding: 12px 15px;
-            box-shadow: 0 2px 8px rgba(168, 85, 247, 0.03);
+            padding: 15px;
+            margin-bottom: 20px;
         }
 
         .hitos-historia-box h1 {
             color: var(--color-primario);
-            font-size: 1.15rem;
+            font-size: 1.2rem;
             margin: 0 0 4px 0;
-            line-height: 1.2;
-        }
-
-        .hitos-historia-box p {
-            color: #4b5563;
-            font-size: 0.82rem;
-            margin-bottom: 8px;
         }
 
         .logros-grid-horizontal {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
-            gap: 8px;
-            margin: 0;
+            gap: 10px;
+            margin-top: 10px;
         }
 
         .logro-item {
-            background: #fdf4ff;
-            padding: 6px 10px;
+            background: white;
+            padding: 8px 12px;
             border-radius: 6px;
             border: 1px solid #fbcfe8;
-            font-size: 0.78rem;
-            color: #333;
+            font-size: 0.8rem;
         }
 
         .logro-item strong {
@@ -197,6 +201,8 @@
             font-size: 0.85rem;
             transition: background 0.2s;
             text-align: center;
+            border: none;
+            cursor: pointer;
         }
 
         .btn:hover {
@@ -204,69 +210,30 @@
         }
 
         .seccion-titulo {
-            font-size: 1.1rem;
+            font-size: 1.2rem;
             font-weight: 800;
             color: var(--color-primario);
             border-bottom: 2px solid var(--color-secundario);
             padding-bottom: 6px;
-            margin-bottom: 15px;
+            margin-bottom: 20px;
             text-transform: uppercase;
             letter-spacing: 0.5px;
-        }
-
-        .noticia-reciente-box {
-            background: linear-gradient(135deg, #fff5f7 0%, #ffffff 100%);
-            border: 1px solid #fda4af;
-            border-left: 5px solid var(--color-acento);
-            border-radius: 8px;
-            padding: 20px;
-            display: grid;
-            grid-template-columns: 240px 1fr;
-            gap: 20px;
-            align-items: center;
-            margin-bottom: 20px;
-        }
-
-        @media (max-width: 768px) {
-            .noticia-reciente-box {
-                grid-template-columns: 1fr;
-            }
-        }
-
-        .noticia-reciente-box img {
-            width: 100%;
-            height: 150px;
-            object-fit: cover;
-            border-radius: 6px;
-        }
-
-        .noticia-reciente-box h3 {
-            color: #881337;
-            margin: 0 0 8px 0;
-            font-size: 1.15rem;
-        }
-
-        .noticia-reciente-box p {
-            font-size: 0.9rem;
-            color: #333;
-            margin: 0 0 12px 0;
         }
 
         .grilla-tarjetas {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 15px;
+            gap: 20px;
         }
 
         .tarjeta {
-            background: var(--color-tarjeta);
+            background: #faf5f8;
             border: 1px solid var(--borde-suave);
             border-radius: 8px;
             padding: 15px;
             display: flex;
             flex-direction: column;
             justify-content: space-between;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.02);
         }
 
         .tarjeta img, .tarjeta iframe {
@@ -290,97 +257,10 @@
             margin: 0 0 12px 0;
         }
 
-        .sidebar-derecha {
-            display: flex;
-            flex-direction: column;
-            gap: 20px;
-        }
-
-        .observatorio-independiente {
-            background: var(--color-tarjeta);
-            border: 2px solid var(--color-acento);
-            border-radius: 12px;
-            padding: 15px;
-            text-align: center;
-            box-shadow: 0 4px 15px rgba(225, 29, 72, 0.08);
-        }
-
-        .burbuja-redonda {
-            width: 95px;
-            height: 95px;
-            background: linear-gradient(135deg, #e11d48 0%, #9f1239 100%);
-            color: white;
-            border-radius: 50%;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            margin: 10px auto;
-            box-shadow: 0 4px 10px rgba(225, 29, 72, 0.3);
-            border: 3px solid #fffdfd;
-        }
-
-        .burbuja-redonda span:first-child {
-            font-size: 1.7rem;
-            font-weight: 900;
-            line-height: 1;
-        }
-
-        .burbuja-redonda span:last-child {
-            font-size: 0.6rem;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            margin-top: 2px;
-        }
-
-        .alerta-arcoiris {
-            background: linear-gradient(135deg, #f5f3ff 0%, #ffffff 100%);
-            border: 2px solid var(--color-primario);
-            border-radius: 12px;
-            padding: 15px;
-            box-shadow: 0 4px 15px rgba(88, 28, 135, 0.08);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .alerta-arcoiris::before {
-            content: "";
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 4px;
-            background: linear-gradient(90deg, #581c87, #a21caf, #e11d48);
-        }
-
-        .alerta-arcoiris img {
-            width: 100%;
-            height: 130px;
-            object-fit: cover;
-            border-radius: 6px;
-            margin-top: 8px;
-            margin-bottom: 10px;
-            border: 1px solid var(--borde-suave);
-        }
-
-        .alerta-arcoiris h3 {
-            color: var(--color-primario);
-            margin: 6px 0 4px 0;
-            font-size: 1rem;
-            font-weight: 800;
-        }
-
-        .alerta-sub {
-            font-size: 0.8rem;
-            color: #4b5563;
-            margin: 0 0 10px 0;
-            line-height: 1.35;
-        }
-
         .participacion-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 15px;
+            gap: 20px;
         }
 
         @media (max-width: 768px) {
@@ -394,9 +274,6 @@
             border: 1px solid var(--borde-suave);
             border-radius: 8px;
             padding: 15px;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
         }
 
         .form-compacto {
@@ -434,6 +311,95 @@
             overflow-y: auto;
         }
 
+        .comentarios-box {
+            background: #fdf4ff;
+            border: 1px solid var(--borde-suave);
+            border-radius: 8px;
+            padding: 15px;
+            margin-top: 20px;
+        }
+
+        .lista-comentarios {
+            margin-top: 12px;
+            max-height: 180px;
+            overflow-y: auto;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .comentario-item {
+            background: white;
+            border: 1px solid #fbcfe8;
+            border-radius: 6px;
+            padding: 8px 10px;
+            font-size: 0.8rem;
+        }
+
+        .comentario-autor {
+            font-weight: bold;
+            color: var(--color-primario);
+        }
+
+        /* Salud y Observatorio Grid */
+        .salud-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+        }
+
+        .observatorio-independiente {
+            background: var(--color-tarjeta);
+            border: 2px solid var(--color-acento);
+            border-radius: 12px;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .burbuja-redonda {
+            width: 95px;
+            height: 95px;
+            background: linear-gradient(135deg, #e11d48 0%, #9f1239 100%);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            margin: 15px auto;
+            box-shadow: 0 4px 10px rgba(225, 29, 72, 0.3);
+            border: 3px solid #fffdfd;
+        }
+
+        .burbuja-redonda span:first-child {
+            font-size: 1.7rem;
+            font-weight: 900;
+            line-height: 1;
+        }
+
+        .burbuja-redonda span:last-child {
+            font-size: 0.6rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-top: 2px;
+        }
+
+        .alerta-arcoiris {
+            background: linear-gradient(135deg, #f5f3ff 0%, #ffffff 100%);
+            border: 2px solid var(--color-primario);
+            border-radius: 12px;
+            padding: 20px;
+        }
+
+        .alerta-arcoiris img {
+            width: 100%;
+            height: 130px;
+            object-fit: cover;
+            border-radius: 6px;
+            margin: 10px 0;
+            border: 1px solid var(--borde-suave);
+        }
+
         footer {
             background-color: var(--color-primario);
             color: white;
@@ -460,145 +426,119 @@
                 <span class="subtitulo-logo">Cultura y perspectiva de género</span>
             </div>
             <nav>
-                <a href="#hitos">Hitos</a>
-                <a href="#actualidad">Actualidad</a>
-                <a href="#cultura">Cultura y Memoria</a>
-                <a href="#recomendaciones">Recomendaciones</a>
-                <a href="#participa">Participá</a>
+                <a onclick="cambiarPagina(1)" id="nav-1" class="activo">1. Tapa e Hitos</a>
+                <a onclick="cambiarPagina(2)" id="nav-2">2. Actualidad</a>
+                <a onclick="cambiarPagina(3)" id="nav-3">3. Cultura y Salud</a>
+                <a onclick="cambiarPagina(4)" id="nav-4">4. Participá y Comunidad</a>
             </nav>
         </div>
         <div class="barra-arcoiris"></div>
     </header>
 
     <main>
-        <div class="layout-principal">
 
-            <div class="columna-izquierda">
-
-                <section id="hitos" class="hitos-historia-box">
-                    <span class="badge">Memoria y Derechos</span>
-                    <h1>Hitos de la historia argentina</h1>
-                    <p style="margin-bottom: 8px;">Conquistas fundamentales y leyes clave en la construcción de derechos:</p>
-                    
-                    <div class="logros-grid-horizontal">
-                        <div class="logro-item"><strong>2010:</strong> Ley de Matrimonio Igualitario.</div>
-                        <div class="logro-item"><strong>2012:</strong> Ley de Identidad de Género (N° 26.743).</div>
-                        <div class="logro-item"><strong>2020:</strong> Cupo Laboral Travesti-Trans.</div>
-                    </div>
-                </section>
-
-                <section id="actualidad">
-                    <div class="seccion-titulo">Actualidad</div>
-                    
-                    <div class="noticia-reciente-box">
-                        <div>
-                            <img src="https://raw.githubusercontent.com/Revistaorilla/ORILLA/main/marcha_orgullo.jpg" alt="Marcha del Orgullo CABA">
-                        </div>
-                        <div>
-                            <span class="badge" style="background-color: #fee2e2; color: #991b1b; border-color: #fca5a5;">Actualidad Comunitaria</span>
-                            <h3>Marcha del Orgullo: la Ciudad pidió reprogramarla pero las organizaciones la ratificaron</h3>
-                            <p>Ante la solicitud del gobierno porteño de mover la fecha por operativos de seguridad, las organizaciones ratificaron la movilización.</p>
-                            <a href="noticia-tension-marcha.html" class="btn" style="padding: 6px 12px; font-size: 0.8rem;">Ampliar información →</a>
-                        </div>
-                    </div>
-
-                    <div class="grilla-tarjetas">
-                        <article class="tarjeta">
-                            <div>
-                                <img src="https://raw.githubusercontent.com/Revistaorilla/ORILLA/main/barracas.jpeg" alt="Juicio Barracas">
-                                <span class="badge">Justicia</span>
-                                <h3>Juicio final por el triple lesbicidio de Barracas</h3>
-                                <p>A dos años del ataque en la pensión, el juicio entra en alegatos exigiendo condena firme.</p>
-                            </div>
-                            <a href="noticia-barracas.html" class="btn" style="padding: 6px 12px; font-size: 0.8rem;">Leer nota</a>
-                        </article>
-
-                        <article class="tarjeta">
-                            <div>
-                                <img src="https://raw.githubusercontent.com/Revistaorilla/ORILLA/main/villa_travesti.jpg" alt="Villa Travesti">
-                                <span class="badge">Patagonia</span>
-                                <h3>Villa Travesti: Soberanía colectiva en el sur</h3>
-                                <p>Resistencia y vida comunitaria en Las Golondrinas, Lago Puelo.</p>
-                            </div>
-                            <a href="villa-travesti.html" class="btn" style="padding: 6px 12px; font-size: 0.8rem;">Leer nota</a>
-                        </article>
-
-                        <article class="tarjeta">
-                            <div>
-                                <img src="https://raw.githubusercontent.com/Revistaorilla/ORILLA/main/encuentro_cordoba.jpg" alt="Encuentro Córdoba">
-                                <span class="badge">Encuentro</span>
-                                <h3>Las grupas rumbo al 39° Encuentro Plurinacional</h3>
-                                <p>Córdoba se prepara para recibir al motor de la marea y la autogestión.</p>
-                            </div>
-                            <a href="encuentro-cordoba.html" class="btn" style="padding: 6px 12px; font-size: 0.8rem;">Leer nota</a>
-                        </article>
-                    </div>
-                </section>
-
-                <section id="cultura">
-                    <div class="seccion-titulo">Cultura y Memoria</div>
-                    <div class="grilla-tarjetas">
-                        <article class="tarjeta">
-                            <div>
-                                <img src="https://raw.githubusercontent.com/Revistaorilla/ORILLA/main/referentes.jpg" alt="Referentes">
-                                <span class="badge">Literatura</span>
-                                <h3>Grandes referentes y poesía patagónica</h3>
-                                <p>Diana Bellessi, Sylvia Molloy, Macky Corbalán y las nuevas voces del sur.</p>
-                            </div>
-                            <a href="cultura.html" class="btn" style="padding: 6px 12px; font-size: 0.8rem;">Explorar sección</a>
-                        </article>
-                    </div>
-                </section>
-
-                <section id="participa">
-                    <div class="seccion-titulo">Participá y Jugá con nosotras</div>
-                    <div class="participacion-grid">
-                        
-                        <div class="caja-participacion">
-                            <div>
-                                <span class="badge">Colaboraciones</span>
-                                <h3 style="color: var(--color-primario); margin: 4px 0 6px 0; font-size: 1rem;">Envianos tu material</h3>
-                                <p style="font-size: 0.8rem; color: #555; margin-bottom: 8px;">Dejanos tu relato o poema:</p>
-                                
-                                <form class="form-compacto" action="https://formspree.io/f/xrpbeeol" method="POST">
-                                    <input type="text" name="nombre" placeholder="Nombre o seudónimo" required>
-                                    <input type="email" name="email" placeholder="Correo electrónico" required>
-                                    <textarea name="mensaje" placeholder="Escribí acá..." required></textarea>
-                                    <button type="submit" class="btn" style="width: fit-content; border:none; cursor:pointer; padding: 6px 12px; font-size: 0.8rem;">Enviar</button>
-                                </form>
-                            </div>
-                        </div>
-
-                        <div class="caja-participacion">
-                            <div>
-                                <span class="badge" style="background-color: #fae8ff; color: #7e22ce; border-color: #f0abfc;">Zona Lúdica</span>
-                                <h3 style="color: var(--color-primario); margin: 4px 0 6px 0; font-size: 1rem;">Cadáver Exquisito</h3>
-                                <p style="font-size: 0.80rem; color: #555; margin-bottom: 4px;">Sumá tu verso colectivo:</p>
-
-                                <div id="poema-en-curso" class="poema-box">
-                                    "Encendemos la noche con fósforos prestados...<br>
-                                    la memoria arde en las esquinas del sur..."
-                                </div>
-
-                                <form id="form-juego" class="form-compacto" onsubmit="guardarVerso(event)">
-                                    <textarea id="input-verso" placeholder="Escribí tu verso..." required style="height: 38px;"></textarea>
-                                    <button type="submit" class="btn" style="background-color: #7e22ce; width: fit-content; border:none; cursor:pointer; padding: 6px 12px; font-size: 0.8rem;">Sumar</button>
-                                </form>
-                            </div>
-                        </div>
-
-                    </div>
-                </section>
-
+        <!-- PÁGINA 1: Hitos y Bienvenida -->
+        <section id="pagina-1" class="revista-hoja activa">
+            <div class="hitos-historia-box">
+                <span class="badge">Memoria y Derechos</span>
+                <h1>Hitos de la historia argentina</h1>
+                <p style="font-size: 0.85rem; color: #4b5563; margin-bottom: 8px;">Conquistas fundamentales y leyes clave en la construcción de derechos:</p>
+                
+                <div class="logros-grid-horizontal">
+                    <div class="logro-item"><strong>2010:</strong> Ley de Matrimonio Igualitario.</div>
+                    <div class="logro-item"><strong>2012:</strong> Ley de Identidad de Género (N° 26.743).</div>
+                    <div class="logro-item"><strong>2020:</strong> Cupo Laboral Travesti-Trans.</div>
+                </div>
             </div>
 
-            <aside class="sidebar-derecha">
+            <div style="background: linear-gradient(135deg, #fff5f7 0%, #ffffff 100%); border: 1px solid #fda4af; border-left: 5px solid var(--color-acento); border-radius: 8px; padding: 25px; margin-top: 20px;">
+                <span class="badge" style="background-color: #fee2e2; color: #991b1b; border-color: #fca5a5;">Editorial / Número Actual</span>
+                <h2 style="color: #881337; margin: 6px 0 10px 0; font-size: 1.3rem;">Voces, cuerpxs y territorios en movimiento</h2>
+                <p style="font-size: 0.9rem; color: #333; line-height: 1.6;">
+                    Bienvenidos a una nueva edición de <strong>ORILLA</strong>. Este espacio digital recorre las luchas, la memoria colectiva, la cultura patagónica y la salud comunitaria desde una perspectiva antipatriarcal y situada en Viedma y la región. Utiliza los botones inferiores para pasar las páginas como en una revista de papel.
+                </p>
+            </div>
 
+            <div class="revista-controles">
+                <span></span>
+                <button onclick="cambiarPagina(2)" class="btn">Siguiente página →</button>
+            </div>
+        </section>
+
+        <!-- PÁGINA 2: Actualidad -->
+        <section id="pagina-2" class="revista-hoja">
+            <div class="seccion-titulo">Actualidad</div>
+            
+            <div style="background: linear-gradient(135deg, #fff5f7 0%, #ffffff 100%); border: 1px solid #fda4af; border-left: 5px solid var(--color-acento); border-radius: 8px; padding: 15px; display: grid; grid-template-columns: 220px 1fr; gap: 15px; align-items: center; margin-bottom: 20px;">
+                <div>
+                    <img src="https://raw.githubusercontent.com/Revistaorilla/ORILLA/main/marcha_orgullo.jpg" alt="Marcha del Orgullo CABA" style="width: 100%; height: 130px; object-fit: cover; border-radius: 6px;">
+                </div>
+                <div>
+                    <span class="badge" style="background-color: #fee2e2; color: #991b1b; border-color: #fca5a5;">Actualidad Comunitaria</span>
+                    <h3 style="color: #881337; margin: 0 0 6px 0; font-size: 1.05rem;">Marcha del Orgullo: la Ciudad pidió reprogramarla pero las organizaciones la ratificaron</h3>
+                    <p style="font-size: 0.85rem; color: #333; margin: 0 0 10px 0;">Ante la solicitud del gobierno porteño, las organizaciones ratificaron la movilización.</p>
+                    <a href="noticia-tension-marcha.html" class="btn" style="padding: 5px 10px; font-size: 0.78rem;">Ampliar →</a>
+                </div>
+            </div>
+
+            <div class="grilla-tarjetas">
+                <article class="tarjeta">
+                    <div>
+                        <img src="https://raw.githubusercontent.com/Revistaorilla/ORILLA/main/barracas.jpeg" alt="Juicio Barracas">
+                        <span class="badge">Justicia</span>
+                        <h3>Juicio final por el triple lesbicidio de Barracas</h3>
+                        <p>A dos años del ataque en la pensión, el juicio entra en alegatos exigiendo condena firme.</p>
+                    </div>
+                    <a href="noticia-barracas.html" class="btn" style="padding: 5px 10px; font-size: 0.78rem;">Leer nota</a>
+                </article>
+
+                <article class="tarjeta">
+                    <div>
+                        <img src="https://raw.githubusercontent.com/Revistaorilla/ORILLA/main/villa_travesti.jpg" alt="Villa Travesti">
+                        <span class="badge">Patagonia</span>
+                        <h3>Villa Travesti: Soberanía colectiva en el sur</h3>
+                        <p>Resistencia y vida comunitaria en Las Golondrinas, Lago Puelo.</p>
+                    </div>
+                    <a href="villa-travesti.html" class="btn" style="padding: 5px 10px; font-size: 0.78rem;">Leer nota</a>
+                </article>
+            </div>
+
+            <div class="revista-controles">
+                <button onclick="cambiarPagina(1)" class="btn" style="background-color: #6b7280;">← Página anterior</button>
+                <button onclick="cambiarPagina(3)" class="btn">Siguiente página →</button>
+            </div>
+        </section>
+
+        <!-- PÁGINA 3: Cultura, Memoria y Salud -->
+        <section id="pagina-3" class="revista-hoja">
+            <div class="seccion-titulo">Cultura, Memoria y Salud Comunitaria</div>
+            
+            <div class="grilla-tarjetas" style="margin-bottom: 20px;">
+                <article class="tarjeta">
+                    <div>
+                        <img src="https://raw.githubusercontent.com/Revistaorilla/ORILLA/main/referentes.jpg" alt="Referentes">
+                        <span class="badge">Literatura</span>
+                        <h3>Grandes referentes y poesía patagónica</h3>
+                        <p>Diana Bellessi, Sylvia Molloy, Macky Corbalán y las nuevas voces del sur.</p>
+                    </div>
+                    <a href="cultura.html" class="btn" style="padding: 5px 10px; font-size: 0.78rem;">Explorar sección</a>
+                </article>
+
+                <article class="tarjeta" style="background: linear-gradient(135deg, #fdf4ff 0%, #ffffff 100%);">
+                    <div>
+                        <iframe src="https://www.youtube.com/embed/rzTRwztisDI" title="MUGRE - NI TU PERRA" allowfullscreen style="height: 130px;"></iframe>
+                        <span class="badge" style="background-color: #fae8ff; color: #7e22ce;">Recomendación</span>
+                        <h3>Mugre — "Ni Tu Perra"</h3>
+                        <p>Potencia sonora y rock comandado por mujeres que sacude los parlantes.</p>
+                    </div>
+                    <a href="https://youtu.be/rzTRwztisDI" target="_blank" class="btn" style="background-color: #7e22ce; padding: 5px 10px; font-size: 0.78rem;">Ver en YouTube →</a>
+                </article>
+            </div>
+
+            <div class="salud-grid">
                 <div class="observatorio-independiente">
-                    <span class="badge" style="background-color: #fee2e2; color: var(--color-acento); border-color: #fca5a5;">Observatorio</span>
-                    <h3 style="color: #881337; font-size: 1rem; margin: 4px 0;">Crímenes de Odio</h3>
-                    <p style="font-size: 0.78rem; color: #4b5563; margin-bottom: 2px;">Registro anual de víctimas:</p>
-                    
+                    <span class="badge" style="background-color: #fee2e2; color: var(--color-acento);">Observatorio</span>
+                    <h3 style="color: #881337; font-size: 0.95rem; margin: 4px 0;">Crímenes de Odio</h3>
                     <div class="burbuja-redonda">
                         <span>227</span>
                         <span>Víctimas</span>
@@ -606,73 +546,69 @@
                 </div>
 
                 <div class="alerta-arcoiris">
-                    <h3 style="color: var(--color-primario); margin: 6px 0 4px 0; font-size: 1rem; font-weight: 800;">Testeo y prevención</h3>
-                    <img src="https://raw.githubusercontent.com/Revistaorilla/ORILLA/main/hospital_zatti.jpg" alt="Hospital Artemides Zatti">
-                    <p class="alerta-sub"><strong>Hospital Artemides Zatti</strong> (ingreso Rivadavia). Unidad de VIH/SIDA e ITS. Atención comunitaria sin estigmas.</p>
-                    <p class="alerta-sub" style="margin-bottom: 10px;"><strong>Horarios:</strong> Lun a vie de 8 a 14 h (Demanda espontánea).</p>
-                    <button onclick="abrirModal()" class="btn" style="width: 100%; box-sizing: border-box; text-align: center; border:none; cursor:pointer; padding: 6px 12px; font-size: 0.8rem;">Más información →</button>
+                    <h3 style="color: var(--color-primario); margin: 0 0 4px 0; font-size: 0.95rem; font-weight: 800;">Testeo y prevención</h3>
+                    <p style="font-size: 0.78rem; color: #4b5563; margin: 0;"><strong>Hospital Zatti</strong> (Rivadavia). Unidad de VIH/SIDA e ITS. Atención comunitaria sin estigmas.</p>
+                    <button onclick="abrirModal()" class="btn" style="width: 100%; margin-top: 10px; padding: 5px; font-size: 0.78rem;">Más información →</button>
+                </div>
+            </div>
+
+            <div class="revista-controles">
+                <button onclick="cambiarPagina(2)" class="btn" style="background-color: #6b7280;">← Página anterior</button>
+                <button onclick="cambiarPagina(4)" class="btn">Siguiente página →</button>
+            </div>
+        </section>
+
+        <!-- PÁGINA 4: Participá, Juegos y Comentarios -->
+        <section id="pagina-4" class="revista-hoja">
+            <div class="seccion-titulo">Participá y Comunidad</div>
+            
+            <div class="participacion-grid" style="margin-bottom: 20px;">
+                <div class="caja-participacion">
+                    <span class="badge">Colaboraciones</span>
+                    <h3 style="color: var(--color-primario); margin: 4px 0 6px 0; font-size: 0.95rem;">Envianos tu material</h3>
+                    <form class="form-compacto" action="https://formspree.io/f/xrpbeeol" method="POST">
+                        <input type="text" name="nombre" placeholder="Nombre o seudónimo" required>
+                        <input type="email" name="email" placeholder="Correo electrónico" required>
+                        <textarea name="mensaje" placeholder="Escribí acá..." required style="height: 45px;"></textarea>
+                        <button type="submit" class="btn" style="padding: 5px 10px; font-size: 0.78rem;">Enviar</button>
+                    </form>
                 </div>
 
-                <section id="recomendaciones" class="tarjeta" style="background: linear-gradient(135deg, #fdf4ff 0%, #ffffff 100%); margin: 0;">
-                    <div>
-                        <iframe src="https://www.youtube.com/embed/rzTRwztisDI" title="MUGRE - NI TU PERRA (Video Oficial)" allowfullscreen></iframe>
-                        <span class="badge" style="background-color: #fae8ff; color: #7e22ce; border-color: #f0abfc;">Recomendaciones</span>
-                        <h3 style="color: var(--color-primario); font-size: 1rem; margin: 4px 0 8px 0;">Mugre — "Ni Tu Perra"</h3>
-                        <p style="font-size: 0.82rem; color: #555; margin: 0 0 12px 0;">Potencia sonora y rock comandado por mujeres que sacude los parlantes.</p>
+                <div class="caja-participacion">
+                    <span class="badge" style="background-color: #fae8ff; color: #7e22ce;">Zona Lúdica</span>
+                    <h3 style="color: var(--color-primario); margin: 4px 0 6px 0; font-size: 0.95rem;">Cadáver Exquisito</h3>
+                    <div id="poema-en-curso" class="poema-box" style="max-height: 45px;">
+                        "Encendemos la noche con fósforos prestados...<br>la memoria arde..."
                     </div>
-                    <a href="https://youtu.be/rzTRwztisDI" target="_blank" class="btn" style="background-color: #7e22ce; width: 100%; box-sizing: border-box; text-align: center; padding: 6px 12px; font-size: 0.8rem;">Ver en YouTube →</a>
-                </section>
+                    <form id="form-juego" class="form-compacto" onsubmit="guardarVerso(event)">
+                        <textarea id="input-verso" placeholder="Sumá tu verso..." required style="height: 30px;"></textarea>
+                        <button type="submit" class="btn" style="background-color: #7e22ce; padding: 5px 10px; font-size: 0.78rem;">Sumar</button>
+                    </form>
+                </div>
+            </div>
 
-                <section style="background: var(--color-tarjeta); border: 1px solid var(--borde-suave); border-radius: 12px; padding: 20px; box-shadow: 0 4px 15px rgba(88, 28, 135, 0.08);">
-                    <span class="badge" style="background-color: #fee2e2; color: #991b1b; border-color: #fca5a5;">Red Federal</span>
-                    <h2 style="color: #881337; margin-top: 4px; font-size: 1.15rem; line-height: 1.3;">Socorristas en Red: Abrazar el territorio, disputar los sentidos</h2>
-                    
-                    <img src="https://raw.githubusercontent.com/Revistaorilla/ORILLA/main/rosa_salvaje.jpg" alt="Socorristas en Red - Rosa Salvaje" style="width: 100%; height: 160px; object-fit: cover; border-radius: 6px; margin: 10px 0; border: 1px solid var(--borde-suave);">
+            <div class="comentarios-box">
+                <span class="badge" style="background-color: #f3e8ff; color: #7e22ce;">Lectores</span>
+                <h3 style="color: var(--color-primario); margin: 2px 0 4px 0; font-size: 0.95rem;">Depósito de Comentarios</h3>
+                <form id="form-comentario" class="form-compacto" onsubmit="guardarComentario(event)">
+                    <input type="text" id="autor-comentario" placeholder="Tu nombre" required>
+                    <textarea id="texto-comentario" placeholder="Tu comentario..." required style="height: 38px;"></textarea>
+                    <button type="submit" class="btn" style="padding: 5px 10px; font-size: 0.78rem;">Publicar</button>
+                </form>
+                <div id="contenedor-lista-comentarios" class="lista-comentarios"></div>
+            </div>
 
-                    <p style="font-size: 0.85rem; color: #4b5563; line-height: 1.5; margin-bottom: 12px;">
-                        A nivel estructural, Socorristas en Red es una articulación feminista federal nacida en 2012 e impulsada inicialmente por la Colectiva Feminista La Revuelta de Neuquén.
-                    </p>
+            <div class="revista-controles">
+                <button onclick="cambiarPagina(3)" class="btn" style="background-color: #6b7280;">← Página anterior</button>
+                <span>Fin de la revista</span>
+            </div>
+        </section>
 
-                    <div id="texto-ampliado-socorristas" style="display: none;">
-                        <p style="font-size: 0.85rem; color: #4b5563; line-height: 1.5;">
-                            Desde sus orígenes, se ha consolidado como una red nacional que agrupa a distintas colectivas a lo largo del país, unidas por el compromiso de acompañar abortos seguros, feministas y amorosos, garantizando información confiable y despojando a la práctica de la culpa, el miedo y la clandestinidad.
-                        </p>
-                        <p style="font-size: 0.85rem; color: #4b5563; line-height: 1.5;">
-                            Sumergirse en este universo —tal como reflexiona la periodista y escritora Laura Rosso— implica encarnar una práctica que trasciende la asistencia sanitaria: significa sentir en el propio cuerpo el valor del "hacer amoroso y acuerpado". Acompañar un proceso de estas características no es un acto aislado, sino una experiencia profundamente humana atravesada por el cuerpo, la escucha sin juicios y el cuidado colectivo.
-                        </p>
-
-                        <h3 style="color: var(--color-primario); font-size: 0.95rem; margin-top: 15px;">1. Romper la soledad y visibilizar lo cotidiano</h3>
-                        <p style="font-size: 0.85rem; color: #4b5563; line-height: 1.5;">
-                            Históricamente, el aborto estuvo confinado al tabú y al silencio. El socorrismo irrumpe para desarticular esa lógica: ya no se aborta más en soledad. Los abortos se ven, se nombran y se charlan. Poner la palabra en común permite que las personas gestantes se reconozcan entre sí, tejiendo redes que fortalecen la autonomía y devienen en formas vitales de resistencia frente a la hostilidad del mundo patriarcal.
-                        </p>
-
-                        <h3 style="color: var(--color-primario); font-size: 0.95rem; margin-top: 15px;">2. Producción de conocimiento y disputa de sentidos</h3>
-                        <p style="font-size: 0.85rem; color: #4b5563; line-height: 1.5;">
-                            La red no se limita a responder a una urgencia práctica, sino que produce un saber propio y situado. A través de registros, relatos y sistematizaciones, las socorristas legitiman saberes que tensionan los sentidos dominantes sobre la salud sexual y reproductiva. Este conocimiento se expande y dialoga activamente con la comunidad y el Estado en todos sus niveles.
-                        </p>
-                    </div>
-
-                    <div style="background: #fdf2f8; border-left: 4px solid #e11d48; padding: 12px; border-radius: 0 8px 8px 0; margin-top: 15px; margin-bottom: 15px;">
-                        <h3 style="color: #881337; margin: 0 0 4px 0; font-size: 0.95rem;">El arraigo local: Socorristas en Viedma</h3>
-                        <p style="font-size: 0.85rem; color: #4b5563; margin: 0 0 8px 0; line-height: 1.5;">
-                            Toda esta marea federal se hace cuerpo, voz y territorio en nuestra comarca. En Viedma, estas redes de complicidad y cuidado feminista se sostienen activamente bajo el nombre de la colectiva local <strong>Rosa Salvaje</strong>.
-                        </p>
-                        <p style="font-size: 0.85rem; color: #881337; margin: 0; font-weight: bold;">
-                            📞 Teléfono de contacto / Acompañamientos: <a href="https://wa.me/5492920635246" target="_blank" style="color: #e11d48; text-decoration: none;">2920 635246</a>
-                        </p>
-                    </div>
-
-                    <button id="btn-leer-mas" onclick="toggleSocorristas()" class="btn" style="width: 100%; box-sizing: border-box; text-align: center; border:none; cursor:pointer; padding: 8px 12px; font-size: 0.85rem; background-color: var(--color-secundario);">Leer más ↓</button>
-                </section>
-
-            </aside>
-
-        </div>
     </main>
 
     <footer>
         <div style="padding: 10px 0;">
-            <img src="https://raw.githubusercontent.com/Revistaorilla/ORILLA/main/logo_orilla.jpg" alt="ORILLA - voces . cuerpxs . territorios" class="logo-footer-img">
+            <img src="https://raw.githubusercontent.com/Revistaorilla/ORILLA/main/logo_orilla.jpg" alt="ORILLA" class="logo-footer-img">
         </div>
         <p style="font-size: 0.85rem; margin: 4px 0;">Cultura y perspectiva de género — Viedma, Río Negro</p>
         <div class="contador">Visitas: <span id="contador-visitas-num">1240</span></div>
@@ -682,15 +618,14 @@
     <div id="modal-zatti" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.6); z-index:1000; justify-content:center; align-items:center; padding: 20px;">
         <div style="background:white; padding:25px; border-radius:12px; max-width:450px; width:100%; position:relative; box-shadow: 0 4px 20px rgba(0,0,0,0.2);">
             <button onclick="cerrarModal()" style="position:absolute; top:12px; right:12px; background:none; border:none; font-size:1.1rem; cursor:pointer; font-weight:bold;">✕</button>
-            <span class="badge" style="background-color: #fdf2f8; color: var(--color-acento); border-color: #fbcfe8;">Testeo</span>
+            <span class="badge" style="background-color: #fdf2f8; color: var(--color-acento);">Testeo</span>
             <h3 style="color: var(--color-primario); margin-top:4px;">Hospital Artemides Zatti — Viedma</h3>
-            <p style="font-size: 0.85rem; color: #4b5563;"><strong>Unidad de VIH/SIDA e ITS:</strong> Ingreso por calle Rivadavia. Atención libre de estigmas.</p>
+            <p style="font-size: 0.85rem; color: #4b5563;"><strong>Unidad de VIH/SIDA e ITS:</strong> Ingreso por calle Rivadavia.</p>
             <ul style="font-size: 0.85rem; color: #4b5563; padding-left: 18px; line-height: 1.5;">
                 <li><strong>Horarios:</strong> Lunes a viernes de 8:00 a 14:00 h.</li>
                 <li><strong>Modalidad:</strong> Demanda espontánea (sin turno previo).</li>
-                <li><strong>Contacto:</strong> Cel. 02920-421626 | Fijo 420130 (int. 130)</li>
             </ul>
-            <button onclick="cerrarModal()" class="btn" style="width:100%; margin-top:8px; border:none; cursor:pointer; padding: 6px 12px; font-size: 0.8rem;">Cerrar</button>
+            <button onclick="cerrarModal()" class="btn" style="width:100%; margin-top:8px; padding: 6px; font-size: 0.8rem;">Cerrar</button>
         </div>
     </div>
 
@@ -700,6 +635,8 @@
             if (versosGuardados) {
                 document.getElementById("poema-en-curso").innerHTML = versosGuardados;
             }
+
+            cargarComentarios();
 
             let visitas = localStorage.getItem("visitas_revista_orilla");
             if (!visitas) {
@@ -711,11 +648,31 @@
             document.getElementById("contador-visitas-num").innerText = visitas;
         });
 
+        function cambiarPagina(num) {
+            // Ocultar todas las hojas
+            let hojas = document.querySelectorAll('.revista-hoja');
+            hojas.forEach(h => h.classList.remove('activa'));
+
+            // Desactivar todos los links del menú
+            for(let i=1; i<=4; i++) {
+                let nav = document.getElementById('nav-' + i);
+                if(nav) nav.classList.remove('activo');
+            }
+
+            // Mostrar la hoja seleccionada y activar su menú
+            let hojaActual = document.getElementById('pagina-' + num);
+            if(hojaActual) hojaActual.classList.add('activa');
+
+            let navActual = document.getElementById('nav-' + num);
+            if(navActual) navActual.classList.add('activo');
+
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
         function guardarVerso(event) {
             event.preventDefault();
             let input = document.getElementById("input-verso");
             let versoTexto = input.value.trim();
-            
             if(versoTexto !== "") {
                 let contenedorPoema = document.getElementById("poema-en-curso");
                 contenedorPoema.innerHTML += "<br>" + versoTexto + "...";
@@ -725,17 +682,43 @@
             }
         }
 
-        function toggleSocorristas() {
-            let textoExtra = document.getElementById("texto-ampliado-socorristas");
-            let boton = document.getElementById("btn-leer-mas");
+        function guardarComentario(event) {
+            event.preventDefault();
+            let autorInput = document.getElementById("autor-comentario");
+            let textoInput = document.getElementById("texto-comentario");
             
-            if (textoExtra.style.display === "none") {
-                textoExtra.style.display = "block";
-                boton.innerText = "Ocultar ↑";
-            } else {
-                textoExtra.style.display = "none";
-                boton.innerText = "Leer más ↓";
+            let autor = autorInput.value.trim();
+            let texto = textoInput.value.trim();
+
+            if(autor !== "" && texto !== "") {
+                let nuevoComentario = { autor: autor, texto: texto, fecha: new Date().toLocaleDateString() };
+                let comentarios = JSON.parse(localStorage.getItem("comentarios_orilla") || "[]");
+                comentarios.unshift(nuevoComentario);
+                localStorage.setItem("comentarios_orilla", JSON.stringify(comentarios));
+
+                autorInput.value = "";
+                textoInput.value = "";
+                cargarComentarios();
             }
+        }
+
+        function cargarComentarios() {
+            let contenedor = document.getElementById("contenedor-lista-comentarios");
+            let comentarios = JSON.parse(localStorage.getItem("comentarios_orilla") || "[]");
+            
+            if(comentarios.length === 0) {
+                comentarios = [
+                    { autor: "Equipo de Orilla", texto: "¡Dejanos tus impresiones sobre este número!", fecha: "Hoy" }
+                ];
+            }
+
+            let html = "";
+            comentarios.forEach(c => {
+                html += `<div class="comentario-item">
+                            <span class="comentario-autor">${c.autor}:</span> ${c.texto}
+                         </div>`;
+            });
+            contenedor.innerHTML = html;
         }
 
         function abrirModal() {

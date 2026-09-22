@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="google-site-verification" content="1O8scWuOw3HF37o-nTpbe9PB6jFZdllZoSmmZpLK3mU" />
     <title>ORILLA — Cultura y perspectiva de género</title>
     <style>
         :root {
@@ -406,7 +407,6 @@
             resize: none;
         }
 
-        /* ESTILOS PARA LA SECCIÓN DE REACCIONES */
         .seccion-reacciones {
             background: var(--color-tarjeta);
             border: 1px solid var(--borde-suave);
@@ -744,26 +744,23 @@
                     document.getElementById("contador-visitas-num").innerText = visitasLocales;
                 });
 
-            // 2. Cargar conteo actual de reacciones (Like 👍, Dislike 👎 y Alien 👽)
+            // 2. Cargar conteo actual de reacciones
             actualizarContadoresReacciones();
         });
 
         function actualizarContadoresReacciones() {
-            // Obtener votos de Like 👍
             fetch("https://api.countapi.xyz/get/revistaorilla-web/reaccion_like")
                 .then(res => res.json())
                 .then(data => {
                     document.getElementById("contador-like").innerText = data.value;
                 }).catch(() => { document.getElementById("contador-like").innerText = "0"; });
 
-            // Obtener votos de Dislike 👎
             fetch("https://api.countapi.xyz/get/revistaorilla-web/reaccion_dislike")
                 .then(res => res.json())
                 .then(data => {
                     document.getElementById("contador-dislike").innerText = data.value;
                 }).catch(() => { document.getElementById("contador-dislike").innerText = "0"; });
 
-            // Obtener votos de Alien 👽
             fetch("https://api.countapi.xyz/get/revistaorilla-web/reaccion_alien")
                 .then(res => res.json())
                 .then(data => {
@@ -777,7 +774,6 @@
             else if (tipo === 'dislike') llaveClave = 'reaccion_dislike';
             else if (tipo === 'alien') llaveClave = 'reaccion_alien';
             
-            // Sumar +1 en la nube al hacer clic
             fetch(`https://api.countapi.xyz/hit/revistaorilla-web/${llaveClave}`)
                 .then(res => res.json())
                 .then(data => {

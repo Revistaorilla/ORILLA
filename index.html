@@ -406,6 +406,58 @@
             resize: none;
         }
 
+        /* ESTILOS PARA LA SECCIÓN DE REACCIONES */
+        .seccion-reacciones {
+            background: var(--color-tarjeta);
+            border: 1px solid var(--borde-suave);
+            border-radius: 12px;
+            padding: 20px;
+            text-align: center;
+            margin-top: 40px;
+            box-shadow: 0 4px 15px rgba(88, 28, 135, 0.05);
+        }
+
+        .seccion-reacciones h3 {
+            color: var(--color-primario);
+            font-size: 1.05rem;
+            margin-top: 0;
+            margin-bottom: 6px;
+        }
+
+        .seccion-reacciones p {
+            font-size: 0.82rem;
+            color: #555;
+            margin-bottom: 15px;
+        }
+
+        .botones-reaccion-container {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .btn-reaccion {
+            background: #fdf4ff;
+            border: 1px solid #fbcfe8;
+            border-radius: 30px;
+            padding: 10px 20px;
+            font-size: 0.95rem;
+            font-weight: bold;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            transition: all 0.2s ease;
+            color: var(--color-primario);
+        }
+
+        .btn-reaccion:hover {
+            background: #fae8ff;
+            transform: translateY(-2px);
+            border-color: var(--color-secundario);
+        }
+
         footer {
             background-color: var(--color-primario);
             color: white;
@@ -557,6 +609,20 @@
                     </div>
                 </section>
 
+                <!-- SECCIÓN DE REACCIONES GLOBALES -->
+                <div class="seccion-reacciones">
+                    <h3>¿Qué te pareció esta visita?</h3>
+                    <p>Dejanos tu reacción de forma anónima:</p>
+                    <div class="botones-reaccion-container">
+                        <button class="btn-reaccion" onclick="reaccionar('amor')">
+                            🫶🏽 <span id="contador-amor">...</span>
+                        </button>
+                        <button class="btn-reaccion" onclick="reaccionar('dislike')">
+                            👎 <span id="contador-dislike">...</span>
+                        </button>
+                    </div>
+                </div>
+
             </div>
 
             <aside class="sidebar-derecha">
@@ -630,7 +696,7 @@
         </div>
         <p style="font-size: 0.85rem; margin: 4px 0;">Cultura y perspectiva de género — Viedma, Río Negro</p>
         <p style="font-size: 0.85rem; margin: 6px 0;">Contacto: <a href="mailto:Contactorevistaorilla@gmail.com" style="color: #f3e8ff; text-decoration: underline;">Contactorevistaorilla@gmail.com</a></p>
-        <div class="contador">VISITAS: <span id="contador-visitas-num">1650</span></div>
+        <div class="contador">VISITAS REALES: <span id="contador-visitas-num">Cargando...</span></div>
         <small style="display: block; margin-top: 10px; opacity: 0.8;">© 2026 ORILLA</small>
     </footer>
 
@@ -648,18 +714,59 @@
         </div>
     </div>
 
-    <!-- SCRIPT DE VISITAS -->
+    <!-- SCRIPTS PARA CONTADOR Y REACCIONES -->
     <script>
         document.addEventListener("DOMContentLoaded", function() {
-            let visitas = localStorage.getItem("visitas_revista_orilla");
-            if (!visitas) {
-                visitas = 1650; 
-            } else {
-                visitas = parseInt(visitas) + 1;
-            }
-            localStorage.setItem("visitas_revista_orilla", visitas);
-            document.getElementById("contador-visitas-num").innerText = visitas;
+            // 1. Cargar contador general de visitas reales
+            fetch("https://api.countapi.xyz/hit/revistaorilla-web/visitas")
+                .then(response => response.json())
+                .then(data => {
+                    document.getElementById("contador-visitas-num").innerText = data.value;
+                })
+                .catch(error => {
+                    let visitasLocales = localStorage.getItem("visitas_orilla_respaldo");
+                    visitasLocales = visitasLocales ? parseInt(visitasLocales) + 1 : 1650;
+                    localStorage.setItem("visitas_orilla_respaldo", visitasLocales);
+                    document.getElementById("contador-visitas-num").innerText = visitasLocales;
+                });
+
+            // 2. Cargar conteo actual de reacciones (Amor 🫶🏽 y Dislike 👎)
+            actualizarContadoresReacciones();
         });
+
+        function actualizarContadoresReacciones() {
+            // Obtener votos de amor 🫶🏽
+            fetch("https://api.countapi.xyz/get/revistaorilla-web/reaccion_amor")
+                .then(res => res.json())
+                .then(data => {
+                    document.getElementById("contador-amor").innerText = data.value;
+                }).catch(() => { document.getElementById("contador-amor").innerText = "0"; });
+
+            // Obtener votos de dislike 👎
+            fetch("https://api.countapi.xyz/get/revistaorilla-web/reaccion_dislike")
+                .then(res => res.json())
+                .then(data => {
+                    document.getElementById("contador-dislike").innerText = data.value;
+                }).catch(() => { document.getElementById("contador-dislike").innerText = "0"; });
+        }
+
+        function reaccionar(tipo) {
+            let llaveClave = (tipo === 'amor') ? 'reaccion_amor' : 'reaccion_dislike';
+            
+            // Sumar +1 en la nube al hacer clic
+            fetch(`https://api.countapi.xyz/hit/revistaorilla-web/${llaveClave}`)
+                .then(res => res.json())
+                .then(data => {
+                    if(tipo === 'amor') {
+                        document.getElementById("contador-amor").innerText = data.value;
+                    } else {
+                        document.getElementById("contador-dislike").innerText = data.value;
+                    }
+                })
+                .catch(err => {
+                    console.error("Error al registrar reacción", err);
+                });
+        }
 
         function toggleSocorristas() {
             let textoExtra = document.getElementById("texto-ampliado-socorristas");

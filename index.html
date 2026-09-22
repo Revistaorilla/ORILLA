@@ -432,8 +432,15 @@
 
         .botones-reaccion-container {
             display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .fila-botones {
+            display: flex;
             justify-content: center;
-            gap: 20px;
+            gap: 15px;
             flex-wrap: wrap;
         }
 
@@ -614,12 +621,19 @@
                     <h3>¿Qué te pareció esta visita?</h3>
                     <p>Dejanos tu reacción de forma anónima:</p>
                     <div class="botones-reaccion-container">
-                        <button class="btn-reaccion" onclick="reaccionar('amor')">
-                            🫶🏽 <span id="contador-amor">...</span>
-                        </button>
-                        <button class="btn-reaccion" onclick="reaccionar('dislike')">
-                            👎 <span id="contador-dislike">...</span>
-                        </button>
+                        <div class="fila-botones">
+                            <button class="btn-reaccion" onclick="reaccionar('like')">
+                                👍 <span id="contador-like">...</span>
+                            </button>
+                            <button class="btn-reaccion" onclick="reaccionar('dislike')">
+                                👎 <span id="contador-dislike">...</span>
+                            </button>
+                        </div>
+                        <div>
+                            <button class="btn-reaccion" onclick="reaccionar('alien')">
+                                👽 <span id="contador-alien">...</span>
+                            </button>
+                        </div>
                     </div>
                 </div>
 
@@ -730,37 +744,49 @@
                     document.getElementById("contador-visitas-num").innerText = visitasLocales;
                 });
 
-            // 2. Cargar conteo actual de reacciones (Amor 🫶🏽 y Dislike 👎)
+            // 2. Cargar conteo actual de reacciones (Like 👍, Dislike 👎 y Alien 👽)
             actualizarContadoresReacciones();
         });
 
         function actualizarContadoresReacciones() {
-            // Obtener votos de amor 🫶🏽
-            fetch("https://api.countapi.xyz/get/revistaorilla-web/reaccion_amor")
+            // Obtener votos de Like 👍
+            fetch("https://api.countapi.xyz/get/revistaorilla-web/reaccion_like")
                 .then(res => res.json())
                 .then(data => {
-                    document.getElementById("contador-amor").innerText = data.value;
-                }).catch(() => { document.getElementById("contador-amor").innerText = "0"; });
+                    document.getElementById("contador-like").innerText = data.value;
+                }).catch(() => { document.getElementById("contador-like").innerText = "0"; });
 
-            // Obtener votos de dislike 👎
+            // Obtener votos de Dislike 👎
             fetch("https://api.countapi.xyz/get/revistaorilla-web/reaccion_dislike")
                 .then(res => res.json())
                 .then(data => {
                     document.getElementById("contador-dislike").innerText = data.value;
                 }).catch(() => { document.getElementById("contador-dislike").innerText = "0"; });
+
+            // Obtener votos de Alien 👽
+            fetch("https://api.countapi.xyz/get/revistaorilla-web/reaccion_alien")
+                .then(res => res.json())
+                .then(data => {
+                    document.getElementById("contador-alien").innerText = data.value;
+                }).catch(() => { document.getElementById("contador-alien").innerText = "0"; });
         }
 
         function reaccionar(tipo) {
-            let llaveClave = (tipo === 'amor') ? 'reaccion_amor' : 'reaccion_dislike';
+            let llaveClave = '';
+            if (tipo === 'like') llaveClave = 'reaccion_like';
+            else if (tipo === 'dislike') llaveClave = 'reaccion_dislike';
+            else if (tipo === 'alien') llaveClave = 'reaccion_alien';
             
             // Sumar +1 en la nube al hacer clic
             fetch(`https://api.countapi.xyz/hit/revistaorilla-web/${llaveClave}`)
                 .then(res => res.json())
                 .then(data => {
-                    if(tipo === 'amor') {
-                        document.getElementById("contador-amor").innerText = data.value;
-                    } else {
+                    if(tipo === 'like') {
+                        document.getElementById("contador-like").innerText = data.value;
+                    } else if(tipo === 'dislike') {
                         document.getElementById("contador-dislike").innerText = data.value;
+                    } else if(tipo === 'alien') {
+                        document.getElementById("contador-alien").innerText = data.value;
                     }
                 })
                 .catch(err => {

@@ -406,15 +406,6 @@
             resize: none;
         }
 
-        .seccion-comentarios-publicos {
-            background: var(--color-tarjeta);
-            border: 1px solid var(--borde-suave);
-            border-radius: 12px;
-            padding: 20px;
-            margin-top: 30px;
-            box-shadow: 0 4px 15px rgba(88, 28, 135, 0.05);
-        }
-
         footer {
             background-color: var(--color-primario);
             color: white;
@@ -447,7 +438,6 @@
                 <a href="#artistas">Obras Locales</a>
                 <a href="#recomendaciones">Recomendaciones</a>
                 <a href="#participa">Participá</a>
-                <a href="#comentarios-seccion">Comentarios</a>
             </nav>
         </div>
         <div class="barra-arcoiris"></div>
@@ -567,15 +557,6 @@
                     </div>
                 </section>
 
-                <!-- MURO DE COMENTARIOS PÚBLICOS GLOBAL (DISQUS) -->
-                <section id="comentarios-seccion" class="seccion-comentarios-publicos">
-                    <div class="seccion-titulo" style="border-bottom: none; margin-bottom: 5px;">Muro de Comentarios y Opiniones</div>
-                    <p style="font-size: 0.85rem; color: #555; margin-bottom: 20px;">Dejá tu mensaje o comentario sobre la revista para compartir y leer con toda la comunidad:</p>
-                    
-                    <!-- Integración de Disqus -->
-                    <div id="disqus_thread"></div>
-                </section>
-
             </div>
 
             <aside class="sidebar-derecha">
@@ -667,7 +648,7 @@
         </div>
     </div>
 
-    <!-- SCRIPT DE VISITAS Y CONFIGURACIÓN DE DISQUS -->
+    <!-- SCRIPT DE VISITAS -->
     <script>
         document.addEventListener("DOMContentLoaded", function() {
             let visitas = localStorage.getItem("visitas_revista_orilla");
@@ -679,19 +660,6 @@
             localStorage.setItem("visitas_revista_orilla", visitas);
             document.getElementById("contador-visitas-num").innerText = visitas;
         });
-
-        /* CONFIGURACIÓN DE DISQUS */
-        var disqus_config = function () {
-            this.page.url = window.location.href;  
-            this.page.identifier = "revista-orilla-index"; 
-        };
-        
-        (function() { 
-            var d = document, s = d.createElement('script');
-            s.src = 'https://revistaorilla.disqus.com/embed.js'; 
-            s.setAttribute('data-timestamp', +new Date());
-            (d.head || d.body).appendChild(s);
-        })();
 
         function toggleSocorristas() {
             let textoExtra = document.getElementById("texto-ampliado-socorristas");

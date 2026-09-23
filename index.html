@@ -7,25 +7,26 @@
 <title>ORILLA — Voces, cuerpos, territorios</title>
 <style>
 :root {
---color-fondo: #ffffff;
---color-tarjeta: #f8fafc;
---color-texto: #111827;
---color-texto-secundario: #4b5563;
+--color-fondo: #f1f5f9; /* Un gris muy suave de fondo general para que las tarjetas resalten */
+--color-tarjeta: #ffffff; /* Tarjetas en blanco puro */
+--color-texto: #0f172a;
+--color-texto-secundario: #334155;
 --color-primario: #e11d48;
 --color-secundario: #9333ea;
---borde-suave: #e2e8f0;
+--borde-suave: #cbd5e1; /* Borde un poco más definido */
+--sombra-tarjeta: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
 }
 html {
 scroll-behavior: smooth;
 }
 body {
-font-family: "Courier New", Courier, monospace, system-ui;
+font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
 background-color: var(--color-fondo);
 color: var(--color-texto);
 margin: 0;
 padding: 0;
 line-height: 1.5;
-letter-spacing: 0.5px;
+letter-spacing: 0.3px;
 }
 header {
 background-color: #000000;
@@ -61,15 +62,16 @@ color: #ffffff;
 margin: 0;
 line-height: 1;
 text-transform: uppercase;
-font-family: "Courier New", Courier, monospace;
+font-family: "Courier New", Courier, monospace; /* Único elemento con tipografía de máquina de escribir */
 }
 .subtitulo-logo {
 font-size: 0.75rem;
 color: #a3a3a3;
 font-weight: normal;
 text-transform: lowercase;
-letter-spacing: 2px;
+letter-spacing: 1px;
 margin-top: 5px;
+font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
 }
 .logo-footer-img {
 max-height: 70px;
@@ -118,7 +120,7 @@ gap: 30px;
 }
 .badge {
 display: inline-block;
-background-color: #f1f5f9;
+background-color: #fee2e2;
 color: var(--color-primario);
 font-size: 0.7rem;
 font-weight: bold;
@@ -127,14 +129,15 @@ border-radius: 3px;
 text-transform: uppercase;
 letter-spacing: 1px;
 margin-bottom: 8px;
-border: 1px solid var(--borde-suave);
+border: 1px solid #fca5a5;
 }
 .hitos-historia-box {
 background: var(--color-tarjeta);
 border: 1px solid var(--borde-suave);
-border-left: 4px solid var(--color-primario);
+border-left: 5px solid var(--color-primario);
 border-radius: 6px;
-padding: 15px;
+padding: 20px;
+box-shadow: var(--sombra-tarjeta);
 color: var(--color-texto);
 }
 .hitos-historia-box h1 {
@@ -146,17 +149,17 @@ line-height: 1.3;
 .hitos-historia-box p {
 color: var(--color-texto-secundario);
 font-size: 0.82rem;
-margin-bottom: 10px;
+margin-bottom: 12px;
 }
 .logros-grid-horizontal {
 display: grid;
 grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
-gap: 8px;
+gap: 10px;
 margin: 0;
 }
 .logro-item {
-background: #ffffff;
-padding: 8px 10px;
+background: #f8fafc;
+padding: 10px 12px;
 border-radius: 4px;
 border: 1px solid var(--borde-suave);
 font-size: 0.78rem;
@@ -167,8 +170,8 @@ color: var(--color-primario);
 }
 .btn {
 display: inline-block;
-background-color: #f1f5f9;
-color: #111827;
+background-color: #0f172a;
+color: #ffffff;
 padding: 8px 16px;
 border-radius: 4px;
 font-weight: bold;
@@ -176,29 +179,30 @@ text-decoration: none;
 font-size: 0.8rem;
 transition: background 0.2s;
 text-align: center;
-border: 1px solid #cbd5e1;
+border: 1px solid #0f172a;
+font-family: inherit;
 }
 .btn:hover {
 background-color: var(--color-primario);
-color: #ffffff;
 border-color: var(--color-primario);
 }
 .seccion-titulo {
-font-size: 1rem;
+font-size: 1.05rem;
 font-weight: bold;
-color: #111827;
-border-bottom: 2px solid var(--borde-suave);
+color: #0f172a;
+border-bottom: 2px solid var(--color-primario);
 padding-bottom: 8px;
-margin-bottom: 15px;
+margin-bottom: 20px;
 text-transform: uppercase;
-letter-spacing: 2px;
+letter-spacing: 1px;
 }
 .noticia-reciente-box {
 background: var(--color-tarjeta);
 border: 1px solid var(--borde-suave);
-border-left: 4px solid var(--color-secundario);
+border-left: 5px solid var(--color-secundario);
 border-radius: 6px;
 padding: 20px;
+box-shadow: var(--sombra-tarjeta);
 display: grid;
 grid-template-columns: 240px 1fr;
 gap: 20px;
@@ -216,6 +220,7 @@ width: 100%;
 height: 150px;
 object-fit: cover;
 border-radius: 4px;
+border: 1px solid var(--borde-suave);
 }
 .noticia-reciente-box h3 {
 color: var(--color-texto);
@@ -230,13 +235,14 @@ margin: 0 0 12px 0;
 .grilla-tarjetas {
 display: grid;
 grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-gap: 15px;
+gap: 20px;
 }
 .tarjeta {
 background: var(--color-tarjeta);
 border: 1px solid var(--borde-suave);
 border-radius: 6px;
-padding: 15px;
+padding: 20px;
+box-shadow: var(--sombra-tarjeta);
 display: flex;
 flex-direction: column;
 justify-content: space-between;
@@ -247,8 +253,8 @@ width: 100%;
 height: 160px;
 object-fit: cover;
 border-radius: 4px;
-margin-bottom: 10px;
-border: none;
+margin-bottom: 12px;
+border: 1px solid var(--borde-suave);
 }
 .tarjeta h3 {
 color: var(--color-texto);
@@ -269,14 +275,15 @@ gap: 20px;
 background: var(--color-tarjeta);
 border: 1px solid var(--borde-suave);
 border-radius: 6px;
-padding: 15px;
+padding: 20px;
+box-shadow: var(--sombra-tarjeta);
 text-align: center;
 color: var(--color-texto);
 }
 .burbuja-redonda {
 width: 90px;
 height: 90px;
-background: #ffffff;
+background: #f8fafc;
 color: var(--color-primario);
 border-radius: 50%;
 display: flex;
@@ -285,6 +292,7 @@ justify-content: center;
 align-items: center;
 margin: 10px auto;
 border: 2px solid var(--color-primario);
+box-shadow: 0 2px 4px rgba(225, 29, 72, 0.1);
 }
 .burbuja-redonda span:first-child {
 font-size: 1.6rem;
@@ -302,7 +310,8 @@ color: var(--color-texto-secundario);
 background: var(--color-tarjeta);
 border: 1px solid var(--borde-suave);
 border-radius: 6px;
-padding: 15px;
+padding: 20px;
+box-shadow: var(--sombra-tarjeta);
 position: relative;
 overflow: hidden;
 color: var(--color-texto);
@@ -314,6 +323,7 @@ object-fit: cover;
 border-radius: 4px;
 margin-top: 8px;
 margin-bottom: 10px;
+border: 1px solid var(--borde-suave);
 }
 .alerta-arcoiris h3 {
 color: var(--color-texto);
@@ -328,20 +338,21 @@ margin: 0 0 10px 0;
 line-height: 1.4;
 }
 .caja-participacion {
-background: var(--color-tarjeta);
+background: #f8fafc;
 border: 1px solid var(--borde-suave);
 border-radius: 6px;
 padding: 15px;
 color: var(--color-texto);
+margin-top: 10px;
 }
 .form-compacto {
 display: flex;
 flex-direction: column;
-gap: 8px;
+gap: 10px;
 margin-top: 8px;
 }
 .form-compacto input, .form-compacto textarea {
-padding: 8px;
+padding: 10px;
 background: #ffffff;
 border: 1px solid var(--borde-suave);
 color: var(--color-texto);
@@ -352,21 +363,22 @@ width: 100%;
 box-sizing: border-box;
 }
 .form-compacto textarea {
-height: 60px;
+height: 70px;
 resize: none;
 }
 .seccion-reacciones {
 background: var(--color-tarjeta);
 border: 1px solid var(--borde-suave);
 border-radius: 6px;
-padding: 20px;
+padding: 25px;
+box-shadow: var(--sombra-tarjeta);
 text-align: center;
 margin-top: 40px;
 color: var(--color-texto);
 }
 .seccion-reacciones h3 {
 color: var(--color-texto);
-font-size: 1rem;
+font-size: 1.1rem;
 margin-top: 0;
 margin-bottom: 6px;
 }
@@ -388,7 +400,7 @@ gap: 15px;
 flex-wrap: wrap;
 }
 .btn-reaccion {
-background: #ffffff;
+background: #f8fafc;
 border: 1px solid var(--borde-suave);
 border-radius: 4px;
 padding: 8px 16px;
@@ -401,9 +413,10 @@ gap: 8px;
 transition: all 0.2s ease;
 color: var(--color-texto);
 font-family: inherit;
+box-shadow: 0 1px 2px rgba(0,0,0,0.05);
 }
 .btn-reaccion:hover {
-background: #f1f5f9;
+background: #fee2e2;
 border-color: var(--color-primario);
 color: var(--color-primario);
 }
@@ -448,7 +461,7 @@ letter-spacing: 1px;
 <section id="hitos" class="hitos-historia-box">
 <span class="badge">Memoria y Derechos</span>
 <h1>Hitos de la historia argentina</h1>
-<p style="margin-bottom: 8px;">Conquistas fundamentales y leyes clave en la construcción de derechos:</p>
+<p style="margin-bottom: 12px;">Conquistas fundamentales y leyes clave en la construcción de derechos:</p>
 <div class="logros-grid-horizontal">
 <div class="logro-item"><strong>2010:</strong> Ley de Matrimonio Igualitario.</div>
 <div class="logro-item"><strong>2012:</strong> Ley de Identidad de Género (N° 26.743).</div>
@@ -543,16 +556,19 @@ letter-spacing: 1px;
 <section id="participa">
 <div class="seccion-titulo">Envianos tu material</div>
 <p style="font-size: 0.8rem; color: var(--color-texto-secundario); margin-bottom: 15px;">¿Tenés un relato, poema o ilustración para compartir? Dejanos tu material completando el formulario o escríbenos directamente a nuestro correo:</p>
-<div class="caja-participacion">
+<div class="tarjeta">
+<span class="badge" style="width: fit-content;">Formulario web</span>
 <form class="form-compacto" action="https://formspree.io/f/xrpbeeol" method="POST">
 <input type="text" name="nombre" placeholder="Nombre o seudónimo" required>
 <input type="email" name="email" placeholder="Correo electrónico" required>
-<textarea name="mensaje" placeholder="Escribí tu mensaje o poema acá..." required style="height: 70px;"></textarea>
-<button type="submit" class="btn" style="width: fit-content; border: 1px solid var(--borde-suave); cursor:pointer; padding: 6px 14px; font-size: 0.78rem;">Enviar</button>
+<textarea name="mensaje" placeholder="Escribí tu mensaje o poema acá..." required></textarea>
+<button type="submit" class="btn" style="width: fit-content; cursor:pointer; padding: 8px 16px; font-size: 0.78rem;">Enviar</button>
 </form>
-<p style="font-size: 0.8rem; color: var(--color-texto); margin-top: 12px; margin-bottom: 0; font-weight: bold;">
-Contacto: <a href="mailto:Contactorevistaorilla@gmail.com" style="color: var(--color-primario); text-decoration: underline;">Contactorevistaorilla@gmail.com</a>
+<div class="caja-participacion">
+<p style="font-size: 0.8rem; color: var(--color-texto); margin: 0; font-weight: bold;">
+Contacto directo: <a href="mailto:Contactorevistaorilla@gmail.com" style="color: var(--color-primario); text-decoration: underline;">Contactorevistaorilla@gmail.com</a>
 </p>
+</div>
 </div>
 </section>
 
@@ -602,7 +618,7 @@ Contacto: <a href="mailto:Contactorevistaorilla@gmail.com" style="color: var(--c
 </div>
 <a href="https://youtu.be/rzTRwztisDI" target="_blank" class="btn" style="width: 100%; box-sizing: border-box; text-align: center; padding: 6px 12px; font-size: 0.78rem;">Ver en YouTube →</a>
 </section>
-<section style="background: var(--color-tarjeta); border: 1px solid var(--borde-suave); border-radius: 6px; padding: 20px; color: var(--color-texto);">
+<section class="tarjeta" style="margin: 0;">
 <span class="badge">Red Federal</span>
 <h2 style="color: var(--color-texto); margin-top: 4px; font-size: 1.05rem; line-height: 1.3;">Socorristas en Red: Abrazar el territorio, disputar los sentidos</h2>
 <img src="https://raw.githubusercontent.com/Revistaorilla/ORILLA/main/rosa_salvaje.jpg" alt="Socorristas en Red - Rosa Salvaje" style="width: 100%; height: 150px; object-fit: cover; border-radius: 4px; margin: 10px 0; border: 1px solid var(--borde-suave);">
@@ -614,7 +630,7 @@ A nivel estructural, Socorristas en Red es una articulación feminista federal n
 Desde sus orígenes, se ha consolidado como una red nacional que agrupa a distintas colectivas a lo largo del país, unidas por el compromiso de acompañar abortos seguros, feministas y amorosos.
 </p>
 </div>
-<div style="background: #ffffff; border-left: 3px solid var(--color-primario); padding: 10px; border-radius: 0 4px 4px 0; margin-top: 12px; margin-bottom: 12px; border: 1px solid var(--borde-suave); border-left-width: 3px;">
+<div style="background: #f8fafc; border-left: 3px solid var(--color-primario); padding: 10px; border-radius: 0 4px 4px 0; margin-top: 12px; margin-bottom: 12px; border: 1px solid var(--borde-suave); border-left-width: 3px;">
 <h3 style="color: var(--color-texto); margin: 0 0 4px 0; font-size: 0.9rem;">El arraigo local: Socorristas en Viedma</h3>
 <p style="font-size: 0.8rem; color: var(--color-texto-secundario); margin: 0 0 6px 0; line-height: 1.4;">
 En Viedma, estas redes se sostienen activamente bajo el nombre de la colectiva local <strong>Rosa Salvaje</strong>.
@@ -634,11 +650,12 @@ Teléfono: <a href="https://wa.me/5492920635246" target="_blank" style="color: v
 </div>
 <p style="font-size: 0.8rem; margin: 4px 0;">Cultura y perspectiva de género Viedma, Río Negro</p>
 <p style="font-size: 0.8rem; margin: 6px 0;">Contacto: <a href="mailto:Contactorevistaorilla@gmail.com" style="color: #ffffff; text-decoration: underline;">Contactorevistaorilla@gmail.com</a></p>
+<p style="font-size: 0.8rem; margin: 6px 0;">Instagram: <a href="https://www.instagram.com/revista_orilla?stkn=MXAwMjd0OXhwYjJraA==" target="_blank" style="color: #ffffff; text-decoration: underline;">@revista_orilla</a></p>
 <div class="contador">VISITAS REALES: <span id="contador-visitas-num">Cargando...</span></div>
 <small style="display: block; margin-top: 10px; opacity: 0.7;">© 2026 ORILLA</small>
 </footer>
 <div id="modal-zatti" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.8); z-index: 1000; justify-content:center; align-items:center; padding: 20px;">
-<div style="background:var(--color-tarjeta); border: 1px solid var(--borde-suave); padding:25px; border-radius: 6px; max-width:450px; width: 100%; position:relative; color: var(--color-texto);">
+<div style="background:var(--color-tarjeta); border: 1px solid var(--borde-suave); padding:25px; border-radius: 6px; max-width:450px; width: 100%; position:relative; color: var(--color-texto); box-shadow: 0 20px 25px -5px rgba(0,0,0,0.3);">
 <button onclick="cerrarModal()" style="position:absolute; top: 12px; right:12px; background:none; border:none; color: var(--color-texto); font-size:1.1rem; cursor:pointer; font-weight:bold;">X</button>
 <span class="badge">Testeo</span>
 <h3 style="color: var(--color-texto); margin-top:4px;">Hospital Artemides Zatti Viedma</h3>

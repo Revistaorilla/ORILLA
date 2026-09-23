@@ -7,15 +7,13 @@
 <title>ORILLA — Voces, cuerpos, territorios</title>
 <style>
 :root {
---color-fondo: #0a0a0a;
-/* Tarjetas y bloques en tonos claros para destacar sobre el fondo negro */
---color-tarjeta: #f2f2f2;
---color-tarjeta-hover: #ffffff;
---color-texto: #1a1a1a;
---color-texto-secundario: #555555;
+--color-fondo: #ffffff;
+--color-tarjeta: #f8fafc;
+--color-texto: #111827;
+--color-texto-secundario: #4b5563;
 --color-primario: #e11d48;
 --color-secundario: #9333ea;
---borde-suave: #d4d4d4;
+--borde-suave: #e2e8f0;
 }
 html {
 scroll-behavior: smooth;
@@ -23,7 +21,7 @@ scroll-behavior: smooth;
 body {
 font-family: "Courier New", Courier, monospace, system-ui;
 background-color: var(--color-fondo);
-color: #e5e5e5;
+color: var(--color-texto);
 margin: 0;
 padding: 0;
 line-height: 1.5;
@@ -120,7 +118,7 @@ gap: 30px;
 }
 .badge {
 display: inline-block;
-background-color: #e2e8f0;
+background-color: #f1f5f9;
 color: var(--color-primario);
 font-size: 0.7rem;
 font-weight: bold;
@@ -169,7 +167,7 @@ color: var(--color-primario);
 }
 .btn {
 display: inline-block;
-background-color: #e5e7eb;
+background-color: #f1f5f9;
 color: #111827;
 padding: 8px 16px;
 border-radius: 4px;
@@ -188,8 +186,8 @@ border-color: var(--color-primario);
 .seccion-titulo {
 font-size: 1rem;
 font-weight: bold;
-color: #ffffff;
-border-bottom: 1px solid #262626;
+color: #111827;
+border-bottom: 2px solid var(--borde-suave);
 padding-bottom: 8px;
 margin-bottom: 15px;
 text-transform: uppercase;
@@ -405,7 +403,7 @@ color: var(--color-texto);
 font-family: inherit;
 }
 .btn-reaccion:hover {
-background: #e2e8f0;
+background: #f1f5f9;
 border-color: var(--color-primario);
 color: var(--color-primario);
 }
@@ -529,7 +527,7 @@ letter-spacing: 1px;
 </section>
 <section id="artistas">
 <div class="seccion-titulo">Obras Locales</div>
-<p style="font-size: 0.8rem; color: #a3a3a3; margin-bottom: 15px;">Espacio dedicado a producciones artísticas y literarias de nuestra región:</p>
+<p style="font-size: 0.8rem; color: var(--color-texto-secundario); margin-bottom: 15px;">Espacio dedicado a producciones artísticas y literarias de nuestra región:</p>
 <div class="grilla-tarjetas">
 <article class="tarjeta">
 <div>
@@ -544,7 +542,7 @@ letter-spacing: 1px;
 </section>
 <section id="participa">
 <div class="seccion-titulo">Envianos tu material</div>
-<p style="font-size: 0.8rem; color: #a3a3a3; margin-bottom: 15px;">¿Tenés un relato, poema o ilustración para compartir? Dejanos tu material completando el formulario o escríbenos directamente a nuestro correo:</p>
+<p style="font-size: 0.8rem; color: var(--color-texto-secundario); margin-bottom: 15px;">¿Tenés un relato, poema o ilustración para compartir? Dejanos tu material completando el formulario o escríbenos directamente a nuestro correo:</p>
 <div class="caja-participacion">
 <form class="form-compacto" action="https://formspree.io/f/xrpbeeol" method="POST">
 <input type="text" name="nombre" placeholder="Nombre o seudónimo" required>

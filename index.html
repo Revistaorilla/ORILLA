@@ -3,8 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="google-site-verification"
-content="108scWuOw3HF37o-nTpbe9PB6jFZdllZoSmmZpLK3mU" />
+<meta name="google-site-verification" content="108scWuOw3HF37o-nTpbe9PB6jFZdllZoSmmZpLK3mU" />
 <title>ORILLA — Cultura y perspectiva de género</title>
 <style>
 :root {
@@ -47,8 +46,7 @@ gap: 15px;
 .barra-arcoiris {
 height: 5px;
 width: 100%;
-background: linear-gradient(90deg, #e11d48, #f97316, #eab308, #10b981, #3b82f6,
-#8b5cf6, #a21caf);
+background: linear-gradient(90deg, #e11d48, #f97316, #eab308, #10b981, #3b82f6, #8b5cf6, #a21caf);
 }
 .logo-texto-area {
 display: flex;
@@ -458,6 +456,21 @@ letter-spacing: 1px;
 </section>
 <section id="actualidad">
 <div class="seccion-titulo">Actualidad</div>
+
+
+<!-- NUEVA NOTICIA DESTACADA: 77 AÑOS DEL VOTO FEMENINO -->
+<div class="noticia-reciente-box">
+<div>
+<img src="voto-femenino.jpg" alt="A 77 años del voto femenino">
+</div>
+<div>
+<span class="badge" style="background-color: #fdf2f8; color: var(--color-secundario); border-color: #fbcfe8;">Memoria y Derechos</span>
+<h3>A 77 años del voto femenino: Recordar la conquista de la ciudadanía política</h3>
+<p>El 23 de septiembre de 1948 se promulgaba la Ley 13.010, consagrando el sufragio femenino en Argentina. Un hito histórico impulsado por la lucha colectiva y Eva Perón.</p>
+<a href="voto_femenino.html" class="btn" style="padding: 6px 12px; font-size: 0.8rem;">Leer más →</a>
+</div>
+</div>
+
 <div class="noticia-reciente-box">
 <div>
 <img src="https://raw.githubusercontent.com/Revistaorilla/ORILLA/main/marcha_orgullo.jpg" alt="Marcha del Orgullo CABA">
@@ -588,7 +601,7 @@ Contacto: <a href="mailto:Contactorevistaorilla@gmail.com" style="color: var(--c
 <h3 style="color: var(--color-primario); font-size: 1rem; margin: 4px 0 8px 0;">Mugre - "Ni Tu Perra"</h3>
 <p style="font-size: 0.82rem; color: #555; margin: 0 0 12px 0;">Potencia sonora y rock comandado por mujeres que sacude los parlantes.</p>
 </div>
-<a href="https://youtu.be/rzTRwztisDI" target="_blank" class="btn" style="background-color: #7e22ce; width: 100%; box-sizing: border-box; text-align: center; padding: 6px 12px; font-size: 0.8rem;">Ver en YouTube →</a>
+<a href="https://youtu.be/rzTRwztisDI" target="_blank" class="btn" style="background-color: #7e22ce; width: 100%; box-sizing: border-box; text-align: center; padding: 6px 12px; font-size: 0.80rem;">Ver en YouTube →</a>
 </section>
 <section style="background: var(--color-tarjeta); border: 1px solid var(--borde-suave); border-radius: 12px; padding: 20px; box-shadow: 0 4px 15px rgba(88, 28, 135, 0.08);">
 <span class="badge" style="background-color: #fee2e2; color: #991b1b; border-color: #fca5a5;">Red Federal</span>
@@ -639,12 +652,10 @@ Teléfono: <a href="https://wa.me/5492920635246" target="_blank" style="color: #
 </div>
 </div>
 
-<!-- SCRIPTS FUNCIONALES ACTUALIZADOS -->
 <script>
 const NAMESPACE = "revistaorilla-web";
 
 document.addEventListener("DOMContentLoaded", function() {
-    // 1. Cargar contador general de visitas reales mediante Abacus API
     fetch(`https://abacus.jasoncameron.dev/get/${NAMESPACE}/visitas`)
         .then(response => response.json())
         .then(data => {
@@ -658,10 +669,7 @@ document.addEventListener("DOMContentLoaded", function() {
             registrarVisitaLocal();
         });
 
-    // Registrar un hit de visita de forma única por sesión/carga
     fetch(`https://abacus.jasoncameron.dev/hit/${NAMESPACE}/visitas`).catch(() => {});
-
-    // 2. Cargar conteo actual de reacciones
     actualizarContadoresReacciones();
 });
 
@@ -690,7 +698,6 @@ function actualizarContadoresReacciones() {
 }
 
 function reaccionar(tipo) {
-    // Petición a la API para incrementar la reacción en tiempo real
     fetch(`https://abacus.jasoncameron.dev/hit/${NAMESPACE}/reaccion_${tipo}`)
         .then(res => res.json())
         .then(data => {

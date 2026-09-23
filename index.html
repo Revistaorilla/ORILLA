@@ -7,13 +7,13 @@
 <title>ORILLA — Voces, cuerpos, territorios</title>
 <style>
 :root {
---color-fondo: #f1f5f9; /* Un gris muy suave de fondo general para que las tarjetas resalten */
---color-tarjeta: #ffffff; /* Tarjetas en blanco puro */
+--color-fondo: #f1f5f9;
+--color-tarjeta: #ffffff;
 --color-texto: #0f172a;
 --color-texto-secundario: #334155;
 --color-primario: #e11d48;
 --color-secundario: #9333ea;
---borde-suave: #cbd5e1; /* Borde un poco más definido */
+--borde-suave: #cbd5e1;
 --sombra-tarjeta: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
 }
 html {
@@ -62,7 +62,7 @@ color: #ffffff;
 margin: 0;
 line-height: 1;
 text-transform: uppercase;
-font-family: "Courier New", Courier, monospace; /* Único elemento con tipografía de máquina de escribir */
+font-family: "Courier New", Courier, monospace;
 }
 .subtitulo-logo {
 font-size: 0.75rem;
@@ -136,36 +136,39 @@ background: var(--color-tarjeta);
 border: 1px solid var(--borde-suave);
 border-left: 5px solid var(--color-primario);
 border-radius: 6px;
-padding: 20px;
+padding: 16px 20px;
 box-shadow: var(--sombra-tarjeta);
 color: var(--color-texto);
 }
 .hitos-historia-box h1 {
 color: var(--color-texto);
-font-size: 1.1rem;
-margin: 0 0 6px 0;
+font-size: 1rem;
+margin: 0 0 4px 0;
 line-height: 1.3;
 }
 .hitos-historia-box p {
 color: var(--color-texto-secundario);
-font-size: 0.82rem;
-margin-bottom: 12px;
-}
-.logros-grid-horizontal {
-display: grid;
-grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
-gap: 10px;
-margin: 0;
-}
-.logro-item {
-background: #f8fafc;
-padding: 10px 12px;
-border-radius: 4px;
-border: 1px solid var(--borde-suave);
 font-size: 0.78rem;
+margin-bottom: 8px;
+}
+/* Estilo compacto en línea tipo píldoras */
+.logros-lista-compacta {
+display: flex;
+flex-wrap: wrap;
+gap: 6px 12px;
+margin: 0;
+padding: 0;
+list-style: none;
+font-size: 0.76rem;
 color: var(--color-texto-secundario);
 }
-.logro-item strong {
+.logros-lista-compacta li {
+background: #f8fafc;
+padding: 3px 8px;
+border-radius: 4px;
+border: 1px solid var(--borde-suave);
+}
+.logros-lista-compacta strong {
 color: var(--color-primario);
 }
 .btn {
@@ -461,12 +464,15 @@ letter-spacing: 1px;
 <section id="hitos" class="hitos-historia-box">
 <span class="badge">Memoria y Derechos</span>
 <h1>Hitos de la historia argentina</h1>
-<p style="margin-bottom: 12px;">Conquistas fundamentales y leyes clave en la construcción de derechos:</p>
-<div class="logros-grid-horizontal">
-<div class="logro-item"><strong>2010:</strong> Ley de Matrimonio Igualitario.</div>
-<div class="logro-item"><strong>2012:</strong> Ley de Identidad de Género (N° 26.743).</div>
-<div class="logro-item"><strong>2020:</strong> Cupo Laboral Travesti-Trans.</div>
-</div>
+<p>Leyes clave en la construcción de derechos:</p>
+<ul class="logros-lista-compacta">
+<li><strong>1947:</strong> Voto Femenino</li>
+<li><strong>2006:</strong> Ley ESI</li>
+<li><strong>2010:</strong> Matrimonio Igualitario</li>
+<li><strong>2012:</strong> Identidad de Género</li>
+<li><strong>2020:</strong> Cupo Laboral Travesti-Trans</li>
+<li><strong>2020:</strong> Ley IVE</li>
+</ul>
 </section>
 <section id="actualidad">
 <div class="seccion-titulo">Actualidad</div>

@@ -29,11 +29,11 @@ line-height: 1.5;
 letter-spacing: 0.3px;
 }
 header {
-background-color: #000000;
+background-color: #1e293b; /* Gris oscuro intermedio, ni blanco ni negro absoluto */
 position: sticky;
 top: 0;
 z-index: 100;
-border-bottom: 1px solid #262626;
+border-bottom: 1px solid #334155;
 }
 .header-container {
 max-width: 1100px;
@@ -66,7 +66,7 @@ font-family: "Courier New", Courier, monospace;
 }
 .subtitulo-logo {
 font-size: 0.75rem;
-color: #a3a3a3;
+color: #94a3b8;
 font-weight: normal;
 text-transform: lowercase;
 letter-spacing: 1px;
@@ -87,7 +87,7 @@ flex-wrap: wrap;
 align-items: center;
 }
 nav a {
-color: #a3a3a3;
+color: #cbd5e1;
 text-decoration: none;
 font-weight: bold;
 font-size: 0.8rem;
@@ -95,7 +95,7 @@ transition: color 0.2s;
 text-transform: lowercase;
 }
 nav a:hover {
-color: var(--color-primario);
+color: #f43f5e;
 }
 main {
 max-width: 1100px;
@@ -151,7 +151,6 @@ color: var(--color-texto-secundario);
 font-size: 0.78rem;
 margin-bottom: 8px;
 }
-/* Estilo compacto en línea tipo píldoras */
 .logros-lista-compacta {
 display: flex;
 flex-wrap: wrap;
@@ -286,16 +285,16 @@ color: var(--color-texto);
 .burbuja-redonda {
 width: 90px;
 height: 90px;
-background: #f8fafc;
-color: var(--color-primario);
+background: var(--color-primario); /* Color llamativo de acento que destaca al instante */
+color: #ffffff; /* Texto en blanco para alto contraste */
 border-radius: 50%;
 display: flex;
 flex-direction: column;
 justify-content: center;
 align-items: center;
 margin: 10px auto;
-border: 2px solid var(--color-primario);
-box-shadow: 0 2px 4px rgba(225, 29, 72, 0.1);
+border: 2px solid #ffffff;
+box-shadow: 0 4px 8px rgba(225, 29, 72, 0.3);
 }
 .burbuja-redonda span:first-child {
 font-size: 1.6rem;
@@ -307,7 +306,7 @@ font-size: 0.55rem;
 text-transform: uppercase;
 letter-spacing: 1px;
 margin-top: 2px;
-color: var(--color-texto-secundario);
+color: #f1f5f9;
 }
 .alerta-arcoiris {
 background: var(--color-tarjeta);
@@ -424,16 +423,16 @@ border-color: var(--color-primario);
 color: var(--color-primario);
 }
 footer {
-background-color: #000000;
-color: #a3a3a3;
+background-color: #1e293b; /* Mismo gris grafito para mantener la armonía en el footer */
+color: #cbd5e1;
 text-align: center;
 padding: 30px 20px;
 margin-top: 40px;
-border-top: 1px solid #262626;
+border-top: 1px solid #334155;
 }
 .contador {
 font-size: 0.7rem;
-color: #a3a3a3;
+color: #94a3b8;
 margin-top: 10px;
 text-transform: uppercase;
 letter-spacing: 1px;

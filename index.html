@@ -45,7 +45,7 @@ align-items: stretch;
 flex-wrap: wrap;
 }
 .header-logo-parte {
-background-color: #1e293b; /* Fondo negro/gris oscuro como estaba */
+background-color: #1e293b; /* Fondo oscuro para el logo */
 padding: 15px 25px;
 display: flex;
 flex-direction: column;
@@ -73,11 +73,17 @@ flex-direction: column;
 font-size: 2rem;
 font-weight: bold;
 letter-spacing: 4px;
-color: #ffffff;
 margin: 0;
 line-height: 1;
 text-transform: uppercase;
 font-family: "Courier New", Courier, monospace;
+
+/* Texto en arcoíris */
+background: linear-gradient(90deg, #e11d48, #f97316, #eab308, #10b981, #3b82f6, #8b5cf6, #a21caf);
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
+background-clip: text;
+color: transparent;
 }
 .subtitulo-logo {
 font-size: 0.72rem;
@@ -190,7 +196,7 @@ border: 1px solid var(--borde-suave);
 color: var(--color-primario);
 }
 
-/* BOTONES: Fondo blanco, texto oscuro y borde arcoíris LGBT */
+/* BOTONES: Fondo blanco, texto oscuro y borde arcoíris */
 .btn {
 display: inline-block;
 background-color: #ffffff;

@@ -7,14 +7,14 @@
 <title>ORILLA — Voces, cuerpos, territorios</title>
 <style>
 :root {
---color-fondo: #f1f5f9;
+--color-fondo: #f8fafc;
 --color-tarjeta: #ffffff;
 --color-texto: #0f172a;
 --color-texto-secundario: #334155;
 --color-primario: #e11d48;
 --color-secundario: #9333ea;
---borde-suave: #cbd5e1;
---sombra-tarjeta: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+--borde-suave: #e2e8f0;
+--sombra-tarjeta: 0 4px 6px -1px rgba(0, 0, 0, 0.02), 0 2px 4px -1px rgba(0, 0, 0, 0.01);
 }
 html {
 scroll-behavior: smooth;
@@ -28,22 +28,37 @@ padding: 0;
 line-height: 1.5;
 letter-spacing: 0.3px;
 }
+
+/* ENCABEZADO DIVIDIDO: Logo en fondo oscuro / Navegación en fondo claro */
 header {
-background-color: #1e293b;
 position: sticky;
 top: 0;
 z-index: 100;
-border-bottom: 1px solid #334155;
+box-shadow: 0 2px 4px rgba(0,0,0,0.05);
 }
 .header-container {
 max-width: 1100px;
 margin: 0 auto;
-padding: 15px 20px;
 display: flex;
 justify-content: space-between;
-align-items: center;
+align-items: stretch;
 flex-wrap: wrap;
-gap: 15px;
+}
+.header-logo-parte {
+background-color: #1e293b; /* Fondo negro/gris oscuro como estaba */
+padding: 15px 25px;
+display: flex;
+flex-direction: column;
+justify-content: center;
+}
+.header-nav-parte {
+background-color: #ffffff; /* Fondo blanco limpio para la navegación */
+padding: 15px 25px;
+display: flex;
+align-items: center;
+flex-grow: 1;
+justify-content: flex-end;
+border-bottom: 1px solid var(--borde-suave);
 }
 .barra-arcoiris {
 height: 5px;
@@ -55,7 +70,7 @@ display: flex;
 flex-direction: column;
 }
 .logo-principal {
-font-size: 2.2rem;
+font-size: 2rem;
 font-weight: bold;
 letter-spacing: 4px;
 color: #ffffff;
@@ -65,12 +80,12 @@ text-transform: uppercase;
 font-family: "Courier New", Courier, monospace;
 }
 .subtitulo-logo {
-font-size: 0.75rem;
+font-size: 0.72rem;
 color: #94a3b8;
 font-weight: normal;
 text-transform: lowercase;
 letter-spacing: 1px;
-margin-top: 5px;
+margin-top: 4px;
 font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
 }
 .logo-footer-img {
@@ -87,16 +102,17 @@ flex-wrap: wrap;
 align-items: center;
 }
 nav a {
-color: #cbd5e1;
+color: #475569; /* Texto de navegación oscuro para el fondo blanco */
 text-decoration: none;
-font-weight: bold;
+font-weight: 600;
 font-size: 0.8rem;
 transition: color 0.2s;
 text-transform: lowercase;
 }
 nav a:hover {
-color: #f43f5e;
+color: #e11d48;
 }
+
 main {
 max-width: 1100px;
 margin: 30px auto;
@@ -111,6 +127,9 @@ align-items: start;
 @media (max-width: 1024px) {
 .layout-principal {
 grid-template-columns: 1fr;
+}
+.header-nav-parte {
+justify-content: center;
 }
 }
 .columna-izquierda {
@@ -171,7 +190,7 @@ border: 1px solid var(--borde-suave);
 color: var(--color-primario);
 }
 
-/* ESTILO NUEVO: Botones limpios con fondo blanco, texto oscuro y borde arcoíris LGBT */
+/* BOTONES: Fondo blanco, texto oscuro y borde arcoíris LGBT */
 .btn {
 display: inline-block;
 background-color: #ffffff;
@@ -184,9 +203,8 @@ font-size: 0.8rem;
 text-align: center;
 font-family: inherit;
 box-sizing: border-box;
-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+box-shadow: 0 1px 3px rgba(0, 0, 0, 0.03);
 
-/* Configuración del borde degradado con los colores del orgullo */
 border: 2px solid transparent;
 background-image: linear-gradient(#ffffff, #ffffff), linear-gradient(90deg, #e11d48, #f97316, #eab308, #10b981, #3b82f6, #8b5cf6, #a21caf);
 background-origin: border-box;
@@ -199,7 +217,7 @@ transition: all 0.25s ease;
 background-color: #f8fafc;
 background-image: linear-gradient(#f8fafc, #f8fafc), linear-gradient(90deg, #a21caf, #8b5cf6, #3b82f6, #10b981, #eab308, #f97316, #e11d48);
 transform: translateY(-1px);
-box-shadow: 0 4px 6px rgba(0, 0, 0, 0.08);
+box-shadow: 0 4px 6px rgba(0, 0, 0, 0.06);
 color: #0f172a;
 }
 
@@ -430,7 +448,7 @@ gap: 8px;
 transition: all 0.2s ease;
 color: var(--color-texto);
 font-family: inherit;
-box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+box-shadow: 0 1px 2px rgba(0,0,0,0.03);
 }
 .btn-reaccion:hover {
 background: #fee2e2;
@@ -457,10 +475,13 @@ letter-spacing: 1px;
 <body>
 <header>
 <div class="header-container">
+<div class="header-logo-parte">
 <div class="logo-texto-area">
 <span class="logo-principal">ORILLA</span>
 <span class="subtitulo-logo">voces • cuerpxs • territorios</span>
 </div>
+</div>
+<div class="header-nav-parte">
 <nav>
 <a href="#hitos">hitos</a>
 <a href="#actualidad">actualidad</a>
@@ -469,6 +490,7 @@ letter-spacing: 1px;
 <a href="#recomendaciones">recomendaciones</a>
 <a href="#participa">participá</a>
 </nav>
+</div>
 </div>
 <div class="barra-arcoiris"></div>
 </header>

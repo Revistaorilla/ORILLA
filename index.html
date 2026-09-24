@@ -630,19 +630,6 @@ Contacto directo: <a href="mailto:Contactorevistaorilla@gmail.com" style="color:
 </div>
 
 <aside class="sidebar-derecha">
-<div class="tarjeta" style="border-left: 5px solid var(--color-secundario); margin: 0;">
-<span class="badge">Novedades</span>
-<h3 style="color: var(--color-texto); font-size: 0.95rem; margin: 4px 0 6px 0;">Suscribite al boletín</h3>
-<p style="font-size: 0.78rem; color: var(--color-texto-secundario); margin-bottom: 12px;">Recibí nuestras notas, convocatorias y contenidos directos en tu correo.</p>
-<form class="form-compacto" action="https://formspree.io/f/xrpbeeol" method="POST" onsubmit="alertaSuscripcion(event)">
-<input type="email" name="email_suscripcion" placeholder="Tu correo electrónico..." required>
-<button type="submit" class="btn" style="width: 100%; box-sizing: border-box; text-align: center; cursor:pointer; padding: 7px 12px; font-size: 0.78rem;">Suscribirme →</button>
-</form>
-<div id="mensaje-exito-sus" style="display:none; margin-top:10px; font-size:0.75rem; color:#10b981; font-weight:bold; text-align:center;">
-¡Gracias por sumarte a Orilla! 💌
-</div>
-</div>
-
 <div class="observatorio-independiente">
 <span class="badge">Observatorio</span>
 <h3 style="color: var(--color-texto); font-size: 0.95rem; margin: 4px 0;">Crímenes de Odio</h3>
@@ -794,28 +781,6 @@ function abrirModal() {
 
 function cerrarModal() {
     document.getElementById("modal-zatti").style.display = "none";
-}
-
-function alertaSuscripcion(e) {
-    e.preventDefault();
-    let form = e.target;
-    fetch(form.action, {
-        method: 'POST',
-        body: new FormData(form),
-        headers: { 'Accept': 'application/json' }
-    }).then(response => {
-        if (response.ok) {
-            document.getElementById("mensaje-exito-sus").style.display = "block";
-            form.reset();
-            setTimeout(() => {
-                document.getElementById("mensaje-exito-sus").style.display = "none";
-            }, 5000);
-        } else {
-            alert("Hubo un error al registrar la suscripción. Intentá nuevamente.");
-        }
-    }).catch(error => {
-        alert("Hubo un error de conexión.");
-    });
 }
 </script>
 </body>
